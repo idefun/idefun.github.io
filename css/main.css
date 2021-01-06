@@ -1209,7 +1209,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #c6c650;
+  background: #e821a4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2782,4 +2782,23 @@ body {
   background: rgba(229,35,252,0.212);
   border: 1px solid transparent;
   color: #66e6fa;
+}
+.btn {
+  border-radius: 10px;
+  border: 1px solid #88e04c;
+}
+.btn:hover {
+  background: #49c7e4;
+  border-color: var(--btn-default-hover-border-color);
+  color: #ca7272;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
 }
