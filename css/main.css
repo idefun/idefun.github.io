@@ -1209,7 +1209,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e821a4;
+  background: #ffff75;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2792,13 +2792,9 @@ body {
   border-color: var(--btn-default-hover-border-color);
   color: #ca7272;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-weight: 700;
-  line-height: 1.5;
+.header {
+  margin-top: 10px;
+}
+.main {
+  margin: 10px;
 }
