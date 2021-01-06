@@ -1209,7 +1209,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #40b84f;
+  background: #c6c650;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2772,4 +2772,14 @@ body {
 }
 .post-body {
   color: #333;
+}
+.reward-container button {
+  border: 1px solid #00d5ff;
+  border-radius: 8px;
+  color: #30fc23;
+}
+.reward-container button:hover {
+  background: rgba(229,35,252,0.212);
+  border: 1px solid transparent;
+  color: #66e6fa;
 }
