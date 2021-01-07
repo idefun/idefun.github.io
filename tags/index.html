@@ -408,20 +408,6 @@
 
 
 
-  <div class="links-of-recent-posts motion-element">
-    <div class="links-of-recent-posts-title">
-      <i class="fa fa-history fa-fw"></i>
-      最近文章
-    </div>
-    <ul class="links-of-recent-posts-list">
-        <li class="links-of-recent-posts-item">
-          <a href="/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" title="2021&#x2F;01&#x2F;07&#x2F;自建网盘搜索引擎&#x2F;">自建网盘搜索引擎</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/blog/2021/01/06/%E8%A7%A3%E5%86%B3%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B8%E8%BD%BD%E5%90%8E%E6%97%A0%E6%B3%95%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/" title="2021&#x2F;01&#x2F;06&#x2F;解决谷歌浏览器卸载后无法重新安装的问题&#x2F;">解决谷歌浏览器卸载后无法重新安装的问题</a>
-        </li>
-    </ul>
-  </div>
 
 <div style="">
   <canvas id="canvas" style="width:60%;"> 当前浏览器不支持 canvas，请更换浏览器后再试 </canvas>
@@ -691,6 +677,51 @@ if(canvas.getContext){
 })();
 </script>
 
+
+<div id="days"></div>
+</script>
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("01/01/2021 20:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+
+
+
+  <div class="links-of-recent-posts motion-element">
+    <div class="links-of-recent-posts-title">
+      <i class="fa fa-history fa-fw"></i>
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+        <li class="links-of-recent-posts-item">
+          <a href="/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" title="2021&#x2F;01&#x2F;07&#x2F;自建网盘搜索引擎&#x2F;">自建网盘搜索引擎</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/blog/2021/01/06/%E8%A7%A3%E5%86%B3%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B8%E8%BD%BD%E5%90%8E%E6%97%A0%E6%B3%95%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/" title="2021&#x2F;01&#x2F;06&#x2F;解决谷歌浏览器卸载后无法重新安装的问题&#x2F;">解决谷歌浏览器卸载后无法重新安装的问题</a>
+        </li>
+    </ul>
+  </div>
       </div>
       <div id="days"></div>
 </script>
