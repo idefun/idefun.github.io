@@ -1234,7 +1234,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6ae88a;
+  background: #a339e9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2804,13 +2804,25 @@ mjx-container + br {
   }
 }
 body {
-  background: url("https://i.loli.net/2021/01/10/sqUe2MKQn7pGY8t.jpg");
+  background: url("https://i.loli.net/2021/01/07/yPJxtfTQ5p1hqbn.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
 }
 .post-body {
   color: #333;
+}
+.content-wrap {
+  opacity: 0.9;
+}
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.popup {
+  opacity: 0.9;
 }
 .reward-container button {
   border: 1px solid #00d5ff;
