@@ -1234,7 +1234,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e5ff8b;
+  background: #6ae88a;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2804,7 +2804,7 @@ mjx-container + br {
   }
 }
 body {
-  background: url("https://source.unsplash.com/random/1600x900");
+  background: url("https://i.loli.net/2021/01/10/sqUe2MKQn7pGY8t.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
