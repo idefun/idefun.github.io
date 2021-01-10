@@ -119,6 +119,16 @@
 <p>设置selected=”selected”属性，则该选项就被默认选中。</p>
 <p>在浏览器中显示的结果：</p>
 <p><img src="https://i.loli.net/2021/01/10/p8nCDEVleONLkjg.png" alt="img"></p>
+<h4 id="form表单域"><a href="#form表单域" class="headerlink" title="form表单域"></a>form表单域</h4><p>网站怎样与用户进行交互？答案是使用HTML表单(form)。表单是可以把浏览者输入的数据传送到服务器端，这样服务器端程序就可以处理表单传过来的数据。</p>
+<p>语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;服务器文件/url地址&quot;</span> <span class="attr">method</span>=<span class="string">&quot;传送方式&quot;</span> <span class="attr">name</span>=<span class="string">&quot;表单名称&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>讲解：</strong></p>
+<p>1.<strong>action</strong> <strong>：</strong>浏览者输入的数据被传送到的地方,比如一个PHP页面(save.php)。</p>
+<p>2.<strong>method</strong> <strong>：</strong> 数据传送的方式（get/post）。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>  <span class="attr">action</span>=<span class="string">&quot;save.php&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;username&quot;</span>&gt;</span>用户名:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> /&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;pass&quot;</span>&gt;</span>密码:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pass&quot;</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意:</strong></p>
+<p><strong>1、所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 form 标签之间（否则用户输入的信息可提交不到服务器上哦！）。</strong></p>
+<p><strong>2、method : post/get 的区别这一部分内容属于后端程序员考虑的问题。</strong></p>
 ]]></content>
       <categories>
         <category>web</category>
