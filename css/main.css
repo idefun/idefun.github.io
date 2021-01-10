@@ -1234,7 +1234,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #d62a2a;
+  background: #ed7e04;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2804,7 +2804,7 @@ mjx-container + br {
   }
 }
 body {
-  background-image: url("https://w.wallhaven.cc/full/6o/wallhaven-6oqzgq.jpg");
+  background-image: url("https://i.loli.net/2021/01/07/yPJxtfTQ5p1hqbn.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
