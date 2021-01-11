@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.idefun.com/blog/about/index.html</loc>
+    
+    <lastmod>2021-01-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.idefun.com/blog/2021/01/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2021-01-11</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>http://www.idefun.com/blog/2021/01/11/Linux-C%E7%BC%96%E7%A8%8B/</loc>
-    
-    <lastmod>2021-01-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.idefun.com/blog/about/index.html</loc>
     
     <lastmod>2021-01-11</lastmod>
     
