@@ -129,7 +129,12 @@
 <p><strong>注意:</strong></p>
 <p><strong>1、所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 form 标签之间（否则用户输入的信息可提交不到服务器上哦！）。</strong></p>
 <p><strong>2、method : post/get 的区别这一部分内容属于后端程序员考虑的问题。</strong></p>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="CSS的三种引用方式"><a href="#CSS的三种引用方式" class="headerlink" title="CSS的三种引用方式"></a>CSS的三种引用方式</h3>]]></content>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="CSS的三种引用方式"><a href="#CSS的三种引用方式" class="headerlink" title="CSS的三种引用方式"></a>CSS的三种引用方式</h3><ol>
+<li>内联样式</li>
+<li>嵌入样式</li>
+<li>外部样式</li>
+</ol>
+]]></content>
       <categories>
         <category>web</category>
       </categories>
