@@ -166,6 +166,118 @@
 <td>控制多个站点</td>
 </tr>
 </tbody></table>
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><h4 id="font-family"><a href="#font-family" class="headerlink" title="font-family"></a>font-family</h4><p>可同时指定多个字体,中间以逗号隔开,表示如果浏览器不支持第一个字体,则会尝试下一个,直到找到合适的字体</p>
+<h4 id="CSS-Unicode字体"><a href="#CSS-Unicode字体" class="headerlink" title="CSS Unicode字体"></a>CSS Unicode字体</h4><ul>
+<li><p>为什么使用Unicode字休</p>
+<ul>
+<li>在CSS中设置字体名称，直接写中文是可以的。但是在文件编码(GB2312、 UTF 8等)不匹配时会产生乱码的错误。</li>
+<li>xp系统不支持类似微软雅黑的中文。</li>
+</ul>
+</li>
+<li><p>解决:</p>
+<ul>
+<li>方案一:你可以使用英文来替代。比如font-family: “Microsoft Yahei”。</li>
+<li>方案二:在CSS直接使用Unicode编码来写字体名称可以避免这些错误。使用Unicode写中文字体名称，浏览器是可以正确的解析的。</li>
+</ul>
+</li>
+</ul>
+<h4 id="font-weight"><a href="#font-weight" class="headerlink" title="font-weight"></a>font-weight</h4><ul>
+<li>在html中将字体加粗我们可以用标签来实现<ul>
+<li>使用b和strong标签进行文本加粗。</li>
+</ul>
+</li>
+<li>可以使用CSS来实现，但是CSS 是没有语义的。I</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>默认值(不加粗的)</td>
+</tr>
+<tr>
+<td>bold</td>
+<td>定义粗体(加粗的)</td>
+</tr>
+<tr>
+<td>100~900</td>
+<td>400等同于normal,而700等同于bold</td>
+</tr>
+</tbody></table>
+<p>提倡:<br>    我们平时更喜欢用数字来表示加粗和不加粗。 </p>
+<h4 id="font-style"><a href="#font-style" class="headerlink" title="font-style"></a>font-style</h4><ul>
+<li><p>在html中将字体倾斜我们可以用标签来实现，</p>
+<ul>
+<li>字体倾斜可以用i和em标签。</li>
+</ul>
+</li>
+<li><p>可以使用CSS来实现，但是CSS是没有语义的</p>
+</li>
+</ul>
+<p>font-style属性用于定义字体风格，如设置斜体、倾斜或正常字体，其可用属性值如下:</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>默认值，浏览器会显示标准的字体样式(常用)</td>
+</tr>
+<tr>
+<td>italic</td>
+<td>浏览箭会显示斜体的字体样式。</td>
+</tr>
+</tbody></table>
+<p>小技巧:<br>平时我们很少给文字加斜体，反而喜欢给斜体标签(em, i)改为普通模式。   </p>
+<h4 id="font综合写法"><a href="#font综合写法" class="headerlink" title="font综合写法"></a>font综合写法</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">选择器&#123;<span class="attribute">font</span>:font-style font-weight font-size/line-height font-family&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，各个属性以空格隔开。</p>
+</li>
+<li><p>其中不需要设置的属性可以省略(取默认值)，但必须保留font-size和font-amily属性， 否则font属性将不起作用。</p>
+</li>
+</ul>
+<h4 id="CSS外观属性总结"><a href="#CSS外观属性总结" class="headerlink" title="CSS外观属性总结"></a>CSS外观属性总结</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>颜色</td>
+<td>我们通常用十六进制比如而且是简写形式#fff</td>
+</tr>
+<tr>
+<td>line-height</td>
+<td>行高</td>
+<td>控制行与行之间的距离</td>
+</tr>
+<tr>
+<td>text-align</td>
+<td>水平对齐</td>
+<td>可以设定文字水平的对齐方式</td>
+</tr>
+<tr>
+<td>text-indent</td>
+<td>首行缩进</td>
+<td>通常我们用于段落首行缩进2个字的距离 text-indent: 2em;</td>
+</tr>
+<tr>
+<td>text-decoration</td>
+<td>文本修饰</td>
+<td>记住添加下划线underline 取消下划线none</td>
+</tr>
+</tbody></table>
+<h4 id="快捷操作"><a href="#快捷操作" class="headerlink" title="快捷操作"></a>快捷操作</h4><p>1.如果想要生成多个相同标签加上*就可以了比如  div*3 就可以快速生成3个div<br>2.如果有父子级关系的标签，可以用&gt;比如ul&gt;li就可以了<br>4.如果有兄弟关系的标签，用+就可以了比如div+p<br>5.如果生成带有类名或者id名字的，直接写.demo 或者#two  tab键就可以了<br>6.如果生成的div类名是有顺序的，可以用自增符号$.</p>
 ]]></content>
       <categories>
         <category>web</category>
