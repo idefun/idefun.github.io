@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.idefun.com/blog/photos/index.html</loc>
+    
+    <lastmod>2021-01-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.idefun.com/blog/2021/01/10/Web%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2021-01-10</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://www.idefun.com/blog/2021/01/06/%E8%A7%A3%E5%86%B3%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B8%E8%BD%BD%E5%90%8E%E6%97%A0%E6%B3%95%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2021-01-10</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.idefun.com/blog/photos/index.html</loc>
-    
-    <lastmod>2021-01-08</lastmod>
     
   </url>
   
@@ -74,7 +74,7 @@
 
   <url>
     <loc>http://www.idefun.com/blog</loc>
-    <lastmod>2021-01-10</lastmod>
+    <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,35 +82,35 @@
   
   <url>
     <loc>http://www.idefun.com/blog/tags/Google/</loc>
-    <lastmod>2021-01-10</lastmod>
+    <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.idefun.com/blog/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</loc>
-    <lastmod>2021-01-10</lastmod>
+    <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.idefun.com/blog/tags/%E7%BD%91%E7%9B%98/</loc>
-    <lastmod>2021-01-10</lastmod>
+    <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.idefun.com/blog/tags/web/</loc>
-    <lastmod>2021-01-10</lastmod>
+    <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.idefun.com/blog/tags/html/</loc>
-    <lastmod>2021-01-10</lastmod>
+    <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -119,7 +119,7 @@
   
   <url>
     <loc>http://www.idefun.com/blog/categories/web/</loc>
-    <lastmod>2021-01-10</lastmod>
+    <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
