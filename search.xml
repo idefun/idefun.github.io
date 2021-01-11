@@ -130,10 +130,42 @@
 <p><strong>1、所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 form 标签之间（否则用户输入的信息可提交不到服务器上哦！）。</strong></p>
 <p><strong>2、method : post/get 的区别这一部分内容属于后端程序员考虑的问题。</strong></p>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="CSS的三种引用方式"><a href="#CSS的三种引用方式" class="headerlink" title="CSS的三种引用方式"></a>CSS的三种引用方式</h3><ol>
-<li>内联样式</li>
-<li>嵌入样式</li>
-<li>外部样式</li>
+<li>内联样式(行内式)</li>
+<li>嵌入样式(内部式)</li>
+<li>外部样式(外链式)</li>
 </ol>
+<table>
+<thead>
+<tr>
+<th>样式表</th>
+<th>优点</th>
+<th>缺点</th>
+<th>使用情况</th>
+<th>控制范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行内样式表</td>
+<td>书写方便,权重高</td>
+<td>没有实现结构和样式相分离</td>
+<td>较少</td>
+<td>控制一个标签</td>
+</tr>
+<tr>
+<td>内部样式表</td>
+<td>部分结构和样式相分离</td>
+<td>没有彻底分离</td>
+<td>较多</td>
+<td>控制一个页面</td>
+</tr>
+<tr>
+<td>外部样式表</td>
+<td>完全实现结构和样式相分离</td>
+<td>需要引入</td>
+<td>最多</td>
+<td>控制多个站点</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>web</category>
