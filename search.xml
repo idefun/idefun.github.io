@@ -152,7 +152,7 @@
 </ol>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a=<span class="number">0x81</span>;<span class="comment">//a是值为十六进制数的字符,在计算机看来是补码</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);<span class="comment">//%d为输出十进制数,在用户看来是原码</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面程序运行结果如下:</p>
-<p><img src="https://i.loli.net/2021/01/12/l23jvtQaPwTHyWG.png" alt="image-20210112204926691"></p>
+<p><img src="https://i.loli.net/2021/01/12/l23jvtQaPwTHyWG.png"></p>
 <p>按照十六进制转十进制,0x81等于129而不是-127</p>
 <p>分析:</p>
 <ol>
@@ -161,7 +161,16 @@
 <li>由(1)(2)知,该程序即将0x81的补码转换为原码</li>
 <li>其原码为11111111,即-127</li>
 </ol>
-]]></content>
+<p>有符号和无符号的区别:</p>
+<ul>
+<li>%d,默认以有符号的方式打印</li>
+<li>%u,默认以无符号的方式打印</li>
+<li>有符号，最高位是符号位，如果是1代表为负数，如果为0代表为正数</li>
+<li>无符号，最高位不是符号位，是数的一部分，无符号不可能是负数</li>
+</ul>
+<p>数据类型范围:</p>
+<p>char    1个字节</p>
+<img src="https://i.loli.net/2021/01/12/UNxsfOjRD2cu9eY.png" alt="image-20210112214358475" style="zoom:80%;" />]]></content>
       <categories>
         <category>C&amp;C++</category>
       </categories>

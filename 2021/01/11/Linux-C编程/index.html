@@ -47,8 +47,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/01/11/JgoTpVBjXIPWQLD.png">
 <meta property="og:image" content="https://i.loli.net/2021/01/12/l23jvtQaPwTHyWG.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/12/UNxsfOjRD2cu9eY.png">
 <meta property="article:published_time" content="2021-01-11T06:59:16.000Z">
-<meta property="article:modified_time" content="2021-01-12T12:55:32.695Z">
+<meta property="article:modified_time" content="2021-01-12T13:44:40.708Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="C语言">
@@ -269,7 +270,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-12 20:55:32" itemprop="dateModified" datetime="2021-01-12T20:55:32+08:00">2021-01-12</time>
+                <time title="修改时间：2021-01-12 21:44:40" itemprop="dateModified" datetime="2021-01-12T21:44:40+08:00">2021-01-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -308,7 +309,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -477,7 +478,7 @@
 </ol>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a=<span class="number">0x81</span>;<span class="comment">//a是值为十六进制数的字符,在计算机看来是补码</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);<span class="comment">//%d为输出十进制数,在用户看来是原码</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面程序运行结果如下:</p>
-<p><img src="https://i.loli.net/2021/01/12/l23jvtQaPwTHyWG.png" alt="image-20210112204926691"></p>
+<p><img src="https://i.loli.net/2021/01/12/l23jvtQaPwTHyWG.png"></p>
 <p>按照十六进制转十进制,0x81等于129而不是-127</p>
 <p>分析:</p>
 <ol>
@@ -486,7 +487,16 @@
 <li>由(1)(2)知,该程序即将0x81的补码转换为原码</li>
 <li>其原码为11111111,即-127</li>
 </ol>
-
+<p>有符号和无符号的区别:</p>
+<ul>
+<li>%d,默认以有符号的方式打印</li>
+<li>%u,默认以无符号的方式打印</li>
+<li>有符号，最高位是符号位，如果是1代表为负数，如果为0代表为正数</li>
+<li>无符号，最高位不是符号位，是数的一部分，无符号不可能是负数</li>
+</ul>
+<p>数据类型范围:</p>
+<p>char    1个字节</p>
+<img src="https://i.loli.net/2021/01/12/UNxsfOjRD2cu9eY.png" alt="image-20210112214358475" style="zoom:80%;" />
     </div>
 
    
