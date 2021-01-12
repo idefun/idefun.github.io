@@ -103,7 +103,65 @@
 <li>定义变量需要建立存储空间，如: int b;</li>
 <li>-般的情况下，把建立存储空间的声明称之为“定义”，而把不需要建立存储空间的声明称之为”声明”.</li>
 </ul>
-<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3>]]></content>
+<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><h4 id="C语言如何表示相应的进制数"><a href="#C语言如何表示相应的进制数" class="headerlink" title="C语言如何表示相应的进制数"></a>C语言如何表示相应的进制数</h4><table>
+<thead>
+<tr>
+<th>十进制</th>
+<th>以正常数字1-9开头,如123</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>八进制</td>
+<td>以0(零)开头,如0123</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>以0x开头,如0x123</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>C语言不能直接书写二进制数</td>
+</tr>
+</tbody></table>
+<h3 id="计算机内存数值存储方式"><a href="#计算机内存数值存储方式" class="headerlink" title="计算机内存数值存储方式"></a>计算机内存数值存储方式</h3><p>在计算机系统中，数值一律用补码来存储。</p>
+<h4 id="原码"><a href="#原码" class="headerlink" title="原码:"></a>原码:</h4><p>最高位为符号位:0代表正数,1代表负数​</p>
+<p>原码存储导致2个问题:</p>
+<ol>
+<li> 0有两种存储方式</li>
+<li> 正数和负数相加结果不正确</li>
+</ol>
+<h4 id="反码"><a href="#反码" class="headerlink" title="反码:"></a>反码:</h4><p>反码是为了算补码.正数的原码和反码是一样的,负数的反码在原码基础上,符号位不变,其它位取反(0为1,1变0 ).</p>
+<p>反码存储导致1个问题:</p>
+<ol>
+<li> 0有两种存储方式</li>
+</ol>
+<h4 id="补码"><a href="#补码" class="headerlink" title="补码:"></a>补码:</h4><p>正数的原码,反码,补码都一样</p>
+<p>负数的补码为其反码加1</p>
+<p>十进制数,站在用户角度看,<strong>原码</strong>;二进制,八进制,十六进制,要站在计算机角度看,<strong>补码</strong>.</p>
+<p>原码求补码:</p>
+<ol>
+<li>正数原,反,补码均相同</li>
+<li>负数原码最高位不变,其他位取反得反码</li>
+<li>反码加1得补码</li>
+</ol>
+<p>补码求原码(同上面类似):</p>
+<ol>
+<li>正数原,反,补码均相同</li>
+<li>负数补码最高位不变,其他位取反得反码</li>
+<li>反码加1得原码</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a=<span class="number">0x81</span>;<span class="comment">//a是值为十六进制数的字符,在计算机看来是补码</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);<span class="comment">//%d为输出十进制数,在用户看来是原码</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面程序运行结果如下:</p>
+<p><img src="https://i.loli.net/2021/01/12/l23jvtQaPwTHyWG.png" alt="image-20210112204926691"></p>
+<p>按照十六进制转十进制,0x81等于129而不是-127</p>
+<p>分析:</p>
+<ol>
+<li>0x81在计算机角度看来应为补码存储,其二进制形式为10000001</li>
+<li>输出%d即输出十进制数,十进制数在用户角度为原码</li>
+<li>由(1)(2)知,该程序即将0x81的补码转换为原码</li>
+<li>其原码为11111111,即-127</li>
+</ol>
+]]></content>
       <categories>
         <category>C&amp;C++</category>
       </categories>
