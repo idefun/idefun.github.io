@@ -56,7 +56,54 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc hello.o -o hello</span><br></pre></td></tr></table></figure>
 <p>查看程序所需动态库:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ldd hello   //linux</span><br></pre></td></tr></table></figure>
-]]></content>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h3><h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p><strong>C的关键字共有32个</strong></p>
+<ul>
+<li><p>数据类型关键字(12个)</p>
+<p>char, short, int, long, float, double,unsigned, signed, struct, union, enum, void</p>
+</li>
+<li><p>控制语句关键字(12个)</p>
+<p>if, else, switch, case, default,for , do, while, break, continue, goto, return</p>
+</li>
+<li><p>存储类关键字(5个)</p>
+<p>auto,extern,register, static,const</p>
+</li>
+<li><p>其他关键字(3个)</p>
+<p>sizeof, typedef, volatile</p>
+</li>
+</ul>
+<h4 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h4><p>数据类型的作用:编译器预算对象(变量)分配的内存空间大小</p>
+<p><img src="https://i.loli.net/2021/01/11/JgoTpVBjXIPWQLD.png" alt="image-20210111193755278"></p>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><ul>
+<li>在程序运行过程中，其值不能被改变的量</li>
+<li>常量一般出现在表达式或赋值语句中</li>
+</ul>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ul>
+<li>在程序运行过程中，其值可以改变</li>
+<li>变量在使用前必须先定义，定义变量前必须有相应的数据类型</li>
+</ul>
+<p>标识符命名规则:</p>
+<ul>
+<li><p>标识符不能是关键字</p>
+</li>
+<li><p>标识符只能由字母、数字、下划线组成</p>
+</li>
+<li><p>第一个字符必须为字母或下划线</p>
+</li>
+<li><p>标识符中字母区分大小写</p>
+</li>
+</ul>
+<p>变量特点:</p>
+<ul>
+<li>变量在编译时为其分配相应的内存空间</li>
+<li>可以通过其名字和地址访问相应内存</li>
+</ul>
+<p>声明和定义区别:</p>
+<ul>
+<li>声明变量不需要建立存储空间，如: extern int a;(a不能赋值)</li>
+<li>定义变量需要建立存储空间，如: int b;</li>
+<li>-般的情况下，把建立存储空间的声明称之为“定义”，而把不需要建立存储空间的声明称之为”声明”.</li>
+</ul>
+<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3>]]></content>
       <categories>
         <category>C&amp;C++</category>
       </categories>
