@@ -389,8 +389,8 @@
 <td>记住添加下划线underline 取消下划线none</td>
 </tr>
 </tbody></table>
-<h4 id="快捷操作"><a href="#快捷操作" class="headerlink" title="快捷操作"></a>快捷操作</h4><p>1.如果想要生成多个相同标签加上*就可以了比如  div*3 就可以快速生成3个div<br>2.如果有父子级关系的标签，可以用&gt;比如ul&gt;li就可以了<br>4.如果有兄弟关系的标签，用+就可以了比如div+p<br>5.如果生成带有类名或者id名字的，直接写.demo 或者#two  tab键就可以了<br>6.如果生成的div类名是有顺序的，可以用自增符号$.</p>
-<h4 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h4><ul>
+<h3 id="快捷操作"><a href="#快捷操作" class="headerlink" title="快捷操作"></a>快捷操作</h3><p>1.如果想要生成多个相同标签加上*就可以了比如  div*3 就可以快速生成3个div<br>2.如果有父子级关系的标签，可以用&gt;比如ul&gt;li就可以了<br>4.如果有兄弟关系的标签，用+就可以了比如div+p<br>5.如果生成带有类名或者id名字的，直接写.demo 或者#two  tab键就可以了<br>6.如果生成的div类名是有顺序的，可以用自增符号$.</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><h4 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h4><ul>
 <li>子元素选择器只能选择作为某元素子元素(亲儿子)的元素。</li>
 <li>其写法就是把父级标签写在前面，子级标签写在后面，中间跟一个&gt;进行连接</li>
 </ul>
@@ -434,6 +434,212 @@
 <li><p>因为a链接浏览器具有默认样式，所以我们实际工作中需要给链接单独指定样式。</p>
 </li>
 </ul>
+<h3 id="标签显示模式"><a href="#标签显示模式" class="headerlink" title="标签显示模式"></a>标签显示模式</h3><h4 id="块级元素-block-level"><a href="#块级元素-block-level" class="headerlink" title="块级元素(block-level)"></a>块级元素(block-level)</h4><ul>
+<li><p>常见的块元素有<h1>~<h6>、<p>、 <div>、 <ul>、 <ol>、 <li>等，其中<div>标签是最典型的块元素。</p>
+</li>
+<li><p>块级元素的特点:</p>
+<ol>
+<li>比较霸道，自己独占一行</li>
+<li>高度，宽度、外边距以及内边距都可以控制。</li>
+<li>宽度默认是容器(父级宽度)的100%</li>
+<li>是一个容器及盒子，里面可以放行内或者块级元素。</li>
+</ol>
+</li>
+<li><p>注意:</p>
+<ul>
+<li>只有文字才能组成段落,因此p里面不能放块级元素，特别是p不能放div。</li>
+<li>同理还有这些标签h1,h2,h3,h4,h5,h6,dt， 他们都是文字类块级标签，里面不能放其他块级元素。</li>
+</ul>
+</li>
+</ul>
+<h4 id="行内元素-inline-level"><a href="#行内元素-inline-level" class="headerlink" title="行内元素(inline-level)"></a>行内元素(inline-level)</h4><p>常见的行内元素有&lt;a&gt;、&lt;strong&gt;、&lt;b&gt;、&lt;em&gt;、&lt;i&gt;、&lt;del&gt;、&lt;s&gt;、&lt;ins&gt;、<u>、 &lt;span&gt;等， 其中&lt;span&gt;标签是最典型的行内元素。有的地方也称内联元素。</p>
+<ul>
+<li><p>行内元素的特点:</p>
+<ol>
+<li>相邻行内元素在一行上，一行可以显示多个。</li>
+<li>高、宽直接设置是无效的。</li>
+<li>默认宽度就是它本身内容的宽度。</li>
+<li>行内元素只能容纳文本或者其他行内元素。</li>
+</ol>
+</li>
+<li><p>注意:</p>
+<ol>
+<li>链接里面不能再放链接。</li>
+<li>特殊情况a里面可以放块级元素，但是给a转换一下块级模式最安全。</li>
+</ol>
+</li>
+</ul>
+<h4 id="行内块元素-inline-block"><a href="#行内块元素-inline-block" class="headerlink" title="行内块元素(inline-block)"></a>行内块元素(inline-block)</h4><p>在行内元素中有几个特殊的标签&lt;img /&gt;、&lt;input /&gt;、&lt;td&gt;， 可以对它们设置宽高和对齐属性，有些资料可能会称它们为行内块元素。</p>
+<ul>
+<li>行内块元素的特点:<ol>
+<li>和相邻行内元素(行内块)在一行上,但是之间会有空白缝隙,一行可以显示多个。</li>
+<li>默认宽度就是它本身内容的宽度。</li>
+<li>高度、行高、外边距以及内边距都可以控制。</li>
+</ol>
+</li>
+</ul>
+<h4 id="三种模式总结"><a href="#三种模式总结" class="headerlink" title="三种模式总结"></a>三种模式总结</h4><p><img src="https://i.loli.net/2021/01/12/KbigExyl5cmav6B.png" alt="image-20210112151920674"></p>
+<h4 id="标签显示模式转换-display"><a href="#标签显示模式转换-display" class="headerlink" title="标签显示模式转换 display"></a>标签显示模式转换 display</h4><ul>
+<li>块转行内: display: inline;</li>
+<li>行内转块: display: block;</li>
+<li>块、行内元素转换为行内块: display: inline-block;</li>
+</ul>
+<h3 id="单行文本垂直居中"><a href="#单行文本垂直居中" class="headerlink" title="单行文本垂直居中"></a>单行文本垂直居中</h3><p>行高(基线与基线的距离)我们利用最多的一个地方是:可以让单行文本在盒子中垂直居中对齐。<br><strong>文字的行高等于盒子的高度</strong>即可实现垂直对齐,可近似看作:<strong>行高=上距离+内容高度+下距离</strong></p>
+<p>行高和高度的三种关系:</p>
+<ul>
+<li>如果行高等高度文字会重直居中</li>
+<li>如果行高大于高度文字会偏下</li>
+<li>如果行高小于高度文字会偏上</li>
+</ul>
+<h3 id="CSS背景"><a href="#CSS背景" class="headerlink" title="CSS背景"></a>CSS背景</h3><h4 id="背景颜色"><a href="#背景颜色" class="headerlink" title="背景颜色"></a>背景颜色</h4><p>语法:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">background-color</span>: 颜色值; //默认的值是 <span class="selector-tag">transparent</span> 透明的</span><br></pre></td></tr></table></figure>
+<h4 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h4><p>语法:</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">background-image: none | url(url);</span><br></pre></td></tr></table></figure>
+<h4 id="背景平铺"><a href="#背景平铺" class="headerlink" title="背景平铺"></a>背景平铺</h4><p>语法:</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">background-repeat: repeat(默认) | no-repeat | repeat-x | repeat-y;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>repeat</td>
+<td>平铺</td>
+</tr>
+<tr>
+<td>no-repeat</td>
+<td>不平铺</td>
+</tr>
+<tr>
+<td>repeat-x</td>
+<td>横向平铺</td>
+</tr>
+<tr>
+<td>repeat-y</td>
+<td>纵向平铺</td>
+</tr>
+</tbody></table>
+<h4 id="背景位置"><a href="#背景位置" class="headerlink" title="背景位置"></a>背景位置</h4><p>语法:</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">background-position: length || length;</span><br><span class="line">background-position: position || position;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>length</td>
+<td>百分数|由浮点数字和单位标识符组成的长度值</td>
+</tr>
+<tr>
+<td>position</td>
+<td>center | top | bottom | left | right 方位名词</td>
+</tr>
+</tbody></table>
+<p>注意:</p>
+<ul>
+<li>必须先指定background-image属性</li>
+<li>position后面是x坐标和y坐标，可以使用方位名词或者精确单位。</li>
+<li>如果只指定了一个方位名词，另一个值默认居中，为50%。</li>
+<li>如果只指定一个数值,那该数值用于x坐标，另一个默认是y坐标，默认居中</li>
+<li>如果指定两个值，两个值都是方位名字，则两个值前后顺序无关，比如left top和top left效果一致</li>
+<li>如果指定两个值，精确单位和方位名字混合使用，则第一个值是x坐标，第二个值是y坐标</li>
+</ul>
+<h4 id="背景附着"><a href="#背景附着" class="headerlink" title="背景附着"></a>背景附着</h4><p>背景附着就是背景是滚动还是固定的</p>
+<p>语法:</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">background-attachment: scroll | fixed;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>scroll</td>
+<td>背景图像随对象内容滚动</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>背景图像固定</td>
+</tr>
+</tbody></table>
+<h4 id="背景简写"><a href="#背景简写" class="headerlink" title="背景简写"></a>背景简写</h4><p>背景简写和字体简写不同的是背景简写没有强制要求,建议按下面方式写 </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">background</span>:背景颜色 背景图片地址 背景平铺 背景滚动 背景位置;</span><br></pre></td></tr></table></figure>
+<h4 id="背景透明"><a href="#背景透明" class="headerlink" title="背景透明"></a>背景透明</h4><p>语法:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">background</span>: <span class="selector-tag">rgba</span>(0, 0，0，0.3);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>最后一个参数是alpha透明度取值范围0~1之间</li>
+<li>我们习惯把0.3的0省略掉这样写background: rgba(0, 0, 0, .3);</li>
+<li>注意:背景半透明是指盒子背景半透明，盒子里面的内容不受影响</li>
+<li>因为是CSS3,所以低于ie9的版本是不支持的。</li>
+</ul>
+<h3 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h3><h4 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h4><p>概念:</p>
+<ul>
+<li>所谓层叠性是指多种CSS样式的叠加。是浏览器处理冲突的一个能力，如果一个属性通过两个相同选择器设置到同一个元素上,那么这个时候一个属性就会将另一 个属性层叠掉</li>
+</ul>
+<p>原则: </p>
+<ul>
+<li>样式冲突,遵循的原则是就近原则.那个样式离结构近,就执行那个样式</li>
+<li>样式不冲突,不会层叠</li>
+</ul>
+<h4 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h4><p>概念:</p>
+<ul>
+<li>子标签会继承父标签的某些样式，如文本颜色和字号。</li>
+<li>想要设置一个可继承的属性，只需将它应用于父元素即可。</li>
+</ul>
+<p>注意:</p>
+<ul>
+<li>恰当地使用继承可以简化代码，降低CSS样式的复杂性。比如有很多子级孩子都需要某个样式，可以给父级指定一个，这些孩子继承过来就好了</li>
+<li>子元素可以继承父元素的样式(text-, font-, line-这些元素开头的可以继承，以及color属性)</li>
+</ul>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><p>定义CSS样式时，经常出现两个或更多规则成用在同一元素上，此时，</p>
+<ul>
+<li>选择器相同，则执行层叠性</li>
+<li>选择器不同，就会出现优先级的问题。</li>
+</ul>
+<p>权重计算公式:</p>
+<table>
+<thead>
+<tr>
+<th>标签选择器</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>继承或 *</td>
+<td>0,0,0,0</td>
+</tr>
+<tr>
+<td>元素(标签选择器)</td>
+<td>0,0,0,1</td>
+</tr>
+<tr>
+<td>类,伪类</td>
+<td>0,0,1,0</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>0,1,0,0</td>
+</tr>
+<tr>
+<td>行内样式 style=””</td>
+<td>1,0,0,0</td>
+</tr>
+<tr>
+<td>!important</td>
+<td>∞ 无穷大</td>
+</tr>
+</tbody></table>
+<p><strong>继承的权重为0</strong></p>
+<p>我们修改样式，一 定要看该标签有没有被选中。</p>
+<ol>
+<li>如果选中了,那么以上面的公式来计权重.</li>
+<li>如果没有选中,那么权重是0,因为继承的权重为0.</li>
+</ol>
 ]]></content>
       <categories>
         <category>web</category>
