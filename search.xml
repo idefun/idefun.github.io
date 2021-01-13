@@ -173,6 +173,45 @@
 <img src="https://i.loli.net/2021/01/12/UNxsfOjRD2cu9eY.png" alt="image-20210112214358475" style="zoom:80%;" />
 
 <p>数值越界:</p>
+<p>通过以下代码解释</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="comment">//情况1 有符号</span></span><br><span class="line">        <span class="comment">//char 范围 -128~127</span></span><br><span class="line">        <span class="keyword">char</span> a=<span class="number">127</span>+<span class="number">2</span>;</span><br><span class="line">        <span class="comment">/* a=129,转换二进制为1000 0001,</span></span><br><span class="line"><span class="comment">          二进制(1000 0001)以补码形式存储,</span></span><br><span class="line"><span class="comment">          输出为%d,要求得原码(11111111),</span></span><br><span class="line"><span class="comment">          即-127</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);<span class="comment">//输出-127</span></span><br><span class="line">        <span class="comment">//情况2 无符号</span></span><br><span class="line">        <span class="comment">//无符号 范围 0~255</span></span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">char</span> b=<span class="number">255</span>+<span class="number">2</span>;</span><br><span class="line">        <span class="comment">/* b=257,转换二进制为1 0000 0001,</span></span><br><span class="line"><span class="comment">           舍弃最高位为0000 0001,</span></span><br><span class="line"><span class="comment">           二进制(0000 0001)以补码形式存储,</span></span><br><span class="line"><span class="comment">           转为原码(0000 0001),</span></span><br><span class="line"><span class="comment">           即1</span></span><br><span class="line"><span class="comment">           注意编译时会警告,之后./文件名运行即可</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%u\n&quot;</span>,b);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下:</p>
+<p><img src="https://i.loli.net/2021/01/13/GL8cpTQzUtFu7n1.png" alt="image-20210113191321188"></p>
+<h4 id="sizeof关键字"><a href="#sizeof关键字" class="headerlink" title="sizeof关键字"></a>sizeof关键字</h4><ul>
+<li>sizeof不是函数，所以不需要包含任何头文件，它的功能是计算一个数据类型的大小，单位为字节</li>
+<li>sizeof的返回值为size_ t</li>
+<li>size_t 类型在32位操作系统下是unsigned int,是一个无符号的整数</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/*数据类型的作用:告诉编译器,</span></span><br><span class="line"><span class="comment">    定义此类型变量需要分配多大空间*/</span>					<span class="built_in">printf</span>(<span class="string">&quot;sizeof(char)=%lu\n&quot;</span>,<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">   	<span class="built_in">printf</span>(<span class="string">&quot;sizeof(a)=%lu\n&quot;</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下:</p>
+<img src="https://i.loli.net/2021/01/13/3VmSN7iDcPkwLsY.png" style="zoom:150%;" />
+
+<p>%d,%o,%x,%u等均以四个字节形式打印.</p>
+<p>short占两个字节,short a;与short int a;等价.</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>short (短整型)</td>
+<td>2字节</td>
+</tr>
+<tr>
+<td>int (整型)</td>
+<td>4字节</td>
+</tr>
+<tr>
+<td>1ong(长整形)</td>
+<td>Windows为4字节，Linux为 4字节(32位)，8字节(64位)</td>
+</tr>
+<tr>
+<td>long long (长长整形)</td>
+<td>8字节</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>C&amp;C++</category>
