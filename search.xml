@@ -826,7 +826,102 @@
 <li>属性定义必须另起行</li>
 <li>属性定义后必须以分号结尾</li>
 </ul>
-<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3>]]></content>
+<h3 id="CSS布局的三种机制"><a href="#CSS布局的三种机制" class="headerlink" title="CSS布局的三种机制"></a>CSS布局的三种机制</h3><p>CSS提供了3种机制来设置盒子的摆放位置，分别是普通流(标准流)、浮动和定位，其中:<br>1.普通流(标准流)</p>
+<ul>
+<li><p>块级元素会独占一行，从上向下顺序排列;</p>
+<ul>
+<li>常用元素: div、hr、p、h1-h6、ul、ol、dl、form、table</li>
+</ul>
+</li>
+<li><p>行内元索会按照顺序，从左到右顺序排列，碰到父元素边缘则自动换行;</p>
+<ul>
+<li>常用元素: span、a、i、em等</li>
+</ul>
+</li>
+</ul>
+<p>2.浮动</p>
+<ul>
+<li>让盒子从普通流中浮起来,主要作用让多个块级盒子一行显示。</li>
+</ul>
+<p>3.定位</p>
+<ul>
+<li>将盒子定在浏览器的某一个位置，CSS离不开定位，特别是后面的js特效。</li>
+</ul>
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>问题:如何将多个盒子(div)水平排列成一行?如何实现盒子靠左靠右对齐?</p>
+<p>如果将div转为inline-block可以达到将多个盒子(div)水平排列成一行,但是盒子之间有空隙,且非常难去掉,即使能去掉兼容性极差.无法靠左靠右对齐.</p>
+<p>概念:元素的浮动是指设置了浮动属性的元素会</p>
+<ol>
+<li>脱离标准普通流的控制</li>
+<li>移动到指定位置。</li>
+</ol>
+<p>作用:</p>
+<ol>
+<li>让多个盒子(div)水平排列成一行，使得浮动成为布局的重要手段。</li>
+<li>可以实现盒子的左右对齐等等…</li>
+<li>浮动最早是用来控制图片，实现文字环绕图片的效果。</li>
+</ol>
+<h4 id="清除浮动的本质"><a href="#清除浮动的本质" class="headerlink" title="清除浮动的本质:"></a>清除浮动的本质:</h4><p>清除浮动主要为了解决父级元素因为子级浮动引起内部高度为0的问题。清除浮动之后，父级就会根据浮动的子盒子自动检测高度。父级有了高度，就不会影响下面的标准流了。</p>
+<h4 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法:"></a>清除浮动的方法:</h4><p>在CSS中，clear属性用于清除浮动，<br>语法:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">选择器&#123;<span class="attribute">clear</span>:属性值;&#125; <span class="selector-tag">clear</span> 清除</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>left</td>
+<td>不允许左侧有浮动元素(清除左侧浮动的影响)</td>
+</tr>
+<tr>
+<td>right</td>
+<td>不允许右侧有浮动元素(清除右侧浮动的影响)</td>
+</tr>
+<tr>
+<td>both</td>
+<td>同时清除左右两侧浮动的影响</td>
+</tr>
+</tbody></table>
+<p>实际工作几乎只用clear:both;</p>
+<h5 id="1-额外标签法-隔墙法"><a href="#1-额外标签法-隔墙法" class="headerlink" title="1.额外标签法(隔墙法)"></a>1.额外标签法(隔墙法)</h5><p>在浮动元表末尾添加一个空的标签例如&lt;div style:”clear:both”&gt;&lt;/d1v&gt;, 或者其他标签br等</p>
+<ul>
+<li>优点:通俗易懂，书写方便</li>
+<li>缺点:添加许多无意义的标签,结构化较差</li>
+</ul>
+<h5 id="2-父级添加overflow属性方法"><a href="#2-父级添加overflow属性方法" class="headerlink" title="2.父级添加overflow属性方法"></a>2.父级添加overflow属性方法</h5><figure class="highlight"><table><tr><td class="code"><pre><span class="line">overflow:hidden | auto |scroll(均可清除浮动)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点:代码简洁</li>
+<li>缺点:内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素(溢出隐藏)</li>
+</ul>
+<h5 id="3-使用after伪元素清除浮动"><a href="#3-使用after伪元素清除浮动" class="headerlink" title="3.使用after伪元素清除浮动"></a>3.使用after伪元素清除浮动</h5><p>:after方式为空元素额外标签法的升级版,好处是不用单独加标签了<br>使用方法:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123; </span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block; </span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>; </span><br><span class="line">    <span class="attribute">clear</span>: both; </span><br><span class="line">    <span class="attribute">visibility</span>: hidden; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    <span class="attribute">*zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125; <span class="comment">/* IE6、7专门清除浮动*/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点:符合闭合浮动思想结构语义化正确</li>
+<li>缺点:由于IE6-7不支持:after, 使用*zoom:1触发hasLayout</li>
+<li>代表网站:百度、沟宝网、网易等</li>
+</ul>
+<h5 id="4-使用双伪元素清除浮动"><a href="#4-使用双伪元素清除浮动" class="headerlink" title="4.使用双伪元素清除浮动"></a>4.使用双伪元素清除浮动</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">content</span>:<span class="string">&quot;&quot;</span>;</span><br><span class="line">	<span class="attribute">display</span>:table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">clear</span>:both;</span><br><span class="line">]</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">	<span class="attribute">*zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点:代码更简洁</li>
+<li>缺点:由于IE6-7不支持:after, 使用zoom:1触发hasLayout</li>
+<li>代表网站:小米，腾讯等</li>
+</ul>
+<h3 id="PS知识"><a href="#PS知识" class="headerlink" title="PS知识"></a>PS知识</h3><p>常见图片格式:</p>
+<ol>
+<li>jpg图像格式:<br>JPEG (.JPG) 对色彩的信息保留较好，高清，颜色较多，我们产品类的图片经常用jpg格式的</li>
+<li>gif图像格式:<br>GIF格式最多只能储存256色，所以通常用来显示简单图形及字体，但是可以保存透明背景和动画效果</li>
+<li>png图像格式<br>是一种新兴的网络图形格式，结合了GIF和JPEG的优点，具有存储形式丰富的特点，能够保持透明背景</li>
+<li>PSD图像格式<br>PSD格式是Photoshop的专用格式，里面可以存放图层、通道、遮罩等多种设计草稿</li>
+</ol>
+<h3 id="CSS属性书写顺序"><a href="#CSS属性书写顺序" class="headerlink" title="CSS属性书写顺序"></a>CSS属性书写顺序</h3><p>建议遵循以下顺序:</p>
+<ol>
+<li>布局定位属性: display/position/ float/clear /visbility/overflow (建议display第一个写,毕竟关系到模式)</li>
+<li>自身属性: width/height/ margin/padding/border/background</li>
+<li>文本属性: color/font/text-decoration/tex-align/vertial-align/white- space/break-word</li>
+<li>其他属性(CSS3) : content/cursor/border-radius/box-shadow/text-shadow/ background:linear-gradient</li>
+</ol>
+]]></content>
       <categories>
         <category>web</category>
       </categories>
