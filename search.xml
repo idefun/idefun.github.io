@@ -212,6 +212,62 @@
 <td>8字节</td>
 </tr>
 </tbody></table>
+<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><p>字符型变量用于存储一个单一字符，在C语言中用char 表示，其中每个字符变量都会占用1个字节。在给字符型变量赋值时，需要用一对英文半角格式的单引号(‘ ‘)把字符括起来。<br>字符变量实际上并不是把该字符本身放到变量的内存单元中去，而是将该字符对应的ASCII 编码放到变量的存储单元中。char 的本质就是一个1 字节大小的整型。</p>
+<p>使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">man ascii</span><br></pre></td></tr></table></figure>
+<p>查看ASCII码</p>
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p>字符在单引号内,原则上’ ‘内部只有一个字符,转义字符除外,不能char a=’abc’</p>
+<p>转义字符由反斜杠\组成的多个字符</p>
+<p>例子</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a=<span class="string">&#x27;\r&#x27;</span>;<span class="comment">//光标移到句首</span></span><br><span class="line">        <span class="keyword">char</span> b=<span class="string">&#x27;\b&#x27;</span>;<span class="comment">//退格</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;12345%c6789\n&quot;</span>,a);<span class="comment">//先打印12345,之后光标移到句首再依次打印6789,其中1234被覆盖,留下5,结果为67895</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;abcde%cfghi\n&quot;</span>,b);<span class="comment">//先打印abcde之后打印\b,退一格,e就没了,结果为abcdfghi</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/14/LztFsmUQNaVkf4J.png" alt="image-20210114181115529"></p>
+<h3 id="浮点型-实型"><a href="#浮点型-实型" class="headerlink" title="浮点型(实型)"></a>浮点型(实型)</h3><p>实型变量也可以称为浮点型变量，浮点型变量是用来存储小数数值的。在C语言中，浮点型变量分为两种:单精度浮点数(float)、双精度浮点数(double)，但是double型变量所表示的浮点数比float 型变量更精确。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+<th>有效数字范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4字节</td>
+<td>7位有效数字</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8字节</td>
+<td>15~ 16位有效数字</td>
+</tr>
+</tbody></table>
+<p>float存储不准确</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">float</span> a=<span class="number">100.9</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%f\n&quot;</span>,a);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/15/DHsYQGUAJZhtufr.png" alt="image-20210115164940998"></p>
+<h3 id="类型限定符"><a href="#类型限定符" class="headerlink" title="类型限定符"></a>类型限定符</h3><table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>extern</td>
+<td>声明一个变量，extexn 声明的变量没有建立存储空间。extern int a;</td>
+</tr>
+<tr>
+<td>const</td>
+<td>定义一个常量，常量的值不能修改。const int a 10;</td>
+</tr>
+<tr>
+<td>vo1atile</td>
+<td>防止编译器优化代码</td>
+</tr>
+<tr>
+<td>register</td>
+<td>定义寄存器变量，提高效率。 register是建议型的指令，而不是命令型的指令，如果CPU有空闲寄存器，那么register就生效， 如果没有空闲寄存器，那么register无效。</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>C&amp;C++</category>
