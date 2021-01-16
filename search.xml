@@ -268,6 +268,24 @@
 <td>定义寄存器变量，提高效率。 register是建议型的指令，而不是命令型的指令，如果CPU有空闲寄存器，那么register就生效， 如果没有空闲寄存器，那么register无效。</td>
 </tr>
 </tbody></table>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>字符串常量与字符常量的不同:<br>‘a’为字符常量，”a”为字符串常量</p>
+<img src="https://i.loli.net/2021/01/16/boXsvp7iNnf8YVT.png" alt="image-20210116113617426" style="zoom:150%;" />
+
+<p>每个字符串的结尾，编译器会自动的添加一一个结束标志位’\0’,即”a” 包含<br>两个字符’a’和’\0’。</p>
+<p>%%在屏幕输出一个%，后面的d也会输出</p>
+<p>%5d,以5个字符输出,没有的字符以空字符填充,默认是右对齐</p>
+<p>%05d,以5个字符输出,没有的字符以0填充,默认是右对齐</p>
+<p>%-5d,以5个字符输出,没有的字符以空字符填充,-代表指定为左对齐</p>
+<p>0和-不能同时使用</p>
+<p><img src="https://i.loli.net/2021/01/16/tJT8mfrNpdk2XIl.png" alt="image-20210116121900890"></p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;b=&#x27;%c&#x27;\n&quot;</span>,b);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这个程序看似简单,结果为a=c,b=d,其实不然,结果如下:</p>
+<p><img src="https://i.loli.net/2021/01/16/FKRw9zTI4U5n1B3.png" alt="image-20210116144844189"></p>
+<p>无需输入d直接出结果</p>
+<p>原因:</p>
+<p>当用户输入字符时,编译器默认把输入的内容先放在一块内存中(缓冲区) , scanf()自动在缓冲区读内容(只读一个字符).第一次输入时输入了c\n(回车),scanf取走了c,留下\n还在缓存区,2、第2次scanf ,由于缓冲区还有内容,所以直接取内容,无需再输入</p>
+<p>所以,上面的程序可以这样写</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="comment">//吃掉上一步的\n,不做处理</span></span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">char</span> t;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;t);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;t=&#x27;%c&#x27;\n&quot;</span>,t);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>C&amp;C++</category>
