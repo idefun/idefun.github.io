@@ -285,7 +285,7 @@
 <p>原因:</p>
 <p>当用户输入字符时,编译器默认把输入的内容先放在一块内存中(缓冲区) , scanf()自动在缓冲区读内容(只读一个字符).第一次输入时输入了c\n(回车),scanf取走了c,留下\n还在缓存区,2、第2次scanf ,由于缓冲区还有内容,所以直接取内容,无需再输入</p>
 <p>所以,上面的程序可以这样写</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="comment">//吃掉上一步的\n,不做处理</span></span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">char</span> t;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;t);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;t=&#x27;%c&#x27;\n&quot;</span>,t);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="comment">//吃掉上一步的\n,不做处理</span></span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);</span><br><span class="line">        <span class="keyword">char</span> t;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;t);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;t=&#x27;%c&#x27;\n&quot;</span>,t);</span><br><span class="line">    	<span class="comment">//或者都在一个scanf中写</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>C&amp;C++</category>
@@ -995,6 +995,43 @@
 <li>文本属性: color/font/text-decoration/tex-align/vertial-align/white- space/break-word</li>
 <li>其他属性(CSS3) : content/cursor/border-radius/box-shadow/text-shadow/ background:linear-gradient</li>
 </ol>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>定位=定位模式+边偏移</p>
+<h4 id="定位模式"><a href="#定位模式" class="headerlink" title="定位模式"></a>定位模式</h4><table>
+<thead>
+<tr>
+<th>值</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static</td>
+<td>静态定位</td>
+</tr>
+<tr>
+<td>relative</td>
+<td>相对定位(不脱标)</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>绝对定位(脱标)</td>
+</tr>
+<tr>
+<td>flxed</td>
+<td>固定定位(脱标)</td>
+</tr>
+</tbody></table>
+<h4 id="绝对定位的居中对齐"><a href="#绝对定位的居中对齐" class="headerlink" title="绝对定位的居中对齐"></a>绝对定位的居中对齐</h4><p>绝对定位或者固定定位的盒子不能通过设置margin: auto设置水平居中。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">left</span>: 50%;</span><br><span class="line"><span class="selector-tag">margin-left</span>: <span class="selector-tag">-</span>(自己宽度一半);</span><br></pre></td></tr></table></figure>
+<h4 id="堆叠顺序"><a href="#堆叠顺序" class="headerlink" title="堆叠顺序"></a>堆叠顺序</h4><p>在使用定位布局时，可能会出现<strong>盒子重叠</strong>的情况.加了定位的盒子，默认<strong>后来者居上</strong>，后面的盒子会压住前面的盒子。应用z-index层叠等级属性可以调整盒子的堆叠顺序。</p>
+<p>z-index的特性:</p>
+<p>1.属性值:正整数、负整数或0,默认值是0,数值越大,盒子越靠上<br>2.如果属性值相同,则按照书写顺序,后来居上<br>3.数宇后面不能加单位<br>注意: z-index只能应用于相对定位、绝对定位和固定定位的元素，其他标准流、浮动和静态定位无效。</p>
+<h4 id="定位改变display属性"><a href="#定位改变display属性" class="headerlink" title="定位改变display属性"></a>定位改变display属性</h4><p>display 是显示模式，可以改变显示模式有以下方式</p>
+<ul>
+<li>可以用inline-block 转换为行内块</li>
+<li>可以用浮动float默认转换为行内块(类似，并不完全一样，因为浮动是脱标的)</li>
+<li>绝对定位和固定定位也和浮动类似， 默认转换的特性转换为行内块</li>
+</ul>
+<p>所以说，一个行内的盒子，如果加了浮动、固定定位和绝对定位，不用转换，就可以给这个盒子直接设置宽度和高度等。<br>同时注意:<br>浮动元素、绝对定位元素的都不会触发外边距合并的问题。(我们以前是用padding border overflow解决的)<br>也就是说，我们给盒子改为了浮动或者定位，就不会有垂直外边距合并的问题了。</p>
 ]]></content>
       <categories>
         <category>web</category>
