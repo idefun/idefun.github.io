@@ -301,6 +301,19 @@
 <p>3.浮点型和整型打印问题<br>a)不要直接通过%d，打印一个浮点型变量，得不到想要的结果，要想得到结果，强制类型转换</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> a = <span class="number">11.11</span> ;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,(<span class="keyword">int</span>)a) ;</span><br></pre></td></tr></table></figure>
 <p>b)不要直接通过%f或%lf，打印一个整型变量，得不到想要的结果，要想得到结果，强制类型转换</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ol>
+<li>数组内部的变量或数组,不初始化,它的值为随机数</li>
+<li>部分初始化，其它自动初始化为0<br>0~2(前3个元素)分别为1，2， 3， 其 它初始化为0<br>int a1[10] = {1, 2, 3};</li>
+<li>数组全部元素初始化为0<br>int a2[10] = {0} ;</li>
+<li>如果定义时同时初始化，第1个[]内部可以不写内容<br>编译器会根据用户初始化的元素来确定数组的大小<br>int a3[]={1,2,3,4,5,6,7,8,9,10};</li>
+<li>如果第1个[]内容不写，必须初始化，否则语法错误</li>
+</ol>
+<h4 id="数组名"><a href="#数组名" class="headerlink" title="数组名"></a>数组名</h4><ul>
+<li>数组名是常量,不能修改</li>
+<li>数组名是数组首元素地址</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=%p,&amp;a[0]=%p\n&quot;</span>,a,&amp;a[<span class="number">0</span>]);<span class="comment">//%p输出地址</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;sizeof(a)=%lu\n&quot;</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/23/EFTYRgCKmLP263d.png"></p>
 ]]></content>
       <categories>
         <category>C&amp;C++</category>
@@ -411,7 +424,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;email&quot;</span>&gt;</span>输入你的邮箱地址<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;email&quot;</span> <span class="attr">id</span>=<span class="string">&quot;email&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Enter email&quot;</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="textarea控件-文本域"><a href="#textarea控件-文本域" class="headerlink" title="textarea控件(文本域)"></a>textarea控件(文本域)</h4><p>当用户需要在表单中输入大段文字时，需要用到文本输入域。</p>
 <p><strong>语法</strong>：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> **<span class="attr">rows</span>=<span class="string">&quot;行数&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;列数&quot;</span>**&gt;</span>文本<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">&quot;行数&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;列数&quot;</span>&gt;</span>文本<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>1、<strong>cols ：</strong>多行输入域的<strong>列数</strong>。</p>
 <p>2、<strong>rows ：</strong>多行输入域的<strong>行数</strong>。</p>
 <p><strong>举例：</strong></p>
@@ -1126,7 +1139,7 @@
 </tr>
 <tr>
 <td>prompt(info)</td>
-<td>浏览器弹出输入框,用户可以输入</td>
+<td>浏览器弹出输入框,用户可以输入,取过来的值是字符型的</td>
 <td>浏览器</td>
 </tr>
 </tbody></table>
@@ -1186,7 +1199,7 @@
 <td>null</td>
 </tr>
 </tbody></table>
-<h4 id="数字型Number"><a href="#数字型Number" class="headerlink" title="数字型Number"></a>数字型Number</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert (<span class="literal">Infinity</span>); <span class="comment">// Infinity</span></span><br><span class="line">alert(-<span class="literal">Infinity</span>); <span class="comment">// -Infinity</span></span><br><span class="line">alert (<span class="literal">NaN</span>) ;<span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+<h4 id="数字型Number"><a href="#数字型Number" class="headerlink" title="数字型Number"></a>数字型Number</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert(<span class="literal">Infinity</span>); <span class="comment">// Infinity</span></span><br><span class="line">alert(-<span class="literal">Infinity</span>); <span class="comment">// -Infinity</span></span><br><span class="line">alert(<span class="literal">NaN</span>) ;<span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>Infinity ,代表无穷大,大于任何数值</li>
 <li>-Infinity ,代表无穷小,小于任何数值</li>
@@ -1195,7 +1208,7 @@
 <p>isNaN()方法:</p>
 <p>isNaN()这个方法用来判断非数字并且返回一个值,如果是数字返回的是false,如果不是数字返回的是true</p>
 <h4 id="字符串型String"><a href="#字符串型String" class="headerlink" title="字符串型String"></a>字符串型String</h4><p>字符串型可以是引号中的任意文本,其语法为<strong>双引号””**和</strong>单引号’’**,推荐使用单引号</p>
-<h4 id="字符串转义符"><a href="#字符串转义符" class="headerlink" title="字符串转义符"></a>字符串转义符</h4><p>类似HTML里面的特殊字符,字符串中也有特殊字符,我们称之为转义符。转义符都是\开头的,常用的转义符及其说明如下:</p>
+<h5 id="字符串转义符"><a href="#字符串转义符" class="headerlink" title="字符串转义符"></a>字符串转义符</h5><p>类似HTML里面的特殊字符,字符串中也有特殊字符,我们称之为转义符。转义符都是\开头的,常用的转义符及其说明如下:</p>
 <table>
 <thead>
 <tr>
@@ -1228,6 +1241,191 @@
 <td>空格,b是blank的意思</td>
 </tr>
 </tbody></table>
+<h5 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h5><p>字符串是由若干字符组成的,这些字符的数量就是字符串的长度.通过字符串的<strong>length</strong>属性可以获取整个字符串的长度.</p>
+<h5 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h5><ul>
+<li>多个字符串之间可以使用+进行拼接,其拼接方式为<strong>字符串+任何类型=拼接之后的新字符串</strong></li>
+<li>拼接前会把与字符串相加的任何类型转成字符串,再拼接成一个新的字符串</li>
+</ul>
+<h4 id="布尔型Boolean"><a href="#布尔型Boolean" class="headerlink" title="布尔型Boolean"></a>布尔型Boolean</h4><p>布尔类型有两个值: true和false,其中true表示真(对),而false表示假(错).<br>布尔型和数字型相加的时候,true的值为1, false的值为0.</p>
+<h4 id="Undefined"><a href="#Undefined" class="headerlink" title="Undefined"></a>Undefined</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="string">&#x27;abc&#x27;</span>); <span class="comment">// undefinedabc</span></span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="number">1</span>); <span class="comment">// NaN undefined和数字相加最后的结果是NaN</span></span><br></pre></td></tr></table></figure>
+<h4 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="string">&#x27;abc&#x27;</span>); <span class="comment">// nullabc</span></span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="number">1</span>); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h4 id="检测变量数据类型"><a href="#检测变量数据类型" class="headerlink" title="检测变量数据类型"></a>检测变量数据类型</h4><p>使用typeof检测变量的数据类型</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// number</span></span><br><span class="line"><span class="keyword">var</span> b=<span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b); <span class="comment">// string</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> c); <span class="comment">// boolean</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="literal">undefined</span> ;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> d); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> e = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> e); <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
+<h4 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h4><p>使用表单、prompt 获取过来的数据默认是字符串类型的,此时就不能直接简单的进行加法运算,而需要转换变量的数据类型.通俗来说,就是<strong>把一种数据类型的变量转换成另外一种数据类型</strong>.</p>
+<h5 id="转换为字符串类型"><a href="#转换为字符串类型" class="headerlink" title="转换为字符串类型"></a>转换为字符串类型</h5><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>toString()</td>
+<td>转成字符串</td>
+<td>var num= 1; alert(num.toString());</td>
+</tr>
+<tr>
+<td>String()强制转换</td>
+<td>转成字符串</td>
+<td>var num = 1; alert(String(num));</td>
+</tr>
+<tr>
+<td>加号拼接字符串(隐式转换)</td>
+<td>和字符串拼接的结果都是字符串</td>
+<td>var num = 1; alert(num+“字符串”);</td>
+</tr>
+</tbody></table>
+<h5 id="转换为数字型"><a href="#转换为数字型" class="headerlink" title="转换为数字型"></a>转换为数字型</h5><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>parseInt(string)函数</td>
+<td>将string类型转成整数数值型(将小数点后数值直接删除,同时会去掉单位)</td>
+<td>parseInt(‘78’)</td>
+</tr>
+<tr>
+<td>parseFloat(string)函数</td>
+<td>将string类型转成浮点数数值型</td>
+<td>parseFloat(‘78.21’)</td>
+</tr>
+<tr>
+<td>Number()强制转换函数</td>
+<td>将string类型转换为数值型</td>
+<td>Number(‘12’)</td>
+</tr>
+<tr>
+<td>js隐式转换(- * /)</td>
+<td>利用算术运算隐式转换为数值型</td>
+<td>‘12’-0</td>
+</tr>
+</tbody></table>
+<h5 id="转换为布尔型"><a href="#转换为布尔型" class="headerlink" title="转换为布尔型"></a>转换为布尔型</h5><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Boolean()函数</td>
+<td>其他类型转成布尔值</td>
+<td>Boolean(‘true’);</td>
+</tr>
+</tbody></table>
+<ul>
+<li>代表空、否定的值会被转换为false，如’’、0、NaN、null、undefined</li>
+<li>其余值都会被转换为true</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">0.1</span> + <span class="number">0.2</span>); <span class="comment">// 0.30000000000000004</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">0.07</span>*<span class="number">100</span>); <span class="comment">// 7.000000000000001</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">0.1</span>+<span class="number">0.2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a==<span class="number">0.3</span>)<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>浮点数值的最高精度是17位小数,但在进行算术计算时其精确度远远不如整数</li>
+<li>我们不能直接拿着浮点数来进行相比较是否相等</li>
+</ul>
+<h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4><p>概念:比较运算符(关系运算符)是两个数据进行比较时所使用的运算符,比较运算后,会返回一个布尔值( true / false )作为比较运算的结果。</p>
+<table>
+<thead>
+<tr>
+<th>运算符名称</th>
+<th>说明</th>
+<th>案例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;</td>
+<td>小于号</td>
+<td>1 &lt;2</td>
+<td>true</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于号</td>
+<td>1&gt;2</td>
+<td>false</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于号(大于或者等于)</td>
+<td>2&gt;=2</td>
+<td>true</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于号(小于或者等于)</td>
+<td>3&lt;=2</td>
+<td>false</td>
+</tr>
+<tr>
+<td>==</td>
+<td>判等号(会转型)</td>
+<td>37==37</td>
+<td>true</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等号</td>
+<td>37!= 37</td>
+<td>false</td>
+</tr>
+<tr>
+<td>===    !==</td>
+<td>全等要求值和数据类型都一致</td>
+<td>37 === ‘37’</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>概念:逻辑运算符是用来进行布尔值运算的运算符,其返回值也是布尔值.</p>
+<table>
+<thead>
+<tr>
+<th>逻辑运算符</th>
+<th>说明</th>
+<th>案例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;&amp;</td>
+<td>“逻辑与”，简称”与”and</td>
+<td>true &amp;&amp; false</td>
+</tr>
+<tr>
+<td>||</td>
+<td>“逻辑或”，简称”或”or</td>
+<td>true || false</td>
+</tr>
+<tr>
+<td>!</td>
+<td>“逻辑非”，简称”非”not</td>
+<td>! true</td>
+</tr>
+</tbody></table>
+<h4 id="短路运算-逻辑中断"><a href="#短路运算-逻辑中断" class="headerlink" title="短路运算(逻辑中断)"></a>短路运算(逻辑中断)</h4><p>短路运算的原理:当有多个表达式(值)时,左边的表达式值可以确定结果时就不再继续运算右边的表达式的值</p>
+<p>1.逻辑与</p>
+<ul>
+<li>语法:表达式1&amp;&amp;表达式2</li>
+<li>如果第一个表达式的值为真,则返回表达式2</li>
+<li>如果第一个表达式的值为假,则返回表达式1</li>
+</ul>
+<p>2.逻辑或</p>
+<ul>
+<li>语法:表达式1||表达式2</li>
+<li>如果第一个表达式的值为真,则返回表达式1</li>
+<li>如果第一个表达式的值为假,则返回表达式2</li>
+</ul>
+<h4 id="switch语句和if-else-if语句的区别"><a href="#switch语句和if-else-if语句的区别" class="headerlink" title="switch语句和if else if语句的区别"></a>switch语句和if else if语句的区别</h4><ol>
+<li>一般情况下 ,它们两个语句可以相互替换.</li>
+<li>switch…case语句通常处理case为比较确定值的情况,而if…else…语句更加灵活,常用于范围判断(大于、等于某个范国).</li>
+<li>switch语句进行条件判断后直接执行到程序的条件语句,效率更高.而if…else 语句有几种条件,就得判断多少次.</li>
+<li>当分支比较少时，if…else语句的执行效率比switch语句高.</li>
+<li>当分支比较多时, switch语句的执行效率比较高,而且结构更清晰.</li>
+</ol>
 ]]></content>
       <categories>
         <category>web</category>
@@ -1623,6 +1821,46 @@
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BurpSuite的设置及使用</title>
+    <url>/blog/2021/01/24/Hack%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="BurpSuite的设置及使用"><a href="#BurpSuite的设置及使用" class="headerlink" title="BurpSuite的设置及使用"></a>BurpSuite的设置及使用</h1><h2 id="1-BurpSuite安装与配置"><a href="#1-BurpSuite安装与配置" class="headerlink" title="1.BurpSuite安装与配置"></a>1.BurpSuite安装与配置</h2><h3 id="BurpSuite功能介绍"><a href="#BurpSuite功能介绍" class="headerlink" title="BurpSuite功能介绍"></a>BurpSuite功能介绍</h3><p>BurpSuite是用于攻击web应用程序的集成平台，包含了许多工具。BurpSuite为这些工具设计了许多接口，以加快攻击应用程序的过程。所有工具都共享-一个请求， 并能处理对应的HTTP消息、持久性、认证、代理、日志、警报。</p>
+<p>Burpsuite是由JAVA语言编写,所以Burpsuite是-款跨平台的软件。 但是在测试过程中Buripsuite不像其他自动化测试工具不需要输入任何内容即可完成测试，而需要手动的配置某些参数触发对应的行为才会完成测试。</p>
+<h2 id="2-BurpSuite-Proxy模块"><a href="#2-BurpSuite-Proxy模块" class="headerlink" title="2.BurpSuite Proxy模块"></a>2.BurpSuite Proxy模块</h2><p>Burp Proxy 是Burp Suite以用户驱动测试流程功能的核心，通过代理模式，可以让我们拦截、查看、修改所有在客户端和服务端之间传输的数据。</p>
+<h3 id="1-Intercept"><a href="#1-Intercept" class="headerlink" title="1.Intercept"></a>1.Intercept</h3><p>Forward表示将截断的HTTP或HTTPS请求发送到服务器。<br>Drop表示将截断的HTTP或HTTPS请求丢弃。<br>Intercept is on和Intercept is off表示开启或关闭代理截断功能。<br>Action表示将代理截断的HT TP或HT TPS请求发送到其他模块或做其他处理。<br>对Intercept进行Raw Hex Params Header切换查看不同的数据格式。</p>
+<h3 id="2-HTTP-history"><a href="#2-HTTP-history" class="headerlink" title="2.HTTP history"></a>2.HTTP history</h3><p>HTTP history用来查看提交过的HTTP请求。<br>Fiter可以过滤显示某些HTTP请求。点击Filter就可以打开。对于指定URL可以选中右键点击,执行其他操作。WebSockets history与HTTP history功能类似。</p>
+<h3 id="3-options"><a href="#3-options" class="headerlink" title="3.options"></a>3.options</h3><p>Options具有的功能:代理监听设置、戳断客户端请求、截断服务器响应、截断WebSocket通信、服务端响应修改(绕过JS验证文件上传)、匹配与替换HTTP消息中的内容、通过SSL连接Web服务器配置、其他配置选项。</p>
+<h3 id="4-设置proxy-listener"><a href="#4-设置proxy-listener" class="headerlink" title="4.设置proxy listener"></a>4.设置proxy listener</h3><p>通过设置Proxy Listeners来截断数据流量。比如设置监听端口等。BurpSuite默认监听8080端口.</p>
+<p>修改端口:</p>
+<p>1.关闭截断</p>
+<p>2.options-&gt;edit</p>
+<p>3.修改端口,点击running</p>
+<p>4.修改浏览器端口</p>
+<p>5.Internet选项-&gt;连接-&gt;局域网设置</p>
+<p>6.修改端口</p>
+<h3 id="5-设置intercept-client-requests"><a href="#5-设置intercept-client-requests" class="headerlink" title="5.设置intercept client requests"></a>5.设置intercept client requests</h3><p>通过设置Intercept Client Requests来截断符合条件的HTTP请求。</p>
+<h3 id="6-设置Intercept-Server-Response"><a href="#6-设置Intercept-Server-Response" class="headerlink" title="6.设置Intercept Server Response"></a>6.设置Intercept Server Response</h3><p>通过设置Intercept Server Response来筛选出符合条件的HTTP响应。</p>
+<h3 id="7-设置截断Websocket通信以及修改Response的内容"><a href="#7-设置截断Websocket通信以及修改Response的内容" class="headerlink" title="7.设置截断Websocket通信以及修改Response的内容"></a>7.设置截断Websocket通信以及修改Response的内容</h3><h3 id="8-匹配以及修改HTTP消息"><a href="#8-匹配以及修改HTTP消息" class="headerlink" title="8.匹配以及修改HTTP消息"></a>8.匹配以及修改HTTP消息</h3><p>可以修改HTTP请求和HTTP响应中的内容。</p>
+<h2 id="3-Burpsuite抓取手机APP流量"><a href="#3-Burpsuite抓取手机APP流量" class="headerlink" title="3.Burpsuite抓取手机APP流量"></a>3.Burpsuite抓取手机APP流量</h2><p>目前WebApp(手机App)的通信任然使用HTTP协议进行对应的通信.可以通过Burp设置代理,然后手机设置网络代理,通过Burp截断手机APP流量.</p>
+<p>1.Burpsuite设置截断所有网卡的流量，那么局城网中所有的主机都可以通过该代理进行网络访问。</p>
+<p><img src="https://i.loli.net/2021/01/24/n1owBAfCMJXqvhW.png"></p>
+<p><img src="https://i.loli.net/2021/01/24/Cu6NGxn2SI57hBs.png"></p>
+<p>2.查看电脑ip</p>
+<p>3.在手机网络设置中，填写对应的代理。</p>
+<p><img src="https://i.loli.net/2021/01/24/gcYyFBzhjZEKOev.png"></p>
+<p><img src="https://i.loli.net/2021/01/24/US7BIW1oNuXlHhJ.png"></p>
+<p><img src="https://i.loli.net/2021/01/24/o8hED3xYzjUlvC9.png"></p>
+<p>4.Burpsuite开启截断</p>
+<p><img src="https://i.loli.net/2021/01/24/nU8QWAlJGESgP96.png"></p>
+<h2 id="4-Burpsuite剔除JS脚本-绕过JS文件上传验证"><a href="#4-Burpsuite剔除JS脚本-绕过JS文件上传验证" class="headerlink" title="4.Burpsuite剔除JS脚本(绕过JS文件上传验证)"></a>4.Burpsuite剔除JS脚本(绕过JS文件上传验证)</h2><p>JavaScript—种直译式脚本语言，是一种动态类型、 弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML (标准通用标记语言下的一个应用)网页上使用，用来给HTML网页增加动态功能。例如:对于上传文件进行JS验证。</p>
+]]></content>
+      <categories>
+        <category>BurpSuite</category>
+      </categories>
+      <tags>
+        <tag>BurpSuite</tag>
       </tags>
   </entry>
 </search>
