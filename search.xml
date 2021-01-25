@@ -1825,7 +1825,7 @@
   </entry>
   <entry>
     <title>BurpSuite的设置及使用</title>
-    <url>/blog/2021/01/24/Hack%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2021/01/24/BurpSuite%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="BurpSuite的设置及使用"><a href="#BurpSuite的设置及使用" class="headerlink" title="BurpSuite的设置及使用"></a>BurpSuite的设置及使用</h1><h2 id="1-BurpSuite安装与配置"><a href="#1-BurpSuite安装与配置" class="headerlink" title="1.BurpSuite安装与配置"></a>1.BurpSuite安装与配置</h2><h3 id="BurpSuite功能介绍"><a href="#BurpSuite功能介绍" class="headerlink" title="BurpSuite功能介绍"></a>BurpSuite功能介绍</h3><p>BurpSuite是用于攻击web应用程序的集成平台，包含了许多工具。BurpSuite为这些工具设计了许多接口，以加快攻击应用程序的过程。所有工具都共享-一个请求， 并能处理对应的HTTP消息、持久性、认证、代理、日志、警报。</p>
 <p>Burpsuite是由JAVA语言编写,所以Burpsuite是-款跨平台的软件。 但是在测试过程中Buripsuite不像其他自动化测试工具不需要输入任何内容即可完成测试，而需要手动的配置某些参数触发对应的行为才会完成测试。</p>
 <h2 id="2-BurpSuite-Proxy模块"><a href="#2-BurpSuite-Proxy模块" class="headerlink" title="2.BurpSuite Proxy模块"></a>2.BurpSuite Proxy模块</h2><p>Burp Proxy 是Burp Suite以用户驱动测试流程功能的核心，通过代理模式，可以让我们拦截、查看、修改所有在客户端和服务端之间传输的数据。</p>
@@ -1855,12 +1855,28 @@
 <p>4.Burpsuite开启截断</p>
 <p><img src="https://i.loli.net/2021/01/24/nU8QWAlJGESgP96.png"></p>
 <h2 id="4-Burpsuite剔除JS脚本-绕过JS文件上传验证"><a href="#4-Burpsuite剔除JS脚本-绕过JS文件上传验证" class="headerlink" title="4.Burpsuite剔除JS脚本(绕过JS文件上传验证)"></a>4.Burpsuite剔除JS脚本(绕过JS文件上传验证)</h2><p>JavaScript—种直译式脚本语言，是一种动态类型、 弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML (标准通用标记语言下的一个应用)网页上使用，用来给HTML网页增加动态功能。例如:对于上传文件进行JS验证。</p>
+<p><img src="https://i.loli.net/2021/01/25/P1A6G4zFDUpbRs3.png"></p>
+<p>也可以使用浏览器审计工具直接删除JS</p>
+<h2 id="5-Burpsuite-Target介绍"><a href="#5-Burpsuite-Target介绍" class="headerlink" title="5.Burpsuite Target介绍"></a>5.Burpsuite Target介绍</h2><p>Burp Target组件主要包含站点地图、目标域、Target 工具三部分组成，他们帮助渗透测试人员更好地了解目标应用的整体状况、当前的工作涉及哪些目标域、分析可能存在的攻击面等信息</p>
+<p>Target Scope中作用域的定义比较宽泛，通常来说，当我们对某个产品进行渗透测试时，可以通过域名或者主机名去限制拦截内容，这里域名或主机名就是我们说的作用域;如果我们想限制得更为细粒度化，比如，你只想拦截login目录下的所有请求，这时我们也可以在此设置，此时，作用域就是目录。</p>
 ]]></content>
       <categories>
-        <category>BurpSuite</category>
+        <category>Hack</category>
       </categories>
       <tags>
         <tag>BurpSuite</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Kail Linux下安装配置Nessus漏洞扫描器</title>
+    <url>/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hack</category>
+      </categories>
+      <tags>
+        <tag>Nessus</tag>
+        <tag>Kail</tag>
       </tags>
   </entry>
 </search>
