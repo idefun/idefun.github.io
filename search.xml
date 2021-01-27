@@ -1439,20 +1439,22 @@
 </ul>
 <h5 id="利用new创建数组"><a href="#利用new创建数组" class="headerlink" title="利用new创建数组"></a>利用new创建数组</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> 数组名 = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();<span class="comment">//创建一个空数组</span></span><br></pre></td></tr></table></figure>
 <h5 id="利用数组字面量创建数组"><a href="#利用数组字面量创建数组" class="headerlink" title="利用数组字面量创建数组"></a>利用数组字面量创建数组</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.使用数组字面量(方括号)方式创建空的数组</span></span><br><span class="line"><span class="keyword">var</span> 数组名 = [] ;</span><br><span class="line"><span class="comment">//2.使用数组字面量方式创建带初始值的数组</span></span><br><span class="line"><span class="keyword">var</span> 数组名 = [<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>] ;</span><br></pre></td></tr></table></figure>
-<h5 id="数组元素的类型"><a href="#数组元素的类型" class="headerlink" title="数组元素的类型"></a>数组元素的类型</h5><p>数组中可以存放任意类型的数据,例如字符串,数字,布尔值等.</p>
+<h4 id="数组元素的类型"><a href="#数组元素的类型" class="headerlink" title="数组元素的类型"></a>数组元素的类型</h4><p>数组中可以存放任意类型的数据,例如字符串,数字,布尔值等.</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;小白&#x27;</span>,<span class="number">123</span>,<span class="literal">true</span>,<span class="number">2.5</span>] ;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
+<h4 id="数组中新增元素"><a href="#数组中新增元素" class="headerlink" title="数组中新增元素"></a>数组中新增元素</h4><p>可以通过修改length长度以及索引号增加数组元素</p>
+<h5 id="通过修改length长度新增数组元素"><a href="#通过修改length长度新增数组元素" class="headerlink" title="通过修改length长度新增数组元素"></a>通过修改length长度新增数组元素</h5><ul>
+<li>可以通过修改 length长度来实现数组扩容的目的</li>
+<li>length属性是可读写的</li>
+<li>新增元素没有给值,默认为undefined</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;green&#x27;</span>] ;</span><br><span class="line"><span class="built_in">console</span>.log(arr.length);</span><br><span class="line">arr.length=<span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">3</span>]);<span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">4</span>]);<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/27/T8VcRdq5ZsKwOvU.png"></p>
+<h5 id="通过修改数组索引号新增数组元素"><a href="#通过修改数组索引号新增数组元素" class="headerlink" title="通过修改数组索引号新增数组元素"></a>通过修改数组索引号新增数组元素</h5><ul>
+<li>可以通过修改数组索引的方式追加数组元素</li>
+<li>不能直接给数组名赋值,否则会覆盖掉以前的数据</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;green&#x27;</span>] ;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr[<span class="number">3</span>]=<span class="string">&#x27;pink&#x27;</span>;<span class="comment">//新增索引号为3的元素</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr[<span class="number">1</span>]=<span class="string">&#x27;yellow&#x27;</span>;<span class="comment">//修改索引号为1的元素值,由blue改为yellow</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr=<span class="string">&#x27;skyblue&#x27;</span>;<span class="comment">//直接给数组名赋值,覆盖掉以前的数据</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//skyblue</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/27/lGt1pmcWziJkL6x.png"></p>
 ]]></content>
       <categories>
         <category>web</category>
