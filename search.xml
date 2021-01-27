@@ -1426,6 +1426,33 @@
 <li>当分支比较少时，if…else语句的执行效率比switch语句高.</li>
 <li>当分支比较多时, switch语句的执行效率比较高,而且结构更清晰.</li>
 </ol>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>与C语言类似</p>
+<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><p>双for循环打印九九乘法表</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">        str=str+j+<span class="string">&#x27;×&#x27;</span>+i+<span class="string">&#x27;=&#x27;</span>+i*j+<span class="string">&#x27;\t&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    str=str+<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
+<p>结果如下:</p>
+<p><img src="https://i.loli.net/2021/01/27/Wdv2AhMRQTE1K5m.png"></p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组是指一组数据的集合,其中的每个数据被称作元素,在数组中可以存放任意类型的元素。数组是一种将一组数据存储在单个变量名下的优雅方式。</p>
+<h4 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h4><p>JS中创建数组有两种方式:</p>
+<ul>
+<li>利用new创建数组</li>
+<li>利用数组字面量创建数组(常用)</li>
+</ul>
+<h5 id="利用new创建数组"><a href="#利用new创建数组" class="headerlink" title="利用new创建数组"></a>利用new创建数组</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> 数组名 = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();<span class="comment">//创建一个空数组</span></span><br></pre></td></tr></table></figure>
+<h5 id="利用数组字面量创建数组"><a href="#利用数组字面量创建数组" class="headerlink" title="利用数组字面量创建数组"></a>利用数组字面量创建数组</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.使用数组字面量(方括号)方式创建空的数组</span></span><br><span class="line"><span class="keyword">var</span> 数组名 = [] ;</span><br><span class="line"><span class="comment">//2.使用数组字面量方式创建带初始值的数组</span></span><br><span class="line"><span class="keyword">var</span> 数组名 = [<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>] ;</span><br></pre></td></tr></table></figure>
+<h5 id="数组元素的类型"><a href="#数组元素的类型" class="headerlink" title="数组元素的类型"></a>数组元素的类型</h5><p>数组中可以存放任意类型的数据,例如字符串,数字,布尔值等.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;小白&#x27;</span>,<span class="number">123</span>,<span class="literal">true</span>,<span class="number">2.5</span>] ;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
 ]]></content>
       <categories>
         <category>web</category>
@@ -1868,9 +1895,40 @@
       </tags>
   </entry>
   <entry>
-    <title>Kail Linux下安装配置Nessus漏洞扫描器</title>
+    <title>Kail Linux虚拟机安装配置Nessus漏洞扫描器</title>
     <url>/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="Kail-Linux虚拟机安装配置Nessus漏洞扫描器"><a href="#Kail-Linux虚拟机安装配置Nessus漏洞扫描器" class="headerlink" title="Kail Linux虚拟机安装配置Nessus漏洞扫描器"></a>Kail Linux虚拟机安装配置Nessus漏洞扫描器</h1><a id="more"></a>
+
+<h2 id="1-获取激活码"><a href="#1-获取激活码" class="headerlink" title="1.获取激活码"></a>1.获取激活码</h2><p>前往<a href="https://www.tenable.com/products/nessus/nessus-essentials">官网</a>进行注册</p>
+<p><img src="https://i.loli.net/2021/01/26/HVptOeBDnJZlF6w.png"></p>
+<h2 id="2-下载nessus"><a href="#2-下载nessus" class="headerlink" title="2.下载nessus"></a>2.下载nessus</h2><p>注册完毕后前往下载页面</p>
+<p><img src="https://i.loli.net/2021/01/26/SaI7x2nDEHRfMOu.png"></p>
+<p>选择deb结尾的(我选择的64位)</p>
+<p><img src="https://i.loli.net/2021/01/26/hPzGvds7T2bXirE.png"></p>
+<p>官网下载较慢,这里我准备了一份,<a href="https://idefun.lanzous.com/iQnR4kvm5oh">点击下载</a></p>
+<h2 id="3-安装nessus"><a href="#3-安装nessus" class="headerlink" title="3.安装nessus"></a>3.安装nessus</h2><p>将nessus拖入kail linux虚拟机</p>
+<p><img src="https://i.loli.net/2021/01/26/Mca54FXCQuY6x7p.png"></p>
+<p>打开终端,切换至桌面</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd 桌面</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/26/ekf7ri8R54ZuwDW.png"></p>
+<p>安装nessus(需要密码)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i Nessus-8.13.1-debian6_amd64.deb</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/26/hYk1gFqJplIuQw9.png"></p>
+<p>安装完成</p>
+<p><img src="https://i.loli.net/2021/01/26/KWfAuHosZB7vJ1F.png"></p>
+<h2 id="4-启动nessus"><a href="#4-启动nessus" class="headerlink" title="4.启动nessus"></a>4.启动nessus</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/bin/systemctl start nessusd.service</span><br></pre></td></tr></table></figure>
+<p>同样需要密码</p>
+<img src="https://i.loli.net/2021/01/26/1Wjf7rMiImHSk4A.png"  />
+
+<p>在浏览器中访问</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">https://kali:8834/</span><br></pre></td></tr></table></figure>
+<p>选择Managed Scanner</p>
+<p><img src="https://i.loli.net/2021/01/26/Y9wajpE7ye1JhVv.png"></p>
+<p>选择Tenable.sc</p>
+<p><img src="https://i.loli.net/2021/01/26/ONiI4T2EJeylcZ5.png"></p>
+<p>创建账号</p>
+<p><img src="https://i.loli.net/2021/01/26/1KLS8misZR7DVCI.png"></p>
+]]></content>
       <categories>
         <category>Hack</category>
       </categories>

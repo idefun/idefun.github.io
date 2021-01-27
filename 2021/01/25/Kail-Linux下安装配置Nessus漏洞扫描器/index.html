@@ -38,19 +38,31 @@
     var CONFIG = {"hostname":"www.idefun.com","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Kail Linux下安装配置Nessus漏洞扫描器">
+  <meta name="description" content="Kail Linux虚拟机安装配置Nessus漏洞扫描器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kail Linux下安装配置Nessus漏洞扫描器">
+<meta property="og:title" content="Kail Linux虚拟机安装配置Nessus漏洞扫描器">
 <meta property="og:url" content="http://www.idefun.com/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/index.html">
 <meta property="og:site_name" content="IdeFun Blog">
-<meta property="og:description" content="Kail Linux下安装配置Nessus漏洞扫描器">
+<meta property="og:description" content="Kail Linux虚拟机安装配置Nessus漏洞扫描器">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/HVptOeBDnJZlF6w.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/SaI7x2nDEHRfMOu.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/hPzGvds7T2bXirE.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/Mca54FXCQuY6x7p.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/ekf7ri8R54ZuwDW.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/hYk1gFqJplIuQw9.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/KWfAuHosZB7vJ1F.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/1Wjf7rMiImHSk4A.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/Y9wajpE7ye1JhVv.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/ONiI4T2EJeylcZ5.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/1KLS8misZR7DVCI.png">
 <meta property="article:published_time" content="2021-01-25T08:35:06.000Z">
-<meta property="article:modified_time" content="2021-01-25T08:38:13.680Z">
+<meta property="article:modified_time" content="2021-01-26T09:14:35.272Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="Nessus">
 <meta property="article:tag" content="Kail">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/26/HVptOeBDnJZlF6w.png">
 
 <link rel="canonical" href="http://www.idefun.com/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/">
 
@@ -75,7 +87,7 @@
     })();
 </script>
 
-  <title>Kail Linux下安装配置Nessus漏洞扫描器 | IdeFun Blog</title>
+  <title>Kail Linux虚拟机安装配置Nessus漏洞扫描器 | IdeFun Blog</title>
   
 
 
@@ -249,7 +261,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Kail Linux下安装配置Nessus漏洞扫描器
+          Kail Linux虚拟机安装配置Nessus漏洞扫描器
         </h1>
 
         <div class="post-meta">
@@ -258,10 +270,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-01-25 16:35:06 / 修改时间：16:38:13" itemprop="dateCreated datePublished" datetime="2021-01-25T16:35:06+08:00">2021-01-25</time>
+              <time title="创建时间：2021-01-25 16:35:06" itemprop="dateCreated datePublished" datetime="2021-01-25T16:35:06+08:00">2021-01-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-26 17:14:35" itemprop="dateModified" datetime="2021-01-26T17:14:35+08:00">2021-01-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -299,7 +317,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>311</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -308,7 +326,7 @@
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
             </span>
-            <div class="post-description">Kail Linux下安装配置Nessus漏洞扫描器</div>
+            <div class="post-description">Kail Linux虚拟机安装配置Nessus漏洞扫描器</div>
 
         </div>
       </header>
@@ -319,7 +337,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="Kail-Linux虚拟机安装配置Nessus漏洞扫描器"><a href="#Kail-Linux虚拟机安装配置Nessus漏洞扫描器" class="headerlink" title="Kail Linux虚拟机安装配置Nessus漏洞扫描器"></a>Kail Linux虚拟机安装配置Nessus漏洞扫描器</h1><a id="more"></a>
+
+<h2 id="1-获取激活码"><a href="#1-获取激活码" class="headerlink" title="1.获取激活码"></a>1.获取激活码</h2><p>前往<a target="_blank" rel="noopener" href="https://www.tenable.com/products/nessus/nessus-essentials">官网</a>进行注册</p>
+<p><img src="https://i.loli.net/2021/01/26/HVptOeBDnJZlF6w.png"></p>
+<h2 id="2-下载nessus"><a href="#2-下载nessus" class="headerlink" title="2.下载nessus"></a>2.下载nessus</h2><p>注册完毕后前往下载页面</p>
+<p><img src="https://i.loli.net/2021/01/26/SaI7x2nDEHRfMOu.png"></p>
+<p>选择deb结尾的(我选择的64位)</p>
+<p><img src="https://i.loli.net/2021/01/26/hPzGvds7T2bXirE.png"></p>
+<p>官网下载较慢,这里我准备了一份,<a target="_blank" rel="noopener" href="https://idefun.lanzous.com/iQnR4kvm5oh">点击下载</a></p>
+<h2 id="3-安装nessus"><a href="#3-安装nessus" class="headerlink" title="3.安装nessus"></a>3.安装nessus</h2><p>将nessus拖入kail linux虚拟机</p>
+<p><img src="https://i.loli.net/2021/01/26/Mca54FXCQuY6x7p.png"></p>
+<p>打开终端,切换至桌面</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd 桌面</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/26/ekf7ri8R54ZuwDW.png"></p>
+<p>安装nessus(需要密码)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i Nessus-8.13.1-debian6_amd64.deb</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/26/hYk1gFqJplIuQw9.png"></p>
+<p>安装完成</p>
+<p><img src="https://i.loli.net/2021/01/26/KWfAuHosZB7vJ1F.png"></p>
+<h2 id="4-启动nessus"><a href="#4-启动nessus" class="headerlink" title="4.启动nessus"></a>4.启动nessus</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/bin/systemctl start nessusd.service</span><br></pre></td></tr></table></figure>
+<p>同样需要密码</p>
+<img src="https://i.loli.net/2021/01/26/1Wjf7rMiImHSk4A.png"  />
+
+<p>在浏览器中访问</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">https://kali:8834/</span><br></pre></td></tr></table></figure>
+<p>选择Managed Scanner</p>
+<p><img src="https://i.loli.net/2021/01/26/Y9wajpE7ye1JhVv.png"></p>
+<p>选择Tenable.sc</p>
+<p><img src="https://i.loli.net/2021/01/26/ONiI4T2EJeylcZ5.png"></p>
+<p>创建账号</p>
+<p><img src="https://i.loli.net/2021/01/26/1KLS8misZR7DVCI.png"></p>
+
     </div>
 
    
@@ -356,7 +405,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.idefun.com/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/" title="Kail Linux下安装配置Nessus漏洞扫描器">http://www.idefun.com/blog/2021/01/25/Kail-Linux下安装配置Nessus漏洞扫描器/</a>
+    <a href="http://www.idefun.com/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/" title="Kail Linux虚拟机安装配置Nessus漏洞扫描器">http://www.idefun.com/blog/2021/01/25/Kail-Linux下安装配置Nessus漏洞扫描器/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -470,6 +519,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kail-Linux%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8"><span class="nav-text">Kail Linux虚拟机安装配置Nessus漏洞扫描器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96%E6%BF%80%E6%B4%BB%E7%A0%81"><span class="nav-text">1.获取激活码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BDnessus"><span class="nav-text">2.下载nessus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85nessus"><span class="nav-text">3.安装nessus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%90%AF%E5%8A%A8nessus"><span class="nav-text">4.启动nessus</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -791,7 +841,7 @@ if(canvas.getContext){
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
-          <a href="/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/" title="2021&#x2F;01&#x2F;25&#x2F;Kail-Linux下安装配置Nessus漏洞扫描器&#x2F;">Kail Linux下安装配置Nessus漏洞扫描器</a>
+          <a href="/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/" title="2021&#x2F;01&#x2F;25&#x2F;Kail-Linux下安装配置Nessus漏洞扫描器&#x2F;">Kail Linux虚拟机安装配置Nessus漏洞扫描器</a>
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/blog/2021/01/24/BurpSuite%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/" title="2021&#x2F;01&#x2F;24&#x2F;BurpSuite的设置及使用&#x2F;">BurpSuite的设置及使用</a>
