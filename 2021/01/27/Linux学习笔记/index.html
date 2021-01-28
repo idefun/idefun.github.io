@@ -46,7 +46,7 @@
 <meta property="og:description" content="Linux学习笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-27T09:36:28.000Z">
-<meta property="article:modified_time" content="2021-01-28T01:30:39.549Z">
+<meta property="article:modified_time" content="2021-01-28T13:22:42.893Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -265,7 +265,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-28 09:30:39" itemprop="dateModified" datetime="2021-01-28T09:30:39+08:00">2021-01-28</time>
+                <time title="修改时间：2021-01-28 21:22:42" itemprop="dateModified" datetime="2021-01-28T21:22:42+08:00">2021-01-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -304,15 +304,16 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>33</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
+            <div class="post-description">Linux学习笔记</div>
 
         </div>
       </header>
@@ -325,9 +326,133 @@
       
         <h1 id="Linux学习笔记"><a href="#Linux学习笔记" class="headerlink" title="Linux学习笔记"></a>Linux学习笔记</h1><a id="more"></a>
 
-<p>Ctrl+a  快速回到行首</p>
+<h2 id="Linux注意事项"><a href="#Linux注意事项" class="headerlink" title="Linux注意事项"></a>Linux注意事项</h2><p>Ctrl+a  快速回到行首</p>
 <p>Ctrl+e  快速回到行末</p>
-
+<p>Linux严格区分大小写.</p>
+<p>Linux中所有内容以文件形式保存，包括硬件</p>
+<ul>
+<li>硬盘文件是/dev/sd[a-p]</li>
+<li>光盘文件是/dev/sr0</li>
+</ul>
+<p>Linux不靠扩展名区分文件类型(扩展名便于用户使用),靠文件权限</p>
+<ul>
+<li>压缩包: “*.gz”、”*.bz2”、”*.tar.bz2”、”*.tgz”等</li>
+<li>二进制软件包: “*.rpm”</li>
+<li>网页文件: “*.html”、”*.php”</li>
+<li>脚本文件: “*.sh”</li>
+<li>配置文件: “*.conf”</li>
+</ul>
+<p>Linux所有的存储设备都必须挂载,之后用户才能使用,包括硬盘、U盘和光盘</p>
+<p>Windows下的程序不能直接在Iinux中安装和运行</p>
+<h2 id="服务器管理和维护"><a href="#服务器管理和维护" class="headerlink" title="服务器管理和维护"></a>服务器管理和维护</h2><h3 id="目录及作用"><a href="#目录及作用" class="headerlink" title="目录及作用"></a>目录及作用</h3><table>
+<thead>
+<tr>
+<th>目录名</th>
+<th>目录作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bin/</td>
+<td>存放系统命令的目录，普通用户和超级用户都可以执行。不过放在/bin下的命令在单用户模式下也可以执行</td>
+</tr>
+<tr>
+<td>/sbin/</td>
+<td>保存和系统环境设置相关的命令，只有超级用户可以使用这些命令进行系统环境设置，但是有些命令可以允许普通用户查看</td>
+</tr>
+<tr>
+<td>/usr/bin/</td>
+<td>存放系统命令的目录，普通用户和超级用户都可以执行。这些命令和系统启动无关，在单用户模式下不能执行</td>
+</tr>
+<tr>
+<td>/usr/sbin/</td>
+<td>存放根文件系统不必要的系统管理命令，例如多数服务程序。只有超级用户可以使用。大家其实可以注意到Linux的系统，在所有“sbin” 目录中保存的命令只有超级用户可以使用，“bin”目录中保存的命令所有用户都可以使用</td>
+</tr>
+<tr>
+<td>/boot/</td>
+<td>系统启动目录，保存系统启动相关的文件，如内核文件和启动引导程序( grub)文件等</td>
+</tr>
+<tr>
+<td>/dev/</td>
+<td>设备文件保存位置。我们已经说过Linux中所有内容以文件形式保存，包括硬件。那么这个目录就是用来保存所有硬件设备文件的</td>
+</tr>
+<tr>
+<td>/etc/</td>
+<td>配置文件保存位置。系统内所有采用默认安装方式(rpm安装)的服务的配置文件全部都保存在这个目录当中，如用户账户和密码，服务的启动脚本，常用服务的配置文件等</td>
+</tr>
+<tr>
+<td>/home/</td>
+<td>普通用户的家目录。建立每个用户时，每个用户要有一个默认登录位置，这个位置就是这个用户的家目录，所有普通用户的家目录就是在/home下建立一个和用户名相同的目录。如用户user1 的家目录就是home/user1</td>
+</tr>
+<tr>
+<td>/lib/</td>
+<td>系统调用的函数库保存位置</td>
+</tr>
+<tr>
+<td>/lost+found/</td>
+<td>当系统意外崩溃或机器意外关机，而产生一些文件碎片放在这里。当系统启动的过程中fsck工具会检查这里，并修复已经损坏的文件系统。这个目录只在每个分区中出现，例如/lost+found就是根分区的备份恢复目录，/boot/lost+ found就是/boot分区的备份恢复目录</td>
+</tr>
+<tr>
+<td>/media/</td>
+<td>挂载目录。系统建议是用来挂载媒体设备的，例如软盘和光盘</td>
+</tr>
+<tr>
+<td>/mnt/</td>
+<td>挂载目录，早期Linux中只有这一个挂载目录，并没有细分。现在这个目录系统建议挂载额外设备，如U盘，移动硬盘和其他操作系统的分区</td>
+</tr>
+<tr>
+<td>/misc/</td>
+<td>挂载目录。系统建议用来挂载NFS服务的共享目录。只要是一个已经建立的空目录就可以作为挂载点。那么系统虽然准备了三个默认挂载目录/media、/mnt、 /misc, 但是到底在哪个目录中挂载什么设备都可以由管理员自己决定。例如在/mnt下建立不同目录挂载不同设备。如/mnt/cdrom挂载光盘，/mnt/usb挂载U盘</td>
+</tr>
+<tr>
+<td>/opt/</td>
+<td>第三方安装的软件保存位置。这个目录就是放置和安装其他软件的位置，手工安装的源码包软件都可以安装到这个目录当中。/usr/local目录也可以用来安装软件(更为常用)</td>
+</tr>
+<tr>
+<td>/proc/</td>
+<td>虚拟文件系统，该目录中的数据并不保存到硬盘当中，而是保存到内存当中。主要保存系统的内核，进程，外部设备状态和网络状态灯。如/proc/cpuinfo是保存CPU信息的，/proc/devices是保存设备驱动的列表的，/proc/filesystems是保存文件系统列表的，/proc/net/是保存网络协议信息的</td>
+</tr>
+<tr>
+<td>/sys/</td>
+<td>虚拟文件系统。和/proc 目录相似，都是保存在内存当中的，主要是保存于内核相关信息的</td>
+</tr>
+<tr>
+<td>/root/</td>
+<td>超级用户的家目录。普通用户家目录在“home”下，超级用户家目录直接在“/”下</td>
+</tr>
+<tr>
+<td>/srv/</td>
+<td>服务数据目录。一些系统服务启动之后，可以在这个目录中保存所需要的数据</td>
+</tr>
+<tr>
+<td>/tmp/</td>
+<td>临时目录。系统存放临时文件的目录，该目录下所有用户都可以访问和写入。建议此目录中不能保存重要数据，最好每次开机都把该目录清空</td>
+</tr>
+<tr>
+<td>/usr/</td>
+<td>系统软件资源目录。注意usr不是user的缩写，而是“Unix Softwre Resource”的缩写，所以不是存放用户数据，而是存放系统软件资源的目录。系统中安装的软件大多数保存在这里</td>
+</tr>
+<tr>
+<td>/var/</td>
+<td>动态数据保存位置。主要保存缓存、日志以及软件运行所产生的文件</td>
+</tr>
+</tbody></table>
+<h3 id="服务器注意事项"><a href="#服务器注意事项" class="headerlink" title="服务器注意事项"></a>服务器注意事项</h3><ul>
+<li>远程服务器不允许关机，只能重启</li>
+<li>重启时应该正确关闭服务</li>
+<li>不要在服务器访问高峰运行高负载命令</li>
+<li>远程配置防火墙时不要把自己踢出服务器</li>
+<li>指定合理的密码规范并定期更新</li>
+<li>合理分配权限</li>
+<li>定期备份重要数据和日志</li>
+</ul>
+<h2 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h2><h3 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h3><h4 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h4><p><strong>命令格式:**命令 [-选项] [参数]<br>**例:**ls -la /etc<br>**说明:</strong></p>
+<ol>
+<li>个别命令使用不遵循此格式</li>
+<li>当有多个选项时，可以写在一起,绝大多数顺序也可以改变</li>
+<li>简化选项与完整选项<br>-a等于–all</li>
+</ol>
+<h4 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h4><p><strong>命令名称:</strong> ls<br><strong>命令英文原意:**list<br>**命令所在路径:</strong> /bin/ls<br><strong>执行权限:**所有用户<br>**功能描述:**显示目录文件<br>**语法:</strong> ls 选项[-ald] [文件或目录]<br>    -a  显示所有文件，包括隐藏文件<br>    -1  详细信息显示<br>    -d  查看目录属性</p>
+<h4 id="文件处理命令-1"><a href="#文件处理命令-1" class="headerlink" title="文件处理命令"></a>文件处理命令</h4><h4 id="链接命令"><a href="#链接命令" class="headerlink" title="链接命令"></a>链接命令</h4><h3 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h3><h3 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h3><h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><h3 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h3><h3 id="压缩解压命令"><a href="#压缩解压命令" class="headerlink" title="压缩解压命令"></a>压缩解压命令</h3><h3 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h3><h3 id="关机重启命令"><a href="#关机重启命令" class="headerlink" title="关机重启命令"></a>关机重启命令</h3>
     </div>
 
    
@@ -480,7 +605,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">Linux学习笔记</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">Linux学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">Linux注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="nav-text">服务器管理和维护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E5%8F%8A%E4%BD%9C%E7%94%A8"><span class="nav-text">目录及作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">服务器注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4"><span class="nav-text">文件处理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="nav-text">命令格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4"><span class="nav-text">目录处理命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4-1"><span class="nav-text">文件处理命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E5%91%BD%E4%BB%A4"><span class="nav-text">链接命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="nav-text">权限管理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4"><span class="nav-text">文件搜索命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="nav-text">帮助命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="nav-text">用户管理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4"><span class="nav-text">压缩解压命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4"><span class="nav-text">网络命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4"><span class="nav-text">关机重启命令</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -802,13 +927,13 @@ if(canvas.getContext){
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/blog/2021/01/28/python%E7%AC%94%E8%AE%B0/" title="2021&#x2F;01&#x2F;28&#x2F;python笔记&#x2F;">python笔记</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/blog/2021/01/28/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E6%BA%90%E5%9C%B0%E5%9D%80%E9%93%BE%E6%8E%A5/" title="2021&#x2F;01&#x2F;28&#x2F;教你如何获取腾讯视频源地址链接&#x2F;">教你如何获取腾讯视频源地址链接</a>
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/blog/2021/01/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="2021&#x2F;01&#x2F;27&#x2F;Linux学习笔记&#x2F;">Linux学习笔记</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/blog/2021/01/27/Leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" title="2021&#x2F;01&#x2F;27&#x2F;Leetcode刷题记录&#x2F;">Leetcode刷题记录</a>
         </li>
     </ul>
   </div>
