@@ -3,7 +3,7 @@
   <entry>
     <title>Linux C编程</title>
     <url>/blog/2021/01/11/Linux-C%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="Linux-C编程"><a href="#Linux-C编程" class="headerlink" title="Linux C编程"></a>Linux C编程</h1><h2 id="C语言处理过程"><a href="#C语言处理过程" class="headerlink" title="C语言处理过程"></a>C语言处理过程</h2><p>C代码编译成可执行程序经过4步:<br>1)预处理:宏定义展开、头文件展开、条件编译等，同时将代码中的注释删除，这里并不会检查语法<br>2)编译:检查语法，将预处理后文件编译生成汇编文件<br>3)汇编:将汇编文件生成目标文件(二进制文件)<br>4)链接: C语言写的程序是需要依赖各种库的，所以编译之后还需要把库链接到最终的可执行程序中去</p>
+    <content><![CDATA[<h1 id="Linux-C编程"><a href="#Linux-C编程" class="headerlink" title="Linux C编程"></a>Linux C编程</h1><h3 id="C语言处理过程"><a href="#C语言处理过程" class="headerlink" title="C语言处理过程"></a>C语言处理过程</h3><p>C代码编译成可执行程序经过4步:<br>1)预处理:宏定义展开、头文件展开、条件编译等，同时将代码中的注释删除，这里并不会检查语法<br>2)编译:检查语法，将预处理后文件编译生成汇编文件<br>3)汇编:将汇编文件生成目标文件(二进制文件)<br>4)链接: C语言写的程序是需要依赖各种库的，所以编译之后还需要把库链接到最终的可执行程序中去</p>
 <p>预处理:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc -E hello.c -o hello.i</span><br></pre></td></tr></table></figure>
 <p>编译:</p>
@@ -19,7 +19,7 @@
 <li>vi写文件，没有保存就关闭，自动生成一个后缀为. swp交换文件， 保存了之前写的内容</li>
 <li>先恢复，再删除.swp交换文件</li>
 </ol>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h3><h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p><strong>C的关键字共有32个</strong></p>
+<h3 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h3><h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p><strong>C的关键字共有32个</strong></p>
 <ul>
 <li><p>数据类型关键字(12个)</p>
 <p>char, short, int, long, float, double,unsigned, signed, struct, union, enum, void</p>
@@ -34,7 +34,7 @@
 <p>sizeof, typedef, volatile</p>
 </li>
 </ul>
-<h4 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h4><p>数据类型的作用:编译器预算对象(变量)分配的内存空间大小</p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>数据类型的作用:编译器预算对象(变量)分配的内存空间大小</p>
 <p><img src="https://i.loli.net/2021/01/11/JgoTpVBjXIPWQLD.png" alt="image-20210111193755278"></p>
 <h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><ul>
 <li>在程序运行过程中，其值不能被改变的量</li>
@@ -253,7 +253,7 @@
 <p>goto语句</p>
 <p>goto(只能跳转到同一作用域)任意地方都能使用,无条件跳转,不能滥用,代码会很乱</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">goto</span> hello;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;1111111111\n&quot;</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;2222222222\n&quot;</span>);</span><br><span class="line">        hello:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;3333333333\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="C:\Users\Peng\AppData\Roaming\Typora\typora-user-images\image-20210122205440917.png" alt="image-20210122205440917" style="zoom:150%;" />
+<img src="https://i.loli.net/2021/01/28/fNUX46T5h1YqSc9.png" alt="image-20210122205440917" style="zoom:150%;" />
 
 <p>类型转换:</p>
 <p>1.隐式转换</p>
