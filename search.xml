@@ -479,6 +479,191 @@
 <p><strong>注意:</strong></p>
 <p><strong>1、所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 form 标签之间（否则用户输入的信息可提交不到服务器上哦！）。</strong></p>
 <p><strong>2、method : post/get 的区别这一部分内容属于后端程序员考虑的问题。</strong></p>
+<h3 id="html5语义化标签"><a href="#html5语义化标签" class="headerlink" title="html5语义化标签"></a>html5语义化标签</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span> :头部标签</span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span> :导航标签</span><br><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span> :内容标签</span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span> : 块级标签</span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span> :侧边栏标签</span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span> :尾部标签</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这种语义化标准主要针对搜索引擎的</li>
+<li>这些标签页面中可以使用多次</li>
+<li>在IE9中,需要把这些元素转换为块级元素</li>
+<li>移动端更喜欢使用这些标签</li>
+</ul>
+<h3 id="多媒体标签"><a href="#多媒体标签" class="headerlink" title="多媒体标签"></a>多媒体标签</h3><p>谷歌浏览器把音频和规频自动播放禁止了</p>
+<h4 id="音频标签"><a href="#音频标签" class="headerlink" title="音频标签"></a>音频标签</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">&quot;文件地址&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;mp3格式视频&quot;</span> <span class="attr">type</span>=<span class="string">&quot;audio/mpeg&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;ogg格式视频&quot;</span> <span class="attr">type</span>=<span class="string">&quot;audio/ogg&quot;</span>&gt;</span></span><br><span class="line">	您的浏览器暂不支持audio标签播放音频.</span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h5><p>Internet Explorer 9+, Firefox, Opera, Chrome, 和 Safari 都支持 <audio> 元素.</p>
+<p><strong>注意:</strong> Internet Explorer 8 及更早IE版本不支持 &lt;audio&gt; 元素.</p>
+<h5 id="音频格式及浏览器支持"><a href="#音频格式及浏览器支持" class="headerlink" title="音频格式及浏览器支持"></a>音频格式及浏览器支持</h5><p>目前, &lt;audio&gt;元素支持三种音频格式文件: MP3, Wav和Ogg:</p>
+<table>
+<thead>
+<tr>
+<th align="left">浏览器</th>
+<th align="left">MP3</th>
+<th align="left">Wav</th>
+<th align="left">Ogg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Internet Explorer 9+</td>
+<td align="left">YES</td>
+<td align="left">NO</td>
+<td align="left">NO</td>
+</tr>
+<tr>
+<td align="left">Chrome 6+</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+</tr>
+<tr>
+<td align="left">Firefox 3.6+</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+</tr>
+<tr>
+<td align="left">Safari 5+</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+<td align="left">NO</td>
+</tr>
+<tr>
+<td align="left">Opera 10+</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+</tr>
+</tbody></table>
+<p>因为不同浏览器支持不同格式，采取的解决方案是为这个音频准备多个格式</p>
+<h5 id="音频标签常见属性"><a href="#音频标签常见属性" class="headerlink" title="音频标签常见属性"></a>音频标签常见属性</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>autoplay</td>
+<td>autoplay</td>
+<td>如果出现该属性，则音频在就绪后马上播放。</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>controls</td>
+<td>如果出现该属性，则向用户显示控件，比如播放按钮。</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>loop</td>
+<td>如果出现该属性，则每当音频结束时重新开始播放。</td>
+</tr>
+<tr>
+<td>src</td>
+<td>url</td>
+<td>要播放的音频的URL。</td>
+</tr>
+</tbody></table>
+<h4 id="视频标签"><a href="#视频标签" class="headerlink" title="视频标签"></a>视频标签</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;文件地址&quot;</span> <span class="attr">controls</span>=<span class="string">&quot;controls&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;mp4文件&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/mp4&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;ogg文件&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/ogg&quot;</span>&gt;</span></span><br><span class="line">    您的浏览器暂不支持video标签播放视频.</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="浏览器支持-1"><a href="#浏览器支持-1" class="headerlink" title="浏览器支持"></a>浏览器支持</h5><p>Internet Explorer 9+, Firefox, Opera, Chrome, 和 Safari 支持 &lt;video&gt; 元素.</p>
+<p><strong>注意:</strong> Internet Explorer 8 或者更早的IE版本不支持 &lt;video&gt; 元素。</p>
+<p>当前， &lt;video&gt; 元素支持三种视频格式： MP4, WebM和 Ogg:</p>
+<table>
+<thead>
+<tr>
+<th align="left">浏览器</th>
+<th align="left">MP4</th>
+<th align="left">WebM</th>
+<th align="left">Ogg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Internet Explorer</td>
+<td align="left">YES</td>
+<td align="left">NO</td>
+<td align="left">NO</td>
+</tr>
+<tr>
+<td align="left">Chrome</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+</tr>
+<tr>
+<td align="left">Firefox</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+</tr>
+<tr>
+<td align="left">Safari</td>
+<td align="left">YES</td>
+<td align="left">NO</td>
+<td align="left">NO</td>
+</tr>
+<tr>
+<td align="left">Opera</td>
+<td align="left">YES (从 Opera 25 起)</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+</tr>
+</tbody></table>
+<ul>
+<li>MP4 = 带有 H.264 视频编码和 AAC 音频编码的 MPEG 4 文件</li>
+<li>WebM = 带有 VP8 视频编码和 Vorbis 音频编码的 WebM 文件</li>
+<li>Ogg = 带有 Theora 视频编码和 Vorbis 音频编码的 Ogg 文件</li>
+</ul>
+<h5 id="视频标签常见属性"><a href="#视频标签常见属性" class="headerlink" title="视频标签常见属性"></a>视频标签常见属性</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>autoplay</td>
+<td>autoplay</td>
+<td>视频就绪自动播放(谷歌浏览器需要添加muted来解决自动播放问题)</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>controls</td>
+<td>向用户显示播放控件</td>
+</tr>
+<tr>
+<td>width</td>
+<td>pixels(像素)</td>
+<td>设置播放器宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>pixels(像素)</td>
+<td>设置播放器高度</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>loop</td>
+<td>播放完是否继续播放该视频，循环播放</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>auto<br/>metadata<br/>none</td>
+<td>如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性。</td>
+</tr>
+<tr>
+<td>src</td>
+<td>url</td>
+<td>视频url地址</td>
+</tr>
+<tr>
+<td>poster</td>
+<td>url</td>
+<td>加载等待的画面图片地址</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>muted</td>
+<td>静音播放</td>
+</tr>
+</tbody></table>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="CSS的三种引用方式"><a href="#CSS的三种引用方式" class="headerlink" title="CSS的三种引用方式"></a>CSS的三种引用方式</h3><ol>
 <li>内联样式(行内式)</li>
 <li>嵌入样式(内部式)</li>
@@ -1512,6 +1697,9 @@
 
 
 ]]></content>
+      <categories>
+        <category>无处安放</category>
+      </categories>
       <tags>
         <tag>搜索引擎</tag>
         <tag>网盘</tag>
@@ -1542,6 +1730,9 @@
 <h2 id="方法四"><a href="#方法四" class="headerlink" title="方法四:"></a>方法四:</h2><p>听闻geek卸载软件可以删除注册表，所以可以用它卸载Google，且重装不会有问题。（可能对大部分人，此方法意义不大）<br>给出链接<br> 链接:<a href="https://pan.baidu.com/s/1qaDZ05A9yD1jhOcUeQppuA">https://pan.baidu.com/s/1qaDZ05A9yD1jhOcUeQppuA</a><br> 提取码:386a</p>
 <h2 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h2><p>该文仅为记载我在重装Google的艰辛历程，以上方法均为网络收集，如果和我有相同问题的朋友可以尝试一下，节约你百度的时间。如果对于第三种方法不懂这里有现成的文件，下面给出链接：<a href="https://download.csdn.net/download/moshangduanchang/12354433">点这里呀</a></p>
 ]]></content>
+      <categories>
+        <category>无处安放</category>
+      </categories>
       <tags>
         <tag>Google</tag>
       </tags>
@@ -1873,7 +2064,9 @@
     <url>/blog/2021/01/22/python%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="python笔记"><a href="#python笔记" class="headerlink" title="python笔记"></a>python笔记</h1><a id="more"></a>
 
-<h2 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2><h3 id="网络通信概述"><a href="#网络通信概述" class="headerlink" title="网络通信概述"></a>网络通信概述</h3><h2 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h2><h2 id="web服务器"><a href="#web服务器" class="headerlink" title="web服务器"></a>web服务器</h2>]]></content>
+<h2 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2><h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><h4 id="Linux查看ip"><a href="#Linux查看ip" class="headerlink" title="Linux查看ip"></a>Linux查看ip</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ifconfig   //查看ip</span><br><span class="line">sudo ifconfig 网卡名 up  //开启网卡</span><br><span class="line">sudo ifconfig 网卡名 down  //关闭网卡</span><br></pre></td></tr></table></figure>
+<h4 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h4><h5 id="ipv4"><a href="#ipv4" class="headerlink" title="ipv4"></a>ipv4</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xxx.xxx.xxx.xxx</span><br></pre></td></tr></table></figure>
+<h5 id="ipv6"><a href="#ipv6" class="headerlink" title="ipv6"></a>ipv6</h5>]]></content>
       <categories>
         <category>python</category>
       </categories>
@@ -1977,6 +2170,50 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux学习笔记</title>
+    <url>/blog/2021/01/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Linux学习笔记"><a href="#Linux学习笔记" class="headerlink" title="Linux学习笔记"></a>Linux学习笔记</h1><a id="more"></a>
+
+<p>Ctrl+a  快速回到行首</p>
+<p>Ctrl+e  快速回到行末</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>教你如何获取腾讯视频源地址链接</title>
+    <url>/blog/2021/01/28/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E6%BA%90%E5%9C%B0%E5%9D%80%E9%93%BE%E6%8E%A5/</url>
+    <content><![CDATA[<h1 id="教你如何获取腾讯视频源地址链接"><a href="#教你如何获取腾讯视频源地址链接" class="headerlink" title="教你如何获取腾讯视频源地址链接"></a>教你如何获取腾讯视频源地址链接</h1><a id="more"></a>
+
+<p>下面以<a href="https://v.qq.com/x/cover/umpnsyqfu7f60se/n003547u6to.html">星骸骑士第5集</a>为例获取其视频源链接</p>
+<h2 id="1-获取视频vid"><a href="#1-获取视频vid" class="headerlink" title="1.获取视频vid"></a>1.获取视频vid</h2><p><img src="https://i.loli.net/2021/01/28/qaZ7UP3RvO2p9wn.png" alt="image-20210128094307061"></p>
+<p>本视频的vid为:<strong>n003547u6to</strong></p>
+<h2 id="2-获取视频相关信息"><a href="#2-获取视频相关信息" class="headerlink" title="2.获取视频相关信息"></a>2.获取视频相关信息</h2><p>将获取的vid替换到以下接口地址中的vid</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">http://vv.video.qq.com/getinfo?vids=n003547u6to&amp;platform=101001&amp;charge=0&amp;otype=json</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/28/bKydUeomPDJ26pv.png" alt="image-20210128094934650"></p>
+<p>替换后直接访问<a href="https://vv.video.qq.com/getinfo?vids=n003547u6to&platform=101001&charge=0&otype=json">此接口地址</a>,得到视频相关信息</p>
+<p><img src="https://i.loli.net/2021/01/28/6WDMa4ZYCpmK9c7.png" alt="image-20210128095135162"></p>
+<h2 id="3-记录fn值-fvkey值-url值"><a href="#3-记录fn值-fvkey值-url值" class="headerlink" title="3.记录fn值,fvkey值,url值"></a>3.记录fn值,fvkey值,url值</h2><img src="https://i.loli.net/2021/01/28/ClqnVZ8i17ymrbQ.png" alt="image-20210128095804655" style="zoom:150%;" />
+
+<p>fn值:n003547u6to.mp4</p>
+<p>fvkey值:C6BC3B0988CA19AA2F174E5D78E2B423980D558135C5C2D121533A22C4296B58AC52A0CCA5E0D1F2999B20CF4B4A9DCE560088AA238AFA2DD377158F603EEF853EF7FE56F25027CCEE6856BC6C53C831D055DF618F89D9405DE9A84A9B3D3F183F50B8B26BD49B564C9B733F27791429</p>
+<p>url值:<a href="http://101.206.186.29/vlive.qqvideo.tc.qq.com/A8q7f567bhHzdteBgaLoRWLtIt01ZxK4F-vSY8TLLzUo/uwMROfz2r5zAoaQXGdGlC2dfDmYqGCmd2Ymfgp6_SfoyIMNz/">http://101.206.186.29/vlive.qqvideo.tc.qq.com/A8q7f567bhHzdteBgaLoRWLtIt01ZxK4F-vSY8TLLzUo/uwMROfz2r5zAoaQXGdGlC2dfDmYqGCmd2Ymfgp6_SfoyIMNz/</a></p>
+<h2 id="4-通过公式组合成源视频链接"><a href="#4-通过公式组合成源视频链接" class="headerlink" title="4.通过公式组合成源视频链接"></a>4.通过公式组合成源视频链接</h2><p>组合公式为：url值 + fn值? + vkey值 + fvkey值(注意fn值后面要加个问号)</p>
+<p><img src="https://i.loli.net/2021/01/28/AeaLG8kNQ5Y9Cc7.png" alt="image-20210128100914780"></p>
+<p>源视频链接为:<a href="http://101.206.186.29/vlive.qqvideo.tc.qq.com/A8q7f567bhHzdteBgaLoRWLtIt01ZxK4F-vSY8TLLzUo/uwMROfz2r5zAoaQXGdGlC2dfDmYqGCmd2Ymfgp6_SfoyIMNz/n003547u6to.mp4?C6BC3B0988CA19AA2F174E5D78E2B423980D558135C5C2D121533A22C4296B58AC52A0CCA5E0D1F2999B20CF4B4A9DCE560088AA238AFA2DD377158F603EEF853EF7FE56F25027CCEE6856BC6C53C831D055DF618F89D9405DE9A84A9B3D3F183F50B8B26BD49B564C9B733F27791429">http://101.206.186.29/vlive.qqvideo.tc.qq.com/A8q7f567bhHzdteBgaLoRWLtIt01ZxK4F-vSY8TLLzUo/uwMROfz2r5zAoaQXGdGlC2dfDmYqGCmd2Ymfgp6_SfoyIMNz/n003547u6to.mp4?C6BC3B0988CA19AA2F174E5D78E2B423980D558135C5C2D121533A22C4296B58AC52A0CCA5E0D1F2999B20CF4B4A9DCE560088AA238AFA2DD377158F603EEF853EF7FE56F25027CCEE6856BC6C53C831D055DF618F89D9405DE9A84A9B3D3F183F50B8B26BD49B564C9B733F27791429</a></p>
+]]></content>
+      <categories>
+        <category>无处安放</category>
+      </categories>
+      <tags>
+        <tag>视频解析</tag>
       </tags>
   </entry>
 </search>
