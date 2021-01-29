@@ -255,7 +255,22 @@
 <p>%-5d,以5个字符输出,没有的字符以空字符填充,-代表指定为左对齐</p>
 <p>0和-不能同时使用</p>
 <p><img src="https://i.loli.net/2021/01/22/ts6idzBZGxWJveY.png"></p>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;b=&#x27;%c&#x27;\n&quot;</span>,b);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="puts"><a href="#puts" class="headerlink" title="puts()"></a>puts()</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[]=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    <span class="built_in">puts</span>(buf);<span class="comment">//把buf内容输出到屏幕,自动在屏幕加换行</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,buf);<span class="comment">//没有加换行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/29/u4frlgbByp9IMoT.png"></p>
+<h3 id="fputs"><a href="#fputs" class="headerlink" title="fputs()"></a>fputs()</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[]=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    <span class="comment">//向stdout(代表屏幕,标准输出)输出buf的内容</span></span><br><span class="line">    <span class="built_in">fputs</span>(buf,<span class="built_in">stdout</span>);<span class="comment">//没有加换行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/29/r64eO1HkSZt9JXd.png" alt="image-20210129141616052"></p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><h3 id="scanf"><a href="#scanf" class="headerlink" title="scanf"></a>scanf</h3><p>scanf()的缺陷，不做越界检查,不允许有空格</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">5</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入字符串:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a=%s\n&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/29/foM25d9lpc8aQUR.png"></p>
+<h3 id="gets"><a href="#gets" class="headerlink" title="gets()"></a>gets()</h3><p>gets()从键盘读取字符串，放在指定的数组<br>gets()允许有空格，不做越界检查，此函数不安全</p>
+<h3 id="fgets"><a href="#fgets" class="headerlink" title="fgets()"></a>fgets()</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line">        <span class="comment">//从stdin(代表标准输入,键盘)读取内容</span></span><br><span class="line">        <span class="comment">/*如果输入内容大于sizeof(buf)-1,只取	</span></span><br><span class="line"><span class="comment">        sizeof(buf)-1,放在buf所在数组;</span></span><br><span class="line"><span class="comment">        当不足sizeof(buf)-1,会把换行符读进去*/</span></span><br><span class="line">        fgets(buf,<span class="keyword">sizeof</span>(buf),<span class="built_in">stdin</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;buf=%s\n&quot;</span>,buf);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/29/qgh4QbsSC7MvWfd.png"></p>
+<p>fgets()允许有空格</p>
+<p><img src="https://i.loli.net/2021/01/29/6vIXpuY7SQeEKUM.png"></p>
+<p>当不足sizeof(buf)-1,会把换行符读进去</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line">    fgets(buf,<span class="keyword">sizeof</span>(buf),<span class="built_in">stdin</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;buf=#%s#\n&quot;</span>,buf);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/01/29/3gJLWmkOlP8fQKI.png"></p>
+<h3 id="输入字符"><a href="#输入字符" class="headerlink" title="输入字符"></a>输入字符</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;b=&#x27;%c&#x27;\n&quot;</span>,b);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面这个程序看似简单,结果为a=c,b=d,其实不然,结果如下:</p>
 <p><img src="https://i.loli.net/2021/01/22/itzxmayI15d6uqO.png"></p>
 <p>无需输入d直接出结果</p>
@@ -263,6 +278,11 @@
 <p>当用户输入字符时,编译器默认把输入的内容先放在一块内存中(缓冲区) , scanf()自动在缓冲区读内容(只读一个字符).第一次输入时输入了c\n(回车),scanf取走了c,留下\n还在缓存区,第2次scanf ,由于缓冲区还有内容,所以直接取内容,无需再输入</p>
 <p>所以,上面的程序可以这样写</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="comment">//吃掉上一步的\n,不做处理</span></span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);</span><br><span class="line">        <span class="keyword">char</span> t;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;t);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;t=&#x27;%c&#x27;\n&quot;</span>,t);</span><br><span class="line">    	<span class="comment">//或者都在一个scanf中写</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输入字符串"><a href="#输入字符串" class="headerlink" title="输入字符串"></a>输入字符串</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入字符串a:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,a);<span class="comment">//假设输入hello world</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a=%s\n&quot;</span>,a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入字符串b:\n&quot;</span>);</span><br><span class="line">    <span class="keyword">char</span> b[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;b=%s\n&quot;</span>,b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下:</p>
+<p><img src="https://i.loli.net/2021/01/29/OUtFhK74fAaNsj5.png"></p>
+<p>原因:</p>
+<p>当输入hello world时,第一个scanf取走第一个空格前的字符串,即hello;第二个scanf取第一个空格后第二个空格前的内容,\n不取</p>
 <p>switch语句</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">        <span class="comment">//1、switch是关键字， switch() 后面没有分号</span></span><br><span class="line">        <span class="comment">//2、switch()中() 里只能放整型变量或字符型变量</span></span><br><span class="line">        <span class="keyword">switch</span>(num)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;1楼\n&quot;</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;2楼\n&quot;</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;3楼\n&quot;</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;其他楼层\n&quot;</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>goto语句</p>
@@ -341,7 +361,7 @@
         <th>描述</th>  
     </tr >
     <tr >
-        <td rowspan="12">type</td>
+        <td rowspan="16">type</td>
         <td>text</td>
         <td>单行文本输入框</td>
     </tr>
@@ -389,6 +409,22 @@
         <td>邮箱输入框</td>
     </tr>
     <tr>
+        <td>date</td>
+        <td>日期</td>
+    </tr>
+    <tr>
+        <td>color</td>
+        <td>颜色选择表单</td>
+    </tr>
+    <tr>
+        <td>tel</td>
+        <td>手机号码</td>
+    </tr>
+    <tr>
+        <td>search</td>
+        <td>搜索框</td>
+    </tr>
+    <tr>
         <td >name</td>
         <td>用户自定义</td>
         <td>控件名称</td>
@@ -418,8 +454,28 @@
         <td >自定义</td>
         <td >占位符</td>
     </tr>
+    <tr>
+        <td >required</td>
+        <td >required</td>
+        <td >内容不能为空,必填</td>
+    </tr>
+    <tr>
+        <td >autofocus</td>
+        <td >autofocus</td>
+        <td >自动聚焦属性,页面加载完成自动聚焦到指定表单</td>
+    </tr>
+    <tr>
+        <td >multiple</td>
+        <td >multiple</td>
+        <td >可以多选文件提交</td>
+    </tr>
+    <tr>
+        <td >autocomplete</td>
+        <td >on/off(默认为on[开启])</td>
+        <td >当用户在字段开始键入时,浏览器基于之前键入过的值,显示出在字段中填写过的选项。使用要求:1.需要放在表单内同时加上name属性2.同时成功提交(off用得多)
+</td>
+    </tr>
 </table>
-
 
 <h4 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h4><p>label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label 标签内点击文本，就会触发此控件。就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。</p>
 <p>语法：</p>
@@ -2286,12 +2342,22 @@
 <li>当有多个选项时，可以写在一起,绝大多数顺序也可以改变</li>
 <li>简化选项与完整选项<br>-a等于--all</li>
 </ol>
-<h4 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h4><p>命令名称: ls<br>命令英文原意:list<br>命令所在路径: /bin/ls<br>执行权限:所有用户<br>功能描述:显示目录文件<br>语法: ls 选项[-ald] [文件或目录]<br>    -a  显示所有文件，包括隐藏文件<br>    -1  详细信息显示<br>    -d  查看目录属性</p>
+<h4 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h4><h5 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h5><p>命令名称: ls<br>命令英文原意:list<br>命令所在路径: /bin/ls<br>执行权限:所有用户<br>功能描述:显示目录文件<br>语法: ls 选项[-ald] [文件或目录]<br>    -a  显示所有文件，包括隐藏文件<br>    -1  详细信息显示<br>    -d  查看目录属性</p>
 <p>-rw-r--r--</p>
 <ul>
 <li>- 文件类型(-二进制文件 d目录 l软链接文件)</li>
 <li>rw- r-- r--<br>u     g    o<br>u所有者 g所属组 o其他人<br>r读 w写 x执行</li>
 </ul>
+<h5 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h5><p>命令名称: mkdir<br>命令英文原意: make directories<br>命令所在路径: /bin/mkdir<br>执行权限: 所有用户<br>语法: mkdir -p [目录名]<br>功能描述:创建新目录<br>      -p  递归创建(不加-p只能在已有目录创建一个新目录,而不能创建一个带有子目录的目录)</p>
+<p>mkdir可同时创建多个目录  </p>
+<h5 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h5><p>命令名称: cd<br>命令英文原意: change directory<br>命令所在路径: shell内置命令<br>执行权限: 所有用户<br>语法: cd [目录]<br>功能描述: 切换目录</p>
+<h5 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h5><p>命令名称: pwd<br>命令英文原意: print working directory<br>命令所在路径: /bin/pwd<br>执行权限: 所有用户<br>语法: pwd<br>功能描述: 显示当前目录</p>
+<h5 id="rmdir命令"><a href="#rmdir命令" class="headerlink" title="rmdir命令"></a>rmdir命令</h5><p>命令名称: rmdir<br>命令英文原意: remove empty directories<br>命令所在路径: /bin/rmdir<br>执行权限: 所有用户<br>语法: rmdir [目录名]<br>功能描述: 只能删除空目录</p>
+<h5 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h5><p>命令名称: cp<br>命令英文原意: copy<br>命令所在路径: /bin/cp<br>执行权限: 所有用户<br>语法: cp -rp [原文件或目录] [目标目录]<br>    -r  复制目录<br>    -p  保留文件属性(不加-p时会改变文件的修改时间)<br>功能描述: 复制文件或目录到另一个文件(改名)或目录</p>
+<p>cp命令可以同时复制多个目录或文件,可以复制并同时改名</p>
+<h5 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h5><p>命令名称: mv<br>命令英文原意: move<br>命令所在路径: /bin/mv<br>执行权限: 所有用户<br>语法: mv [原文件或目录] [目标目录]<br>功能描述: 剪切文件、改名</p>
+<h5 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h5><p>命令名称: rm<br>命令英文原意: remove<br>命令所在路径: /bin/rm<br>执行权限: 所有用户<br>语法: rm -rf [文件或目录]<br>    -r  删除目录<br>    -f  强制执行<br>功能描述: 删除文件</p>
+<p>Linux没有回收站概念,删除文件要谨慎.删除文件前要备份,一旦发现误删除情况,尽量不要对硬盘做过多的读写或查找操作.</p>
 <h4 id="文件处理命令-1"><a href="#文件处理命令-1" class="headerlink" title="文件处理命令"></a>文件处理命令</h4><h4 id="链接命令"><a href="#链接命令" class="headerlink" title="链接命令"></a>链接命令</h4><h3 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h3><h3 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h3><h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><h3 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h3><h3 id="压缩解压命令"><a href="#压缩解压命令" class="headerlink" title="压缩解压命令"></a>压缩解压命令</h3><h3 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h3><h3 id="关机重启命令"><a href="#关机重启命令" class="headerlink" title="关机重启命令"></a>关机重启命令</h3>]]></content>
       <categories>
         <category>Linux</category>
