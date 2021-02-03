@@ -2613,7 +2613,7 @@
 <p>如果一个新建立的文件没有被收录,就查找不到,可以使用updatedb更新文件资料库;/tmp存放临时文件,(存放临时文件的目录)不在locate文件资料库收录范围,无法查找/tmp中文件</p>
 <h5 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h5><p>命令名称: which<br>命令所在路径: /usr/bin/which<br>执行权限: 所有用户<br>语法: which 命令名称<br>功能描述: 搜索命令所在目录及别名信息</p>
 <h5 id="whereis命令"><a href="#whereis命令" class="headerlink" title="whereis命令"></a>whereis命令</h5><p>命令名称: whereis<br>命令所在路径: /usr/bin/whereis<br>执行权限: 所有用户<br>语法: whereis [命令名称]<br>功能描述: 搜索命令所在目录及帮助文档路径(配置文件)</p>
-<h5 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h5><p>命令名称: grep<br>命令所在路径: /bin/grep<br>执行权限: 所有用户<br>语法: grep -iv [指定字串] [文件]<br>功能描述: 在文件中搜寻字串匹配的行并输出<br>    -i  不区分大小写<br>    -v  排除指定字串</p>
+<h5 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h5><p>命令名称: grep<br>命令所在路径: /bin/grep<br>执行权限: 所有用户<br>语法: grep -iv [指定字串] [文件]<br>功能描述: 在文件中搜寻字串匹配的行并输出<br>    -i  不区分大小写<br>    -v  排除指定字串<br>    -n  输出行号<br>    --color=auto   搜索出的关键字用颜色显示</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grep -v ^# &#x2F;etc&#x2F;inittab  &#x2F;&#x2F;搜索时去掉以#号开头的内容</span><br></pre></td></tr></table></figure>
 <h3 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h3><h4 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h4><p>命令名称: man<br>命令英文原意: manual<br>命令所在路径: /usr/bin/man<br>执行权限: 所有用户<br>语法: man [命令或配置文件]<br>功能描述: 获得(命令或配置文件的)帮助信息</p>
 <p>man命令与more和less类似;man查看配置文件的帮助信息不要加绝对路径,只要加配置文件名称即可;1表示命令的帮助,5表示配置文件的帮助</p>
@@ -3678,7 +3678,222 @@
 </ol>
 <p>在Linux中回车符识别为$,windows回车符识别为^M$,所以Linux无法识别在windows编写的脚本,将在windows编写的脚本转换为Linux可识别的脚本,可使用dos2unix命令</p>
 <p>格式: dos2unix 文件名</p>
-<h3 id="Bash的基本功能"><a href="#Bash的基本功能" class="headerlink" title="Bash的基本功能"></a>Bash的基本功能</h3><h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
+<h3 id="Bash的基本功能"><a href="#Bash的基本功能" class="headerlink" title="Bash的基本功能"></a>Bash的基本功能</h3><h4 id="历史命令与命令补全"><a href="#历史命令与命令补全" class="headerlink" title="历史命令与命令补全"></a>历史命令与命令补全</h4><h5 id="历史命令"><a href="#历史命令" class="headerlink" title="历史命令"></a>历史命令</h5><p>[root@localhost <del>]# history [选项] [历史命令保存文件]<br>选项:<br>    -c   清空历史命令<br>    -w  把缓存中的历史命令写入历史命令保存文件</del>/.bash_history</p>
+<p>历史命令默认会保存1000条,可以在环境变量配置文件/etc/profile中进行修改,超过1000条会删除前面的,保留后面的.</p>
+<ul>
+<li>使用上、下箭头调用以前的历史命令</li>
+<li>使用”!n”重新执行第n条历史命令</li>
+<li>使用”!!”重新执行上一条命令</li>
+<li>使用”!字串”重新执行最后一条以该字串开头的命令</li>
+</ul>
+<h5 id="命令补全"><a href="#命令补全" class="headerlink" title="命令补全"></a>命令补全</h5><p>在Bash中,命令与文件补全是非常方便与常用的功能,我们只要在输入命令或文件<br>时,按”Tab”键就会自动进行补全,如果有很多条可能不会显示,再按一下即可</p>
+<h4 id="命令别名与常用快捷键"><a href="#命令别名与常用快捷键" class="headerlink" title="命令别名与常用快捷键"></a>命令别名与常用快捷键</h4><h5 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h5><p>[root@localhost ~]# alias 别名=’原命令’<br>#设定命令别名<br>[root@localhost ~]# alias<br>#查询命令别名</p>
+<p>使用命令行设定别名只会临时生效;使用别名时要注意命令执行顺序</p>
+<h6 id="命令执行顺序"><a href="#命令执行顺序" class="headerlink" title="命令执行顺序"></a>命令执行顺序</h6><ol>
+<li>第一顺位执行用绝对路径或相对路径执行的命令</li>
+<li>第二顺位执行别名</li>
+<li>第三顺位执行Bash的内部命令</li>
+<li>第四顺位执行按照$PATH环境变量定义的目录查找顺序找到的第一个命令</li>
+</ol>
+<h6 id="让别名永久生效"><a href="#让别名永久生效" class="headerlink" title="让别名永久生效"></a>让别名永久生效</h6><p>[root@localhost ~]# vi /用户名/.bashrc    #修改其中相关内容</p>
+<h5 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h5><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctr1+a</td>
+<td>把光标移动到命令行开头</td>
+</tr>
+<tr>
+<td>Ctrl+e</td>
+<td>把光标移动到命令行结尾</td>
+</tr>
+<tr>
+<td>Ctrl+c</td>
+<td>强制终止当前的命令</td>
+</tr>
+<tr>
+<td>Ctrl+l</td>
+<td>清屏,相当于clear命令</td>
+</tr>
+<tr>
+<td>Ctrl+u</td>
+<td>删除或剪切光标之前的命令</td>
+</tr>
+<tr>
+<td>Ctrl+k</td>
+<td>删除或剪切光标之后的内容</td>
+</tr>
+<tr>
+<td>Ctrl+y</td>
+<td>粘贴Ctrl+u或Ctrl+k剪切的内容</td>
+</tr>
+<tr>
+<td>Ctrl+r</td>
+<td>在历史命令中搜索,按下Ctrl+r之后,就会出现搜索界面,只要输入搜索内容,就会从历史命令中搜索</td>
+</tr>
+<tr>
+<td>Ctrl+d</td>
+<td>退出当前终端</td>
+</tr>
+<tr>
+<td>Ctrl+z</td>
+<td>暂停,并放入后台.这个快捷键与工作管理有关</td>
+</tr>
+<tr>
+<td>Ctrl+s</td>
+<td>暂停屏幕输出</td>
+</tr>
+<tr>
+<td>Ctrl+q</td>
+<td>恢复屏幕输出</td>
+</tr>
+</tbody></table>
+<h4 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h4><h5 id="标准输入输出"><a href="#标准输入输出" class="headerlink" title="标准输入输出"></a>标准输入输出</h5><table>
+<thead>
+<tr>
+<th>设备</th>
+<th>设备文件名</th>
+<th>文件描述符</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>键盘</td>
+<td>/dev/stdin</td>
+<td>0</td>
+<td>标准输入</td>
+</tr>
+<tr>
+<td>显示器</td>
+<td>/dev/stdout</td>
+<td>1</td>
+<td>标准输出</td>
+</tr>
+<tr>
+<td>显示器</td>
+<td>/dev/stderr</td>
+<td>2</td>
+<td>标准错误输出</td>
+</tr>
+</tbody></table>
+<h5 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h5><table>
+    <tr>
+        <th>类型</th>
+        <th>符号</th>
+        <th>作用</th>
+    </tr>
+    <tr>
+        <td rowspan="2">标准输出重定向</td>
+        <td>命令 > 文件</td>
+        <td>以覆盖的方式,把命令的正确输出输出到指定的文件或设备当中</td>
+    </tr>
+    <tr>
+        <td>命令 >> 文件</td>
+        <td>以追加的方式,把命令的正确输出输出到指定的文件或设备当中</td>
+    </tr>
+    <tr>
+        <td rowspan="2">标准错误输出重定向</td>
+        <td>错误命令 2> 文件</td>
+        <td>以覆盖的方式,把命令的错误输出输出到指定的文件或设备当中</td>
+    </tr>
+    <tr>
+        <td>错误命令 2>> 文件</td>
+        <td>以追加的方式,把命令的错误输出输出到指定的文件或设备当中</td>
+    </tr>
+    <tr>
+        <td rowspan="5">正确输出和错误输出同时保存</td>
+        <td>命令 > 文件 2>&1</td>
+        <td>以覆盖的方式,把正确输出和错误输出都保存到同一个文件当中</td>
+    </tr>
+    <tr>
+        <td>命令 >> 文件 2>&1</td>
+        <td>以追加的方式,把正确输出和错误输出都保存到同一个文件当中</td>
+    </tr>
+    <tr>
+        <td>命令 &> 文件</td>
+        <td>以覆盖的方式,把正确输出和错误输出都保存到同一个文件当中</td>
+    </tr>
+    <tr>
+        <td>命令 &>> 文件</td>
+        <td>以追加的方式,把正确输出和错误输出都保存到同一个文件当中</td>
+    </tr>
+    <tr>
+        <td>命令 >> 文件1 2>>文件2</td>
+        <td>把正确的输出追加到文件1中,把错误的输出追加到文件2中</td>
+    </tr>
+</table>
+
+
+
+<ul>
+<li>注意2与大于号(&gt;)之间不能有空格,命令与大于号之间,文件与大于号之间最好也有空格</li>
+<li>2&gt;&amp;1表示把错误输出保存到正确输出中</li>
+<li>ls &amp;&gt; /dev/null     #把ls结果丢进垃圾箱</li>
+</ul>
+<h5 id="输入重定向"><a href="#输入重定向" class="headerlink" title="输入重定向"></a>输入重定向</h5><p>[root@localhost~] # wc [选项] [文件名]<br>选项:<br>    -c  统计字节数<br>    -w  统计单词数<br>    -l  统计行数</p>
+<p>Ctrl+d结束输入(wc会统计回车符)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wc &lt; 文件名   #统计该文件行数等信息</span><br><span class="line">wc &lt;&lt; test   #当第一次遇到test时停止,统计test之前的内容</span><br></pre></td></tr></table></figure>
+<h4 id="多命令顺序执行与管道符"><a href="#多命令顺序执行与管道符" class="headerlink" title="多命令顺序执行与管道符"></a>多命令顺序执行与管道符</h4><h5 id="多命令顺序执行"><a href="#多命令顺序执行" class="headerlink" title="多命令顺序执行"></a>多命令顺序执行</h5><table>
+<thead>
+<tr>
+<th>多命令执行符</th>
+<th>格式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>;</td>
+<td>命令1 ; 命令2</td>
+<td>多个命令顺序执行,命令之间没有任何逻辑联系</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>命令1 &amp;&amp; 命令2</td>
+<td>逻辑与<br>当命令1正确执行,则命令2才会执行 <br>当命令1执行不正确,则命令2不会执行</td>
+</tr>
+<tr>
+<td>||</td>
+<td>命令1 || 命令2</td>
+<td>逻辑或<br/>当命令1执行不正确,则命令2才会执行<br>当命令1正确执行,则命令2不会执行</td>
+</tr>
+</tbody></table>
+<h5 id="dd命令"><a href="#dd命令" class="headerlink" title="dd命令"></a>dd命令</h5><p>用于磁盘复制</p>
+<p>[root@localhost ~]# dd if=输入文件 of=输出文件 bs=字节数 count=个数<br>选项:<br>    if=输入文件       指定源文件或源设备<br>    of=输出文件      指定目标文件或目标设备<br>    bs=字节数          指定一次输入/输出多少字节,即把这些字节看做一个数据块<br>    count=个数        指定输入/输出多少个数据块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">date ; dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;&#x2F;root&#x2F;test bs&#x3D;1k count&#x3D;102400 ; date     #记录&#x2F;dev&#x2F;zero向&#x2F;root&#x2F;test复制100MB</span><br><span class="line">命令 &amp;&amp; echo yes || echo no   #如果命令正确执行则输出yes,否则输出no</span><br></pre></td></tr></table></figure>
+<h5 id="管道符"><a href="#管道符" class="headerlink" title="管道符"></a>管道符</h5><p>[root@localhost ~]# 命令1|命令2<br>#命令1的正确输出作为命令2的操作对象</p>
+<h4 id="通配符与其他特殊符号"><a href="#通配符与其他特殊符号" class="headerlink" title="通配符与其他特殊符号"></a>通配符与其他特殊符号</h4><h5 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h5><table>
+<thead>
+<tr>
+<th>通配符</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>?</td>
+<td align="left">匹配一个任意字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td align="left">匹配0个或任意多个任意字符,也就是可以匹配任何内容</td>
+</tr>
+<tr>
+<td>[]</td>
+<td align="left">匹配中括号中任意一个字符.例如:[abc]代表一定匹配一个字符,或者是a,或者是b,或者是c</td>
+</tr>
+<tr>
+<td>[-]</td>
+<td align="left">匹配中括号中任意一个字符,代表一个范围.例如: [a-z]代表匹配一个小写字母</td>
+</tr>
+<tr>
+<td>[^]</td>
+<td align="left">逻辑非,表示匹配不是中括号内的一个字符.例如: [^0-9]代表匹配一个不是数字的字符</td>
+</tr>
+</tbody></table>
+<h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
