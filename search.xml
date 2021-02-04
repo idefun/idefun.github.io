@@ -3982,7 +3982,13 @@
 <td>转义符.跟在\之后的特殊符号将失去特殊含义,变为普通字符.如$将输出”$“符号,而不当做是变量引用</td>
 </tr>
 </tbody></table>
-<h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><h4 id="用户自定义变量"><a href="#用户自定义变量" class="headerlink" title="用户自定义变量"></a>用户自定义变量</h4><h5 id="变量设置规则"><a href="#变量设置规则" class="headerlink" title="变量设置规则"></a>变量设置规则</h5><ul>
+<h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><h4 id="变量分类"><a href="#变量分类" class="headerlink" title="变量分类"></a>变量分类</h4><ul>
+<li>用户自定义变量</li>
+<li>环境变量: 这种变量中主要保存的是和系统操作环境相关的数据</li>
+<li>位置参数变量: 这种变量主要是用来向脚本当中传递参数或数据的,变量名不能自定义,变量作用是固定的</li>
+<li>预定义变量: 是Bash中已经定义好的变量,变量名不能自定义,变量作用也是固定的</li>
+</ul>
+<h4 id="用户自定义变量"><a href="#用户自定义变量" class="headerlink" title="用户自定义变量"></a>用户自定义变量</h4><h5 id="变量设置规则"><a href="#变量设置规则" class="headerlink" title="变量设置规则"></a>变量设置规则</h5><ul>
 <li>变量名称可以由字母、数字和下划线组成,但是不能以数字开头</li>
 <li>在Bash中,变量的默认类型都是字符串型,如果要进行数值运算,则必需指定变量类型为数值型</li>
 <li>变量用等号连接值,等号左右两侧不能有空格</li>
@@ -3992,6 +3998,13 @@
 <li>如果是把命令的结果作为变量值赋予变量,则需要使用反引号或$()包含命令</li>
 <li>环境变量名建议大写,便于区分</li>
 </ul>
+<h5 id="变量叠加"><a href="#变量叠加" class="headerlink" title="变量叠加"></a>变量叠加</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">abc&#x3D;123           #abc值为123</span><br><span class="line">abc&#x3D;&quot;$abc&quot;456     #给abc的值追加456</span><br><span class="line">abc&#x3D;$&#123;abc&#125;789     #给abc的值追加789</span><br></pre></td></tr></table></figure>
+<h5 id="变量调用"><a href="#变量调用" class="headerlink" title="变量调用"></a>变量调用</h5><p>echo $变量名</p>
+<h5 id="变量查看"><a href="#变量查看" class="headerlink" title="变量查看"></a>变量查看</h5><p>set</p>
+<blockquote>
+<p>查看系统所有变量</p>
+</blockquote>
+<h5 id="变量删除"><a href="#变量删除" class="headerlink" title="变量删除"></a>变量删除</h5><p>unset 变量名</p>
 <h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><h4 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h4><h4 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h4><h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
       <categories>
         <category>Linux</category>
