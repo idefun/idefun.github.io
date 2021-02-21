@@ -3994,7 +3994,8 @@
 <td>转义符.跟在\之后的特殊符号将失去特殊含义,变为普通字符.如$将输出”$“符号,而不当做是变量引用</td>
 </tr>
 </tbody></table>
-<h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><h4 id="变量分类"><a href="#变量分类" class="headerlink" title="变量分类"></a>变量分类</h4><ul>
+<h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><p>shell中默认变量类型为字符型</p>
+<h4 id="变量分类"><a href="#变量分类" class="headerlink" title="变量分类"></a>变量分类</h4><ul>
 <li>用户自定义变量</li>
 <li>环境变量: 这种变量中主要保存的是和系统操作环境相关的数据</li>
 <li>位置参数变量: 这种变量主要是用来向脚本当中传递参数或数据的,变量名不能自定义,变量作用是固定的</li>
@@ -4091,7 +4092,7 @@
 </tr>
 </tbody></table>
 <h5 id="接收键盘输入"><a href="#接收键盘输入" class="headerlink" title="接收键盘输入"></a>接收键盘输入</h5><p>[root@localhost ~]# read [选项] [变量名]<br>选项:<br>    -p “提示信息”      在等待read输入时,输出提示信息<br>    -t 秒数                  read命令会一直等待用户输入,使用此选项可以指定等待时间<br>    -n 字符数             read命令只接受指定的字符数,就会执行<br>    -s                           隐藏输入的数据,适用于机密信息的输入</p>
-<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
+<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h4 id="数值运算与运算符"><a href="#数值运算与运算符" class="headerlink" title="数值运算与运算符"></a>数值运算与运算符</h4><h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
