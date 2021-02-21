@@ -255,6 +255,9 @@
 <p>%-5d,以5个字符输出,没有的字符以空字符填充,-代表指定为左对齐</p>
 <p>0和-不能同时使用</p>
 <p><img src="https://i.loli.net/2021/01/22/ts6idzBZGxWJveY.png"></p>
+<h3 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h3><blockquote>
+<p>遇到”\0”停止</p>
+</blockquote>
 <h3 id="puts"><a href="#puts" class="headerlink" title="puts()"></a>puts()</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[]=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    <span class="built_in">puts</span>(buf);<span class="comment">//把buf内容输出到屏幕,自动在屏幕加换行</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,buf);<span class="comment">//没有加换行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/01/29/u4frlgbByp9IMoT.png"></p>
 <h3 id="fputs"><a href="#fputs" class="headerlink" title="fputs()"></a>fputs()</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[]=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    <span class="comment">//向stdout(代表屏幕,标准输出)输出buf的内容</span></span><br><span class="line">    <span class="built_in">fputs</span>(buf,<span class="built_in">stdout</span>);<span class="comment">//没有加换行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -339,6 +342,15 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;//产生随机数的函数包含在此</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;//获取当前系统时间的函数包含在此</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="comment">//先设置种子,种子设置一次即可</span></span><br><span class="line">        <span class="comment">//srand(10);</span></span><br><span class="line">        <span class="comment">/*如果srand()参数一样,则每次产生的随机数一样,</span></span><br><span class="line"><span class="comment">        每次启动计算机以后，种子就是定值了，</span></span><br><span class="line"><span class="comment">        所以根据公式推算出来的结果</span></span><br><span class="line"><span class="comment">        （也就是生成的随机数）就是固定的*/</span></span><br><span class="line">        <span class="comment">/*time(NULL)用来获取系统当前时间,</span></span><br><span class="line"><span class="comment">        由于时间会变,srand()也会改变*/</span></span><br><span class="line">        srand((<span class="keyword">unsigned</span> <span class="keyword">int</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num;</span><br><span class="line">        <span class="keyword">for</span>(;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                num=rand();<span class="comment">//rand()产生随机数</span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;num=%d\n&quot;</span>,num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/01/27/lTzVDuG41P6RUr7.png"></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="strlen"><a href="#strlen" class="headerlink" title="strlen"></a>strlen</h3><blockquote>
+<p>strlen需要使用返回值,返回值就是字符串的长度,从首元素开始,到结束符为止的长度,结束符不算(遇到’\0’结束)</p>
+</blockquote>
+<h3 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy"></a>strcpy</h3><blockquote>
+<p>拷贝原理:从首元素开始,到结束符(\0)为止的长度</p>
+</blockquote>
+<h3 id="strncpy"><a href="#strncpy" class="headerlink" title="strncpy"></a>strncpy</h3><blockquote>
+<p>可以把”\0”拷贝过去,但是”\0”后面的就不能了</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>C&amp;C++</category>
@@ -3988,7 +4000,8 @@
 <li>位置参数变量: 这种变量主要是用来向脚本当中传递参数或数据的,变量名不能自定义,变量作用是固定的</li>
 <li>预定义变量: 是Bash中已经定义好的变量,变量名不能自定义,变量作用也是固定的</li>
 </ul>
-<h4 id="用户自定义变量"><a href="#用户自定义变量" class="headerlink" title="用户自定义变量"></a>用户自定义变量</h4><h5 id="变量设置规则"><a href="#变量设置规则" class="headerlink" title="变量设置规则"></a>变量设置规则</h5><ul>
+<h4 id="用户自定义变量"><a href="#用户自定义变量" class="headerlink" title="用户自定义变量"></a>用户自定义变量</h4><p>或者叫本地变量</p>
+<h5 id="变量设置规则"><a href="#变量设置规则" class="headerlink" title="变量设置规则"></a>变量设置规则</h5><ul>
 <li>变量名称可以由字母、数字和下划线组成,但是不能以数字开头</li>
 <li>在Bash中,变量的默认类型都是字符串型,如果要进行数值运算,则必需指定变量类型为数值型</li>
 <li>变量用等号连接值,等号左右两侧不能有空格</li>
@@ -4005,7 +4018,80 @@
 <p>查看系统所有变量</p>
 </blockquote>
 <h5 id="变量删除"><a href="#变量删除" class="headerlink" title="变量删除"></a>变量删除</h5><p>unset 变量名</p>
-<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><h4 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h4><h4 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h4><h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
+<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><h5 id="环境变量特点"><a href="#环境变量特点" class="headerlink" title="环境变量特点"></a>环境变量特点</h5><ul>
+<li>用户自定义变量只在当前的Shell中生效,而环境变量会在当前Shell和这个Shell的所有子Shell当中生效.如果把环境变量写入相应的配置文件,那么这个环境变量就会在所有的Shell中生效</li>
+</ul>
+<h5 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h5><p>export 变量名[=变量值]        #声明变量(export表示把变量声明为全局变量)</p>
+<h5 id="查询环境变量"><a href="#查询环境变量" class="headerlink" title="查询环境变量"></a>查询环境变量</h5><p>env</p>
+<blockquote>
+<p>专门用于查询环境变量(删除变量依旧是unset+变量名)</p>
+</blockquote>
+<h5 id="系统常见环境变量"><a href="#系统常见环境变量" class="headerlink" title="系统常见环境变量"></a>系统常见环境变量</h5><h6 id="PATH"><a href="#PATH" class="headerlink" title="PATH"></a>PATH</h6><blockquote>
+<p>系统查找命令的路径</p>
+</blockquote>
+<p>如果想令自己的脚本在任何路径都能直接运行,可以将其加入PATH</p>
+<p>方法一:</p>
+<blockquote>
+<p>直接将脚本拷贝到PATH所指向的路径</p>
+</blockquote>
+<p>方法二:</p>
+<blockquote>
+<p>通过变量叠加,为PATH增加新的路径(临时生效,必须写入指定文件)</p>
+<p>例如:PATH=”$PATH”:/root   #将root目录加入环境变量</p>
+</blockquote>
+<h6 id="PS1"><a href="#PS1" class="headerlink" title="PS1"></a>PS1</h6><blockquote>
+<p>定义系统提示符的变量</p>
+<p>严格来说PS1不是环境变量(env查询不到,set可以查询到),PS1是系统预留的专门用来定义系统操作环境的变量</p>
+</blockquote>
+<p>\d: 显示日期,格式为“星期 月 日”<br>\h: 显示简写主机名.如默认主机名“localhost”<br>\t: 显示24小时制时间,格式为“HH:MM:SS”<br>\T: 显示12小时制时间,格式为“HH:MM:SS”<br>\A: 显示24小时制时间,格式为“HH:MM”<br>\u: 显示当前用户名<br>\w: 显示当前所在目录的完整名称<br>\W: 显示当前所在目录的最后一个目录<br>\#: 执行的第几个命令<br>\$: 提示符.如果是root用户会显示提示符为“#”,如果是普通用户会显示提示符为“$”</p>
+<h4 id="位置参数变量"><a href="#位置参数变量" class="headerlink" title="位置参数变量"></a>位置参数变量</h4><table>
+<thead>
+<tr>
+<th>位置参数变量</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$n</td>
+<td>n为数字,$0代表命令本身,$1-$9代表第一到第九个参数,十以上的参数需要用大括号包含,如${10}</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>这个变量代表命令行中所有的参数,$*把所有的参数看成一个整体</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>这个变量也代表命令行中所有的参数,$@把每个参数区分对待</td>
+</tr>
+<tr>
+<td>$#</td>
+<td>这个变量代表命令行中所有参数的个数</td>
+</tr>
+</tbody></table>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">for x in &quot;$*&quot;</span><br><span class="line">	do</span><br><span class="line">		echo $x</span><br><span class="line">	done</span><br><span class="line">for y in &quot;$@&quot;</span><br><span class="line">	do</span><br><span class="line">		echo $y</span><br><span class="line">	done</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/21/VM2n9QGFRwhLBdJ.png"></p>
+<h4 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h4><table>
+<thead>
+<tr>
+<th>预定义变量</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$?</td>
+<td>最后一次执行的命令的返回状态.如果这个变量的值为0,证明<br/>上一个命令正确执行;如果这个变量的值为非0(具体是哪个<br/>数,由命令自己来决定),则证明上一个命令执行不正确</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>当前进程的进程号(PID)</td>
+</tr>
+<tr>
+<td>$!</td>
+<td>后台运行的最后一个进程的进程号(PID)</td>
+</tr>
+</tbody></table>
+<h5 id="接收键盘输入"><a href="#接收键盘输入" class="headerlink" title="接收键盘输入"></a>接收键盘输入</h5><p>[root@localhost ~]# read [选项] [变量名]<br>选项:<br>    -p “提示信息”      在等待read输入时,输出提示信息<br>    -t 秒数                  read命令会一直等待用户输入,使用此选项可以指定等待时间<br>    -n 字符数             read命令只接受指定的字符数,就会执行<br>    -s                           隐藏输入的数据,适用于机密信息的输入</p>
+<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
