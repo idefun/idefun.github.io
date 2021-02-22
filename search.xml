@@ -4106,7 +4106,8 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">x=11</span><br><span class="line">y=22</span><br><span class="line">m=$(($x+$y))</span><br><span class="line">n=$[$y-$x]</span><br><span class="line">echo $m</span><br><span class="line">echo $n</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/02/22/5x7IA1mcwFVn6pj.png"></p>
 <h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><p><img src="https://i.loli.net/2021/02/22/RsryJHD18EGS9jf.png"></p>
-<h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
+<h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><p><img src="https://i.loli.net/2021/02/22/GhwCUnPTuS7QJol.png"></p>
+<h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
