@@ -4092,7 +4092,8 @@
 </tr>
 </tbody></table>
 <h5 id="接收键盘输入"><a href="#接收键盘输入" class="headerlink" title="接收键盘输入"></a>接收键盘输入</h5><p>[root@localhost ~]# read [选项] [变量名]<br>选项:<br>    -p “提示信息”      在等待read输入时,输出提示信息<br>    -t 秒数                  read命令会一直等待用户输入,使用此选项可以指定等待时间<br>    -n 字符数             read命令只接受指定的字符数,就会执行<br>    -s                           隐藏输入的数据,适用于机密信息的输入</p>
-<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h4 id="数值运算与运算符"><a href="#数值运算与运算符" class="headerlink" title="数值运算与运算符"></a>数值运算与运算符</h4><h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
+<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h4 id="数值运算与运算符"><a href="#数值运算与运算符" class="headerlink" title="数值运算与运算符"></a>数值运算与运算符</h4><h5 id="declare声明变量类型"><a href="#declare声明变量类型" class="headerlink" title="declare声明变量类型"></a>declare声明变量类型</h5><p>[root@localhost ~]# declare [+/-] [选项] 变量名<br>选项:<br>    -      给变量设定类型属性<br>    +      取消变量的类型属性<br>    -i     将变量声明为整数型(integer)<br>    -x    将变量声明为环境变量<br>    -p    显示指定变量的被声明的类型</p>
+<h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
