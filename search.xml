@@ -4092,7 +4092,20 @@
 </tr>
 </tbody></table>
 <h5 id="接收键盘输入"><a href="#接收键盘输入" class="headerlink" title="接收键盘输入"></a>接收键盘输入</h5><p>[root@localhost ~]# read [选项] [变量名]<br>选项:<br>    -p “提示信息”      在等待read输入时,输出提示信息<br>    -t 秒数                  read命令会一直等待用户输入,使用此选项可以指定等待时间<br>    -n 字符数             read命令只接受指定的字符数,就会执行<br>    -s                           隐藏输入的数据,适用于机密信息的输入</p>
-<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h4 id="数值运算与运算符"><a href="#数值运算与运算符" class="headerlink" title="数值运算与运算符"></a>数值运算与运算符</h4><h5 id="declare声明变量类型"><a href="#declare声明变量类型" class="headerlink" title="declare声明变量类型"></a>declare声明变量类型</h5><p>[root@localhost ~]# declare [+/-] [选项] 变量名<br>选项:<br>    -      给变量设定类型属性<br>    +      取消变量的类型属性<br>    -i     将变量声明为整数型(integer)<br>    -x    将变量声明为环境变量<br>    -p    显示指定变量的被声明的类型</p>
+<h3 id="Bash的运算符"><a href="#Bash的运算符" class="headerlink" title="Bash的运算符"></a>Bash的运算符</h3><h4 id="数值运算与运算符"><a href="#数值运算与运算符" class="headerlink" title="数值运算与运算符"></a>数值运算与运算符</h4><p><img src="https://i.loli.net/2021/02/22/mbBqaXHsEU9RGSe.png"></p>
+<p>变量直接相加无法达到预计的效果.</p>
+<h5 id="declare声明变量类型"><a href="#declare声明变量类型" class="headerlink" title="declare声明变量类型"></a>declare声明变量类型</h5><p>[root@localhost ~]# declare [+/-] [选项] 变量名<br>选项:<br>    -      给变量设定类型属性<br>    +      取消变量的类型属性<br>    -i     将变量声明为整数型(integer)<br>    -x    将变量声明为环境变量<br>    -p    显示指定变量的被声明的类型</p>
+<p>使用export声明环境变量其实就是赋予变量declare -x属性</p>
+<h5 id="数值运算"><a href="#数值运算" class="headerlink" title="数值运算"></a>数值运算</h5><h6 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h6><p>使用declare将变量声明为整数型</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">x=11</span><br><span class="line">y=22</span><br><span class="line">declare -i z=$x+$y</span><br><span class="line">echo $z</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/22/6TuSNE4ylFZiJ7V.png"></p>
+<h6 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h6><p>使用expr或let数值运算工具</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">x=11</span><br><span class="line">y=22</span><br><span class="line">z=$(expr $x + $y)    注意“+”号左右两侧必须有空格</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/22/avOuV1fIxPZcUrn.png"></p>
+<h6 id="方法3-推荐"><a href="#方法3-推荐" class="headerlink" title="方法3(推荐)"></a>方法3(推荐)</h6><p>“$((运算式))”或”$[运算式]”</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">x=11</span><br><span class="line">y=22</span><br><span class="line">m=$(($x+$y))</span><br><span class="line">n=$[$y-$x]</span><br><span class="line">echo $m</span><br><span class="line">echo $n</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/22/5x7IA1mcwFVn6pj.png"></p>
+<h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><p><img src="https://i.loli.net/2021/02/22/RsryJHD18EGS9jf.png"></p>
 <h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
       <categories>
         <category>Linux</category>
