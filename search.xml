@@ -3996,7 +3996,7 @@
 </tbody></table>
 <h3 id="Bash的变量"><a href="#Bash的变量" class="headerlink" title="Bash的变量"></a>Bash的变量</h3><p>shell中默认变量类型为字符型</p>
 <h4 id="变量分类"><a href="#变量分类" class="headerlink" title="变量分类"></a>变量分类</h4><ul>
-<li>用户自定义变量</li>
+<li>用户自定义变量(本地变量)</li>
 <li>环境变量: 这种变量中主要保存的是和系统操作环境相关的数据</li>
 <li>位置参数变量: 这种变量主要是用来向脚本当中传递参数或数据的,变量名不能自定义,变量作用是固定的</li>
 <li>预定义变量: 是Bash中已经定义好的变量,变量名不能自定义,变量作用也是固定的</li>
@@ -4107,7 +4107,18 @@
 <p><img src="https://i.loli.net/2021/02/22/5x7IA1mcwFVn6pj.png"></p>
 <h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><p><img src="https://i.loli.net/2021/02/22/RsryJHD18EGS9jf.png"></p>
 <h4 id="变量测试与内容替换"><a href="#变量测试与内容替换" class="headerlink" title="变量测试与内容替换"></a>变量测试与内容替换</h4><p><img src="https://i.loli.net/2021/02/22/GhwCUnPTuS7QJol.png"></p>
-<h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3>]]></content>
+<h3 id="环境变量配置文件"><a href="#环境变量配置文件" class="headerlink" title="环境变量配置文件"></a>环境变量配置文件</h3><h4 id="环境变量配置文件简介"><a href="#环境变量配置文件简介" class="headerlink" title="环境变量配置文件简介"></a>环境变量配置文件简介</h4><h5 id="source命令"><a href="#source命令" class="headerlink" title="source命令"></a>source命令</h5><p>[root@localhost<del>]# source 配置文件<br>或<br>[root@localhost</del>]# . 配置文件</p>
+<p>让配置文件直接生效而不用注销或重新登录</p>
+<h5 id="环境变量配置文件简介-1"><a href="#环境变量配置文件简介-1" class="headerlink" title="环境变量配置文件简介"></a>环境变量配置文件简介</h5><ul>
+<li>环境变量配置文件中主要是定义对系统的操作环境生效的系统默认环境变量,比如PATH、HISTSIZE、PS1、HOSTNAME等默认环境变量</li>
+<li>/etc/profile</li>
+<li>/etc/profile.d/*.sh</li>
+<li>~/.bash_profile</li>
+<li>~/.bashrc</li>
+<li>/etc/bashrc</li>
+<li>位于/etc目录下的环境变量配置文件对全局起作用</li>
+</ul>
+<h4 id="环境变量配置文件作用"><a href="#环境变量配置文件作用" class="headerlink" title="环境变量配置文件作用"></a>环境变量配置文件作用</h4><h4 id="其他配置文件和登录信息"><a href="#其他配置文件和登录信息" class="headerlink" title="其他配置文件和登录信息"></a>其他配置文件和登录信息</h4><h2 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h2>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
