@@ -4155,11 +4155,17 @@
 </ul>
 </li>
 <li>登录后欢迎信息:/etc/motd<ul>
-<li>不管是本地登录,还是远程登录,都可以显示此欢迎信息</li>
+<li>不管是本地登录,还是远程登录,都可以显示此欢迎信息,只不过是登录后显示欢迎信息</li>
 </ul>
 </li>
 </ul>
-<h2 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h2>]]></content>
+<h2 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h2><h3 id="基础正则表达式"><a href="#基础正则表达式" class="headerlink" title="基础正则表达式"></a>基础正则表达式</h3><h4 id="正则表达式与通配符"><a href="#正则表达式与通配符" class="headerlink" title="正则表达式与通配符"></a>正则表达式与通配符</h4><ul>
+<li>正则表达式用来在文件中匹配符合条件的字符串,正则是包含匹配.grep、awk、sed等命令可以支持正则表达式</li>
+<li>通配符用来在系统中匹配符合条件的文件名,通配符是完全匹配.ls、find、cp这些命令不支持正则表达式,所以只能使用shell自己的通配符来进行匹配了</li>
+</ul>
+<h4 id="基础正则表达式-1"><a href="#基础正则表达式-1" class="headerlink" title="基础正则表达式"></a>基础正则表达式</h4><p><img src="https://i.loli.net/2021/02/23/DomvlfhTQzHd86R.png"></p>
+<p><a href="https://man.linuxde.net/docs/shell_regex.html">拓展</a></p>
+<h3 id="字符截取命令"><a href="#字符截取命令" class="headerlink" title="字符截取命令"></a>字符截取命令</h3><h3 id="字符处理命令"><a href="#字符处理命令" class="headerlink" title="字符处理命令"></a>字符处理命令</h3><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
