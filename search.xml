@@ -4116,9 +4116,50 @@
 <li>~/.bash_profile</li>
 <li>~/.bashrc</li>
 <li>/etc/bashrc</li>
-<li>位于/etc目录下的环境变量配置文件对全局起作用</li>
+<li>位于/etc目录下的环境变量配置文件对全局(任何用户)起作用</li>
 </ul>
-<h4 id="环境变量配置文件作用"><a href="#环境变量配置文件作用" class="headerlink" title="环境变量配置文件作用"></a>环境变量配置文件作用</h4><h4 id="其他配置文件和登录信息"><a href="#其他配置文件和登录信息" class="headerlink" title="其他配置文件和登录信息"></a>其他配置文件和登录信息</h4><h2 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h2>]]></content>
+<h4 id="环境变量配置文件作用"><a href="#环境变量配置文件作用" class="headerlink" title="环境变量配置文件作用"></a>环境变量配置文件作用</h4><p>越往后文件优先级越高</p>
+<p><img src="https://i.loli.net/2021/02/23/1CZxXnVHYudBjvf.png"></p>
+<h5 id="etc-profile的作用"><a href="#etc-profile的作用" class="headerlink" title="/etc/profile的作用"></a>/etc/profile的作用</h5><ul>
+<li>USER变量</li>
+<li>LOGNAME变量</li>
+<li>MAIL变量</li>
+<li>PATH变量</li>
+<li>HOSTNAME变量</li>
+<li>HISTSIZE变量</li>
+<li>umask</li>
+<li>调用/etc/profile.d/* .sh文件</li>
+</ul>
+<h5 id="bash-profile的作用"><a href="#bash-profile的作用" class="headerlink" title="~/.bash_profile的作用"></a>~/.bash_profile的作用</h5><ul>
+<li>调用了~/.bashrc文件</li>
+<li>在PATH变量后面加入了”:$HOME/bin”这个目录</li>
+</ul>
+<h5 id="etc-bashrc的作用"><a href="#etc-bashrc的作用" class="headerlink" title="/etc/bashrc的作用"></a>/etc/bashrc的作用</h5><ul>
+<li>定义登录提示符</li>
+</ul>
+<h4 id="其他配置文件和登录信息"><a href="#其他配置文件和登录信息" class="headerlink" title="其他配置文件和登录信息"></a>其他配置文件和登录信息</h4><h5 id="注销时生效的环境变量配置文件"><a href="#注销时生效的环境变量配置文件" class="headerlink" title="注销时生效的环境变量配置文件"></a>注销时生效的环境变量配置文件</h5><ul>
+<li>~/.bash_logout</li>
+<li>默认为空</li>
+</ul>
+<h5 id="其他配置文件"><a href="#其他配置文件" class="headerlink" title="其他配置文件"></a>其他配置文件</h5><ul>
+<li>~/bash_history</li>
+</ul>
+<h5 id="shell登录信息"><a href="#shell登录信息" class="headerlink" title="shell登录信息"></a>shell登录信息</h5><ul>
+<li>本地终端欢迎信息(登录前):/etc/issue</li>
+</ul>
+<p><img src="https://i.loli.net/2021/02/23/gZB7KiHf9kWltDx.png"></p>
+<ul>
+<li>远程终端欢迎信息(登录前):/etc/issue.net<ul>
+<li>转义符在/etc/issue.net文件中不能使用</li>
+<li>是否显示此欢迎信息,由ssh的配置文件/etc/ssh/sshd_config决定,加入“Banner /etc/issue.net”行才能显示(记得重启SSH服务:service sshd restart)</li>
+</ul>
+</li>
+<li>登录后欢迎信息:/etc/motd<ul>
+<li>不管是本地登录,还是远程登录,都可以显示此欢迎信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h2>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
