@@ -2366,7 +2366,9 @@
 <p>在.py文件首行加如下代码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#-*- coding:utf-8 -*-</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/02/23/5mZEGStriAYQPuq.png"></p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2>]]></content>
+<h2 id="python2与python3的区别"><a href="#python2与python3的区别" class="headerlink" title="python2与python3的区别"></a>python2与python3的区别</h2><p>python2中的input与python3的不同,python2中input将从键盘得到的数据当成代码执行;python2中的raw_input()类似python3(没有raw_input())中为input() ,所以python2中可用raw_input()</p>
+<p>注意：raw_input()和input()都获取的是字符串,字符串不能做-,*,/运算,做+运算只是拼接,可用int()函数获得数字,如int(input())</p>
+]]></content>
       <categories>
         <category>python</category>
       </categories>
