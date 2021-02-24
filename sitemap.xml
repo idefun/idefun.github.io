@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.idefun.com/blog/2021/01/10/Web%E5%AD%A6%E4%B9%A0/</loc>
+    
+    <lastmod>2021-02-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.idefun.com/blog/2021/01/28/python%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2021-02-24</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.idefun.com/blog/2021/01/11/Linux-C%E7%BC%96%E7%A8%8B/</loc>
     
     <lastmod>2021-02-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.idefun.com/blog/2021/01/10/Web%E5%AD%A6%E4%B9%A0/</loc>
-    
-    <lastmod>2021-02-03</lastmod>
     
   </url>
   
