@@ -504,17 +504,17 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">action</span>=<span class="string">&quot;save.php&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">label</span>&gt;</span>联系我们<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">cols</span>=<span class="string">&quot;50&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;10&quot;</span> &gt;</span>在这里输入内容...<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="select下拉列表"><a href="#select下拉列表" class="headerlink" title="select下拉列表"></a>select下拉列表</h4><p>下拉列表:</p>
 <p>下拉列表在网页中也常会用到，它可以有效的节省网页空间。既可以单选、又可以多选。如下代码：</p>
-<p><img src="https://i.loli.net/2021/01/10/1cExMyhR3dkTeKi.png" alt="img"></p>
+<p><img src="https://i.loli.net/2021/01/10/1cExMyhR3dkTeKi.png"></p>
 <p><strong>讲解：</strong></p>
 <p>1、select和option标签都是双标签，它总是成对出现的，需要首标签和尾标签。</p>
 <p>2、select标签里面只能放option标签，表示下拉列表的选项。</p>
 <p>3、option标签放选项内容，不放置其他标签。</p>
 <p>4、value：</p>
-<p><img src="https://i.loli.net/2021/01/10/VAhEQFzT7dNoMO8.png" alt="img"></p>
+<p><img src="https://i.loli.net/2021/01/10/VAhEQFzT7dNoMO8.png"></p>
 <p>5、selected=”selected”：</p>
 <p>设置selected=”selected”属性，则该选项就被默认选中。</p>
 <p>在浏览器中显示的结果：</p>
-<p><img src="https://i.loli.net/2021/01/10/p8nCDEVleONLkjg.png" alt="img"></p>
+<p><img src="https://i.loli.net/2021/01/10/p8nCDEVleONLkjg.png"></p>
 <h4 id="form表单域"><a href="#form表单域" class="headerlink" title="form表单域"></a>form表单域</h4><p>网站怎样与用户进行交互？答案是使用HTML表单(form)。表单是可以把浏览者输入的数据传送到服务器端，这样服务器端程序就可以处理表单传过来的数据。</p>
 <p>语法：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;服务器文件/url地址&quot;</span> <span class="attr">method</span>=<span class="string">&quot;传送方式&quot;</span> <span class="attr">name</span>=<span class="string">&quot;表单名称&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1590,6 +1590,19 @@
 <li>之所以a包含span就是因为整个导航都是可以点击的</li>
 <li>a和span都要转换为行内块(因为是滑动门,左右推拉,跟文字内容多少有关系,此时需要用文字撑开盒子, 就要用到行内块)</li>
 </ol>
+<h3 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h3><h4 id="2D移动"><a href="#2D移动" class="headerlink" title="2D移动"></a>2D移动</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>(<span class="selector-tag">x</span>,<span class="selector-tag">y</span>); </span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateX</span>(<span class="selector-tag">n</span>);</span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateY</span>(<span class="selector-tag">n</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义2D转换中的移动,沿着X和Y轴移动元素</li>
+<li>translate最大的优点:不会影响到其他元素的位置</li>
+<li>translate中的百分比单位是相对于自身元素的translate(50%,50%);</li>
+<li>对行内标签没有效果</li>
+</ul>
+<h4 id="2D旋转"><a href="#2D旋转" class="headerlink" title="2D旋转"></a>2D旋转</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:rotate(</span>度数);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>rotate里面跟度数,单位是deg,比如rotate(45deg)</li>
+<li>角度为正时,为顺时针;负时,为逆时针</li>
+<li>默认旋转的中心点是元素的中心点</li>
+</ul>
 <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="JavaScript概述"><a href="#JavaScript概述" class="headerlink" title="JavaScript概述"></a>JavaScript概述</h3><ul>
 <li>JavaScript是世界上最流行的语言之一, 是一种运行在<strong>客户端</strong>的脚本语言( Script是脚本的意思)</li>
 <li>脚本语言:不需要编译,运行过程中由js解释器(js引擎)逐行来进行解释并执行</li>
