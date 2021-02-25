@@ -38,27 +38,51 @@
     var CONFIG = {"hostname":"www.idefun.com","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本文旨在搭建网盘资源搜索引擎">
+  <meta name="description" content="Windows10下搭建汇编语言开发环境">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自建网盘搜索引擎">
-<meta property="og:url" content="http://www.idefun.com/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/index.html">
+<meta property="og:title" content="Windows10下搭建汇编语言开发环境">
+<meta property="og:url" content="http://www.idefun.com/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="IdeFun Blog">
-<meta property="og:description" content="本文旨在搭建网盘资源搜索引擎">
+<meta property="og:description" content="Windows10下搭建汇编语言开发环境">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7559cf809c4cf41e9f0c6c79d7db4885.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/1ae2e326d170098cd6399ebb6914aaa8.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/56e6799e4eb5d859ce4c14e988318eda.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/c2c6d2ec8573ddbe46875698e95678b9.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/46d801c5e960346b65910892afbf9cc7.png">
-<meta property="article:published_time" content="2021-01-07T03:18:14.000Z">
-<meta property="article:modified_time" content="2021-01-28T01:34:04.303Z">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/vmXynkcD7V3bwEe.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/X7F4cripOvBg1ex.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/QXCsuzLV2YNwFBJ.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/Tr6jgH7u5XQElVD.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/37Nqut1AGRfmYyx.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/mGS1D2g8eMP6Bpx.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/OWEklSHxi1BeqbM.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/doXaBf7hCV4MmjH.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/5GCfg6hOt8UHvbi.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/b15TdjRzCasUB8c.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/pJPAUlga1SRvuse.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/PFvrz5jt4GAaDQb.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/NmC2sKFeYyInMWq.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/GtgYexwQulLnOKk.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/8hrbIxNBJZQ723k.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/YZwN2LOQPTuG8Wv.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/ZWr6DIB4qxb9VEd.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/WYMSUboDf82N7cG.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/jrcGQTxs8hgupvU.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/lfQUBhXntJYV5qK.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/VhRfkGB84zJyHAS.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/bYF13Vaz48fQ6uM.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/TEDcVGa7yMz2SXJ.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/wfoIpsM62gWbFiz.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/TdPkfD7oRp5aZrB.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/d5LQbCi9n1AOPSk.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/P2G6sZqBlDQvKOE.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/7zr4gBpDmUGi9nx.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/gGrdk2zUZQEDFl3.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png">
+<meta property="og:image" content="https://i.loli.net/2021/02/25/tdvuEMzlSUHI79C.png">
+<meta property="article:published_time" content="2021-02-25T02:17:53.000Z">
+<meta property="article:modified_time" content="2021-02-25T13:14:05.113Z">
 <meta property="article:author" content="IdeFun">
-<meta property="article:tag" content="搜索引擎">
-<meta property="article:tag" content="网盘">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/7559cf809c4cf41e9f0c6c79d7db4885.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/25/vmXynkcD7V3bwEe.png">
 
-<link rel="canonical" href="http://www.idefun.com/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/">
+<link rel="canonical" href="http://www.idefun.com/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
 
 
 <script id="page-configurations">
@@ -81,7 +105,7 @@
     })();
 </script>
 
-  <title>自建网盘搜索引擎 | IdeFun Blog</title>
+  <title>Windows10下搭建汇编语言开发环境 | IdeFun Blog</title>
   
 
 
@@ -242,7 +266,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.idefun.com/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/">
+    <link itemprop="mainEntityOfPage" href="http://www.idefun.com/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/01/05/Gf1qZ9szBp7tISF.jpg">
@@ -255,7 +279,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          自建网盘搜索引擎
+          Windows10下搭建汇编语言开发环境
         </h1>
 
         <div class="post-meta">
@@ -264,24 +288,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-01-07 11:18:14" itemprop="dateCreated datePublished" datetime="2021-01-07T11:18:14+08:00">2021-01-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-28 09:34:04" itemprop="dateModified" datetime="2021-01-28T09:34:04+08:00">2021-01-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/" itemprop="url" rel="index"><span itemprop="name">无处安放</span></a>
-                </span>
+              <time title="创建时间：2021-02-25 10:17:53 / 修改时间：21:14:05" itemprop="dateCreated datePublished" datetime="2021-02-25T10:17:53+08:00">2021-02-25</time>
             </span>
 
           
@@ -300,8 +309,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" itemprop="commentCount"></span>
+    <a title="valine" href="/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -311,16 +320,16 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>916</span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
-            <div class="post-description">本文旨在搭建网盘资源搜索引擎</div>
+            <div class="post-description">Windows10下搭建汇编语言开发环境</div>
 
         </div>
       </header>
@@ -331,22 +340,131 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="教你如何自建网盘资源搜索引擎"><a href="#教你如何自建网盘资源搜索引擎" class="headerlink" title="教你如何自建网盘资源搜索引擎"></a>教你如何自建网盘资源搜索引擎</h1><a id="more"></a>
+        <h1 id="Windows10下搭建汇编语言开发环境"><a href="#Windows10下搭建汇编语言开发环境" class="headerlink" title="Windows10下搭建汇编语言开发环境"></a>Windows10下搭建汇编语言开发环境</h1><a id="more"></a>
 
-
-<h3 id="1-利用Google-要能科学上网"><a href="#1-利用Google-要能科学上网" class="headerlink" title="1.利用Google(要能科学上网)"></a>1.利用Google(要能科学上网)</h3><p><a target="_blank" rel="noopener" href="https://cse.google.com/cse/" class="LinkCard">点击这里直达</a></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/7559cf809c4cf41e9f0c6c79d7db4885.png" alt="image-20201114100907681"></p>
-<h3 id="2-点击开始吧"><a href="#2-点击开始吧" class="headerlink" title="2.点击开始吧"></a>2.点击开始吧</h3><p>进入如下界面</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/1ae2e326d170098cd6399ebb6914aaa8.png" alt="image-20201114100937412"></p>
-<h3 id="3-点击新建搜索引擎"><a href="#3-点击新建搜索引擎" class="headerlink" title="3.点击新建搜索引擎"></a>3.点击新建搜索引擎</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/56e6799e4eb5d859ce4c14e988318eda.png" alt="image-20201114101047442"></p>
-<h3 id="4-依次进行配置"><a href="#4-依次进行配置" class="headerlink" title="4.依次进行配置"></a>4.依次进行配置</h3><p>注意第一个是要搜索的网站</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/c2c6d2ec8573ddbe46875698e95678b9.png" alt="image-20201114101417580"></p>
-<h3 id="5-创建完毕后-点击修改搜索引擎-选择刚才创建的-找到搜索引擎ID-也可以点击获取代码-插入代码即可"><a href="#5-创建完毕后-点击修改搜索引擎-选择刚才创建的-找到搜索引擎ID-也可以点击获取代码-插入代码即可" class="headerlink" title="5.创建完毕后,点击修改搜索引擎,选择刚才创建的,找到搜索引擎ID(也可以点击获取代码,插入代码即可)"></a>5.创建完毕后,点击修改搜索引擎,选择刚才创建的,找到搜索引擎ID(也可以点击获取代码,插入代码即可)</h3><p><img src="https://img-blog.csdnimg.cn/img_convert/46d801c5e960346b65910892afbf9cc7.png" alt="image-20201114103410456"></p>
-<p>外观不满意的话可以自行修改,最后附上代码</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#main</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">width</span><span class="selector-pseudo">:750px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin</span><span class="selector-pseudo">:20px</span> <span class="selector-tag">auto</span>;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#main</span> <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-size</span><span class="selector-pseudo">:25px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">font-weight</span><span class="selector-pseudo">:bold</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">margin-button</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">百度网盘资源搜索器</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> cx = <span class="string">&#x27;你的搜索引擎ID&#x27;</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> gcse = <span class="built_in">document</span>.createElement(<span class="string">&#x27;script&#x27;</span>);</span></span><br><span class="line"><span class="javascript">    gcse.type = <span class="string">&#x27;text/javascript&#x27;</span>;</span></span><br><span class="line"><span class="javascript">    gcse.async = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">    gcse.src = <span class="string">&#x27;https://cse.google.com/cse.js?cx=&#x27;</span> + cx;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;script&#x27;</span>)[<span class="number">0</span>];</span></span><br><span class="line">    s.parentNode.insertBefore(gcse, s);</span><br><span class="line">  &#125;)();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">gcse:search</span>&gt;</span><span class="tag">&lt;/<span class="name">gcse:search</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本学期学校安排有汇编语言这门课,需要自己搭建汇编语言开发环境,特此写下本文记录搭建过程.</p>
+<p>关于搭建汇编语言开发环境的教程,我也找了许多,可看下来却依旧一头雾水,经过本人摸索,同时结合网上教程,欲写下这篇易懂的文章.</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="1-下载DOSBox"><a href="#1-下载DOSBox" class="headerlink" title="1.下载DOSBox"></a>1.下载DOSBox</h3><p>工具介绍:DOSBox是一个DOS模拟程序,由于它采用的是SDL库,所以可以很方便的移植到其他的平台.目前,DOSBox已经支持在Windows、Linux、Mac OS X、BeOS 、palmOS、Android 、webOS、os/2等系统中运行.不少DOS下的游戏都可以直接在该平台上运行.</p>
+<p>工具官网：<a target="_blank" rel="noopener" href="http://www.dosbox.com/">http://www.dosbox.com/</a></p>
+<p>项目主页：<a target="_blank" rel="noopener" href="http://sourceforge.net/projects/dosbox/">http://sourceforge.net/projects/dosbox/</a></p>
+<p>下载链接1：<a target="_blank" rel="noopener" href="http://sourceforge.net/projects/dosbox/files/dosbox/0.74/DOSBox0.74-win32-installer.exe/download">http://sourceforge.net/projects/dosbox/files/dosbox/0.74/DOSBox0.74-win32-installer.exe/download</a> （32位）</p>
+<p>下载链接2(这个是我下载好的,可能会快一点): <a target="_blank" rel="noopener" href="https://idefun.lanzous.com/i91Xpm4qzyb">https://idefun.lanzous.com/i91Xpm4qzyb</a></p>
+<h3 id="2-下载汇编工具包"><a href="#2-下载汇编工具包" class="headerlink" title="2.下载汇编工具包"></a>2.下载汇编工具包</h3><p>下载链接:<a target="_blank" rel="noopener" href="https://idefun.lanzous.com/i4TQgm4zjkf">https://idefun.lanzous.com/i4TQgm4zjkf</a></p>
+<p>汇编工具截图</p>
+<p><img src="https://i.loli.net/2021/02/25/vmXynkcD7V3bwEe.png"></p>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><h3 id="1-安装DOSBox"><a href="#1-安装DOSBox" class="headerlink" title="1.安装DOSBox"></a>1.安装DOSBox</h3><p>双击运行DOSBox安装程序</p>
+<p><img src="https://i.loli.net/2021/02/25/X7F4cripOvBg1ex.png"></p>
+<p>点击next</p>
+<p><img src="https://i.loli.net/2021/02/25/QXCsuzLV2YNwFBJ.png"></p>
+<p>点击next</p>
+<p><img src="https://i.loli.net/2021/02/25/Tr6jgH7u5XQElVD.png"></p>
+<p>选择安装位置(我选择都是D:\DOSBox)然后点击install即可</p>
+<p><img src="https://i.loli.net/2021/02/25/37Nqut1AGRfmYyx.png"></p>
+<p>安装位置要记得,后面要用</p>
+<h3 id="2-创建工作目录"><a href="#2-创建工作目录" class="headerlink" title="2.创建工作目录"></a>2.创建工作目录</h3><p>安装完毕创建一个工作目录(目录位置及目录名可自定义)</p>
+<p>我的是在D:/DOSBox/Debug</p>
+<p><img src="https://i.loli.net/2021/02/25/mGS1D2g8eMP6Bpx.png"></p>
+<p>之后再在Debug下创建两个文件夹ASM(放自己写的汇编程序)和MASM(放汇编工具)</p>
+<p><img src="https://i.loli.net/2021/02/25/OWEklSHxi1BeqbM.png"></p>
+<p>将汇编工具放入MASM文件夹</p>
+<p><img src="https://i.loli.net/2021/02/25/doXaBf7hCV4MmjH.png"></p>
+<h3 id="3-挂载工作目录"><a href="#3-挂载工作目录" class="headerlink" title="3.挂载工作目录"></a>3.挂载工作目录</h3><p>打开DOSBox安装目录(我的在D:\DOSBox)</p>
+<p><img src="https://i.loli.net/2021/02/25/5GCfg6hOt8UHvbi.png"></p>
+<p>打开后找到DOSBox 0.74 Options.bat这个批处理文件</p>
+<p><img src="https://i.loli.net/2021/02/25/b15TdjRzCasUB8c.png"></p>
+<p>直接双击运行会出现一个记事本</p>
+<p><img src="https://i.loli.net/2021/02/25/pJPAUlga1SRvuse.png"></p>
+<p>使用快捷键Ctrl+F查找其中的[autoexec]部分(一般在文件末尾)</p>
+<p><img src="https://i.loli.net/2021/02/25/PFvrz5jt4GAaDQb.png"></p>
+<p>在文件中添加下列内容并保存</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MOUNT F D:\DOSBox\Debug</span><br><span class="line">set PATH&#x3D;%PATH%;F:\MASM;</span><br><span class="line">F:</span><br><span class="line">cd F:\ASM</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/25/NmC2sKFeYyInMWq.png"></p>
+<p>命令解释:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#挂载工作目录挂载到虚拟盘符F(虚拟盘符可自定义,命令不区分大小写)</span><br><span class="line">MOUNT F D:\DOSBox\Debug</span><br><span class="line">#添加系统临时变量(此时的F代表的是D:\DOSBox\Debug）</span><br><span class="line">set PATH&#x3D;%PATH%;F:\MASM; </span><br><span class="line">#转到F盘符</span><br><span class="line">F:</span><br><span class="line">#切换到F:\ASM目录</span><br><span class="line">cd F:\ASM</span><br></pre></td></tr></table></figure>
+<p>之后重启DOSBox,可见自动执行上述命令</p>
+<p><img src="https://i.loli.net/2021/02/25/GtgYexwQulLnOKk.png"></p>
+<p>注意:不进行此种配置的话,每次打开DOSBox是需要手动输入上述命令,非常麻烦</p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="调整窗口大小"><a href="#调整窗口大小" class="headerlink" title="调整窗口大小"></a>调整窗口大小</h3><p>初始的界面很小,且不能直接拉伸界面,所以有需要的可以按照下面的方法调整一下<br>双击打开DOSBox 0.74 Options.bat</p>
+<p>使用快捷键Ctrl+F查找windowresolution字段</p>
+<p><img src="https://i.loli.net/2021/02/25/8hrbIxNBJZQ723k.png"></p>
+<p>将</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">windowresolution&#x3D;original</span><br><span class="line">output&#x3D;surface</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">windowresolution&#x3D;800x500  #800x500为自定义大小,可修改</span><br><span class="line">output&#x3D;opengl </span><br></pre></td></tr></table></figure>
+<p>注意:不用删除原来的语句,在前面加上#注释掉即可</p>
+<p><img src="https://i.loli.net/2021/02/25/YZwN2LOQPTuG8Wv.png"></p>
+<p>保存后,重启DOSBox生效</p>
+<h3 id="创建并编辑文件"><a href="#创建并编辑文件" class="headerlink" title="创建并编辑文件"></a>创建并编辑文件</h3><p>关于创建并编辑文件,如果你的工作目录(挂载的目录)有EDIT.COM文件(我提供的汇编工具包中有),那么你就可以在DOSBox中创建并编辑文件,如果没有请使用我提供的工具包或者耐心往下看.</p>
+<h4 id="使用DOSBox创建并编辑文件-不推荐"><a href="#使用DOSBox创建并编辑文件-不推荐" class="headerlink" title="使用DOSBox创建并编辑文件(不推荐)"></a>使用DOSBox创建并编辑文件(不推荐)</h4><p>打开DOSBox使用下面命令创建并编辑test.asm文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">edit test.asm</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/25/ZWr6DIB4qxb9VEd.png"></p>
+<p>回车后进入下面界面即可进行编辑(注意:鼠标箭头只能在编辑器里活动,想将鼠标退出来的话可以用Ctrl+F10组合键退出)</p>
+<p><img src="https://i.loli.net/2021/02/25/WYMSUboDf82N7cG.png"></p>
+<h4 id="使用记事本创建并编辑文件-其他编辑器也可以"><a href="#使用记事本创建并编辑文件-其他编辑器也可以" class="headerlink" title="使用记事本创建并编辑文件(其他编辑器也可以)"></a>使用记事本创建并编辑文件(其他编辑器也可以)</h4><p>下面以此种方式创建test.asm文件</p>
+<p>新建文本文档,将下面代码复制到里面并保存</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">datas segment</span><br><span class="line">buf db&#39;Hello, World!$&#39;</span><br><span class="line">datas ends</span><br><span class="line"></span><br><span class="line">stacks segment stack</span><br><span class="line">db 200 dup(0)</span><br><span class="line">stacks ends</span><br><span class="line"></span><br><span class="line">codes segment</span><br><span class="line">assume cs:codes,ds:datas,ss:stacks</span><br><span class="line">start:</span><br><span class="line">mov ax,datas</span><br><span class="line">mov ds,ax</span><br><span class="line"></span><br><span class="line">mov dx,seg buf</span><br><span class="line">lea dx,buf</span><br><span class="line">mov ah,09h</span><br><span class="line">int 21h</span><br><span class="line"></span><br><span class="line">mov ah,4ch</span><br><span class="line">int 21h</span><br><span class="line">codes ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/25/jrcGQTxs8hgupvU.png"></p>
+<p>之后重命名为test.asm</p>
+<p><img src="https://i.loli.net/2021/02/25/lfQUBhXntJYV5qK.png"></p>
+<h3 id="编译调试"><a href="#编译调试" class="headerlink" title="编译调试"></a>编译调试</h3><p>打开DOSBox输入下面命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">masm test.asm</span><br></pre></td></tr></table></figure>
+<p>回车后会询问文件名,建议直接回车</p>
+<p><img src="https://i.loli.net/2021/02/25/VhRfkGB84zJyHAS.png" alt="image-20210225195117402"></p>
+<p><img src="https://i.loli.net/2021/02/25/bYF13Vaz48fQ6uM.png"></p>
+<p>可以像上图一样分别输入文件名,打开ASM查看如下</p>
+<p><img src="https://i.loli.net/2021/02/25/TEDcVGa7yMz2SXJ.png"></p>
+<p>本文全部默认即不分别输入文件名直接回车</p>
+<p><img src="https://i.loli.net/2021/02/25/wfoIpsM62gWbFiz.png"></p>
+<p>打开ASM文件夹查看如下</p>
+<p><img src="https://i.loli.net/2021/02/25/TdPkfD7oRp5aZrB.png"></p>
+<p>继续输入命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">link test.obj</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/25/d5LQbCi9n1AOPSk.png"></p>
+<p>运行完毕,查看ASM文件夹</p>
+<p><img src="https://i.loli.net/2021/02/25/P2G6sZqBlDQvKOE.png"></p>
+<p>继续执行下列命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">debug test.exe</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/02/25/7zr4gBpDmUGi9nx.png"></p>
+<h3 id="debug的简单使用"><a href="#debug的简单使用" class="headerlink" title="debug的简单使用"></a>debug的简单使用</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R命令</td>
+<td>查看、改变CPU寄存器的内容</td>
+</tr>
+<tr>
+<td>D命令</td>
+<td>查看内存中的内容(机器指令形式)</td>
+</tr>
+<tr>
+<td>E命令</td>
+<td>改写内存中的内容,即提供指令(使用机器指令),用得比较少,多为A命令</td>
+</tr>
+<tr>
+<td>U命令</td>
+<td>查看内存中的内容（将机器指令形式转换为汇编指令的形式）</td>
+</tr>
+<tr>
+<td>T命令</td>
+<td>执行一条汇编(机器)指令(就是执行当前指令缓冲器中的指令)</td>
+</tr>
+<tr>
+<td>A命令</td>
+<td>相比较E,使用汇编指令进行内存修改——向内存提供机器指令</td>
+</tr>
+<tr>
+<td>P命令</td>
+<td>在遇到汇编指令为int xx 时,使用p指令结束(否则CPU会指向一个<br>未知的地址段)</td>
+</tr>
+</tbody></table>
+<h4 id="R命令"><a href="#R命令" class="headerlink" title="R命令"></a>R命令</h4><h5 id="查看CPU寄存器的内容"><a href="#查看CPU寄存器的内容" class="headerlink" title="查看CPU寄存器的内容"></a>查看CPU寄存器的内容</h5><p><img src="https://i.loli.net/2021/02/25/gGrdk2zUZQEDFl3.png"></p>
+<h5 id="改变CPU寄存器的内容"><a href="#改变CPU寄存器的内容" class="headerlink" title="改变CPU寄存器的内容"></a>改变CPU寄存器的内容</h5><p><img src="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png"></p>
+<p><img src="https://i.loli.net/2021/02/25/tdvuEMzlSUHI79C.png"></p>
+<h4 id="D命令"><a href="#D命令" class="headerlink" title="D命令"></a>D命令</h4><h4 id="E命令"><a href="#E命令" class="headerlink" title="E命令"></a>E命令</h4><h4 id="U命令"><a href="#U命令" class="headerlink" title="U命令"></a>U命令</h4><h4 id="T命令"><a href="#T命令" class="headerlink" title="T命令"></a>T命令</h4><h4 id="A命令"><a href="#A命令" class="headerlink" title="A命令"></a>A命令</h4><h4 id="P命令"><a href="#P命令" class="headerlink" title="P命令"></a>P命令</h4>
     </div>
 
    
@@ -383,7 +501,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.idefun.com/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" title="自建网盘搜索引擎">http://www.idefun.com/blog/2021/01/07/自建网盘搜索引擎/</a>
+    <a href="http://www.idefun.com/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="Windows10下搭建汇编语言开发环境">http://www.idefun.com/blog/2021/02/25/Windows10下搭建汇编语言开发环境/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -403,10 +521,6 @@
       </div>
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/blog/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" rel="tag"><i class="fa fa-tag"></i> 搜索引擎</a>
-              <a href="/blog/tags/%E7%BD%91%E7%9B%98/" rel="tag"><i class="fa fa-tag"></i> 网盘</a>
-          </div>
 
         
   <div class="post-widgets">
@@ -419,13 +533,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2021/01/06/%E8%A7%A3%E5%86%B3%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B8%E8%BD%BD%E5%90%8E%E6%97%A0%E6%B3%95%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/" rel="prev" title="解决谷歌浏览器卸载后无法重新安装的问题">
-      <i class="fa fa-chevron-left"></i> 解决谷歌浏览器卸载后无法重新安装的问题
+    <a href="/blog/2021/02/25/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="汇编语言学习笔记">
+      <i class="fa fa-chevron-left"></i> 汇编语言学习笔记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/blog/2021/01/10/Web%E5%AD%A6%E4%B9%A0/" rel="next" title="Web学习">
-      Web学习 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -500,7 +611,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E"><span class="nav-text">教你如何自建网盘资源搜索引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%88%A9%E7%94%A8Google-%E8%A6%81%E8%83%BD%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91"><span class="nav-text">1.利用Google(要能科学上网)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%82%B9%E5%87%BB%E5%BC%80%E5%A7%8B%E5%90%A7"><span class="nav-text">2.点击开始吧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%82%B9%E5%87%BB%E6%96%B0%E5%BB%BA%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E"><span class="nav-text">3.点击新建搜索引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BE%9D%E6%AC%A1%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="nav-text">4.依次进行配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%AF%95%E5%90%8E-%E7%82%B9%E5%87%BB%E4%BF%AE%E6%94%B9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E-%E9%80%89%E6%8B%A9%E5%88%9A%E6%89%8D%E5%88%9B%E5%BB%BA%E7%9A%84-%E6%89%BE%E5%88%B0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8EID-%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%82%B9%E5%87%BB%E8%8E%B7%E5%8F%96%E4%BB%A3%E7%A0%81-%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81%E5%8D%B3%E5%8F%AF"><span class="nav-text">5.创建完毕后,点击修改搜索引擎,选择刚才创建的,找到搜索引擎ID(也可以点击获取代码,插入代码即可)</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-text">Windows10下搭建汇编语言开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDDOSBox"><span class="nav-text">1.下载DOSBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD%E6%B1%87%E7%BC%96%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-text">2.下载汇编工具包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="nav-text">安装教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85DOSBox"><span class="nav-text">1.安装DOSBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">2.创建工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%8C%82%E8%BD%BD%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">3.挂载工作目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="nav-text">使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F"><span class="nav-text">调整窗口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6"><span class="nav-text">创建并编辑文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8DOSBox%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6-%E4%B8%8D%E6%8E%A8%E8%8D%90"><span class="nav-text">使用DOSBox创建并编辑文件(不推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AE%B0%E4%BA%8B%E6%9C%AC%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6-%E5%85%B6%E4%BB%96%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%9F%E5%8F%AF%E4%BB%A5"><span class="nav-text">使用记事本创建并编辑文件(其他编辑器也可以)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95"><span class="nav-text">编译调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="nav-text">debug的简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R%E5%91%BD%E4%BB%A4"><span class="nav-text">R命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BCPU%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">查看CPU寄存器的内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%94%B9%E5%8F%98CPU%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">改变CPU寄存器的内容</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D%E5%91%BD%E4%BB%A4"><span class="nav-text">D命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E%E5%91%BD%E4%BB%A4"><span class="nav-text">E命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#U%E5%91%BD%E4%BB%A4"><span class="nav-text">U命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T%E5%91%BD%E4%BB%A4"><span class="nav-text">T命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A%E5%91%BD%E4%BB%A4"><span class="nav-text">A命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P%E5%91%BD%E4%BB%A4"><span class="nav-text">P命令</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1025,7 +1136,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'blog',
       owner       : 'wxpsjhhd',
       admin       : ['wxpsjhhd'],
-      id          : '0f8bc4df615181ecf5f66ee7461012dd',
+      id          : '2d5733a14ce9db4dc69e54139b586261',
         language: 'zh-CN',
       distractionFreeMode: true
     });
