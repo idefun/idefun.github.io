@@ -4419,7 +4419,12 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210227164805994.png"></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">将cat test.txt的结果作为<span class="built_in">printf</span>的输入</span></span><br><span class="line">printf &#x27;%s&#x27; $(cat test.txt)</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">printf</span>命令后不能直接跟文件名</span></span><br><span class="line">printf &#x27;%s&#x27; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">cat命令运行的结果也不能通过管道符使用<span class="built_in">printf</span>输出</span></span><br><span class="line">cat test.txt | printf &#x27;%s&#x27;</span><br></pre></td></tr></table></figure>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210227165459937.png"></p>
-<h5 id="awk命令-1"><a href="#awk命令-1" class="headerlink" title="awk命令"></a>awk命令</h5><h4 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h4><h3 id="字符处理命令"><a href="#字符处理命令" class="headerlink" title="字符处理命令"></a>字符处理命令</h3><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3>]]></content>
+<h5 id="awk命令-1"><a href="#awk命令-1" class="headerlink" title="awk命令"></a>awk命令</h5><p>在awk命令的输出中支持print和printf命令</p>
+<ul>
+<li>print命令:print会在每个输出之后自动加入一个换行符(Linux 默认没有print命令)</li>
+<li>printf命令:printf是标准格式输出命令,并不会自动加入换行符,如果需要换行,需要手工加入换行符</li>
+</ul>
+<h4 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h4><h3 id="字符处理命令"><a href="#字符处理命令" class="headerlink" title="字符处理命令"></a>字符处理命令</h3><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
