@@ -3903,7 +3903,7 @@
 </ol>
 <p>在Linux中回车符识别为$,windows回车符识别为^M$,所以Linux无法识别在windows编写的脚本,将在windows编写的脚本转换为Linux可识别的脚本,可使用dos2unix命令</p>
 <p>格式: dos2unix 文件名</p>
-<h3 id="Bash的基本功能"><a href="#Bash的基本功能" class="headerlink" title="Bash的基本功能"></a>Bash的基本功能</h3><h4 id="历史命令与命令补全"><a href="#历史命令与命令补全" class="headerlink" title="历史命令与命令补全"></a>历史命令与命令补全</h4><h5 id="历史命令"><a href="#历史命令" class="headerlink" title="历史命令"></a>历史命令</h5><p>[root@localhost <del>]# history [选项] [历史命令保存文件]<br>选项:<br>    -c   清空历史命令<br>    -w  把缓存中的历史命令写入历史命令保存文件</del>/.bash_history</p>
+<h3 id="Bash的基本功能"><a href="#Bash的基本功能" class="headerlink" title="Bash的基本功能"></a>Bash的基本功能</h3><h4 id="历史命令与命令补全"><a href="#历史命令与命令补全" class="headerlink" title="历史命令与命令补全"></a>历史命令与命令补全</h4><h5 id="历史命令"><a href="#历史命令" class="headerlink" title="历史命令"></a>历史命令</h5><p>[root@localhost~]#  history [选项] [历史命令保存文件]<br>选项:<br>    -c      清空历史命令<br>    -w    把缓存中的历史命令写入历史命令保存文件~/.bash_history</p>
 <p>历史命令默认会保存1000条,可以在环境变量配置文件/etc/profile中进行修改,超过1000条会删除前面的,保留后面的.</p>
 <ul>
 <li>使用上、下箭头调用以前的历史命令</li>
@@ -4407,9 +4407,11 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210226194901137.png"></p>
 <p>可见提取出的是空白,这是因为我们选择的分隔符为一个空格,所以提取到空白列</p>
 <p>想要实现该功能需要借助awk命令,cut命令无法做到</p>
-<h4 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h4><p>printf命令</p>
-<p>awk命令</p>
-<h4 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h4><h3 id="字符处理命令"><a href="#字符处理命令" class="headerlink" title="字符处理命令"></a>字符处理命令</h3><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3>]]></content>
+<h4 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h4><h5 id="printf命令"><a href="#printf命令" class="headerlink" title="printf命令"></a>printf命令</h5><p>格式化输出命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">printf &#x27;输出类型输出格式&#x27; 输出内容</span><br></pre></td></tr></table></figure>
+<h6 id="输出类型"><a href="#输出类型" class="headerlink" title="输出类型"></a>输出类型</h6><p>%ns        输出字符串,n是数字指代输出几个字符<br>%ni        输出整数,n是数字指代输出几个数字<br>%m.nf   输出浮点数,m和n是数字,指代输出的数字位数和小数位数.如%8.2f代表共输出8位数,其中2位是小数,6位是整数</p>
+<h6 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h6><p>\a          输出警告声音<br>\b          输出退格键,也就是Backspace键<br>\f           清除屏幕<br>\n          换行<br>\r           回车,也就是Enter键<br>\t           水平输出退格键,也就是Tab键<br>\v          垂直输出退格键,也就是Tab键</p>
+<h5 id="awk命令-1"><a href="#awk命令-1" class="headerlink" title="awk命令"></a>awk命令</h5><h4 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h4><h3 id="字符处理命令"><a href="#字符处理命令" class="headerlink" title="字符处理命令"></a>字符处理命令</h3><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3>]]></content>
       <categories>
         <category>Linux</category>
       </categories>
