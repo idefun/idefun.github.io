@@ -4440,7 +4440,12 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210226194901137.png"></p>
 <p>可见提取出的是空白,这是因为我们选择的分隔符为一个空格,所以提取到空白列</p>
 <p>想要实现该功能需要借助awk命令,cut命令无法做到</p>
-<h4 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h4><h5 id="printf命令"><a href="#printf命令" class="headerlink" title="printf命令"></a>printf命令</h5><p>printf命令后不能直接跟文件名,cat命令运行的结果也不能通过管道符使用printf输出</p>
+<h4 id="awk命令"><a href="#awk命令" class="headerlink" title="awk命令"></a>awk命令</h4><p>在awk命令的输出中支持print和printf命令</p>
+<ul>
+<li>print命令:print会在每个输出之后自动加入一个换行符(Linux 默认没有print命令)</li>
+<li>printf命令:printf是标准格式输出命令,并不会自动加入换行符,如果需要换行,需要手工加入换行符</li>
+</ul>
+<h5 id="printf命令"><a href="#printf命令" class="headerlink" title="printf命令"></a>printf命令</h5><p>printf命令后不能直接跟文件名,cat命令运行的结果也不能通过管道符使用printf输出</p>
 <p>格式化输出命令</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">printf &#x27;输出类型输出格式&#x27; 输出内容</span><br></pre></td></tr></table></figure>
 <h6 id="输出类型"><a href="#输出类型" class="headerlink" title="输出类型"></a>输出类型</h6><p>%ns        输出字符串,n是数字指代输出几个字符<br>%ni        输出整数,n是数字指代输出几个数字<br>%m.nf   输出浮点数,m和n是数字,指代输出的数字位数和小数位数.如%8.2f代表共输出8位数,其中2位是小数,6位是整数</p>
@@ -4452,11 +4457,76 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210227164805994.png"></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">将cat test.txt的结果作为<span class="built_in">printf</span>的输入</span></span><br><span class="line">printf &#x27;%s&#x27; $(cat test.txt)</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">printf</span>命令后不能直接跟文件名</span></span><br><span class="line">printf &#x27;%s&#x27; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">cat命令运行的结果也不能通过管道符使用<span class="built_in">printf</span>输出</span></span><br><span class="line">cat test.txt | printf &#x27;%s&#x27;</span><br></pre></td></tr></table></figure>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210227165459937.png"></p>
-<h5 id="awk命令-1"><a href="#awk命令-1" class="headerlink" title="awk命令"></a>awk命令</h5><p>在awk命令的输出中支持print和printf命令</p>
+<h5 id="awk命令格式"><a href="#awk命令格式" class="headerlink" title="awk命令格式"></a>awk命令格式</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">awk &#x27;条件1&#123;动作1&#125; 条件2&#123;动作2&#125;...&#x27; 文件名</span><br></pre></td></tr></table></figure>
+<p>条件:</p>
 <ul>
-<li>print命令:print会在每个输出之后自动加入一个换行符(Linux 默认没有print命令)</li>
-<li>printf命令:printf是标准格式输出命令,并不会自动加入换行符,如果需要换行,需要手工加入换行符</li>
+<li>关系表达式,例如: x&gt;10,x&lt;=10</li>
+<li>BEGIN (在读取数据之前执行其后的动作)</li>
+<li>END (在所有动作执行完,再执行其后动作)</li>
 </ul>
+<p>动作:</p>
+<ul>
+<li>格式化输出</li>
+<li>流程控制语句</li>
+</ul>
+<p>下面以test.txt为例说明:</p>
+<blockquote>
+<p>查看test.txt    cat test.txt</p>
+</blockquote>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228185800661.png"></p>
+<blockquote>
+<p>使用awk截取其中的第2,4列</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">awk &#x27;&#123;printf $2 &quot;\t&quot; $4&quot;\n&quot;&#125;&#x27; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="variable">$2</span>表示第2列,<span class="variable">$4</span>表示第4列</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228190025765.png"></p>
+<p>关于cut命令的局限,awk命令则不存在,下面举例说明</p>
+<blockquote>
+<p>使用df -h查看系统相关信息</p>
+</blockquote>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228190527438.png"></p>
+<blockquote>
+<p>使用awk截取/dev/vda1行中的14%</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">df -h | grep vda1 | awk &#x27;&#123;print $5&#125;&#x27; | cut -d &quot;%&quot; -f 1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228190815576.png"></p>
+<h5 id="关系表达式"><a href="#关系表达式" class="headerlink" title="关系表达式"></a>关系表达式</h5><blockquote>
+<p>使用cat test.txt查看test.txt</p>
+</blockquote>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228194934658.png"></p>
+<blockquote>
+<p>提取其中Mark小于80的姓名</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat test.txt | grep -v Name | awk &#x27;$4&lt;=80&#123;print $2&quot;\n&quot;&#125;&#x27;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228194925571.png" alt="image-20210228194925571"></p>
+<h5 id="BEGIN"><a href="#BEGIN" class="headerlink" title="BEGIN"></a>BEGIN</h5><p>在读取数据之前执行其后的动作</p>
+<blockquote>
+<p>在截取test.txt第2,4列之前先执行BEGIN后的命令</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">awk &#x27;BEGIN&#123;print &quot;hello world!&quot;&#125; &#123;print $2 &quot;\t&quot; $4&quot;\n&quot;&#125;&#x27; test.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228191408806.png"></p>
+<blockquote>
+<p>截取/etc/passwd的第1,3列</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">awk &#x27;&#123;FS=&quot;:&quot;&#125; &#123;print $1 &quot;\t&quot; $3&#125;&#x27; /etc/passwd</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由下图可见,/etc/passwd中的第一行并没有处理</p>
+<p>awk会先读入第一行数据,再执行命令</p>
+</blockquote>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228193119168.png"></p>
+<blockquote>
+<p>加上BEGIN,会在读入第一行数据之前,先执行命令</p>
+</blockquote>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228193512426.png"></p>
+<h5 id="END"><a href="#END" class="headerlink" title="END"></a>END</h5><p>在所有命令执行完毕,再执行其后的命令</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228194138995.png" alt="太长了,拼的图"></p>
+<h5 id="FS内置变量"><a href="#FS内置变量" class="headerlink" title="FS内置变量"></a>FS内置变量</h5><p>用于指定分隔符</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">awk &#x27;&#123;print $1 &quot;\t&quot; $3&#125;&#x27; /etc/passwd</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>并没有起到提取第1列和第3列的效果</p>
+</blockquote>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228192029233.png"></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">awk &#x27;&#123;FS=&quot;:&quot;&#125; &#123;print $1 &quot;\t&quot; $3&#125;&#x27; /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228192406633.png"></p>
 <h4 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h4><h3 id="字符处理命令"><a href="#字符处理命令" class="headerlink" title="字符处理命令"></a>字符处理命令</h3><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3>]]></content>
       <categories>
         <category>Linux</category>
