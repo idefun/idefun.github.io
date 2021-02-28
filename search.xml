@@ -4704,10 +4704,8 @@
 </tr>
 </tbody></table>
 <h4 id="R命令"><a href="#R命令" class="headerlink" title="R命令"></a>R命令</h4><h5 id="查看CPU寄存器的内容"><a href="#查看CPU寄存器的内容" class="headerlink" title="查看CPU寄存器的内容"></a>查看CPU寄存器的内容</h5><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228122008954.png"></p>
-<h5 id="改变CPU寄存器的内容"><a href="#改变CPU寄存器的内容" class="headerlink" title="改变CPU寄存器的内容"></a>改变CPU寄存器的内容</h5><p>改变ax的值</p>
-<p><img src="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png"></p>
-<p>改变CS:IP的值</p>
-<p><img src="https://i.loli.net/2021/02/25/tdvuEMzlSUHI79C.png"></p>
+<h5 id="改变CPU寄存器的内容"><a href="#改变CPU寄存器的内容" class="headerlink" title="改变CPU寄存器的内容"></a>改变CPU寄存器的内容</h5><h6 id="改变ax的值"><a href="#改变ax的值" class="headerlink" title="改变ax的值"></a>改变ax的值</h6><p><img src="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png"></p>
+<h6 id="改变CS-IP的值"><a href="#改变CS-IP的值" class="headerlink" title="改变CS:IP的值"></a>改变CS:IP的值</h6><p><img src="https://i.loli.net/2021/02/25/tdvuEMzlSUHI79C.png"></p>
 <h4 id="D命令"><a href="#D命令" class="headerlink" title="D命令"></a>D命令</h4><p>使用D命令,debug将输出3部分内容：</p>
 <ol>
 <li>中间是从指定地址开始的128个内存单元的内容,用16进制的格式输出,每行的输出从16的整数倍的地址开始,最多输出16个单元的内容.注意在每行的中间有一个”-“,它将每行的输出分为两部分,这样便于查看</li>
@@ -4726,7 +4724,18 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228123922247.png"></p>
 <p>若输入的地址不是16的倍数,则输出效果是这样的</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228123042937.png"></p>
-<h4 id="E命令"><a href="#E命令" class="headerlink" title="E命令"></a>E命令</h4><h4 id="命令"><a href="#命令" class="headerlink" title="?命令"></a>?命令</h4><p>输入?查看更多命令</p>
+<h4 id="E命令"><a href="#E命令" class="headerlink" title="E命令"></a>E命令</h4><p>将内存1000:0-1000:9单元中的内容分别写为0、1、2、3….、9,可以用”e 段地址:起始地址 数据 数据 数据 ……”的格式来进行</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228132259802.png"></p>
+<p>用E命令以提问的方式来逐个地修改从某一地址开始的内存单元中的内容</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228132759807.png"></p>
+<ul>
+<li>红色部分为用户输入的修改的数据,到了某一内存单元的时候,可以选择修改(输入要修改的数值),也可以选择不修改(直接按空格),处理完一个内存单元之后,按空格,继续处理下一个内存单元;全部都处理完毕之后,按enter</li>
+</ul>
+<p>可以用E命令向内存中写入字符</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228133235259.png"></p>
+<p>也可以用E命令向内存中写入字符串</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228133636393.png"></p>
+<h4 id="命令"><a href="#命令" class="headerlink" title="?命令"></a>?命令</h4><p>输入?查看更多命令</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228112817615.png"></p>
 <p>结果如下:</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228112748762.png"></p>
