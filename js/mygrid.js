@@ -50,7 +50,7 @@ if (windowPath.indexOf('photos') > 0 ) {
                                 '<img data-src="' + small_cdn_url + '" src="' + small_cdn_url + '" data-loaded="true">' +
                             '</a>' +
                         '</div>' +
-                    '</div>'
+                      '</div>'
             }
             $(".MyGrid").append(li);
             this.minigrid();
