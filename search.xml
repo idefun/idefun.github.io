@@ -2250,7 +2250,131 @@
   <entry>
     <title>密码学原理学习笔记</title>
     <url>/article/32664.html</url>
-    <content><![CDATA[<h1 id="密码学原理学习笔记"><a href="#密码学原理学习笔记" class="headerlink" title="密码学原理学习笔记"></a>密码学原理学习笔记</h1><a id="more"></a>]]></content>
+    <content><![CDATA[<h1 id="密码学原理学习笔记"><a href="#密码学原理学习笔记" class="headerlink" title="密码学原理学习笔记"></a>密码学原理学习笔记</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><h3 id="我国的密码分级"><a href="#我国的密码分级" class="headerlink" title="我国的密码分级"></a>我国的密码分级</h3><ol>
+<li>核心密码:用于保护党政军的核心机密</li>
+<li>普通密码:用于保护国家和事企业单位的低于核心机密,高于商用机密信息</li>
+<li>商用密码:用于保护国家和事企业单位的非机密的敏感信息</li>
+<li>个人密码:用于保护个人的隐私信息</li>
+</ol>
+<blockquote>
+<p>前三种密码均有国家密码管理局统一管理</p>
+</blockquote>
+<h3 id="密码学的组成"><a href="#密码学的组成" class="headerlink" title="密码学的组成"></a>密码学的组成</h3><ul>
+<li>研究密码编制的科学:密码编制学(Cryptography )</li>
+<li>研究密码破译的科学:密码分析学(Cryptanalysis)</li>
+<li>密码编制学+密码分析学=密码学(Cryptology)</li>
+</ul>
+<h3 id="保密系统"><a href="#保密系统" class="headerlink" title="保密系统"></a>保密系统</h3><p>简单地说,一个保密系统主要由明文信源、信道、加密器、解密器以及密钥源<br>等五个基本部分组成</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301210414677.png"></p>
+<p>明文信息的产生和发送者称为明文信源(source). 我们一般称由明文信源产生的信息为消息(message).由明文信源输出的消息要经过某种通信渠道传送给称为信宿的接收者(receiver). 所谓信道(channel)就是将明文信源消息传送给接收者的渠道.加密器将明文信源输出的消息变换为密文,然后再输出到信道.解密器接收信道的输出,并恢复出原始的明文信源消息.密钥源用于产生加密器和解密器所使用的密钥</p>
+<blockquote>
+<p>存储系统也可以看做是一种特殊的保密系统</p>
+</blockquote>
+<p>保密系统的使用者通常称为用户(user). 保密系统的破坏者有时称为对手(adversary).对手分为“窃听型”和“干扰型”两种.“ 窃听型”对手只是截取信道上传送的信息,然后进行分析.而“干扰型”对手则会篡改信道上传送的信息.</p>
+<h3 id="密码体制"><a href="#密码体制" class="headerlink" title="密码体制"></a>密码体制</h3><p>没有加密的信息称为明文(plaintext).加密后的信息称为密文(ciphertext).从明文到密文的变换称为加密(encryption). 从密文到明文的变换称为解密(decryption).</p>
+<blockquote>
+<p>加密和解密都是在密钥(key) 的控制下进行的.给定一个密钥,就可确定一对具体的加密变换和解密变换.</p>
+</blockquote>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301212036997.png"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301212533141.png"></p>
+<blockquote>
+<p>密钥空间中不同密钥的个数称为密码体制的密钥量.它是衡量密码体制安全性的一个重要指标.</p>
+</blockquote>
+<p>如果一个密码体制的加密密钥与解密密钥相同,则称其为单密钥密码体制或对称密码体制;否则,称其为双密钥密码体制或非对称密码体制.</p>
+<p>在一个双密钥密码体制中,如果由加密密钥ke计算解密密钥kd是困难的,公开ke不会损害kd的安全性,则可以将加密密钥ke公开.这样的密码体制称为公钥密码体制(public-key cryptosystem).(kd更重要)</p>
+<h4 id="密码体制的分类"><a href="#密码体制的分类" class="headerlink" title="密码体制的分类"></a>密码体制的分类</h4><h5 id="从加密密钥与解密密钥是否相等划分"><a href="#从加密密钥与解密密钥是否相等划分" class="headerlink" title="从加密密钥与解密密钥是否相等划分"></a>从加密密钥与解密密钥是否相等划分</h5><ol>
+<li>传统密码: <ul>
+<li>ke=kd</li>
+<li>典型密码: DES, AES, SMS4, RC4</li>
+</ul>
+</li>
+<li>公开密钥密码:<ul>
+<li>ke!=kd</li>
+<li>且由ke不能计算出kd</li>
+<li>可将ke公开,不会危害kd安全</li>
+<li>典型密码: RSA,EIGAMAL,ECC</li>
+</ul>
+</li>
+</ol>
+<h5 id="从密钥的使用方式划分"><a href="#从密钥的使用方式划分" class="headerlink" title="从密钥的使用方式划分"></a>从密钥的使用方式划分</h5><ol>
+<li>序列密码:<ul>
+<li>明文、密文、密钥以位(字符)为单位加解密</li>
+<li>核心密码的主流</li>
+<li>典型密码: RC4,ZUC </li>
+</ul>
+</li>
+<li>分组密码:<ul>
+<li>明文、密文、密钥以分组为单位加解密</li>
+<li>商用密码的主流</li>
+<li>典型密码: DES,AES,SMS4</li>
+</ul>
+</li>
+</ol>
+<h5 id="从密码算法是否变化划分"><a href="#从密码算法是否变化划分" class="headerlink" title="从密码算法是否变化划分"></a>从密码算法是否变化划分</h5><ol>
+<li>固定算法密码:<ul>
+<li>密码工作过程中算法固定不变,密钥可变</li>
+<li>迄今为止的绝大多数密码都是固定算法密码</li>
+<li>典型密码:DES, AES, SMS4, RC4,RSA, EIGAMAL, ECC</li>
+</ul>
+</li>
+<li>演化密码:<ul>
+<li>借鉴生物进化,将密码学与演化计算结合</li>
+<li>密码算法不断演化变化,越变越好</li>
+<li>实现密码设计与密码分析自动化的一种方法</li>
+<li>密码系统智能化的一种成功实践</li>
+</ul>
+</li>
+</ol>
+<h5 id="从是否基于数学划分"><a href="#从是否基于数学划分" class="headerlink" title="从是否基于数学划分"></a>从是否基于数学划分</h5><ol>
+<li>基于数学:上述所有密码</li>
+<li>基于非数学:量子密码,DNA密码<ul>
+<li>在唯密文攻击下无条件安全的密码</li>
+<li>基于量子的保密物理属性</li>
+<li>利用量子力学产生真随机数作密钥</li>
+<li>利用量子通信的保密性传输密钥</li>
+<li>利用模2加进行加密</li>
+<li>一次一密方式工作</li>
+</ul>
+</li>
+</ol>
+<h3 id="密码分析"><a href="#密码分析" class="headerlink" title="密码分析"></a>密码分析</h3><p>密码分析指的是对密码体制的攻击.如果能够根据密文系统地确定出明文或密钥,或者能够根据明密文对系统地确定出密钥,则该密码是可破译的.<br>一个密码,如果无论密码分析者截获了多少密文和用什么方法进行攻击都不能被攻破,则称为是绝对不可破译的</p>
+<blockquote>
+<p>理论上,绝对不可破译的密码是存在的(一次一密)<br>理论上,任何可实用的密码都是可破译的</p>
+</blockquote>
+<h4 id="密码学假设"><a href="#密码学假设" class="headerlink" title="密码学假设"></a>密码学假设</h4><ol>
+<li>攻击者总能获得密文</li>
+<li>攻击者总能知道密码算法,但不知道密钥</li>
+<li>攻击者有足够的计算资源</li>
+</ol>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301215206694.png"></p>
+<ul>
+<li>唯密文攻击(ciphertext-only attack):密码分析者仅知道一些密文</li>
+<li>已知明文攻击(known-plaintext attack):密码分析者知道一些明文和相应的密文</li>
+<li>选择明文攻击(chosen-plaintext attack):密码分析者可以选择一些明文, 并得到相应的密文</li>
+<li>选择密文攻击(chosen-ciphertext attack):密码分析者可以选择一些密文,并得到相应的明文</li>
+</ul>
+<blockquote>
+<p>攻击强度依次加强</p>
+</blockquote>
+<h4 id="穷举攻击"><a href="#穷举攻击" class="headerlink" title="穷举攻击"></a>穷举攻击</h4><p>密码分析者采用依次试遍所有可能的密钥对所获密文进行解密,直至得到正确明文;或者依次用一个确定的密钥对所有可能的明文进行加密,直至得到所获得的密文.</p>
+<blockquote>
+<p>显然,理论上,对于任何可实用密码只要有足够的资源,都可以用穷举攻击将其攻破.<br>可通过增大密钥量来对抗穷举攻击</p>
+</blockquote>
+<h4 id="统计分析攻击-基于数学的分析"><a href="#统计分析攻击-基于数学的分析" class="headerlink" title="统计分析攻击(基于数学的分析)"></a>统计分析攻击(基于数学的分析)</h4><p>所谓基于数学的密码分析是指密码分析者针对加解密算法的数学依据通过数学分析的方法来破译密码.</p>
+<ul>
+<li>统计分析攻击:密码分析者通过分析密文和明文的统计规律来破译密码</li>
+<li>解密变换攻击:通过数学求解的方法来设法找到相应的解密变换</li>
+</ul>
+<p>为了基于数学的分析攻击,应当选用具有坚实数学基础和足够复杂的加解密算法</p>
+<h4 id="基于非数学的分析"><a href="#基于非数学的分析" class="headerlink" title="基于非数学的分析"></a>基于非数学的分析</h4><p>所谓基于非数学的密码分析是指密码分析者获取并分析密码芯片的物理参数(如:功率、电流、声音、执行时间等)来破译密码.</p>
+<ul>
+<li>侧信道攻击<ul>
+<li>攻击原理:密码芯片在执行不同的指令、处理不同数据时所消耗的功率、电流、时间等不同</li>
+<li>两种攻击目的:获取密钥和获取密码算法</li>
+</ul>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>密码学</category>
       </categories>
