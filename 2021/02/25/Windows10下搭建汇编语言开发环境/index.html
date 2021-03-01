@@ -20,28 +20,28 @@
         }
     })();
 </script>
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico">
-  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/blog/css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-mac-osx.min.css">
-  <script src="/blog/lib/pace/pace.min.js"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.idefun.com","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"blog.idefun.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Windows10下搭建汇编语言开发环境">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows10下搭建汇编语言开发环境">
-<meta property="og:url" content="http://www.idefun.com/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:url" content="https://blog.idefun.com/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="IdeFun Blog">
 <meta property="og:description" content="Windows10下搭建汇编语言开发环境">
 <meta property="og:locale" content="zh_CN">
@@ -75,6 +75,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/02/25/P2G6sZqBlDQvKOE.png">
 <meta property="og:image" content="https://i.loli.net/2021/02/25/7zr4gBpDmUGi9nx.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210301085326154.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210301095739288.png">
 <meta property="og:image" content="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png">
 <meta property="og:image" content="https://i.loli.net/2021/02/25/tdvuEMzlSUHI79C.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210228122306758.png">
@@ -88,16 +89,18 @@
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210228133235259.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210228133636393.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210301075936404.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210301100802300.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210301100844123.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210228112817615.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210228112748762.png">
 <meta property="article:published_time" content="2021-02-25T02:17:53.000Z">
-<meta property="article:modified_time" content="2021-03-01T00:57:46.943Z">
+<meta property="article:modified_time" content="2021-03-01T02:08:49.764Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="汇编语言">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/02/25/vmXynkcD7V3bwEe.png">
 
-<link rel="canonical" href="http://www.idefun.com/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+<link rel="canonical" href="https://blog.idefun.com/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
 
 
 <script id="page-configurations">
@@ -169,7 +172,7 @@
 
   <div class="site-meta">
 
-    <a href="/blog/" class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">IdeFun Blog</h1>
       <span class="logo-line-after"><i></i></span>
@@ -191,37 +194,37 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-photos">
 
-    <a href="/blog/photos/" rel="section"><i class="fas fa-camera-retro fa-fw"></i>相册</a>
+    <a href="/photos/" rel="section"><i class="fas fa-camera-retro fa-fw"></i>相册</a>
 
   </li>
         <li class="menu-item menu-item-schedule">
 
-    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程</a>
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -281,7 +284,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.idefun.com/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+    <link itemprop="mainEntityOfPage" href="https://blog.idefun.com/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/01/05/Gf1qZ9szBp7tISF.jpg">
@@ -311,7 +314,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-01 08:57:46" itemprop="dateModified" datetime="2021-03-01T08:57:46+08:00">2021-03-01</time>
+                <time title="修改时间：2021-03-01 10:08:49" itemprop="dateModified" datetime="2021-03-01T10:08:49+08:00">2021-03-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -319,7 +322,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">汇编语言</span></a>
+                  <a href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">汇编语言</span></a>
                 </span>
             </span>
 
@@ -339,8 +342,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -350,7 +353,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -626,7 +629,11 @@
 <td>NC</td>
 </tr>
 </tbody></table>
-<h5 id="改变CPU寄存器的内容"><a href="#改变CPU寄存器的内容" class="headerlink" title="改变CPU寄存器的内容"></a>改变CPU寄存器的内容</h5><h6 id="改变ax的值"><a href="#改变ax的值" class="headerlink" title="改变ax的值"></a>改变ax的值</h6><p><img src="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png"></p>
+<p>改变标志位的值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rf</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301095739288.png"></p>
+<h5 id="改变CPU寄存器的内容"><a href="#改变CPU寄存器的内容" class="headerlink" title="改变CPU寄存器的内容"></a>改变CPU寄存器的内容</h5><h6 id="改变ax的值"><a href="#改变ax的值" class="headerlink" title="改变ax的值"></a>改变ax的值</h6><p>直接回车退出修改</p>
+<p><img src="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png"></p>
 <h6 id="改变CS-IP的值"><a href="#改变CS-IP的值" class="headerlink" title="改变CS:IP的值"></a>改变CS:IP的值</h6><p><img src="https://i.loli.net/2021/02/25/tdvuEMzlSUHI79C.png"></p>
 <h4 id="D命令"><a href="#D命令" class="headerlink" title="D命令"></a>D命令</h4><p>使用D命令,debug将输出3部分内容：</p>
 <ol>
@@ -683,7 +690,15 @@
 <blockquote>
 <p>用E命令向从1000:0开始的内存单元中写入了8个字节的机器码<br>用D命令查看内存1000:0~1000:1f中的数据(从数据的角度看一下写入的内容)<br>用U命令查看从1000:0开始的内存单元中的机器指令和他们所对应的汇编指令</p>
 </blockquote>
-<h4 id="U命令"><a href="#U命令" class="headerlink" title="U命令"></a>U命令</h4><h4 id="T命令"><a href="#T命令" class="headerlink" title="T命令"></a>T命令</h4><h4 id="命令"><a href="#命令" class="headerlink" title="?命令"></a>?命令</h4><p>输入?查看更多命令</p>
+<h4 id="U命令"><a href="#U命令" class="headerlink" title="U命令"></a>U命令</h4><p>对机器代码反汇编显示</p>
+<h5 id="按地址反汇编"><a href="#按地址反汇编" class="headerlink" title="按地址反汇编"></a>按地址反汇编</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">u 地址</span><br></pre></td></tr></table></figure>
+<p>该命令从指定地址开始,反汇编32个字节,若地址省略,则从上一个U命令的最后一个指令的下一个单元开始显示32个字节</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301100802300.png"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301100844123.png"></p>
+<h5 id="按范围反汇编"><a href="#按范围反汇编" class="headerlink" title="按范围反汇编"></a>按范围反汇编</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">u 范围</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="T命令"><a href="#T命令" class="headerlink" title="T命令"></a>T命令</h4><h4 id="命令"><a href="#命令" class="headerlink" title="?命令"></a>?命令</h4><p>输入?查看更多命令</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228112817615.png"></p>
 <p>结果如下:</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228112748762.png"></p>
@@ -703,12 +718,12 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/blog/images/wechatpay.png" alt="IdeFun 微信支付">
+        <img src="/images/wechatpay.png" alt="IdeFun 微信支付">
         <p>微信支付</p>
       </div>
       
       <div style="display: inline-block;">
-        <img src="/blog/images/alipay.png" alt="IdeFun 支付宝">
+        <img src="/images/alipay.png" alt="IdeFun 支付宝">
         <p>支付宝</p>
       </div>
 
@@ -724,7 +739,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.idefun.com/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="Windows10下搭建汇编语言开发环境">http://www.idefun.com/blog/2021/02/25/Windows10下搭建汇编语言开发环境/</a>
+    <a href="https://blog.idefun.com/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="Windows10下搭建汇编语言开发环境">https://blog.idefun.com/2021/02/25/Windows10下搭建汇编语言开发环境/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -745,7 +760,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> 汇编语言</a>
+              <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> 汇编语言</a>
           </div>
 
         
@@ -759,11 +774,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2021/01/28/python%E7%AC%94%E8%AE%B0/" rel="prev" title="python笔记">
+    <a href="/2021/01/28/python%E7%AC%94%E8%AE%B0/" rel="prev" title="python笔记">
       <i class="fa fa-chevron-left"></i> python笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2021/02/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="汇编语言学习笔记">
+    <a href="/2021/02/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="汇编语言学习笔记">
       汇编语言学习笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -780,15 +795,15 @@
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
             <li class="tab"><a href="#comment-valine">valine</a></li>
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane gitalk" id="comment-gitalk">
-              <div class="comments" id="gitalk-container"></div>
-            </div>
             <div class="tab-pane valine" id="comment-valine">
               <div class="comments" id="valine-comments"></div>
+            </div>
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
             </div>
         </div>
       </div>
@@ -840,7 +855,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-text">Windows10下搭建汇编语言开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDDOSBox"><span class="nav-text">1.下载DOSBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD%E6%B1%87%E7%BC%96%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-text">2.下载汇编工具包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="nav-text">安装教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85DOSBox"><span class="nav-text">1.安装DOSBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">2.创建工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%8C%82%E8%BD%BD%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">3.挂载工作目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="nav-text">使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOSBox%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">DOSBox常用快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F"><span class="nav-text">调整窗口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6"><span class="nav-text">创建并编辑文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8DOSBox%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6-%E4%B8%8D%E6%8E%A8%E8%8D%90"><span class="nav-text">使用DOSBox创建并编辑文件(不推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AE%B0%E4%BA%8B%E6%9C%AC%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6-%E5%85%B6%E4%BB%96%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%9F%E5%8F%AF%E4%BB%A5"><span class="nav-text">使用记事本创建并编辑文件(其他编辑器也可以)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95"><span class="nav-text">编译调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="nav-text">debug的简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R%E5%91%BD%E4%BB%A4"><span class="nav-text">R命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BCPU%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">查看CPU寄存器的内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%94%B9%E5%8F%98CPU%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">改变CPU寄存器的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%94%B9%E5%8F%98ax%E7%9A%84%E5%80%BC"><span class="nav-text">改变ax的值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%94%B9%E5%8F%98CS-IP%E7%9A%84%E5%80%BC"><span class="nav-text">改变CS:IP的值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D%E5%91%BD%E4%BB%A4"><span class="nav-text">D命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E%E5%91%BD%E4%BB%A4"><span class="nav-text">E命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#U%E5%91%BD%E4%BB%A4"><span class="nav-text">U命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T%E5%91%BD%E4%BB%A4"><span class="nav-text">T命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-text">?命令</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-text">Windows10下搭建汇编语言开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDDOSBox"><span class="nav-text">1.下载DOSBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD%E6%B1%87%E7%BC%96%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-text">2.下载汇编工具包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="nav-text">安装教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85DOSBox"><span class="nav-text">1.安装DOSBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">2.创建工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%8C%82%E8%BD%BD%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-text">3.挂载工作目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="nav-text">使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOSBox%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">DOSBox常用快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F"><span class="nav-text">调整窗口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6"><span class="nav-text">创建并编辑文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8DOSBox%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6-%E4%B8%8D%E6%8E%A8%E8%8D%90"><span class="nav-text">使用DOSBox创建并编辑文件(不推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AE%B0%E4%BA%8B%E6%9C%AC%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6-%E5%85%B6%E4%BB%96%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%9F%E5%8F%AF%E4%BB%A5"><span class="nav-text">使用记事本创建并编辑文件(其他编辑器也可以)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95"><span class="nav-text">编译调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="nav-text">debug的简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R%E5%91%BD%E4%BB%A4"><span class="nav-text">R命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BCPU%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">查看CPU寄存器的内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%94%B9%E5%8F%98CPU%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">改变CPU寄存器的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%94%B9%E5%8F%98ax%E7%9A%84%E5%80%BC"><span class="nav-text">改变ax的值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%94%B9%E5%8F%98CS-IP%E7%9A%84%E5%80%BC"><span class="nav-text">改变CS:IP的值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D%E5%91%BD%E4%BB%A4"><span class="nav-text">D命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E%E5%91%BD%E4%BB%A4"><span class="nav-text">E命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#U%E5%91%BD%E4%BB%A4"><span class="nav-text">U命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8C%89%E5%9C%B0%E5%9D%80%E5%8F%8D%E6%B1%87%E7%BC%96"><span class="nav-text">按地址反汇编</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8C%89%E8%8C%83%E5%9B%B4%E5%8F%8D%E6%B1%87%E7%BC%96"><span class="nav-text">按范围反汇编</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T%E5%91%BD%E4%BB%A4"><span class="nav-text">T命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-text">?命令</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -854,20 +869,20 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/blog/archives/">
+          <a href="/archives/">
         
           <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/blog/categories/">
+            <a href="/categories/">
           
         <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/blog/tags/">
+            <a href="/tags/">
           
         <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
@@ -1162,13 +1177,13 @@ if(canvas.getContext){
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
-          <a href="/blog/2021/03/01/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="2021&#x2F;03&#x2F;01&#x2F;密码学原理学习笔记&#x2F;">密码学原理学习笔记</a>
+          <a href="/2021/03/01/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="2021&#x2F;03&#x2F;01&#x2F;密码学原理学习笔记&#x2F;">密码学原理学习笔记</a>
         </li>
         <li class="links-of-recent-posts-item">
-          <a href="/blog/2021/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="2021&#x2F;02&#x2F;28&#x2F;数据库学习笔记&#x2F;">数据库学习笔记</a>
+          <a href="/2021/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="2021&#x2F;02&#x2F;28&#x2F;数据库学习笔记&#x2F;">数据库学习笔记</a>
         </li>
         <li class="links-of-recent-posts-item">
-          <a href="/blog/2021/02/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="2021&#x2F;02&#x2F;26&#x2F;汇编语言学习笔记&#x2F;">汇编语言学习笔记</a>
+          <a href="/2021/02/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="2021&#x2F;02&#x2F;26&#x2F;汇编语言学习笔记&#x2F;">汇编语言学习笔记</a>
         </li>
     </ul>
   </div>
@@ -1261,26 +1276,26 @@ show_date_time();
   </div>
 
   
-  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.min.js"></script>
-  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/blog/js/utils.js"></script>
+<script src="/js/utils.js"></script>
 
-<script src="/blog/js/motion.js"></script>
-
-
-<script src="/blog/js/schemes/pisces.js"></script>
+<script src="/js/motion.js"></script>
 
 
-<script src="/blog/js/next-boot.js"></script>
-
-<script src="/blog/js/bookmark.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
-  <script defer src="/blog/lib/three/three.min.js"></script>
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
 
 
   
@@ -1334,7 +1349,7 @@ show_date_time();
   </script>
 
   
-<script src="/blog/js/local-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -1353,26 +1368,6 @@ show_date_time();
   
 
   
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '1d7032354798c5048461',
-      clientSecret: '416c493c6bd9253cec2cb3f55183673413ade90b',
-      repo        : 'blog',
-      owner       : 'wxpsjhhd',
-      admin       : ['wxpsjhhd'],
-      id          : '2d5733a14ce9db4dc69e54139b586261',
-        language: 'zh-CN',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
 
 <script>
@@ -1400,6 +1395,26 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       serverURLs : ''
     });
   }, window.Valine);
+});
+</script>
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '1d7032354798c5048461',
+      clientSecret: '416c493c6bd9253cec2cb3f55183673413ade90b',
+      repo        : 'blog',
+      owner       : 'wxpsjhhd',
+      admin       : ['wxpsjhhd'],
+      id          : '3faeb942990b88d6901d19ebf51844f6',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
 });
 </script>
 
