@@ -4746,7 +4746,7 @@
 </tr>
 <tr>
 <td>U命令</td>
-<td>查看内存中的内容（将机器指令形式转换为汇编指令的形式）(反编译)</td>
+<td>查看内存中的内容(将机器指令形式转换为汇编指令的形式)(反编译)</td>
 </tr>
 <tr>
 <td>T命令</td>
@@ -4773,7 +4773,56 @@
 <td>查看指令帮助</td>
 </tr>
 </tbody></table>
-<h4 id="R命令"><a href="#R命令" class="headerlink" title="R命令"></a>R命令</h4><h5 id="查看CPU寄存器的内容"><a href="#查看CPU寄存器的内容" class="headerlink" title="查看CPU寄存器的内容"></a>查看CPU寄存器的内容</h5><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228122008954.png"></p>
+<h4 id="R命令"><a href="#R命令" class="headerlink" title="R命令"></a>R命令</h4><h5 id="查看CPU寄存器的内容"><a href="#查看CPU寄存器的内容" class="headerlink" title="查看CPU寄存器的内容"></a>查看CPU寄存器的内容</h5><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301085326154.png"></p>
+<table>
+<thead>
+<tr>
+<th>标识名</th>
+<th>置位</th>
+<th>复位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>溢出Overflow(是否)</td>
+<td>OV</td>
+<td>NV</td>
+</tr>
+<tr>
+<td>向Direction(减量/增量)</td>
+<td>DN</td>
+<td>UP</td>
+</tr>
+<tr>
+<td>中断Interrupt(允许/屏蔽)</td>
+<td>EI</td>
+<td>DI</td>
+</tr>
+<tr>
+<td>符号Sign(负正)</td>
+<td>NG</td>
+<td>PL</td>
+</tr>
+<tr>
+<td>零Zero(是否)</td>
+<td>ZR</td>
+<td>NZ</td>
+</tr>
+<tr>
+<td>辅助进位Auxiliary Carry(是否)</td>
+<td>AC</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>奇偶Parity(偶奇)</td>
+<td>PE</td>
+<td>PO</td>
+</tr>
+<tr>
+<td>进位Carry(是否)</td>
+<td>CY</td>
+<td>NC</td>
+</tr>
+</tbody></table>
 <h5 id="改变CPU寄存器的内容"><a href="#改变CPU寄存器的内容" class="headerlink" title="改变CPU寄存器的内容"></a>改变CPU寄存器的内容</h5><h6 id="改变ax的值"><a href="#改变ax的值" class="headerlink" title="改变ax的值"></a>改变ax的值</h6><p><img src="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png"></p>
 <h6 id="改变CS-IP的值"><a href="#改变CS-IP的值" class="headerlink" title="改变CS:IP的值"></a>改变CS:IP的值</h6><p><img src="https://i.loli.net/2021/02/25/tdvuEMzlSUHI79C.png"></p>
 <h4 id="D命令"><a href="#D命令" class="headerlink" title="D命令"></a>D命令</h4><p>使用D命令,debug将输出3部分内容：</p>
@@ -4805,7 +4854,33 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228133235259.png"></p>
 <p>也可以用E命令向内存中写入字符串</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228133636393.png"></p>
-<h4 id="命令"><a href="#命令" class="headerlink" title="?命令"></a>?命令</h4><p>输入?查看更多命令</p>
+<p>用E命令向内存中写入机器码,用T命令执行内存中的机器码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">e 1000:0 b8 01 00 b9 02 00 01 c8</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>机器码</th>
+<th>对应的汇编指令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>b80100</td>
+<td>mov ax,0001</td>
+</tr>
+<tr>
+<td>b90200</td>
+<td>mov cx,0002</td>
+</tr>
+<tr>
+<td>01c8</td>
+<td>add ax,cx</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301075936404.png"></p>
+<blockquote>
+<p>用E命令向从1000:0开始的内存单元中写入了8个字节的机器码<br>用D命令查看内存1000:0~1000:1f中的数据(从数据的角度看一下写入的内容)<br>用U命令查看从1000:0开始的内存单元中的机器指令和他们所对应的汇编指令</p>
+</blockquote>
+<h4 id="U命令"><a href="#U命令" class="headerlink" title="U命令"></a>U命令</h4><h4 id="T命令"><a href="#T命令" class="headerlink" title="T命令"></a>T命令</h4><h4 id="命令"><a href="#命令" class="headerlink" title="?命令"></a>?命令</h4><p>输入?查看更多命令</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228112817615.png"></p>
 <p>结果如下:</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228112748762.png"></p>
@@ -4960,7 +5035,7 @@
 <li>4个段寄存器(ES、CS、SS、DS)</li>
 <li>1个指令指针寄存器(IP)1个标志寄存器(Flags)</li>
 </ul>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228120217398.png"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301085326154.png"></p>
 <p>32位CPU所含有的寄存器有(共16个):</p>
 <ul>
 <li>4个数据寄存器(EAX、EBX、ECX和EDX)</li>
@@ -5159,6 +5234,17 @@
       </categories>
       <tags>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>密码学原理学习笔记</title>
+    <url>/blog/2021/03/01/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="密码学原理学习笔记"><a href="#密码学原理学习笔记" class="headerlink" title="密码学原理学习笔记"></a>密码学原理学习笔记</h1><a id="more"></a>]]></content>
+      <categories>
+        <category>密码学</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
       </tags>
   </entry>
 </search>
