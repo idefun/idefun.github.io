@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Linux C编程</title>
-    <url>/2021/01/11/Linux-C%E7%BC%96%E7%A8%8B/</url>
+    <url>/blog/2021/01/11/Linux-C%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="Linux-C编程"><a href="#Linux-C编程" class="headerlink" title="Linux C编程"></a>Linux C编程</h1><p>C语言的源代码文件是一个普通的文本文件,但扩展名是c.而且源代码文件是不能直接执行的,需要编译,编译后的可执行文件只能在指定操作系统下运行.</p>
 <p>Linux编译后的可执行程序只能在linux运行,windows编译后的程序只能在windows下运行</p>
 <p>64位的linux编译后的程序只能在64位linux下运行,32位linux编译后的程序只能在32位的linux运行.</p>
@@ -362,7 +362,7 @@
   </entry>
   <entry>
     <title>Web学习</title>
-    <url>/2021/01/10/Web%E5%AD%A6%E4%B9%A0/</url>
+    <url>/blog/2021/01/10/Web%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="Web学习"><a href="#Web学习" class="headerlink" title="Web学习"></a>Web学习</h1><a id="more"></a>
 
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><h4 id="input控件"><a href="#input控件" class="headerlink" title="input控件"></a>input控件</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;属性值&quot;</span> <span class="attr">value</span>=<span class="string">&quot;你好&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -2163,7 +2163,7 @@
   </entry>
   <entry>
     <title>自建网盘搜索引擎</title>
-    <url>/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</url>
+    <url>/blog/2021/01/07/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</url>
     <content><![CDATA[<h1 id="教你如何自建网盘资源搜索引擎"><a href="#教你如何自建网盘资源搜索引擎" class="headerlink" title="教你如何自建网盘资源搜索引擎"></a>教你如何自建网盘资源搜索引擎</h1><a id="more"></a>
 
 
@@ -2190,7 +2190,7 @@
   </entry>
   <entry>
     <title>解决谷歌浏览器卸载后无法重新安装的问题</title>
-    <url>/2021/01/06/%E8%A7%A3%E5%86%B3%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B8%E8%BD%BD%E5%90%8E%E6%97%A0%E6%B3%95%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <url>/blog/2021/01/06/%E8%A7%A3%E5%86%B3%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B8%E8%BD%BD%E5%90%8E%E6%97%A0%E6%B3%95%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="解决谷歌浏览器卸载后无法重新安装的问题"><a href="#解决谷歌浏览器卸载后无法重新安装的问题" class="headerlink" title="解决谷歌浏览器卸载后无法重新安装的问题"></a>解决谷歌浏览器卸载后无法重新安装的问题</h1><a id="more"></a>
 
 <p>你是否在卸载Google后重装的路上焦头烂额？下载一遍又一遍却无法安装？（这可真是一时卸载一时爽，卸载容易重装难啊）</p>
@@ -2222,7 +2222,7 @@
   </entry>
   <entry>
     <title>数据结构与算法总结</title>
-    <url>/2021/01/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <url>/blog/2021/01/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="一-绪论"><a href="#一-绪论" class="headerlink" title="一.绪论"></a>一.绪论</h2><p>算法是为了解决实际问题而设计的.数据结构是算法需要处理的问题载体.</p>
 <h3 id="基本概念和术语"><a href="#基本概念和术语" class="headerlink" title="基本概念和术语:"></a>基本概念和术语:</h3><ul>
 <li><p>数据:数据是指能输入到计算机中并能够被计算机处理的一切对象.</p>
@@ -2544,7 +2544,7 @@
   </entry>
   <entry>
     <title>python笔记</title>
-    <url>/2021/01/28/python%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2021/01/28/python%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="python笔记"><a href="#python笔记" class="headerlink" title="python笔记"></a>python笔记</h1><a id="more"></a>
 
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><p>例子:</p>
@@ -2574,7 +2574,7 @@
   </entry>
   <entry>
     <title>BurpSuite的设置及使用</title>
-    <url>/2021/01/24/BurpSuite%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
+    <url>/blog/2021/01/24/BurpSuite%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="BurpSuite的设置及使用"><a href="#BurpSuite的设置及使用" class="headerlink" title="BurpSuite的设置及使用"></a>BurpSuite的设置及使用</h1><h2 id="1-BurpSuite安装与配置"><a href="#1-BurpSuite安装与配置" class="headerlink" title="1.BurpSuite安装与配置"></a>1.BurpSuite安装与配置</h2><h3 id="BurpSuite功能介绍"><a href="#BurpSuite功能介绍" class="headerlink" title="BurpSuite功能介绍"></a>BurpSuite功能介绍</h3><p>BurpSuite是用于攻击web应用程序的集成平台，包含了许多工具。BurpSuite为这些工具设计了许多接口，以加快攻击应用程序的过程。所有工具都共享-一个请求， 并能处理对应的HTTP消息、持久性、认证、代理、日志、警报。</p>
 <p>Burpsuite是由JAVA语言编写,所以Burpsuite是-款跨平台的软件。 但是在测试过程中Buripsuite不像其他自动化测试工具不需要输入任何内容即可完成测试，而需要手动的配置某些参数触发对应的行为才会完成测试。</p>
 <h2 id="2-BurpSuite-Proxy模块"><a href="#2-BurpSuite-Proxy模块" class="headerlink" title="2.BurpSuite Proxy模块"></a>2.BurpSuite Proxy模块</h2><p>Burp Proxy 是Burp Suite以用户驱动测试流程功能的核心，通过代理模式，可以让我们拦截、查看、修改所有在客户端和服务端之间传输的数据。</p>
@@ -2618,7 +2618,7 @@
   </entry>
   <entry>
     <title>Kail Linux虚拟机安装配置Nessus漏洞扫描器</title>
-    <url>/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/</url>
+    <url>/blog/2021/01/25/Kail-Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENessus%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E5%99%A8/</url>
     <content><![CDATA[<h1 id="Kail-Linux虚拟机安装配置Nessus漏洞扫描器"><a href="#Kail-Linux虚拟机安装配置Nessus漏洞扫描器" class="headerlink" title="Kail Linux虚拟机安装配置Nessus漏洞扫描器"></a>Kail Linux虚拟机安装配置Nessus漏洞扫描器</h1><a id="more"></a>
 
 <h2 id="1-获取激活码"><a href="#1-获取激活码" class="headerlink" title="1.获取激活码"></a>1.获取激活码</h2><p>前往<a href="https://www.tenable.com/products/nessus/nessus-essentials">官网</a>进行注册</p>
@@ -2661,7 +2661,7 @@
   </entry>
   <entry>
     <title>Linux学习笔记</title>
-    <url>/2021/01/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2021/01/27/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="Linux学习笔记"><a href="#Linux学习笔记" class="headerlink" title="Linux学习笔记"></a>Linux学习笔记</h1><a id="more"></a>
 
 <h2 id="Linux注意事项"><a href="#Linux注意事项" class="headerlink" title="Linux注意事项"></a>Linux注意事项</h2><p>Ctrl+a  快速回到行首</p>
@@ -4537,7 +4537,7 @@
   </entry>
   <entry>
     <title>教你如何获取腾讯视频源地址链接</title>
-    <url>/2021/01/28/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E6%BA%90%E5%9C%B0%E5%9D%80%E9%93%BE%E6%8E%A5/</url>
+    <url>/blog/2021/01/28/%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E6%BA%90%E5%9C%B0%E5%9D%80%E9%93%BE%E6%8E%A5/</url>
     <content><![CDATA[<h1 id="教你如何获取腾讯视频源地址链接"><a href="#教你如何获取腾讯视频源地址链接" class="headerlink" title="教你如何获取腾讯视频源地址链接"></a>教你如何获取腾讯视频源地址链接</h1><a id="more"></a>
 
 <p>下面以<a href="https://v.qq.com/x/cover/umpnsyqfu7f60se/n003547u6to.html">星骸骑士第5集</a>为例获取其视频源链接</p>
@@ -4566,7 +4566,7 @@
   </entry>
   <entry>
     <title>Windows10下搭建汇编语言开发环境</title>
-    <url>/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+    <url>/blog/2021/02/25/Windows10%E4%B8%8B%E6%90%AD%E5%BB%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<h1 id="Windows10下搭建汇编语言开发环境"><a href="#Windows10下搭建汇编语言开发环境" class="headerlink" title="Windows10下搭建汇编语言开发环境"></a>Windows10下搭建汇编语言开发环境</h1><a id="more"></a>
 
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本学期学校安排有汇编语言这门课,需要自己搭建汇编语言开发环境,特此写下本文记录搭建过程.</p>
@@ -4906,7 +4906,7 @@
   </entry>
   <entry>
     <title>汇编语言学习笔记</title>
-    <url>/2021/02/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2021/02/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="汇编语言学习笔记"><a href="#汇编语言学习笔记" class="headerlink" title="汇编语言学习笔记"></a>汇编语言学习笔记</h1><a id="more"></a>
 
 <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h3><p>机器语言是机器指令的集合.机器指令展开来讲就是一台机器可以正确执行的命令.电子计算机的机器指令是一列二进制数字.计算机将之转变为一列高低电平,以使计算机的电子器件受到驱动,进行运算.</p>
@@ -5211,7 +5211,7 @@
   </entry>
   <entry>
     <title>数据库学习笔记</title>
-    <url>/2021/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2021/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="数据库学习笔记"><a href="#数据库学习笔记" class="headerlink" title="数据库学习笔记"></a>数据库学习笔记</h1><a id="more"></a>
 
 <h2 id="数据库的相关概念"><a href="#数据库的相关概念" class="headerlink" title="数据库的相关概念"></a>数据库的相关概念</h2><h3 id="DB"><a href="#DB" class="headerlink" title="DB"></a>DB</h3><p>数据库(database) :存储数据的”仓库”,它保存了一系列有组织的数据</p>
@@ -5250,7 +5250,7 @@
   </entry>
   <entry>
     <title>密码学原理学习笔记</title>
-    <url>/2021/03/01/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2021/03/01/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="密码学原理学习笔记"><a href="#密码学原理学习笔记" class="headerlink" title="密码学原理学习笔记"></a>密码学原理学习笔记</h1><a id="more"></a>]]></content>
       <categories>
         <category>密码学</category>
