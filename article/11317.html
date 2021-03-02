@@ -57,8 +57,9 @@
 <meta property="og:image" content="https://i.loli.net/2021/02/25/b15TdjRzCasUB8c.png">
 <meta property="og:image" content="https://i.loli.net/2021/02/25/pJPAUlga1SRvuse.png">
 <meta property="og:image" content="https://i.loli.net/2021/02/25/PFvrz5jt4GAaDQb.png">
-<meta property="og:image" content="https://i.loli.net/2021/02/25/NmC2sKFeYyInMWq.png">
-<meta property="og:image" content="https://i.loli.net/2021/02/25/GtgYexwQulLnOKk.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210302185912863.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/GtgYexwQulLnOKk.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210302190118748.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210228111902877.png">
 <meta property="og:image" content="https://i.loli.net/2021/02/25/8hrbIxNBJZQ723k.png">
 <meta property="og:image" content="https://i.loli.net/2021/02/25/YZwN2LOQPTuG8Wv.png">
@@ -94,7 +95,7 @@
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210228112817615.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210228112748762.png">
 <meta property="article:published_time" content="2021-02-25T02:17:53.000Z">
-<meta property="article:modified_time" content="2021-03-01T11:01:25.290Z">
+<meta property="article:modified_time" content="2021-03-02T11:03:12.893Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="汇编语言">
 <meta name="twitter:card" content="summary">
@@ -319,7 +320,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-01 19:01:25" itemprop="dateModified" datetime="2021-03-01T19:01:25+08:00">2021-03-01</time>
+                <time title="修改时间：2021-03-02 19:03:12" itemprop="dateModified" datetime="2021-03-02T19:03:12+08:00">2021-03-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -415,12 +416,14 @@
 <p>使用快捷键Ctrl+F查找其中的[autoexec]部分(一般在文件末尾)</p>
 <p><img src="https://i.loli.net/2021/02/25/PFvrz5jt4GAaDQb.png"></p>
 <p>在文件中添加下列内容并保存</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MOUNT F D:\DOSBox\Debug</span><br><span class="line">set PATH&#x3D;%PATH%;F:\MASM;</span><br><span class="line">F:</span><br><span class="line">cd F:\ASM</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/02/25/NmC2sKFeYyInMWq.png"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MOUNT F D:\DOSBox\Debug</span><br><span class="line">set PATH&#x3D;%PATH%;F:\MASM;</span><br><span class="line">F:</span><br><span class="line">cd F:\ASM</span><br><span class="line">cls</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302185912863.png"></p>
 <p>命令解释:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#挂载工作目录挂载到虚拟盘符F(虚拟盘符可自定义,命令不区分大小写)</span><br><span class="line">MOUNT F D:\DOSBox\Debug</span><br><span class="line">#添加系统临时变量(此时的F代表的是D:\DOSBox\Debug）</span><br><span class="line">set PATH&#x3D;%PATH%;F:\MASM; </span><br><span class="line">#转到F盘符</span><br><span class="line">F:</span><br><span class="line">#切换到F:\ASM目录</span><br><span class="line">cd F:\ASM</span><br></pre></td></tr></table></figure>
-<p>之后重启DOSBox,可见自动执行上述命令</p>
-<p><img src="https://i.loli.net/2021/02/25/GtgYexwQulLnOKk.png"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#挂载工作目录挂载到虚拟盘符F(虚拟盘符可自定义,命令不区分大小写)</span><br><span class="line">MOUNT F D:\DOSBox\Debug</span><br><span class="line">#添加系统临时变量(此时的F代表的是D:\DOSBox\Debug）</span><br><span class="line">set PATH&#x3D;%PATH%;F:\MASM; </span><br><span class="line">#转到F盘符</span><br><span class="line">F:</span><br><span class="line">#切换到F:\ASM目录</span><br><span class="line">cd F:\ASM</span><br><span class="line">#执行一次清屏</span><br><span class="line">cls</span><br></pre></td></tr></table></figure>
+<p>如果不加cls,打开会是这样</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/GtgYexwQulLnOKk.png"></p>
+<p>加上cls,打开会是这样(我觉得更美观,依个人喜好)</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302190118748.png"></p>
 <p>注意:不进行此种配置的话,每次打开DOSBox是需要手动输入上述命令,非常麻烦</p>
 <h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="DOSBox常用快捷键"><a href="#DOSBox常用快捷键" class="headerlink" title="DOSBox常用快捷键"></a>DOSBox常用快捷键</h3><table>
 <thead>
