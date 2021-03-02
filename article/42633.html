@@ -61,7 +61,7 @@
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210227205939995.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210302134231838.png">
 <meta property="article:published_time" content="2021-02-25T23:24:01.000Z">
-<meta property="article:modified_time" content="2021-03-02T09:57:14.260Z">
+<meta property="article:modified_time" content="2021-03-02T13:41:48.652Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="汇编语言">
 <meta name="twitter:card" content="summary">
@@ -286,7 +286,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-02 17:57:14" itemprop="dateModified" datetime="2021-03-02T17:57:14+08:00">2021-03-02</time>
+                <time title="修改时间：2021-03-02 21:41:48" itemprop="dateModified" datetime="2021-03-02T21:41:48+08:00">2021-03-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -325,14 +325,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
+              <span>7.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>7 分钟</span>
             </span>
             <div class="post-description">汇编语言学习笔记</div>
 
@@ -508,14 +508,17 @@
 <li>1个指令指针寄存器(EIP)1个标志寄存器(EFlags)</li>
 </ul>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210227202835381.png"></p>
-<h3 id="数据寄存器"><a href="#数据寄存器" class="headerlink" title="数据寄存器"></a>数据寄存器</h3><ul>
-<li>数据寄存器:主要用来保存操作数和运算结果等信息</li>
-<li>数据寄存器由AX,BX, CX, DX四个组成</li>
-<li>由于在8086之前的CPU为8位CPU,为了兼容以前的8位程序,在8086CPU中,每一个数据寄存器都可以当做两个单独的寄存器来使用,由此,每一个16位寄存器可以当做2个独立的8位寄存器来使用</li>
-<li>AX可以分为AH和AL </li>
-<li>BX可以分为BH和BL </li>
-<li>CX可以分为CH和CL </li>
-<li>DX可以分为DH和DL</li>
+<h3 id="数据寄存器"><a href="#数据寄存器" class="headerlink" title="数据寄存器"></a>数据寄存器</h3><p>数据寄存器主要用来保存操作数和运算结果等信息,从而节省读取操作数所需占用总线和访问存储器的时间</p>
+<p>32位CPU有4个32位通用寄存器：EAX、EBX、ECX和EDX,对低16位数据的取存,不会影响高16位的数据,这些低16位寄存器分别命名为AX、BX、CX和DX,它和先前的CPU中的寄存器相一致.4个16位寄存器又可分割成8个独立的8位寄存器(AX:ah-al、BX:bh-bl、CX:ch-cl、DX:dh-dl)</p>
+<blockquote>
+<p>由于在8086之前的CPU为8位CPU,为了兼容以前的8位程序,在8086CPU中,每一个数据寄存器都可以当做两个单独的寄存器来使用,由此,每一个16位寄存器可以当做2个独立的8位寄存器来使用</p>
+</blockquote>
+<p>每个寄存器都有自己的名称,可独立存取.程序员可利用数据寄存器的这种”可合可分”的特性,灵活地处理字或字节的信息</p>
+<p>AX和al通常称为累加器,用累加器进行的操作可能需要更少时间,累加器可用于乘、除、输入/输出等操作,它们的使用频率很高</p>
+<p>BX称为基地址寄存器,它可作为存储器指针来使用</p>
+<p>CX称为计数寄存器,在循环和字符串操作时,要用它来控制循环次数;在位操作中,当移多位时,要用cl来指明位移的位数</p>
+<p>DX称为数据寄存器,在进行乘、除运算时,它可以为默认的操作数参与运算,也可用于存放I/O的端口地址</p>
+<ul>
 <li>AX、BX、CX、DX这4个寄存器通常用来存放一般性的数据,被称为通用寄存器</li>
 </ul>
 <p>注意:除了上面4个数据寄存器以外,其他寄存器均不可以分为两个独立的8位寄存器</p>
@@ -570,7 +573,32 @@
 <li>在16位CPU中,AX、BX、CX和DX不能存放存储单元的地址</li>
 <li>在32位CPU中,其32位寄存器EAX、EBX、ECX和EDX不仅可传送数据、暂存数据保存算术逻辑运算结果,而且也可作为指针寄存器,所以,这些32位寄存器更具有通用性</li>
 </ul>
-<h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><p>8086CPU有4个段寄存器:</p>
+<h3 id="变址寄存器"><a href="#变址寄存器" class="headerlink" title="变址寄存器"></a>变址寄存器</h3><p>32位CPU有2个32位通用寄存器ESI和EDI,其低16位对应先前CPU中的SI和DI,对低16位数据的存取,不影响高16位的数据</p>
+<p>ESI、EDI、SI和DI称为变址寄存器,它们主要用于存放存储单元在段内的偏移量,用它们可实现多种存储器操作数的寻址方式,为以不同的地址形式访问存储单元提供方便</p>
+<p>变址寄存器不可分割成8位寄存器,作为通用寄存器,也可存储算术逻辑运算的操作数和运算结果</p>
+<p>它们可作一般的存储器指针使用,在字符串操作指令的执行过程中,对它们有特定的要求,而且还具有特殊的功能</p>
+<h3 id="指针寄存器"><a href="#指针寄存器" class="headerlink" title="指针寄存器"></a>指针寄存器</h3><p>32位CPU有2个32位通用寄存器EBP和ESP,其低16位对应先前CPU中的BP和SP,对低16位数据的存取,不影响高16位的数据</p>
+<p>EBP、ESP、BP和SP称为指针寄存器,主要用于存放堆栈内存储单元的偏移量,用它们可实现多种存储器操作数的寻址方式,为以不同的地址形式访问存储单元提供方便</p>
+<p>指针寄存器不可分割成8位寄存器,作为通用寄存器,也可存储算术逻辑运算的操作数和运算结果</p>
+<p>它们主要用于访问堆栈内的存储单元,并且规定:</p>
+<p>BP为基指针寄存器,用它可直接存取堆栈中的数据</p>
+<p>SP为堆栈指针寄存器,用它只可访问栈顶</p>
+<h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><p>段寄存器是根据内存分段的管理模式而设置的.内存单元的物理地址由段寄存器的值和一个偏移量组合而成的,这样可用两个较少位数的值组合成一个可访问较大物理空间的内存地址</p>
+<p>32位CPU有6个段寄存器,分别如下:</p>
+<p>CS：代码段寄存器  ES：附加段寄存器</p>
+<p>DS：数据段寄存器  FS：附加段寄存器</p>
+<p>SS：堆栈段寄存器  GS：附件段寄存器</p>
+<blockquote>
+<p>在16位CPU系统中,只有4个段寄存器,所以,程序在任何时刻至多有4个正在使用的段可直接访问,在32位微机系统中,它有6个段寄存器,所以在此环境下开发的程序最多可同时访问6个段</p>
+</blockquote>
+<p>32位CPU有两个不同的工作方式:实方式和保护方式.在每种方式下,段寄存器的作用是不同的,有关规定简单描述如下:</p>
+<ul>
+<li><p>实方式:段寄存器CS、DS、ES和SS与先前CPU中的所对应的段寄存器的含义完全一致,内存单元的逻辑地址仍为”段地址:偏移地址”的形式,为访问某内存段内的数据,必须使用该段寄存器和存储单元的偏移地址</p>
+</li>
+<li><p> 保护方式:在此方式下,情况要复杂得多,装入段寄存器的不再是段值,而是称为”选择子”的某个值</p>
+</li>
+</ul>
+<p>8086CPU有4个段寄存器:</p>
 <ul>
 <li>CS:代码段寄存器(Code Segment)</li>
 <li>DS:数据段寄存器(Data Segment)</li>
@@ -578,6 +606,22 @@
 <li>ES:附加段寄存器(Extra Segment)</li>
 </ul>
 <p>8086机中,任意时刻,CPU将CS:IP指向的内容作为即将执行的指令</p>
+<h3 id="指令指针寄存器"><a href="#指令指针寄存器" class="headerlink" title="指令指针寄存器"></a>指令指针寄存器</h3><p>32位CPU把指令指针扩展到32位,并记作EIP,EIP的低16位与先前CPU中的IP作用相同</p>
+<p>指令指针EIP、IP是存放下次将要执行的指令在代码段的偏移地址,在具有预取指令功能的系统中,下次要执行的指令通常已被预取到指令队列中,除非发生转移情况,所以,在理解它们的功能时不考虑存在指令队列的情况</p>
+<p>在实方式下,由于每个段的最大范围为64KB,所以,EIP的高16位肯定都为0,此时,相当于只用其低16位的IP来反映程序中的指令的执行次序</p>
+<h3 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h3><p>1.运算结果标志位.一共6个,包括:CF进位标志位、PF奇偶标志位、AF辅助进位标志位、ZF零标志位、SF符号标志位、OF溢出标志位</p>
+<p>2.状态控制标志位.一共3个,包括:TF追踪标志位、IF中断允许标志位、DF方向标志位</p>
+<p>32位标志寄存器增加的4个标志位:</p>
+<p> 1.I/O特权标志IOPL</p>
+<p>IOPL用两位二进制位来表示,也称为I/O特权级字段,该字段指定了要求执行I/O指令的特权级,如果当前的特权级别在数值上小于等于IOPL的值,那么,该I/O指令可执行,否则将发生一个保护异常</p>
+<p>2.嵌套任务标志NT</p>
+<p>NT用来控制中断返回指令IRET的执行.具体规定如下:</p>
+<p>（1）   当NT=0,用堆栈中保存的值恢复EFlags、CS和EIP,执行常规的中断返回操作</p>
+<p>（2）   当NT=1,通过任务转换实现中断返回</p>
+<p>3.重启动标志RF</p>
+<p>RF用来控制是否接受调试故障.规定:RF=0时,表示接受,否则拒绝</p>
+<p>4.虚拟8086方式标志VM</p>
+<p>如果VM=1,表示处理机处于虚拟的8086方式下的工作状态,否则,处理机处于一般保护方式下的工作状态</p>
 <h3 id="CS-IP"><a href="#CS-IP" class="headerlink" title="CS:IP"></a>CS:IP</h3><h4 id="程序的简要运行流程"><a href="#程序的简要运行流程" class="headerlink" title="程序的简要运行流程"></a>程序的简要运行流程</h4><ol>
 <li>程序加载到内存中</li>
 <li>CPU找到程序即将执行指令的位置,并执行游戏程序</li>
@@ -807,7 +851,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">汇编语言学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="nav-text">机器语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80"><span class="nav-text">汇编语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-text">汇编语言的组成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E5%92%8C%E6%95%B0%E6%8D%AE"><span class="nav-text">指令和数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-text">存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E5%88%86%E7%B1%BB"><span class="nav-text">存储器分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4"><span class="nav-text">内存地址空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%8D%95%E4%BD%8D"><span class="nav-text">存储单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="nav-text">存储单元</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU"><span class="nav-text">CPU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU%E5%AF%B9%E5%AD%98%E5%82%A8%E5%99%A8%E8%AF%BB%E5%86%99"><span class="nav-text">CPU对存储器读写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BA%BF%E5%AE%BD%E5%BA%A6%E4%B8%8ECPU%E6%80%A7%E8%83%BD"><span class="nav-text">总线宽度与CPU性能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E6%80%BB%E7%BA%BF"><span class="nav-text">地址总线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%80%BB%E7%BA%BF"><span class="nav-text">数据总线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%80%BB%E7%BA%BF"><span class="nav-text">控制总线</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">数据寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">段寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CS-IP"><span class="nav-text">CS:IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%AE%80%E8%A6%81%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-text">程序的简要运行流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80"><span class="nav-text">物理地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9CS-IP"><span class="nav-text">修改CS:IP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-text">字在寄存器的存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="nav-text">简单汇编指令</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-text">汇编语言学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80"><span class="nav-text">机器语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80"><span class="nav-text">汇编语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-text">汇编语言的组成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E5%92%8C%E6%95%B0%E6%8D%AE"><span class="nav-text">指令和数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-text">存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E5%88%86%E7%B1%BB"><span class="nav-text">存储器分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4"><span class="nav-text">内存地址空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%8D%95%E4%BD%8D"><span class="nav-text">存储单位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="nav-text">存储单元</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CPU"><span class="nav-text">CPU</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU%E5%AF%B9%E5%AD%98%E5%82%A8%E5%99%A8%E8%AF%BB%E5%86%99"><span class="nav-text">CPU对存储器读写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BA%BF%E5%AE%BD%E5%BA%A6%E4%B8%8ECPU%E6%80%A7%E8%83%BD"><span class="nav-text">总线宽度与CPU性能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E6%80%BB%E7%BA%BF"><span class="nav-text">地址总线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%80%BB%E7%BA%BF"><span class="nav-text">数据总线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%80%BB%E7%BA%BF"><span class="nav-text">控制总线</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">数据寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">变址寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">指针寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">段寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E6%8C%87%E9%92%88%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">指令指针寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-text">标志寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CS-IP"><span class="nav-text">CS:IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%AE%80%E8%A6%81%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="nav-text">程序的简要运行流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80"><span class="nav-text">物理地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9CS-IP"><span class="nav-text">修改CS:IP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-text">字在寄存器的存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="nav-text">简单汇编指令</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
