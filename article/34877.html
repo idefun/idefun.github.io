@@ -375,11 +375,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc hello.o -o hello</span><br></pre></td></tr></table></figure>
 <p>查看程序所需动态库:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ldd hello   //linux</span><br></pre></td></tr></table></figure>
-<p>交换文件说明:</p>
-<ol>
-<li>vi写文件，没有保存就关闭，自动生成一个后缀为. swp交换文件， 保存了之前写的内容</li>
-<li>先恢复，再删除.swp交换文件</li>
-</ol>
+<p>交换文件说明:<br>1) vi写文件，没有保存就关闭，自动生成一个后缀为. swp交换文件， 保存了之前写的内容<br>2)先恢复，再删除.swp交换文件</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi -r &#123;your file name&#125; //恢复</span><br><span class="line">rm &#123;your file name&#125;.swp   //删除</span><br></pre></td></tr></table></figure>
 <h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p><strong>C的关键字共有32个</strong></p>
 <ul>
@@ -412,10 +408,8 @@
 </li>
 <li><p>标识符只能由字母、数字、下划线组成</p>
 </li>
-<li><p>第一个字符必须为字母或下划线</p>
-</li>
-<li><p>标识符中字母区分大小写</p>
-</li>
+<li>第一个字符必须为字母或下划线</li>
+<li>标识符中字母区分大小写</li>
 </ul>
 <p>变量特点:</p>
 <ul>
@@ -428,14 +422,16 @@
 <li>定义变量需要建立存储空间，如: int b;</li>
 <li>-般的情况下，把建立存储空间的声明称之为“定义”，而把不需要建立存储空间的声明称之为”声明”.</li>
 </ul>
-<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><h4 id="C语言如何表示相应的进制数"><a href="#C语言如何表示相应的进制数" class="headerlink" title="C语言如何表示相应的进制数"></a>C语言如何表示相应的进制数</h4><table>
+<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><h4 id="C语言如何表示相应的进制数"><a href="#C语言如何表示相应的进制数" class="headerlink" title="C语言如何表示相应的进制数"></a>C语言如何表示相应的进制数</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>十进制</th>
 <th>以正常数字1-9开头,如123</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>八进制</td>
 <td>以0(零)开头,如0123</td>
 </tr>
@@ -447,18 +443,20 @@
 <td>二进制</td>
 <td>C语言不能直接书写二进制数</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="计算机内存数值存储方式"><a href="#计算机内存数值存储方式" class="headerlink" title="计算机内存数值存储方式"></a>计算机内存数值存储方式</h3><p>在计算机系统中，数值一律用补码来存储。</p>
 <h4 id="原码"><a href="#原码" class="headerlink" title="原码:"></a>原码:</h4><p>最高位为符号位:0代表正数,1代表负数​</p>
 <p>原码存储导致2个问题:</p>
 <ol>
-<li> 0有两种存储方式</li>
-<li> 正数和负数相加结果不正确</li>
+<li>0有两种存储方式</li>
+<li>正数和负数相加结果不正确</li>
 </ol>
 <h4 id="反码"><a href="#反码" class="headerlink" title="反码:"></a>反码:</h4><p>反码是为了算补码.正数的原码和反码是一样的,负数的反码在原码基础上,符号位不变,其它位取反(0为1,1变0 ).</p>
 <p>反码存储导致1个问题:</p>
 <ol>
-<li> 0有两种存储方式</li>
+<li>0有两种存储方式</li>
 </ol>
 <h4 id="补码"><a href="#补码" class="headerlink" title="补码:"></a>补码:</h4><p>正数的原码,反码,补码都一样</p>
 <p>负数的补码为其反码加1</p>
@@ -477,7 +475,7 @@
 </ol>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a=<span class="number">0x81</span>;<span class="comment">//a是值为十六进制数的字符,在计算机看来是补码</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);<span class="comment">//%d为输出十进制数,在用户看来是原码</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面程序运行结果如下:</p>
-<p><img src="https://i.loli.net/2021/01/12/l23jvtQaPwTHyWG.png"></p>
+<p><img src="https://i.loli.net/2021/01/12/l23jvtQaPwTHyWG.png" alt=""></p>
 <p>按照十六进制转十进制,0x81等于129而不是-127</p>
 <p>分析:</p>
 <ol>
@@ -495,8 +493,7 @@
 </ul>
 <p>数据类型范围:</p>
 <p>char    1个字节</p>
-<img src="https://i.loli.net/2021/01/12/UNxsfOjRD2cu9eY.png" alt="image-20210112214358475" style="zoom:80%;" />
-
+<p><img src="https://i.loli.net/2021/01/12/UNxsfOjRD2cu9eY.png" alt="image-20210112214358475" style="zoom:80%;" /></p>
 <p>数值越界:</p>
 <p>通过以下代码解释</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="comment">//情况1 有符号</span></span><br><span class="line">        <span class="comment">//char 范围 -128~127</span></span><br><span class="line">        <span class="keyword">char</span> a=<span class="number">127</span>+<span class="number">2</span>;</span><br><span class="line">        <span class="comment">/* a=129,转换二进制为1000 0001,</span></span><br><span class="line"><span class="comment">          二进制(1000 0001)以补码形式存储,</span></span><br><span class="line"><span class="comment">          输出为%d,要求得原码(11111111),</span></span><br><span class="line"><span class="comment">          即-127</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);<span class="comment">//输出-127</span></span><br><span class="line">        <span class="comment">//情况2 无符号</span></span><br><span class="line">        <span class="comment">//无符号 范围 0~255</span></span><br><span class="line">        <span class="keyword">unsigned</span> <span class="keyword">char</span> b=<span class="number">255</span>+<span class="number">2</span>;</span><br><span class="line">        <span class="comment">/* b=257,转换二进制为1 0000 0001,</span></span><br><span class="line"><span class="comment">           舍弃最高位为0000 0001,</span></span><br><span class="line"><span class="comment">           二进制(0000 0001)以补码形式存储,</span></span><br><span class="line"><span class="comment">           转为原码(0000 0001),</span></span><br><span class="line"><span class="comment">           即1</span></span><br><span class="line"><span class="comment">           注意编译时会警告,之后./文件名运行即可</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%u\n&quot;</span>,b);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -509,10 +506,10 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/*数据类型的作用:告诉编译器,</span></span><br><span class="line"><span class="comment">    定义此类型变量需要分配多大空间*/</span>					<span class="built_in">printf</span>(<span class="string">&quot;sizeof(char)=%lu\n&quot;</span>,<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">   	<span class="built_in">printf</span>(<span class="string">&quot;sizeof(a)=%lu\n&quot;</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果如下:</p>
-<img src="https://i.loli.net/2021/01/13/3VmSN7iDcPkwLsY.png" style="zoom:150%;" />
-
+<p><img src="https://i.loli.net/2021/01/13/3VmSN7iDcPkwLsY.png" style="zoom:150%;" /></p>
 <p>%d,%o,%x,%u等均以四个字节形式打印.</p>
 <p>short占两个字节,short a;与short int a;等价.</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -520,7 +517,8 @@
 <th>占用空间</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>short (短整型)</td>
 <td>2字节</td>
 </tr>
@@ -536,7 +534,9 @@
 <td>long long (长长整形)</td>
 <td>8字节</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="字符型变量"><a href="#字符型变量" class="headerlink" title="字符型变量"></a>字符型变量</h3><p>字符型变量用于存储一个单一字符，在C语言中用char 表示，其中每个字符变量都会占用1个字节。在给字符型变量赋值时，需要用一对英文半角格式的单引号(‘ ‘)把字符括起来。<br>字符变量实际上并不是把该字符本身放到变量的内存单元中去，而是将该字符对应的ASCII 编码放到变量的存储单元中。char 的本质就是一个1 字节大小的整型。</p>
 <p>使用</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">man ascii</span><br></pre></td></tr></table></figure>
@@ -545,8 +545,9 @@
 <p>转义字符由反斜杠\组成的多个字符</p>
 <p>例子</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a=<span class="string">&#x27;\r&#x27;</span>;<span class="comment">//光标移到句首</span></span><br><span class="line">        <span class="keyword">char</span> b=<span class="string">&#x27;\b&#x27;</span>;<span class="comment">//退格</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;12345%c6789\n&quot;</span>,a);<span class="comment">//先打印12345,之后光标移到句首再依次打印6789,其中1234被覆盖,留下5,结果为67895</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;abcde%cfghi\n&quot;</span>,b);<span class="comment">//先打印abcde之后打印\b,退一格,e就没了,结果为abcdfghi</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/22/wYUVzd2mpNqX3LQ.png"></p>
+<p><img src="https://i.loli.net/2021/01/22/wYUVzd2mpNqX3LQ.png" alt=""></p>
 <h3 id="浮点型-实型"><a href="#浮点型-实型" class="headerlink" title="浮点型(实型)"></a>浮点型(实型)</h3><p>实型变量也可以称为浮点型变量，浮点型变量是用来存储小数数值的。在C语言中，浮点型变量分为两种:单精度浮点数(float)、双精度浮点数(double)，但是double型变量所表示的浮点数比float 型变量更精确。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -555,7 +556,8 @@
 <th>有效数字范围</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>float</td>
 <td>4字节</td>
 <td>7位有效数字</td>
@@ -565,18 +567,22 @@
 <td>8字节</td>
 <td>15~ 16位有效数字</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>float存储不准确</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">float</span> a=<span class="number">100.9</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%f\n&quot;</span>,a);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/22/pT1JRNYS97IyjM4.png"></p>
-<h3 id="类型限定符"><a href="#类型限定符" class="headerlink" title="类型限定符"></a>类型限定符</h3><table>
+<p><img src="https://i.loli.net/2021/01/22/pT1JRNYS97IyjM4.png" alt=""></p>
+<h3 id="类型限定符"><a href="#类型限定符" class="headerlink" title="类型限定符"></a>类型限定符</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>限定符</th>
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>extern</td>
 <td>声明一个变量，extexn 声明的变量没有建立存储空间。extern int a;</td>
 </tr>
@@ -592,7 +598,9 @@
 <td>register</td>
 <td>定义寄存器变量，提高效率。 register是建议型的指令，而不是命令型的指令，如果CPU有空闲寄存器，那么register就生效， 如果没有空闲寄存器，那么register无效。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>字符串常量与字符常量的不同:<br>‘a’为字符常量，”a”为字符串常量</p>
 <p><img src="https://i.loli.net/2021/01/22/hAXpsqiEMktCuyn.png" alt="image-20210113191321188"></p>
 <p>每个字符串的结尾，编译器会自动的添加一一个结束标志位’\0’,即”a” 包含<br>两个字符’a’和’\0’。</p>
@@ -601,28 +609,28 @@
 <p>%05d,以5个字符输出,没有的字符以0填充,默认是右对齐</p>
 <p>%-5d,以5个字符输出,没有的字符以空字符填充,-代表指定为左对齐</p>
 <p>0和-不能同时使用</p>
-<p><img src="https://i.loli.net/2021/01/22/ts6idzBZGxWJveY.png"></p>
+<p><img src="https://i.loli.net/2021/01/22/ts6idzBZGxWJveY.png" alt=""></p>
 <h3 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h3><blockquote>
 <p>遇到”\0”停止</p>
 </blockquote>
 <h3 id="puts"><a href="#puts" class="headerlink" title="puts()"></a>puts()</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[]=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    <span class="built_in">puts</span>(buf);<span class="comment">//把buf内容输出到屏幕,自动在屏幕加换行</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,buf);<span class="comment">//没有加换行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/29/u4frlgbByp9IMoT.png"></p>
+<p><img src="https://i.loli.net/2021/01/29/u4frlgbByp9IMoT.png" alt=""></p>
 <h3 id="fputs"><a href="#fputs" class="headerlink" title="fputs()"></a>fputs()</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[]=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    <span class="comment">//向stdout(代表屏幕,标准输出)输出buf的内容</span></span><br><span class="line">    <span class="built_in">fputs</span>(buf,<span class="built_in">stdout</span>);<span class="comment">//没有加换行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/01/29/r64eO1HkSZt9JXd.png" alt="image-20210129141616052"></p>
 <h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><h3 id="scanf"><a href="#scanf" class="headerlink" title="scanf"></a>scanf</h3><p>scanf()的缺陷，不做越界检查,不允许有空格</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">5</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入字符串:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a=%s\n&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/29/foM25d9lpc8aQUR.png"></p>
+<p><img src="https://i.loli.net/2021/01/29/foM25d9lpc8aQUR.png" alt=""></p>
 <h3 id="gets"><a href="#gets" class="headerlink" title="gets()"></a>gets()</h3><p>gets()从键盘读取字符串，放在指定的数组<br>gets()允许有空格，不做越界检查，此函数不安全</p>
 <h3 id="fgets"><a href="#fgets" class="headerlink" title="fgets()"></a>fgets()</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line">        <span class="comment">//从stdin(代表标准输入,键盘)读取内容</span></span><br><span class="line">        <span class="comment">/*如果输入内容大于sizeof(buf)-1,只取	</span></span><br><span class="line"><span class="comment">        sizeof(buf)-1,放在buf所在数组;</span></span><br><span class="line"><span class="comment">        当不足sizeof(buf)-1,会把换行符读进去*/</span></span><br><span class="line">        fgets(buf,<span class="keyword">sizeof</span>(buf),<span class="built_in">stdin</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;buf=%s\n&quot;</span>,buf);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/29/qgh4QbsSC7MvWfd.png"></p>
+<p><img src="https://i.loli.net/2021/01/29/qgh4QbsSC7MvWfd.png" alt=""></p>
 <p>fgets()允许有空格</p>
-<p><img src="https://i.loli.net/2021/01/29/6vIXpuY7SQeEKUM.png"></p>
+<p><img src="https://i.loli.net/2021/01/29/6vIXpuY7SQeEKUM.png" alt=""></p>
 <p>当不足sizeof(buf)-1,会把换行符读进去</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line">    fgets(buf,<span class="keyword">sizeof</span>(buf),<span class="built_in">stdin</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;buf=#%s#\n&quot;</span>,buf);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/29/3gJLWmkOlP8fQKI.png"></p>
+<p><img src="https://i.loli.net/2021/01/29/3gJLWmkOlP8fQKI.png" alt=""></p>
 <h3 id="输入字符"><a href="#输入字符" class="headerlink" title="输入字符"></a>输入字符</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;b=&#x27;%c&#x27;\n&quot;</span>,b);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面这个程序看似简单,结果为a=c,b=d,其实不然,结果如下:</p>
-<p><img src="https://i.loli.net/2021/01/22/itzxmayI15d6uqO.png"></p>
+<p><img src="https://i.loli.net/2021/01/22/itzxmayI15d6uqO.png" alt=""></p>
 <p>无需输入d直接出结果</p>
 <p>原因:</p>
 <p>当用户输入字符时,编译器默认把输入的内容先放在一块内存中(缓冲区) , scanf()自动在缓冲区读内容(只读一个字符).第一次输入时输入了c\n(回车),scanf取走了c,留下\n还在缓存区,第2次scanf ,由于缓冲区还有内容,所以直接取内容,无需再输入</p>
@@ -630,16 +638,15 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);<span class="comment">//假设输入c</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=&#x27;%c&#x27;\n&quot;</span>,a);</span><br><span class="line">        <span class="comment">//吃掉上一步的\n,不做处理</span></span><br><span class="line">        <span class="keyword">char</span> b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;b);</span><br><span class="line">        <span class="keyword">char</span> t;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入字符:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;t);<span class="comment">//假设输入d</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;t=&#x27;%c&#x27;\n&quot;</span>,t);</span><br><span class="line">    	<span class="comment">//或者都在一个scanf中写</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="输入字符串"><a href="#输入字符串" class="headerlink" title="输入字符串"></a>输入字符串</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入字符串a:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,a);<span class="comment">//假设输入hello world</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a=%s\n&quot;</span>,a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入字符串b:\n&quot;</span>);</span><br><span class="line">    <span class="keyword">char</span> b[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;b=%s\n&quot;</span>,b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果如下:</p>
-<p><img src="https://i.loli.net/2021/01/29/OUtFhK74fAaNsj5.png"></p>
+<p><img src="https://i.loli.net/2021/01/29/OUtFhK74fAaNsj5.png" alt=""></p>
 <p>原因:</p>
-<p>当输入hello world时,第一个scanf取走第一个空格前的字符串,即hello;第二个scanf取第一个空格后第二个空格前的内容,\n不取</p>
+<p>当输入hello world时,第一个scanf取走第一个空格前的字符串,即hello;第二个scanf取第一个空格后第二个空格前的内容,\\n不取</p>
 <p>switch语句</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入:\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">        <span class="comment">//1、switch是关键字， switch() 后面没有分号</span></span><br><span class="line">        <span class="comment">//2、switch()中() 里只能放整型变量或字符型变量</span></span><br><span class="line">        <span class="keyword">switch</span>(num)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;1楼\n&quot;</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;2楼\n&quot;</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;3楼\n&quot;</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;其他楼层\n&quot;</span>);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>goto语句</p>
 <p>goto(只能跳转到同一作用域)任意地方都能使用,无条件跳转,不能滥用,代码会很乱</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">goto</span> hello;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;1111111111\n&quot;</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;2222222222\n&quot;</span>);</span><br><span class="line">        hello:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;3333333333\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="https://i.loli.net/2021/01/28/fNUX46T5h1YqSc9.png" alt="image-20210122205440917" style="zoom:150%;" />
-
+<p><img src="https://i.loli.net/2021/01/28/fNUX46T5h1YqSc9.png" alt="image-20210122205440917" style="zoom:150%;" /></p>
 <p>类型转换:</p>
 <p>1.隐式转换</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> a;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//编译器自动转换，把b转 换为double类型后， 再给a赋值(隐式转换)</span></span><br><span class="line">a= b;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%lf\n&quot;</span>，b) ;</span><br></pre></td></tr></table></figure>
@@ -661,7 +668,7 @@
 <li>数组名是数组首元素地址</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[<span class="number">10</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;a=%p,&amp;a[0]=%p\n&quot;</span>,a,&amp;a[<span class="number">0</span>]);<span class="comment">//%p输出地址</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;sizeof(a)=%lu\n&quot;</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/23/EFTYRgCKmLP263d.png"></p>
+<p><img src="https://i.loli.net/2021/01/23/EFTYRgCKmLP263d.png" alt=""></p>
 <h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>内存中没有多维,只有一维,多维数组是特殊的一维数组</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果定义时，同时初始化，第1个[]可以不写内容</span></span><br><span class="line"><span class="keyword">int</span> a1[][<span class="number">4</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>&#125;;<span class="comment">//正确</span></span><br><span class="line"><span class="comment">//如果第1个[]不写，必须初始化</span></span><br><span class="line"><span class="keyword">int</span> a3[][<span class="number">4</span>]; <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
 <h3 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h3><ol>
@@ -671,13 +678,13 @@
 </ol>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1、C语言没有字符串类型，用字符数组模拟</span></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">10</span>];</span><br><span class="line"><span class="comment">//2、字符串一定是字符数组，字符数组就不一定是字符串</span></span><br><span class="line"><span class="comment">//3、如果字符数组以字符&#x27;\0&#x27;(&#x27;\0&#x27;等级于数字0)结尾，那么这个字符数组就是字符串</span></span><br><span class="line"><span class="keyword">char</span> b[] = &#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>&#125;; <span class="comment">//字符数组,方括号中不能填数字,否则会自动补零,就变成字符串</span></span><br><span class="line"><span class="keyword">char</span> c[<span class="number">10</span>] = &#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;\0&#x27;</span>&#125;; <span class="comment">//字符串</span></span><br><span class="line"><span class="keyword">char</span> d[<span class="number">10</span>] = &#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="number">0</span>&#125;; <span class="comment">//字符串</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a[]=&#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;f&#x27;</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a=%s\n&quot;</span>,a);<span class="comment">//会乱码,没有结束符</span></span><br><span class="line">    <span class="keyword">char</span> b[]=&#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;\0&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;f&#x27;</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;b=%s\n&quot;</span>,b);<span class="comment">//输出abc,遇到\0就停止</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/27/Re83qQAwDB7K42Y.png"></p>
+<p><img src="https://i.loli.net/2021/01/27/Re83qQAwDB7K42Y.png" alt=""></p>
 <p>字符数组初始化(常用)</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">10</span>]=<span class="string">&quot;abcde&quot;</span>;<span class="comment">//最多写9个字符,留一个放结束符</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;a=%s\n&quot;</span>,a);</span><br><span class="line"><span class="keyword">char</span> b[]=<span class="string">&quot;abcde&quot;</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;b=%s\n&quot;</span>,b);<span class="comment">//sizeof()测数据类型大小，不会因为结束符提前结束</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;sizeof(b)=%lu\n&quot;</span>,<span class="keyword">sizeof</span>(b));<span class="comment">//输出6,b这个数组有5个字符,会自动补加结束符(隐藏)</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/27/iDy86UJt1X2r3ZK.png"></p>
+<p><img src="https://i.loli.net/2021/01/27/iDy86UJt1X2r3ZK.png" alt=""></p>
 <p>\0后面最好不要跟数字,有可能组成转义字符</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a[]=<span class="string">&quot;\0abc&quot;</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a=%s\n&quot;</span>,a);<span class="comment">//输出为空,含有结束符\0</span></span><br><span class="line">    <span class="keyword">char</span> b[]=<span class="string">&quot;\0417abcde&quot;</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;b=%s\n&quot;</span>,b);<span class="comment">//输出非空,\0与其后数字组成转义字符\041,通过man ascii命令查到\041对应!(感叹号)</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/27/VJXSilNmnR6wyhB.png"></p>
+<p><img src="https://i.loli.net/2021/01/27/VJXSilNmnR6wyhB.png" alt=""></p>
 <p>函数的调用:产生随机数</p>
 <p>当调用函数时，需要关心5要素:</p>
 <ul>
@@ -688,7 +695,7 @@
 <li>返回值:根据需要接收返回值</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;//产生随机数的函数包含在此</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;//获取当前系统时间的函数包含在此</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="comment">//先设置种子,种子设置一次即可</span></span><br><span class="line">        <span class="comment">//srand(10);</span></span><br><span class="line">        <span class="comment">/*如果srand()参数一样,则每次产生的随机数一样,</span></span><br><span class="line"><span class="comment">        每次启动计算机以后，种子就是定值了，</span></span><br><span class="line"><span class="comment">        所以根据公式推算出来的结果</span></span><br><span class="line"><span class="comment">        （也就是生成的随机数）就是固定的*/</span></span><br><span class="line">        <span class="comment">/*time(NULL)用来获取系统当前时间,</span></span><br><span class="line"><span class="comment">        由于时间会变,srand()也会改变*/</span></span><br><span class="line">        srand((<span class="keyword">unsigned</span> <span class="keyword">int</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num;</span><br><span class="line">        <span class="keyword">for</span>(;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                num=rand();<span class="comment">//rand()产生随机数</span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;num=%d\n&quot;</span>,num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/27/lTzVDuG41P6RUr7.png"></p>
+<p><img src="https://i.loli.net/2021/01/27/lTzVDuG41P6RUr7.png" alt=""></p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="strlen"><a href="#strlen" class="headerlink" title="strlen"></a>strlen</h3><blockquote>
 <p>strlen需要使用返回值,返回值就是字符串的长度,从首元素开始,到结束符为止的长度,结束符不算(遇到’\0’结束)</p>
 </blockquote>

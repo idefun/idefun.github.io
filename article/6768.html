@@ -45,10 +45,17 @@
 <meta property="og:site_name" content="IdeFun Blog">
 <meta property="og:description" content="概率论与数理统计">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210303135755095.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210303141506346.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210303141523907.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210303141705094.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210303144734089.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210303151455230.png">
 <meta property="article:published_time" content="2021-03-03T04:07:48.000Z">
-<meta property="article:modified_time" content="2021-03-03T04:08:34.146Z">
+<meta property="article:modified_time" content="2021-03-03T07:37:02.580Z">
 <meta property="article:author" content="IdeFun">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210303135755095.png">
 
 <link rel="canonical" href="http://blog.idefun.com/article/6768.html">
 
@@ -259,7 +266,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-03-03 12:07:48 / 修改时间：12:08:34" itemprop="dateCreated datePublished" datetime="2021-03-03T12:07:48+08:00">2021-03-03</time>
+              <time title="创建时间：2021-03-03 12:07:48 / 修改时间：15:37:02" itemprop="dateCreated datePublished" datetime="2021-03-03T12:07:48+08:00">2021-03-03</time>
             </span>
 
           
@@ -289,7 +296,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -310,6 +317,59 @@
 
       
         <h1 id="概率论与数理统计"><a href="#概率论与数理统计" class="headerlink" title="概率论与数理统计"></a>概率论与数理统计</h1><a id="more"></a>
+<h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><p>概率论与数理统计是研究随机现象统计规律的数学学科<br>概率论:研究如何定量描述随机现象及其规律<br>数理统计:以概率论为基础,研究怎样有效地收集、整理和分析带有随机性的数据,以对所考察的问题作出推断与决策的科学</p>
+<h2 id="概率论的基本概念"><a href="#概率论的基本概念" class="headerlink" title="概率论的基本概念"></a>概率论的基本概念</h2><h3 id="随机事件与样本空间"><a href="#随机事件与样本空间" class="headerlink" title="随机事件与样本空间"></a>随机事件与样本空间</h3><h4 id="两类现象"><a href="#两类现象" class="headerlink" title="两类现象"></a>两类现象</h4><ol>
+<li>确定性现象:在一定条件下必然发生的现象称为确定性现象</li>
+<li>随机现象:在一定条件下可能出现也可能不出现的现象称为随机现象(在个别试验中试验结果呈现不确定性,在大量重复试验中结果具有统计规律性)</li>
+</ol>
+<h4 id="随机试验"><a href="#随机试验" class="headerlink" title="随机试验"></a>随机试验</h4><p>对随机现象的观察、记录、实验统称为随机试验,通常用E表示<br>随机试验具有以下共同特点:</p>
+<ol>
+<li>可以在相同的条件下重复进行</li>
+<li>每次试验的可能的结果不止一个,并且能事先明确试验的所有可能结果</li>
+<li>试验之前不能确定哪一个结果会出现</li>
+</ol>
+<h4 id="样本空间"><a href="#样本空间" class="headerlink" title="样本空间"></a>样本空间</h4><p>随机试验E的所有可能结果所组成的集合称为E的样本空间,通常记作Ω</p>
+<p>样本空间的<strong>元素</strong>,即E的每个结果,称为样本点</p>
+<blockquote>
+<p>注:试验目的不同,对应的样本空间也不一定相同</p>
+<p>例如:</p>
+<p>E :拋两枚硬币<br>若观察正面H和反面T出现的情况,则样本空间为 Ω={HH,HT,TH,TT}<br>若观察出现正面的次数,则样本空间为Ω={0,1,2}</p>
+</blockquote>
+<h4 id="随机事件"><a href="#随机事件" class="headerlink" title="随机事件"></a>随机事件</h4><p>试验E的样本空间Ω的子集称为E的随机事件,简称事件,用A,B,C,…表示</p>
+<p>若某事件A中所包含的某个样本点出现,则称事件A发生</p>
+<blockquote>
+<p>基本事件:由一个样本点组成的单点集</p>
+<p>必然事件:在试验中必定发生的事件</p>
+<p>不可能事件:在一次试验中不可能发生的事件,记作Φ(空集)</p>
+</blockquote>
+<h3 id="事件的关系与运算"><a href="#事件的关系与运算" class="headerlink" title="事件的关系与运算"></a>事件的关系与运算</h3><h4 id="包含关系"><a href="#包含关系" class="headerlink" title="包含关系"></a>包含关系</h4><p>若事件A发生,必然导致事件B发生,则称事件B包含事件A,或称事件A包含于事件B,记作B⊃A或A⊂B</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303135755095.png" alt="包含关系"></p>
+<h4 id="相等"><a href="#相等" class="headerlink" title="相等"></a>相等</h4><p>若事件A包含事件B,且事件B包含事件A,则称事件A与事件B相等,记作A=B</p>
+<h4 id="事件的并-和"><a href="#事件的并-和" class="headerlink" title="事件的并(和)"></a>事件的并(和)</h4><p>事件A、B至少有一个发生所构成的事件叫做事件A与事件B的和,记作A∪B或A+B</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303141506346.png" alt="事件的并"></p>
+<blockquote>
+<p>推广:$\bigcup_{i=1}^{n}A_{i}$为事件$A_{1},A_{2}…A_{n}$的和事件或并事件</p>
+<p>含义:$A_{1},A_{2}…A_{n}$至少有一个发生</p>
+</blockquote>
+<h4 id="事件的交-积"><a href="#事件的交-积" class="headerlink" title="事件的交(积)"></a>事件的交(积)</h4><p>事件A、B同时发生所构成的事件叫做事件A与事件B的积,记作A∩B或AB</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303141523907.png" alt="事件的交"></p>
+<blockquote>
+<p>推广:$\bigcap_{i=1}^{n}A_{i}$为事件$A_{1},A_{2}…A_{n}$的交事件或积事件</p>
+<p>含义:$A_{1},A_{2}…A_{n}$同时发生</p>
+</blockquote>
+<h4 id="事件的差"><a href="#事件的差" class="headerlink" title="事件的差"></a>事件的差</h4><p>由事件A发生且事件B不发生所组成的事件称为事件A与B的差,记作A-B</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303141705094.png" alt="事件的差"></p>
+<blockquote>
+<p>重要恒等式:A-B=A-AB=A$\bar B$</p>
+</blockquote>
+<h4 id="事件的互不相容-互斥"><a href="#事件的互不相容-互斥" class="headerlink" title="事件的互不相容(互斥)"></a>事件的互不相容(互斥)</h4><p>若A∩B=Φ中,即A与B不能同时发生,则称事件A与事件B是互不相容或互斥</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303144734089.png" alt="事件的互斥"></p>
+<h4 id="事件的互逆-对立"><a href="#事件的互逆-对立" class="headerlink" title="事件的互逆(对立)"></a>事件的互逆(对立)</h4><p>若A∩B=Φ且A∪B=Ω,即A与B有且只有一个发生,则称事件A与事件B是互逆的或互为对立事件,记作B=$\bar A$,则有A$\bar A$=Φ,A∪$\bar A$=Ω</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303151455230.png" alt="事件的互逆"></p>
+<blockquote>
+<p>注:事件的互斥与对立的关系对立一定互斥,但是互斥不一定对立</p>
+</blockquote>
+<h2 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h2><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>
     </div>
 
    
@@ -443,7 +503,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1"><span class="nav-text">概率论与数理统计</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1"><span class="nav-text">概率论与数理统计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">概率论的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E4%B8%8E%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4"><span class="nav-text">随机事件与样本空间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E7%B1%BB%E7%8E%B0%E8%B1%A1"><span class="nav-text">两类现象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E8%AF%95%E9%AA%8C"><span class="nav-text">随机试验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4"><span class="nav-text">样本空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6"><span class="nav-text">随机事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="nav-text">事件的关系与运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E5%85%B3%E7%B3%BB"><span class="nav-text">包含关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B8%E7%AD%89"><span class="nav-text">相等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%B9%B6-%E5%92%8C"><span class="nav-text">事件的并(和)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%BA%A4-%E7%A7%AF"><span class="nav-text">事件的交(积)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%B7%AE"><span class="nav-text">事件的差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%BA%92%E4%B8%8D%E7%9B%B8%E5%AE%B9-%E4%BA%92%E6%96%A5"><span class="nav-text">事件的互不相容(互斥)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%BA%92%E9%80%86-%E5%AF%B9%E7%AB%8B"><span class="nav-text">事件的互逆(对立)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="nav-text">随机变量及其分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="nav-text">多维随机变量及其分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81"><span class="nav-text">随机变量的数字特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%92%8C%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E5%BE%8B"><span class="nav-text">大数定律和中心极限定律</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -952,6 +1012,59 @@ show_date_time();
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

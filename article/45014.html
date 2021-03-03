@@ -330,21 +330,20 @@
 
       
         <h1 id="python笔记"><a href="#python笔记" class="headerlink" title="python笔记"></a>python笔记</h1><a id="more"></a>
-
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><p>例子:</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#这是单行注释</span></span><br></pre></td></tr></table></figure>
 <h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><p>例子:</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">这是多行注释</span></span><br><span class="line"><span class="string">这是多行注释</span></span><br><span class="line"><span class="string">这是多行注释</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">这是多行注释</span></span><br><span class="line"><span class="string">这是多行注释</span></span><br><span class="line"><span class="string">这是多行注释</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 <h2 id="python2中文的解决"><a href="#python2中文的解决" class="headerlink" title="python2中文的解决"></a>python2中文的解决</h2><p>如果python程序中出现中文,使用python2会出现下面情形</p>
-<p><img src="https://i.loli.net/2021/02/23/EkdVvtGlWsgimcM.png"></p>
+<p><img src="https://i.loli.net/2021/02/23/EkdVvtGlWsgimcM.png" alt=""></p>
 <p>方法一:</p>
 <p>在.py文件首行加如下代码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#coding&#x3D;utf-8</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/02/23/2Emov5c6zDVNHeX.png"></p>
+<p><img src="https://i.loli.net/2021/02/23/2Emov5c6zDVNHeX.png" alt=""></p>
 <p>方法二(python推荐):</p>
 <p>在.py文件首行加如下代码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#-*- coding:utf-8 -*-</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/02/23/5mZEGStriAYQPuq.png"></p>
+<p><img src="https://i.loli.net/2021/02/23/5mZEGStriAYQPuq.png" alt=""></p>
 <h2 id="python2与python3的区别"><a href="#python2与python3的区别" class="headerlink" title="python2与python3的区别"></a>python2与python3的区别</h2><p>python2中的input与python3的不同,python2中input将从键盘得到的数据当成代码执行;python2中的raw_input()类似python3(没有raw_input())中为input() ,所以python2中可用raw_input()</p>
 <p>注意：raw_input()和input()都获取的是字符串,字符串不能做-,*,/运算,做+运算只是拼接,可用int()函数获得数字,如int(input())</p>
 <p>python2中的不等于号&lt;&gt;,而python3中&lt;&gt;则不能使用</p>

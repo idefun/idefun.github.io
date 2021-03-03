@@ -339,36 +339,34 @@
 
       
         <h1 id="Kail-Linux虚拟机安装配置Nessus漏洞扫描器"><a href="#Kail-Linux虚拟机安装配置Nessus漏洞扫描器" class="headerlink" title="Kail Linux虚拟机安装配置Nessus漏洞扫描器"></a>Kail Linux虚拟机安装配置Nessus漏洞扫描器</h1><a id="more"></a>
-
 <h2 id="1-获取激活码"><a href="#1-获取激活码" class="headerlink" title="1.获取激活码"></a>1.获取激活码</h2><p>前往<a target="_blank" rel="noopener" href="https://www.tenable.com/products/nessus/nessus-essentials">官网</a>进行注册</p>
-<p><img src="https://i.loli.net/2021/01/26/HVptOeBDnJZlF6w.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/HVptOeBDnJZlF6w.png" alt=""></p>
 <h2 id="2-下载nessus"><a href="#2-下载nessus" class="headerlink" title="2.下载nessus"></a>2.下载nessus</h2><p>注册完毕后前往下载页面</p>
-<p><img src="https://i.loli.net/2021/01/26/SaI7x2nDEHRfMOu.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/SaI7x2nDEHRfMOu.png" alt=""></p>
 <p>选择deb结尾的(我选择的64位)</p>
-<p><img src="https://i.loli.net/2021/01/26/hPzGvds7T2bXirE.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/hPzGvds7T2bXirE.png" alt=""></p>
 <p>官网下载较慢,这里我准备了一份,<a target="_blank" rel="noopener" href="https://idefun.lanzous.com/iQnR4kvm5oh">点击下载</a></p>
 <h2 id="3-安装nessus"><a href="#3-安装nessus" class="headerlink" title="3.安装nessus"></a>3.安装nessus</h2><p>将nessus拖入kail linux虚拟机</p>
-<p><img src="https://i.loli.net/2021/01/26/Mca54FXCQuY6x7p.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/Mca54FXCQuY6x7p.png" alt=""></p>
 <p>打开终端,切换至桌面</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd 桌面</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/26/ekf7ri8R54ZuwDW.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/ekf7ri8R54ZuwDW.png" alt=""></p>
 <p>安装nessus(需要密码)</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i Nessus-8.13.1-debian6_amd64.deb</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/01/26/hYk1gFqJplIuQw9.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/hYk1gFqJplIuQw9.png" alt=""></p>
 <p>安装完成</p>
-<p><img src="https://i.loli.net/2021/01/26/KWfAuHosZB7vJ1F.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/KWfAuHosZB7vJ1F.png" alt=""></p>
 <h2 id="4-启动nessus"><a href="#4-启动nessus" class="headerlink" title="4.启动nessus"></a>4.启动nessus</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/bin/systemctl start nessusd.service</span><br></pre></td></tr></table></figure>
 <p>同样需要密码</p>
-<img src="https://i.loli.net/2021/01/26/1Wjf7rMiImHSk4A.png"  />
-
+<p><img src="https://i.loli.net/2021/01/26/1Wjf7rMiImHSk4A.png"  /></p>
 <p>在浏览器中访问</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">https://kali:8834/</span><br></pre></td></tr></table></figure>
 <p>选择Managed Scanner</p>
-<p><img src="https://i.loli.net/2021/01/26/Y9wajpE7ye1JhVv.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/Y9wajpE7ye1JhVv.png" alt=""></p>
 <p>选择Tenable.sc</p>
-<p><img src="https://i.loli.net/2021/01/26/ONiI4T2EJeylcZ5.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/ONiI4T2EJeylcZ5.png" alt=""></p>
 <p>创建账号</p>
-<p><img src="https://i.loli.net/2021/01/26/1KLS8misZR7DVCI.png"></p>
+<p><img src="https://i.loli.net/2021/01/26/1KLS8misZR7DVCI.png" alt=""></p>
 
     </div>
 

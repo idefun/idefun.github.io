@@ -352,17 +352,17 @@
 <h3 id="7-设置截断Websocket通信以及修改Response的内容"><a href="#7-设置截断Websocket通信以及修改Response的内容" class="headerlink" title="7.设置截断Websocket通信以及修改Response的内容"></a>7.设置截断Websocket通信以及修改Response的内容</h3><h3 id="8-匹配以及修改HTTP消息"><a href="#8-匹配以及修改HTTP消息" class="headerlink" title="8.匹配以及修改HTTP消息"></a>8.匹配以及修改HTTP消息</h3><p>可以修改HTTP请求和HTTP响应中的内容。</p>
 <h2 id="3-Burpsuite抓取手机APP流量"><a href="#3-Burpsuite抓取手机APP流量" class="headerlink" title="3.Burpsuite抓取手机APP流量"></a>3.Burpsuite抓取手机APP流量</h2><p>目前WebApp(手机App)的通信任然使用HTTP协议进行对应的通信.可以通过Burp设置代理,然后手机设置网络代理,通过Burp截断手机APP流量.</p>
 <p>1.Burpsuite设置截断所有网卡的流量，那么局城网中所有的主机都可以通过该代理进行网络访问。</p>
-<p><img src="https://i.loli.net/2021/01/24/n1owBAfCMJXqvhW.png"></p>
-<p><img src="https://i.loli.net/2021/01/24/Cu6NGxn2SI57hBs.png"></p>
+<p><img src="https://i.loli.net/2021/01/24/n1owBAfCMJXqvhW.png" alt=""></p>
+<p><img src="https://i.loli.net/2021/01/24/Cu6NGxn2SI57hBs.png" alt=""></p>
 <p>2.查看电脑ip</p>
 <p>3.在手机网络设置中，填写对应的代理。</p>
-<p><img src="https://i.loli.net/2021/01/24/gcYyFBzhjZEKOev.png"></p>
-<p><img src="https://i.loli.net/2021/01/24/US7BIW1oNuXlHhJ.png"></p>
-<p><img src="https://i.loli.net/2021/01/24/o8hED3xYzjUlvC9.png"></p>
+<p><img src="https://i.loli.net/2021/01/24/gcYyFBzhjZEKOev.png" alt=""></p>
+<p><img src="https://i.loli.net/2021/01/24/US7BIW1oNuXlHhJ.png" alt=""></p>
+<p><img src="https://i.loli.net/2021/01/24/o8hED3xYzjUlvC9.png" alt=""></p>
 <p>4.Burpsuite开启截断</p>
-<p><img src="https://i.loli.net/2021/01/24/nU8QWAlJGESgP96.png"></p>
-<h2 id="4-Burpsuite剔除JS脚本-绕过JS文件上传验证"><a href="#4-Burpsuite剔除JS脚本-绕过JS文件上传验证" class="headerlink" title="4.Burpsuite剔除JS脚本(绕过JS文件上传验证)"></a>4.Burpsuite剔除JS脚本(绕过JS文件上传验证)</h2><p>JavaScript—种直译式脚本语言，是一种动态类型、 弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML (标准通用标记语言下的一个应用)网页上使用，用来给HTML网页增加动态功能。例如:对于上传文件进行JS验证。</p>
-<p><img src="https://i.loli.net/2021/01/25/P1A6G4zFDUpbRs3.png"></p>
+<p><img src="https://i.loli.net/2021/01/24/nU8QWAlJGESgP96.png" alt=""></p>
+<h2 id="4-Burpsuite剔除JS脚本-绕过JS文件上传验证"><a href="#4-Burpsuite剔除JS脚本-绕过JS文件上传验证" class="headerlink" title="4.Burpsuite剔除JS脚本(绕过JS文件上传验证)"></a>4.Burpsuite剔除JS脚本(绕过JS文件上传验证)</h2><p>JavaScript—-种直译式脚本语言，是一种动态类型、 弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML (标准通用标记语言下的一个应用)网页上使用，用来给HTML网页增加动态功能。例如:对于上传文件进行JS验证。</p>
+<p><img src="https://i.loli.net/2021/01/25/P1A6G4zFDUpbRs3.png" alt=""></p>
 <p>也可以使用浏览器审计工具直接删除JS</p>
 <h2 id="5-Burpsuite-Target介绍"><a href="#5-Burpsuite-Target介绍" class="headerlink" title="5.Burpsuite Target介绍"></a>5.Burpsuite Target介绍</h2><p>Burp Target组件主要包含站点地图、目标域、Target 工具三部分组成，他们帮助渗透测试人员更好地了解目标应用的整体状况、当前的工作涉及哪些目标域、分析可能存在的攻击面等信息</p>
 <p>Target Scope中作用域的定义比较宽泛，通常来说，当我们对某个产品进行渗透测试时，可以通过域名或者主机名去限制拦截内容，这里域名或主机名就是我们说的作用域;如果我们想限制得更为细粒度化，比如，你只想拦截login目录下的所有请求，这时我们也可以在此设置，此时，作用域就是目录。</p>
