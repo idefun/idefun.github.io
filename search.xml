@@ -3174,7 +3174,35 @@
 <p>例:设A,B,C为三事件,用A,B,C的运算关系表示下列各事件<br>(1)A发生,B与C不发生<br>(2)A,B,C中至少有一个发生<br>(3)A,B,C中不多于一个发生<br>(4)A,B,C中不多于两个发生</p>
 <p>解:<br>(1) A$\bar B\bar C$ 或 A-B-C<br>(2)A$\cup $B$\cup $C 或 $\overline{\bar{A}\bar{B}\bar{C}} $<br>(3) $A\bar{B} \bar{C} \cup\bar{A} B\bar{C}  \cup \bar{A}\bar{B}C\cup \bar{A} \bar{B}\bar{C} $ 或  $\overline{AB\cup BC\cup AC} $ 或 $\overline{AB} \cap \overline{BC} \cap \overline{AC} $<br>(4)$\overline{ABC}$ 或  $\bar{A} \cup\bar{B} \cup \bar{C}$</p>
 </blockquote>
-<h3 id="随机事件的概率"><a href="#随机事件的概率" class="headerlink" title="随机事件的概率"></a>随机事件的概率</h3><h4 id="频率与概率"><a href="#频率与概率" class="headerlink" title="频率与概率"></a>频率与概率</h4><h4 id="古典概型"><a href="#古典概型" class="headerlink" title="古典概型"></a>古典概型</h4><h4 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h4><h2 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h2><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
+<h3 id="随机事件的概率"><a href="#随机事件的概率" class="headerlink" title="随机事件的概率"></a>随机事件的概率</h3><h4 id="频率与概率"><a href="#频率与概率" class="headerlink" title="频率与概率"></a>频率与概率</h4><h5 id="频率"><a href="#频率" class="headerlink" title="频率"></a>频率</h5><p>在相同的条件下,进行了n次试验,在这n次试验中,事件A发生的次数$n_{A}$,称为事件A发生的<strong>频数</strong><br>比值$\frac{n_{A} }{n} $称为事件A发生的<strong>频率</strong>,并记成$f_{n} (A)$</p>
+<p><strong>性质</strong>  设A是随机试验E的任一事件,则</p>
+<ol>
+<li>0$\le f_{n} (A)\le 1$</li>
+<li>$f_{n} (\Omega )= 1$,$f_{n} (\Phi )=0$</li>
+<li>若$A_{1} ,A_{2},…,A_{k}$是两两互不相容的事件,则$f(A_{1} \cup A_{2} \cup \cdots \cup A_{k} )=f_{n}(A_{1} )+f_{n}(A_{2} )+\cdots+f_{n}(A_{k} )$</li>
+</ol>
+<h5 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h5><h6 id="概率的统计学定义"><a href="#概率的统计学定义" class="headerlink" title="概率的统计学定义"></a>概率的统计学定义</h6><p>在随机试验中,若事件A出现的频率m/n随着试验次数n的增加,趋于某一常数p,则定义事件A的概率为p($0\le p\le 1$),记作P(A)=p</p>
+<p>缺陷:无法用此定义直接计算概率</p>
+<h6 id="概率的公理化定义"><a href="#概率的公理化定义" class="headerlink" title="概率的公理化定义"></a>概率的公理化定义</h6><p>设试验E的样本空间为$\Omega $,对于每一事件A,定义事件P(A),满足如下条件:<br>(1)非负性:P(A)≥0</p>
+<p>规范性:P($\Omega$)=1</p>
+<p>可列可加性:若$A_{1} ,A_{2},…$是两两互不相容的事件,则$P(A_{1} \cup A_{2} \cup \cdots  )=P_{n}(A_{1} )+P_{n}(A_{2} )+\cdots$</p>
+<h6 id="概率的性质"><a href="#概率的性质" class="headerlink" title="概率的性质"></a>概率的性质</h6><ol>
+<li>P($\phi $)= 0</li>
+<li>若$A_{1} ,A_{2},…$是两两互不相容的事件,则$P(A_{1} \cup A_{2} \cup \cdots \cup A_{n}  )=P_{n}(A_{1} )+P_{n}(A_{2} )+\cdots+P_{n}(A_{n})$(概率的有限可加性)</li>
+<li>对于任意事件A有P(A)≤1</li>
+<li>设$\bar{A} $是A的对立事件,则P($\bar{A} $)=1- P(A)</li>
+<li>A, B是两事件,若A$\subset $B,则<ol>
+<li>P(B-A)=P(B)-P(A) </li>
+<li>P(A)≤P(B)</li>
+<li>一般地,对于任意时间A,B有P(A-B)=P(A)-P(AB)(减法公式)</li>
+</ol>
+</li>
+<li>加法公式  P($A \cup B$)=P(A)+P(B)-P(AB)<ol>
+<li>推广:P($A \cup B \cup C$)=P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC)</li>
+</ol>
+</li>
+</ol>
+<h4 id="古典概型"><a href="#古典概型" class="headerlink" title="古典概型"></a>古典概型</h4><h4 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h4><h2 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h2><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
   </entry>
   <entry>
     <title>为hexo博客添加二级域名</title>
