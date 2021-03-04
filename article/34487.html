@@ -171,6 +171,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="IdeFun Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -237,6 +238,11 @@
         <li class="menu-item menu-item-schedule">
 
     <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -952,7 +958,7 @@
 <h6 id="RPM包依赖性"><a href="#RPM包依赖性" class="headerlink" title="RPM包依赖性"></a>RPM包依赖性</h6><ul>
 <li>树形依赖: a-&gt;b-&gt;c</li>
 <li>环形依赖: a-&gt;b-&gt;c-&gt;a(同时装即可)</li>
-<li>模块依赖: <a target="_blank" rel="noopener" href="https://www.rpmfind.net">模块依赖查询网站</a></li>
+<li>模块依赖: <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.rpmfind.net">模块依赖查询网站</a></li>
 </ul>
 <h5 id="安装升级与卸载"><a href="#安装升级与卸载" class="headerlink" title="安装升级与卸载"></a>安装升级与卸载</h5><h6 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h6><p>rpm -ivh 包全名</p>
 <p>选项:<br>    -i (install)      安装<br>    -v (verbose)   显示详细信息<br>    -h (hash)        显示进度<br>    --nodeps        不检查依赖性</p>
@@ -1578,7 +1584,7 @@
 <li>umount 设备文件名或挂载点     </li>
 </ol>
 <p>注意:Linux把fat16识别为fat,把fat32识别为vfat;Linux默认是不支持NTFS文件系统的</p>
-<h5 id="支持NTFS文件系统"><a href="#支持NTFS文件系统" class="headerlink" title="支持NTFS文件系统"></a>支持NTFS文件系统</h5><p>可通过内核编译(复杂且使用较少)或使用NTFS插件使Linux支持NTFS文件系统,详细过程点击<a target="_blank" rel="noopener" href="https://www.codenong.com/cs105317766/">链接</a>查看</p>
+<h5 id="支持NTFS文件系统"><a href="#支持NTFS文件系统" class="headerlink" title="支持NTFS文件系统"></a>支持NTFS文件系统</h5><p>可通过内核编译(复杂且使用较少)或使用NTFS插件使Linux支持NTFS文件系统,详细过程点击<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.codenong.com/cs105317766/">链接</a>查看</p>
 <h3 id="fdisk分区"><a href="#fdisk分区" class="headerlink" title="fdisk分区"></a>fdisk分区</h3><h4 id="fdisk命令分区过程"><a href="#fdisk命令分区过程" class="headerlink" title="fdisk命令分区过程"></a>fdisk命令分区过程</h4><ol>
 <li>添加新硬盘</li>
 <li>fdisk -l    #查看新硬盘</li>
@@ -1589,7 +1595,7 @@
 <li>mount /dev/sdb1 /disk1/    #挂载</li>
 </ol>
 <p><img src="https://i.loli.net/2021/02/02/dipW8GsbrjTZNJ5.png" alt=""></p>
-<p>Linux通过id识别Linux分区到底是什么,Linux标准分区id是83,swap分区id是82;详细过程点击<a target="_blank" rel="noopener" href="https://blog.csdn.net/keith6785753/article/details/107324335/">链接</a>查看</p>
+<p>Linux通过id识别Linux分区到底是什么,Linux标准分区id是83,swap分区id是82;详细过程点击<a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.csdn.net/keith6785753/article/details/107324335/">链接</a>查看</p>
 <h4 id="分区自动挂载与fstab文件修复"><a href="#分区自动挂载与fstab文件修复" class="headerlink" title="分区自动挂载与fstab文件修复"></a>分区自动挂载与fstab文件修复</h4><h5 id="etc-fstab文件"><a href="#etc-fstab文件" class="headerlink" title="/etc/fstab文件"></a>/etc/fstab文件</h5><ul>
 <li>第一字段: 分区设备文件名或UUID(硬盘通用唯一识别码)</li>
 <li>第二字段: 挂载点</li>
@@ -2213,7 +2219,7 @@
 </table>
 </div>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="string">&quot;*&quot;</span> 前一个字符匹配0次或任意多次</span></span><br><span class="line">grep &quot;a*&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配所有内容，包括空白行</span></span><br><span class="line">grep &quot;aa*&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配至少包含有一个a的行</span></span><br><span class="line">grep &quot;aaa*&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配最少包含两个连续a的字符串</span></span><br><span class="line">grep &quot;aaaaa*&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配最少包含四个连续a的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string">&quot;.&quot;</span> 匹配除了换行符外任意一个字符</span></span><br><span class="line">grep &quot;s..d&quot; test.txt </span><br><span class="line"><span class="meta">#</span><span class="bash">“s..d”会匹配在s和d这两个字母之间一定有两个字符的单词</span></span><br><span class="line">grep &quot;s.*d&quot; test.txt </span><br><span class="line"><span class="meta">#</span><span class="bash">匹配在s和d字母之间有任意字符(任意个)</span></span><br><span class="line">grep &quot;.*&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配所有内容</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string">&quot;^&quot;</span> 匹配行首,<span class="string">&quot;$&quot;</span> 匹配行尾</span></span><br><span class="line">grep &quot;^M&quot; test.txt </span><br><span class="line"><span class="meta">#</span><span class="bash">匹配以大写“M”开头的行</span></span><br><span class="line">grep &quot;n$&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配以小写“n”结尾的行</span></span><br><span class="line">grep -n &quot;^$&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配空白行</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string">&quot;[]&quot;</span>匹配中括号里面指定的任意一个字符,只匹配一个字符</span></span><br><span class="line">grep &quot;s[ao]id&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配s和i字母之间,要不是a、要不是o</span></span><br><span class="line">grep &quot;[0-9]&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配任意0到9中一个数字</span></span><br><span class="line">grep&quot;^[a-z]&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配用小写字母开头的行</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string">&quot;[^]&quot;</span>匹配除中括号里面字符以外的任意一个字符</span></span><br><span class="line">grep &quot;^[^a-z]&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配不用小写字母开头的行</span></span><br><span class="line">grep &quot;^[^a-zA-Z]&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配不用字母开头的行</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string">&quot;\&quot; 转义符</span></span></span><br><span class="line">grep &quot;\.$&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配使用“.”结尾的行</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">“\&#123;n\&#125;”表示其前面的字符恰好出现n次</span></span><br><span class="line">grep &quot;a\&#123;3\&#125;&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配a字母连续出现三次的字符串</span></span><br><span class="line">grep &quot;[0-9]\&#123;3\&#125;&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配包含连续的三个数字的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">“\&#123;n,\&#125;”表示其前面的字符出现不小于n次</span></span><br><span class="line">grep &quot;^[0-9]\&#123;3,\&#125;&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配最少用连续三个数字开头的行</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">“\&#123;n,m)&#125;”匹配其前面的字符至少出现n次,最多出现m次</span></span><br><span class="line">grep &quot;sa\&#123;1,3\&#125;i&quot; test.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">匹配在字母s和字母i之间有最少一个a,最多三个a</span></span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://man.linuxde.net/docs/shell_regex.html">拓展</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://man.linuxde.net/docs/shell_regex.html">拓展</a></p>
 <h3 id="字符截取命令"><a href="#字符截取命令" class="headerlink" title="字符截取命令"></a>字符截取命令</h3><h4 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h4><p>cut命令要和grep命令结合使用</p>
 <p>[root@localhost ~]# cut [选项] 文件名<br>选项:<br>    -f 列号        提取第几列(列与列之间是制表符(Tab键),不能是空格)<br>    -d 分隔符   按照指定分隔符分割列(默认为制表符)</p>
 <p>下面以test.txt为例说明</p>
@@ -2375,7 +2381,7 @@
     <a href="http://blog.idefun.com/article/34487.html" title="Linux学习笔记">http://blog.idefun.com/article/34487.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 </div>
@@ -2511,7 +2517,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/wxpsjhhd" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wxpsjhhd" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/wxpsjhhd" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wxpsjhhd" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
   </div>
 

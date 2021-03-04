@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>IdeFun Blog</title>
+  <icon>http://blog.idefun.com/icon.png</icon>
+  <subtitle>记录生活中的点点滴滴</subtitle>
+  <link href="http://blog.idefun.com/atom.xml" rel="self"/>
+  
+  <link href="http://blog.idefun.com/"/>
+  <updated>2021-03-04T05:59:33.135Z</updated>
+  <id>http://blog.idefun.com/</id>
+  
+  <author>
+    <name>IdeFun</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git报错fatal: unable to access&#39; https:/ / github. com/.......git/&#39; : Failed to connect to github. com port 443: Timed out的解决方法</title>
+    <link href="http://blog.idefun.com/article/10916.html"/>
+    <id>http://blog.idefun.com/article/10916.html</id>
+    <published>2021-03-04T05:59:32.000Z</published>
+    <updated>2021-03-04T05:59:33.135Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理</title>
+    <link href="http://blog.idefun.com/article/51917.html"/>
+    <id>http://blog.idefun.com/article/51917.html</id>
+    <published>2021-03-04T05:42:28.000Z</published>
+    <updated>2021-03-04T05:45:43.074Z</updated>
+    
+    
+    <summary type="html">计算机组成原理</summary>
+    
+    
+    
+    <category term="计算机" scheme="http://blog.idefun.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="计算机" scheme="http://blog.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机病毒原理与防治</title>
+    <link href="http://blog.idefun.com/article/53598.html"/>
+    <id>http://blog.idefun.com/article/53598.html</id>
+    <published>2021-03-04T02:21:04.000Z</published>
+    <updated>2021-03-04T05:44:18.833Z</updated>
+    
+    
+    <summary type="html">计算机病毒原理与防治</summary>
+    
+    
+    
+    <category term="病毒" scheme="http://blog.idefun.com/categories/%E7%97%85%E6%AF%92/"/>
+    
+    
+    <category term="计算机" scheme="http://blog.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="http://blog.idefun.com/tags/%E7%97%85%E6%AF%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通用管理知识概论</title>
+    <link href="http://blog.idefun.com/article/2887.html"/>
+    <id>http://blog.idefun.com/article/2887.html</id>
+    <published>2021-03-03T23:58:59.000Z</published>
+    <updated>2021-03-04T00:00:02.800Z</updated>
+    
+    
+    <summary type="html">通用管理知识概论</summary>
+    
+    
+    
+    <category term="通用管理知识" scheme="http://blog.idefun.com/categories/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="通用管理知识" scheme="http://blog.idefun.com/tags/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通信原理基础</title>
+    <link href="http://blog.idefun.com/article/44284.html"/>
+    <id>http://blog.idefun.com/article/44284.html</id>
+    <published>2021-03-03T13:34:26.000Z</published>
+    <updated>2021-03-04T02:16:59.118Z</updated>
+    
+    
+    <summary type="html">通信原理基础</summary>
+    
+    
+    
+    <category term="通信原理" scheme="http://blog.idefun.com/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="通信原理" scheme="http://blog.idefun.com/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>概率论与数理统计</title>
+    <link href="http://blog.idefun.com/article/6768.html"/>
+    <id>http://blog.idefun.com/article/6768.html</id>
+    <published>2021-03-03T04:07:48.000Z</published>
+    <updated>2021-03-04T05:44:41.077Z</updated>
+    
+    
+    <summary type="html">概率论与数理统计</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>为hexo博客添加二级域名</title>
+    <link href="http://blog.idefun.com/article/49509.html"/>
+    <id>http://blog.idefun.com/article/49509.html</id>
+    <published>2021-03-01T04:53:28.000Z</published>
+    <updated>2021-03-01T05:35:12.953Z</updated>
+    
+    
+    <summary type="html">为hexo博客添加二级域名</summary>
+    
+    
+    
+    <category term="无处安放" scheme="http://blog.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
+    
+    
+    <category term="域名" scheme="http://blog.idefun.com/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+    <category term="hexo" scheme="http://blog.idefun.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码学原理学习笔记</title>
+    <link href="http://blog.idefun.com/article/32664.html"/>
+    <id>http://blog.idefun.com/article/32664.html</id>
+    <published>2021-03-01T00:37:25.000Z</published>
+    <updated>2021-03-04T05:45:07.632Z</updated>
+    
+    
+    <summary type="html">密码学原理学习笔记</summary>
+    
+    
+    
+    <category term="密码学" scheme="http://blog.idefun.com/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+    <category term="密码学" scheme="http://blog.idefun.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库学习笔记</title>
+    <link href="http://blog.idefun.com/article/49140.html"/>
+    <id>http://blog.idefun.com/article/49140.html</id>
+    <published>2021-02-28T06:49:09.000Z</published>
+    <updated>2021-03-04T05:44:49.028Z</updated>
+    
+    
+    <summary type="html">数据库学习笔记</summary>
+    
+    
+    
+    <category term="数据库" scheme="http://blog.idefun.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="数据库" scheme="http://blog.idefun.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>汇编语言学习笔记</title>
+    <link href="http://blog.idefun.com/article/42633.html"/>
+    <id>http://blog.idefun.com/article/42633.html</id>
+    <published>2021-02-25T23:24:01.000Z</published>
+    <updated>2021-03-04T05:44:57.569Z</updated>
+    
+    
+    <summary type="html">汇编语言学习笔记</summary>
+    
+    
+    
+    <category term="汇编语言" scheme="http://blog.idefun.com/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="汇编语言" scheme="http://blog.idefun.com/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows10下搭建汇编语言开发环境</title>
+    <link href="http://blog.idefun.com/article/11317.html"/>
+    <id>http://blog.idefun.com/article/11317.html</id>
+    <published>2021-02-25T02:17:53.000Z</published>
+    <updated>2021-03-02T11:03:12.893Z</updated>
+    
+    
+    <summary type="html">Windows10下搭建汇编语言开发环境</summary>
+    
+    
+    
+    <category term="汇编语言" scheme="http://blog.idefun.com/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="汇编语言" scheme="http://blog.idefun.com/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python笔记</title>
+    <link href="http://blog.idefun.com/article/45014.html"/>
+    <id>http://blog.idefun.com/article/45014.html</id>
+    <published>2021-01-28T09:24:00.000Z</published>
+    <updated>2021-02-26T05:17:24.151Z</updated>
+    
+    
+    <summary type="html">python笔记</summary>
+    
+    
+    
+    <category term="python" scheme="http://blog.idefun.com/categories/python/"/>
+    
+    
+    <category term="python" scheme="http://blog.idefun.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教你如何获取腾讯视频源地址链接</title>
+    <link href="http://blog.idefun.com/article/28328.html"/>
+    <id>http://blog.idefun.com/article/28328.html</id>
+    <published>2021-01-28T01:31:37.000Z</published>
+    <updated>2021-01-28T03:12:54.616Z</updated>
+    
+    
+    <summary type="html">教你如何获取腾讯视频源地址链接</summary>
+    
+    
+    
+    <category term="无处安放" scheme="http://blog.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
+    
+    
+    <category term="视频解析" scheme="http://blog.idefun.com/tags/%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux学习笔记</title>
+    <link href="http://blog.idefun.com/article/34487.html"/>
+    <id>http://blog.idefun.com/article/34487.html</id>
+    <published>2021-01-27T09:36:28.000Z</published>
+    <updated>2021-03-01T12:38:53.194Z</updated>
+    
+    
+    <summary type="html">Linux学习笔记</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://blog.idefun.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://blog.idefun.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kail Linux虚拟机安装配置Nessus漏洞扫描器</title>
+    <link href="http://blog.idefun.com/article/57445.html"/>
+    <id>http://blog.idefun.com/article/57445.html</id>
+    <published>2021-01-25T08:35:06.000Z</published>
+    <updated>2021-01-26T09:14:35.272Z</updated>
+    
+    
+    <summary type="html">Kail Linux虚拟机安装配置Nessus漏洞扫描器</summary>
+    
+    
+    
+    <category term="Hack" scheme="http://blog.idefun.com/categories/Hack/"/>
+    
+    
+    <category term="Nessus" scheme="http://blog.idefun.com/tags/Nessus/"/>
+    
+    <category term="Kail" scheme="http://blog.idefun.com/tags/Kail/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BurpSuite的设置及使用</title>
+    <link href="http://blog.idefun.com/article/13804.html"/>
+    <id>http://blog.idefun.com/article/13804.html</id>
+    <published>2021-01-24T12:16:09.000Z</published>
+    <updated>2021-01-25T08:39:18.829Z</updated>
+    
+    
+    <summary type="html">BurpSuite的设置及使用</summary>
+    
+    
+    
+    <category term="Hack" scheme="http://blog.idefun.com/categories/Hack/"/>
+    
+    
+    <category term="BurpSuite" scheme="http://blog.idefun.com/tags/BurpSuite/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构与算法总结</title>
+    <link href="http://blog.idefun.com/article/42825.html"/>
+    <id>http://blog.idefun.com/article/42825.html</id>
+    <published>2021-01-11T07:36:41.000Z</published>
+    <updated>2021-03-01T23:05:20.127Z</updated>
+    
+    
+    <summary type="html">本文旨在记录数据结构与算法学习中所获(C语言)</summary>
+    
+    
+    
+    <category term="数据结构与算法" scheme="http://blog.idefun.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="数据结构与算法" scheme="http://blog.idefun.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux C编程</title>
+    <link href="http://blog.idefun.com/article/34877.html"/>
+    <id>http://blog.idefun.com/article/34877.html</id>
+    <published>2021-01-11T06:59:16.000Z</published>
+    <updated>2021-02-05T06:21:25.931Z</updated>
+    
+    
+    <summary type="html">本文旨在记录C&amp;C++学习过程中所获</summary>
+    
+    
+    
+    <category term="C&amp;C++" scheme="http://blog.idefun.com/categories/C-C/"/>
+    
+    
+    <category term="Linux" scheme="http://blog.idefun.com/tags/Linux/"/>
+    
+    <category term="C语言" scheme="http://blog.idefun.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web学习</title>
+    <link href="http://blog.idefun.com/article/22773.html"/>
+    <id>http://blog.idefun.com/article/22773.html</id>
+    <published>2021-01-10T09:04:07.000Z</published>
+    <updated>2021-02-28T01:28:04.065Z</updated>
+    
+    
+    <summary type="html">本文旨在记录web学习中所获</summary>
+    
+    
+    
+    <category term="web" scheme="http://blog.idefun.com/categories/web/"/>
+    
+    
+    <category term="web" scheme="http://blog.idefun.com/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自建网盘搜索引擎</title>
+    <link href="http://blog.idefun.com/article/57501.html"/>
+    <id>http://blog.idefun.com/article/57501.html</id>
+    <published>2021-01-07T03:18:14.000Z</published>
+    <updated>2021-01-28T01:34:04.303Z</updated>
+    
+    
+    <summary type="html">本文旨在搭建网盘资源搜索引擎</summary>
+    
+    
+    
+    <category term="无处安放" scheme="http://blog.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
+    
+    
+    <category term="搜索引擎" scheme="http://blog.idefun.com/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="网盘" scheme="http://blog.idefun.com/tags/%E7%BD%91%E7%9B%98/"/>
+    
+  </entry>
+  
+</feed>
