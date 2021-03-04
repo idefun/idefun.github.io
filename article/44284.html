@@ -48,11 +48,14 @@
 <meta property="og:site_name" content="IdeFun Blog">
 <meta property="og:description" content="通信原理基础">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304095254344.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304095541318.png">
 <meta property="article:published_time" content="2021-03-03T13:34:26.000Z">
-<meta property="article:modified_time" content="2021-03-03T13:37:26.922Z">
+<meta property="article:modified_time" content="2021-03-04T02:16:59.118Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="通信原理">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304095254344.png">
 
 <link rel="canonical" href="http://blog.idefun.com/article/44284.html">
 
@@ -279,10 +282,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-03 21:34:26 / 修改时间：21:37:26" itemprop="dateCreated datePublished" datetime="2021-03-03T21:34:26+08:00">2021-03-03</time>
+              <time title="创建时间：2021-03-03 21:34:26" itemprop="dateCreated datePublished" datetime="2021-03-03T21:34:26+08:00">2021-03-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-04 10:16:59" itemprop="dateModified" datetime="2021-03-04T10:16:59+08:00">2021-03-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -320,7 +329,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -341,6 +350,62 @@
 
       
         <h1 id="通信原理基础"><a href="#通信原理基础" class="headerlink" title="通信原理基础"></a>通信原理基础</h1><a id="more"></a>
+<h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h3 id="计算机与通信-C-amp-C"><a href="#计算机与通信-C-amp-C" class="headerlink" title="计算机与通信(C&amp;C)"></a>计算机与通信(C&amp;C)</h3><p>计算机通信系统是典型的数字通信系统.它是计算机技术和通信技术结合的产物.二者互相促进.</p>
+<h4 id="C-amp-C的特点"><a href="#C-amp-C的特点" class="headerlink" title="C&amp;C的特点"></a>C&amp;C的特点</h4><ul>
+<li>数据处理设备与通信设备没有本质区别</li>
+<li>数据、声音、图象的信息没有本质区别</li>
+<li>单处理机、多处理机之间,局域网、城域网、广域网之间的界限变得模糊不清</li>
+</ul>
+<h4 id="计算机通信的发展方向"><a href="#计算机通信的发展方向" class="headerlink" title="计算机通信的发展方向"></a>计算机通信的发展方向</h4><ul>
+<li>由过去的单组(集团)通信向个人通信发展,满足人们个性化的需求(BP机、手机)</li>
+<li>计算机通信网络由专业网络向公用网络发展,又向互联网进步</li>
+<li>信息交换形式:电路交换→报文交换→分组交换(Datagram虚电路)</li>
+<li>由单一的通信网向综合业务数字网发展</li>
+<li>网络体系结构:主从关系→对等关系→客户机与服务器→站点到浏览器</li>
+</ul>
+<h3 id="通信系统模型"><a href="#通信系统模型" class="headerlink" title="通信系统模型"></a>通信系统模型</h3><h4 id="最简单的通信系统"><a href="#最简单的通信系统" class="headerlink" title="最简单的通信系统"></a>最简单的通信系统</h4><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210304095254344.png" alt="最简单的通信系统"></p>
+<blockquote>
+<p>但是很多信号(如语音),如果不经过处理,传输距离很短,而且很容易被干扰.所以,在大多数通信系统中,需要”发送设备”和”接收设备”,它们作用就是使信号传输得更远,质量更好</p>
+</blockquote>
+<h4 id="通信系统的基本模型"><a href="#通信系统的基本模型" class="headerlink" title="通信系统的基本模型"></a>通信系统的基本模型</h4><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210304095541318.png" alt="通信系统的基本模型"></p>
+<ul>
+<li>信源:将原始信号转换成电信号的设备</li>
+<li>发送设备:调制器,天线等</li>
+<li>信道:光纤,同轴电缆,自由空间等</li>
+<li>接收设备:解调,发送设备的逆过程</li>
+<li>信宿:将电信号还原成原始信号的设备</li>
+<li>噪声源:一种随机信号,对通信有害,但不可避免</li>
+</ul>
+<blockquote>
+<p>在传输介质上传送的信号,由于各种噪声源的干扰,受到各种形式的损伤,使得接收到的信号产生畸变.为了尽可能减小信号损伤,需要在发送数据之前,将信号进行编码,用以控制接收端的信号尽量接近发送信号.—-差错控制</p>
+</blockquote>
+<h3 id="数据通信基本概念"><a href="#数据通信基本概念" class="headerlink" title="数据通信基本概念"></a>数据通信基本概念</h3><ul>
+<li>通信:在信源点和信宿点之间通过传递消息的形式来交流信息</li>
+<li>通信系统:完成通信过程的全部设备和传输介质的总和</li>
+<li>信源:产生/形成消息(消息的形式有多种,如:符号、文字、语音、数据、图像、视频等)</li>
+<li>发送器:将消息转换成为适合在信道中传输的信号(又分为模拟信号和数字信号)</li>
+<li>信道:信号的传输媒介/通道,将信号由发送器传输到接收器,它的传输特性对通信质量有着直接影响</li>
+<li>接收器:发生器的逆过程</li>
+<li>信宿:接收消息</li>
+<li>知识:是人们根据某种目的, 从自然界收集得来的数据中,整理、概括、提取得到有价值的、人们所需要的信息.知识是具有普遍和概括性质的高层次的信息</li>
+<li>消息:是信息的载体;是表达信息的形式;是通信统中传输的具体对象<ul>
+<li>消息的形式是多样的,它包括符号、文字、语音、数据、图像、视频等</li>
+<li>同一种信息的内容可用不同形式的消息来表达.而一则消息也可载荷不同的信息</li>
+<li>消息又分成模拟消息、数字消息</li>
+</ul>
+</li>
+<li>数据:是以”数”(number)来表达信息的一类消息表示形式,即数据类消息.<ul>
+<li>在信息社会的发展过程中,数据的概念逐渐从狭义过渡到广义</li>
+<li>模拟数据:如果数据在某个时间取连续值,则称为模拟数据.例如温度和压力</li>
+<li>数字数据:若数据取离散值,则称数字数据.例如文本信息、整数、二进制数字等</li>
+</ul>
+</li>
+<li>信息:是消息所包含的内容<ul>
+<li>香浓(Shannon)定义—-信息是事物运动状态或存在方式的不确定性的描述.因此,通信过程是一种消除不确定性的过程.消除不确定性,就获得了信息.原先的不确定性消除得越多,获得的信息就越多</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据通信基础"><a href="#数据通信基础" class="headerlink" title="数据通信基础"></a>数据通信基础</h2><h2 id="差错控制技术"><a href="#差错控制技术" class="headerlink" title="差错控制技术"></a>差错控制技术</h2><h2 id="多路复用技术"><a href="#多路复用技术" class="headerlink" title="多路复用技术"></a>多路复用技术</h2><h2 id="频带传输及调制技术"><a href="#频带传输及调制技术" class="headerlink" title="频带传输及调制技术"></a>频带传输及调制技术</h2><h2 id="数据交换技术"><a href="#数据交换技术" class="headerlink" title="数据交换技术"></a>数据交换技术</h2><h2 id="物理层接口及标准"><a href="#物理层接口及标准" class="headerlink" title="物理层接口及标准"></a>物理层接口及标准</h2><h2 id="数据链路控制规程"><a href="#数据链路控制规程" class="headerlink" title="数据链路控制规程"></a>数据链路控制规程</h2>
     </div>
 
    
@@ -415,7 +480,10 @@
     <a href="/article/6768.html" rel="prev" title="概率论与数理统计">
       <i class="fa fa-chevron-left"></i> 概率论与数理统计
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/article/2887.html" rel="next" title="通用管理知识概论">
+      通用管理知识概论 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -477,7 +545,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80"><span class="nav-text">通信原理基础</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80"><span class="nav-text">通信原理基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1-C-amp-C"><span class="nav-text">计算机与通信(C&amp;C)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-amp-C%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">C&amp;C的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1%E7%9A%84%E5%8F%91%E5%B1%95%E6%96%B9%E5%90%91"><span class="nav-text">计算机通信的发展方向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B"><span class="nav-text">通信系统模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="nav-text">最简单的通信系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9E%8B"><span class="nav-text">通信系统的基本模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">数据通信基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80"><span class="nav-text">数据通信基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF"><span class="nav-text">差错控制技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="nav-text">多路复用技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%91%E5%B8%A6%E4%BC%A0%E8%BE%93%E5%8F%8A%E8%B0%83%E5%88%B6%E6%8A%80%E6%9C%AF"><span class="nav-text">频带传输及调制技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF"><span class="nav-text">数据交换技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E6%8E%A5%E5%8F%A3%E5%8F%8A%E6%A0%87%E5%87%86"><span class="nav-text">物理层接口及标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E6%8E%A7%E5%88%B6%E8%A7%84%E7%A8%8B"><span class="nav-text">数据链路控制规程</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,20 +561,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -799,13 +867,13 @@ if(canvas.getContext){
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/article/2887.html" title="article&#x2F;2887.html">通用管理知识概论</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/article/44284.html" title="article&#x2F;44284.html">通信原理基础</a>
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/article/6768.html" title="article&#x2F;6768.html">概率论与数理统计</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/article/27179.html" title="article&#x2F;27179.html">计算机硬件系统设计</a>
         </li>
     </ul>
   </div>
