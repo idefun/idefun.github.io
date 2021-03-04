@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.idefun.com/article/53598.html</loc>
+    
+    <lastmod>2021-03-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.idefun.com/article/44284.html</loc>
     
     <lastmod>2021-03-04</lastmod>
@@ -318,6 +325,20 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://blog.idefun.com/tags/%E7%97%85%E6%AF%92/</loc>
+    <lastmod>2021-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
+    <lastmod>2021-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -399,6 +420,13 @@
   
   <url>
     <loc>http://blog.idefun.com/categories/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2021-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.idefun.com/categories/%E7%97%85%E6%AF%92/</loc>
     <lastmod>2021-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
