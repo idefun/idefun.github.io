@@ -2766,6 +2766,18 @@
       </tags>
   </entry>
   <entry>
+    <title>计算机组成原理</title>
+    <url>/article/51917.html</url>
+    <content><![CDATA[<h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h1><a id="more"></a>
+<h2 id="计算机系统概论"><a href="#计算机系统概论" class="headerlink" title="计算机系统概论"></a>计算机系统概论</h2>]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机病毒原理与防治</title>
     <url>/article/53598.html</url>
     <content><![CDATA[<h1 id="计算机病毒原理与防治"><a href="#计算机病毒原理与防治" class="headerlink" title="计算机病毒原理与防治"></a>计算机病毒原理与防治</h1><a id="more"></a>
@@ -3064,11 +3076,6 @@
 <p>解:<br>(1) A$\bar B\bar C$ 或 A-B-C<br>(2)A$\cup $B$\cup $C 或 $\overline{\bar{A}\bar{B}\bar{C}} $<br>(3) $A\bar{B} \bar{C} \cup\bar{A} B\bar{C}  \cup \bar{A}\bar{B}C\cup \bar{A} \bar{B}\bar{C} $ 或  $\overline{AB\cup BC\cup AC} $ 或 $\overline{AB} \cap \overline{BC} \cap \overline{AC} $<br>(4)$\overline{ABC}$ 或  $\bar{A} \cup\bar{B} \cup \bar{C}$</p>
 </blockquote>
 <h3 id="随机事件的概率"><a href="#随机事件的概率" class="headerlink" title="随机事件的概率"></a>随机事件的概率</h3><h4 id="频率与概率"><a href="#频率与概率" class="headerlink" title="频率与概率"></a>频率与概率</h4><h4 id="古典概型"><a href="#古典概型" class="headerlink" title="古典概型"></a>古典概型</h4><h4 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h4><h2 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h2><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
-  </entry>
-  <entry>
-    <title>计算机硬件系统设计</title>
-    <url>/article/27179.html</url>
-    <content><![CDATA[<h1 id="计算机硬件系统设计"><a href="#计算机硬件系统设计" class="headerlink" title="计算机硬件系统设计"></a>计算机硬件系统设计</h1>]]></content>
   </entry>
   <entry>
     <title>为hexo博客添加二级域名</title>
