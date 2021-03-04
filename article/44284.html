@@ -55,8 +55,12 @@
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304184441523.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304191605076.png">
 <meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304191700895.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304200949342.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304201451007.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304201901463.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/image-20210304202242943.png">
 <meta property="article:published_time" content="2021-03-03T13:34:26.000Z">
-<meta property="article:modified_time" content="2021-03-04T11:21:05.819Z">
+<meta property="article:modified_time" content="2021-03-04T12:31:42.124Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="通信原理">
 <meta name="twitter:card" content="summary">
@@ -301,7 +305,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-04 19:21:05" itemprop="dateModified" datetime="2021-03-04T19:21:05+08:00">2021-03-04</time>
+                <time title="修改时间：2021-03-04 20:31:42" itemprop="dateModified" datetime="2021-03-04T20:31:42+08:00">2021-03-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -340,14 +344,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
             <div class="post-description">通信原理基础</div>
 
@@ -451,7 +455,71 @@
 </li>
 </ul>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210304191700895.png" alt="数字信号"></p>
-<h3 id="模拟通信系统"><a href="#模拟通信系统" class="headerlink" title="模拟通信系统"></a>模拟通信系统</h3><h2 id="数据通信基础"><a href="#数据通信基础" class="headerlink" title="数据通信基础"></a>数据通信基础</h2><h2 id="差错控制技术"><a href="#差错控制技术" class="headerlink" title="差错控制技术"></a>差错控制技术</h2><h2 id="多路复用技术"><a href="#多路复用技术" class="headerlink" title="多路复用技术"></a>多路复用技术</h2><h2 id="频带传输及调制技术"><a href="#频带传输及调制技术" class="headerlink" title="频带传输及调制技术"></a>频带传输及调制技术</h2><h2 id="数据交换技术"><a href="#数据交换技术" class="headerlink" title="数据交换技术"></a>数据交换技术</h2><h2 id="物理层接口及标准"><a href="#物理层接口及标准" class="headerlink" title="物理层接口及标准"></a>物理层接口及标准</h2><h2 id="数据链路控制规程"><a href="#数据链路控制规程" class="headerlink" title="数据链路控制规程"></a>数据链路控制规程</h2>
+<h3 id="模拟通信系统"><a href="#模拟通信系统" class="headerlink" title="模拟通信系统"></a>模拟通信系统</h3><ul>
+<li>是指利用模拟信号传递消息的系统<ul>
+<li>信源发出的是模拟信号</li>
+<li>信道上传输的也是模拟信号</li>
+<li>信宿收到的仍然是模拟信号</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210304200949342.png" alt="模拟通信系统"></p>
+<ul>
+<li>信源:产生状态连续的模拟消息</li>
+<li>发信机:非电/电变换器</li>
+<li>调制器:将基带信号→已调信号(频带信号)<ul>
+<li>调制:为让模拟信号与模拟信道匹配,通常采用调制的方法</li>
+</ul>
+</li>
+<li>解调器:将已调信号→基带信号,与调制器作用相反</li>
+<li>收信机:电/非电变换器:基带信号→非电信号</li>
+</ul>
+<h4 id="模拟通信系统优缺点"><a href="#模拟通信系统优缺点" class="headerlink" title="模拟通信系统优缺点"></a>模拟通信系统优缺点</h4><ul>
+<li>信号频谱较窄,信道利用率高</li>
+<li>信号连续,混入噪声后不易清除即:抗干扰能力差;不宜保密</li>
+<li>设备不易大规模集成化;不适应飞速发展的计算机通信要求</li>
+</ul>
+<h3 id="数字通信系统"><a href="#数字通信系统" class="headerlink" title="数字通信系统"></a>数字通信系统</h3><p>是指传输和处理数字信号的通信系统</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210304201451007.png" alt="数字通信系统"></p>
+<h4 id="数字通信系统优缺点"><a href="#数字通信系统优缺点" class="headerlink" title="数字通信系统优缺点"></a>数字通信系统优缺点</h4><ul>
+<li>抗干扰能力强,可靠性高 </li>
+<li>信号传输一般采用进制编码,易于使用计算机处理(因而易于构建计算机通信系统) </li>
+<li>能传输各种信号,系统灵活性高,能够进行加密处理,数字通信保密强</li>
+<li>系统设备易于集成,但成本较高</li>
+</ul>
+<h3 id="计算机通信与通信网"><a href="#计算机通信与通信网" class="headerlink" title="计算机通信与通信网"></a>计算机通信与通信网</h3><h4 id="数据通信网"><a href="#数据通信网" class="headerlink" title="数据通信网"></a>数据通信网</h4><p>由分布各处的数据传输、交换设备以及通信线路组成的网络系统,其功能是完成网络内部各设备之间的数据/信息的通信</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210304201901463.png" alt="数据通信网"></p>
+<h5 id="数据通信网的硬件组成"><a href="#数据通信网的硬件组成" class="headerlink" title="数据通信网的硬件组成"></a>数据通信网的硬件组成</h5><ul>
+<li>节点:完成数据处理和交换功能的点</li>
+<li>链路:提供传输数据的通道,即传输媒介</li>
+</ul>
+<h5 id="数据通信网的网络结构"><a href="#数据通信网的网络结构" class="headerlink" title="数据通信网的网络结构"></a>数据通信网的网络结构</h5><ul>
+<li>硬件:设备(数据传输设备、数据交换设备及通信线路等)</li>
+<li>软件:支持上述设备而配置的网络协议</li>
+</ul>
+<h5 id="数据通信网的拓扑结构"><a href="#数据通信网的拓扑结构" class="headerlink" title="数据通信网的拓扑结构"></a>数据通信网的拓扑结构</h5><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210304202242943.png" alt=""></p>
+<p>前三个可选择路径,用于传输距离远的远程通信网,后两个共享链路,用于传输距离较<br>近的局部网中</p>
+<h4 id="计算机通信网"><a href="#计算机通信网" class="headerlink" title="计算机通信网"></a>计算机通信网</h4><ul>
+<li>用数据通信网将分布在不同位置,具备独立功能的多台计算机、终端及其附属设备(I/O设备)连接起来,并实现资源共享的计算机系统</li>
+<li>在数据通信网基础上再加上计算机资源处理设备就构成了计算机通信网</li>
+<li>通信子网+资源子网<ul>
+<li>通信子网:完成数据传输、交换以及通信控制,即上述数据通信网(网络边界线内)</li>
+<li>资源子网:由计算机、终端及其附属设备组成,完成数据处理并提供网络所需的硬件,软件数据资源(网络边界线外)</li>
+</ul>
+</li>
+</ul>
+<h3 id="计算机通信网与计算机网"><a href="#计算机通信网与计算机网" class="headerlink" title="计算机通信网与计算机网"></a>计算机通信网与计算机网</h3><ul>
+<li>计算机通信网:用户必须具体了解网内某一计算机系统的资源情况,用户利用数据通信功能参与对资源的管理和使用,网络对用户来说是”不透明”的</li>
+<li>计算机网:由网络操作系统实现资源共享, 网络对用户来说是透明的</li>
+</ul>
+<h3 id="通信系统的主要性能指标"><a href="#通信系统的主要性能指标" class="headerlink" title="通信系统的主要性能指标"></a>通信系统的主要性能指标</h3><ul>
+<li>有效性:如何用最低的成本尽可能快的传递信息,即系统传输信息的速度,又称传输速率</li>
+<li>可靠性:量化传输信息的可靠程度, 又称误码率/误比特率</li>
+</ul>
+<blockquote>
+<p>提高通信系统的性能:提高传输速率,降低误码率</p>
+</blockquote>
+<h2 id="数据通信基础"><a href="#数据通信基础" class="headerlink" title="数据通信基础"></a>数据通信基础</h2><h2 id="差错控制技术"><a href="#差错控制技术" class="headerlink" title="差错控制技术"></a>差错控制技术</h2><h2 id="多路复用技术"><a href="#多路复用技术" class="headerlink" title="多路复用技术"></a>多路复用技术</h2><h2 id="频带传输及调制技术"><a href="#频带传输及调制技术" class="headerlink" title="频带传输及调制技术"></a>频带传输及调制技术</h2><h2 id="数据交换技术"><a href="#数据交换技术" class="headerlink" title="数据交换技术"></a>数据交换技术</h2><h2 id="物理层接口及标准"><a href="#物理层接口及标准" class="headerlink" title="物理层接口及标准"></a>物理层接口及标准</h2><h2 id="数据链路控制规程"><a href="#数据链路控制规程" class="headerlink" title="数据链路控制规程"></a>数据链路控制规程</h2>
     </div>
 
    
@@ -591,7 +659,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80"><span class="nav-text">通信原理基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1-C-amp-C"><span class="nav-text">计算机与通信(C&amp;C)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-amp-C%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">C&amp;C的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1%E7%9A%84%E5%8F%91%E5%B1%95%E6%96%B9%E5%90%91"><span class="nav-text">计算机通信的发展方向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B"><span class="nav-text">通信系统模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="nav-text">最简单的通信系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9E%8B"><span class="nav-text">通信系统的基本模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">数据通信基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="nav-text">模拟通信系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80"><span class="nav-text">数据通信基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF"><span class="nav-text">差错控制技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="nav-text">多路复用技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%91%E5%B8%A6%E4%BC%A0%E8%BE%93%E5%8F%8A%E8%B0%83%E5%88%B6%E6%8A%80%E6%9C%AF"><span class="nav-text">频带传输及调制技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF"><span class="nav-text">数据交换技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E6%8E%A5%E5%8F%A3%E5%8F%8A%E6%A0%87%E5%87%86"><span class="nav-text">物理层接口及标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E6%8E%A7%E5%88%B6%E8%A7%84%E7%A8%8B"><span class="nav-text">数据链路控制规程</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E5%9F%BA%E7%A1%80"><span class="nav-text">通信原理基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E9%80%9A%E4%BF%A1-C-amp-C"><span class="nav-text">计算机与通信(C&amp;C)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-amp-C%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">C&amp;C的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1%E7%9A%84%E5%8F%91%E5%B1%95%E6%96%B9%E5%90%91"><span class="nav-text">计算机通信的发展方向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B"><span class="nav-text">通信系统模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="nav-text">最简单的通信系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%9E%8B"><span class="nav-text">通信系统的基本模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">数据通信基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="nav-text">模拟通信系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">模拟通信系统优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="nav-text">数字通信系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">数字通信系统优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%BD%91"><span class="nav-text">计算机通信与通信网</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%BD%91"><span class="nav-text">数据通信网</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%BD%91%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90"><span class="nav-text">数据通信网的硬件组成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%BD%91%E7%9A%84%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84"><span class="nav-text">数据通信网的网络结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E7%BD%91%E7%9A%84%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="nav-text">数据通信网的拓扑结构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1%E7%BD%91"><span class="nav-text">计算机通信网</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1%E7%BD%91%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91"><span class="nav-text">计算机通信网与计算机网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-text">通信系统的主要性能指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80"><span class="nav-text">数据通信基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF"><span class="nav-text">差错控制技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="nav-text">多路复用技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%91%E5%B8%A6%E4%BC%A0%E8%BE%93%E5%8F%8A%E8%B0%83%E5%88%B6%E6%8A%80%E6%9C%AF"><span class="nav-text">频带传输及调制技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF"><span class="nav-text">数据交换技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82%E6%8E%A5%E5%8F%A3%E5%8F%8A%E6%A0%87%E5%87%86"><span class="nav-text">物理层接口及标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E6%8E%A7%E5%88%B6%E8%A7%84%E7%A8%8B"><span class="nav-text">数据链路控制规程</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
