@@ -41,16 +41,17 @@
     var CONFIG = {"hostname":"blog.idefun.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="你要安静的优秀,悄无声息的坚强.">
+  <meta name="description" content="解决git报错的问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git报错fatal: unable to access&#39; https:&#x2F; &#x2F; github. com&#x2F;.......git&#x2F;&#39; : Failed to connect to github. com port 443: Timed out的解决方法">
 <meta property="og:url" content="http://blog.idefun.com/article/10916.html">
 <meta property="og:site_name" content="IdeFun Blog">
-<meta property="og:description" content="你要安静的优秀,悄无声息的坚强.">
+<meta property="og:description" content="解决git报错的问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-04T05:59:32.000Z">
-<meta property="article:modified_time" content="2021-03-04T05:59:33.135Z">
+<meta property="article:published_time" content="2021-02-04T05:59:32.000Z">
+<meta property="article:modified_time" content="2021-03-04T10:28:11.982Z">
 <meta property="article:author" content="IdeFun">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://blog.idefun.com/article/10916.html">
@@ -284,10 +285,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-04 13:59:32 / 修改时间：13:59:33" itemprop="dateCreated datePublished" datetime="2021-03-04T13:59:32+08:00">2021-03-04</time>
+              <time title="创建时间：2021-02-04 13:59:32" itemprop="dateCreated datePublished" datetime="2021-02-04T13:59:32+08:00">2021-02-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-04 18:28:11" itemprop="dateModified" datetime="2021-03-04T18:28:11+08:00">2021-03-04</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -316,7 +323,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>651</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -325,6 +332,7 @@
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               <span>1 分钟</span>
             </span>
+            <div class="post-description">解决git报错的问题</div>
 
         </div>
       </header>
@@ -335,7 +343,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="git报错fatal-unable-to-access’-https-github-com-……-git-‘-Failed-to-connect-to-github-com-port-443-Timed-out的解决方法"><a href="#git报错fatal-unable-to-access’-https-github-com-……-git-‘-Failed-to-connect-to-github-com-port-443-Timed-out的解决方法" class="headerlink" title="git报错fatal: unable to access’ https:/ / github. com/…….git/‘ : Failed to connect to github. com port 443: Timed out的解决方法"></a>git报错fatal: unable to access’ https:/ / github. com/…….git/‘ : Failed to connect to github. com port 443: Timed out的解决方法</h1>  <a id="more"></a>
+<h2 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h2><p> 1.查看看你的git配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global -l </span><br></pre></td></tr></table></figure>
+<p>如果你没有任何与https代理相关的内容,例如https_proxy = …,则问题不在这里. 如果您有与https代理相关的内容,请将其从〜/ .gitconfig文件中删除,然后重试 </p>
+<p>2.如果仍然不起作用,请取消设置环境变量 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">env|grep -i proxy  </span><br></pre></td></tr></table></figure>
+<p>你应该有一行或几行https_proxy = … 使用以下内容逐个取消设置:取消设置https_proxy(或HTTPS_PROXY,具体取决于变量的名称)</p>
+<p>3.再次检查环境变量    </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">env|grep -i proxy</span><br></pre></td></tr></table></figure>
+<p>如果它没有显示任何你应该是好的. 注意:此解决方案可以应用于http和https代理问题.只是变量名称从https更改为http </p>
+<h2 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h2><p>1.手动配置git的代理.git客户端输入如下两个命令即可 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http:&#x2F;&#x2F;127.0.0.1:1080 </span><br><span class="line">git config --global https.proxy http:&#x2F;&#x2F;127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<p>2.取消代理</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy  </span><br><span class="line">git config --global --unset https.proxy  </span><br></pre></td></tr></table></figure>
+
     </div>
 
    
@@ -392,6 +414,9 @@
       </div>
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          </div>
 
         
   <div class="post-widgets">
@@ -404,10 +429,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/article/51917.html" rel="prev" title="计算机组成原理">
-      <i class="fa fa-chevron-left"></i> 计算机组成原理
+    <a href="/article/45014.html" rel="prev" title="python笔记">
+      <i class="fa fa-chevron-left"></i> python笔记
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/article/11317.html" rel="next" title="Windows10下搭建汇编语言开发环境">
+      Windows10下搭建汇编语言开发环境 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -469,6 +497,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E6%8A%A5%E9%94%99fatal-unable-to-access%E2%80%99-https-github-com-%E2%80%A6%E2%80%A6-git-%E2%80%98-Failed-to-connect-to-github-com-port-443-Timed-out%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-text">git报错fatal: unable to access’ https:&#x2F; &#x2F; github. com&#x2F;…….git&#x2F;‘ : Failed to connect to github. com port 443: Timed out的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%80"><span class="nav-text">解决方案一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="nav-text">解决方案二</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -497,7 +526,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -790,13 +819,13 @@ if(canvas.getContext){
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
-          <a href="/article/10916.html" title="article&#x2F;10916.html">git报错fatal: unable to access' https:/ / github. com/.......git/' : Failed to connect to github. com port 443: Timed out的解决方法</a>
-        </li>
-        <li class="links-of-recent-posts-item">
           <a href="/article/51917.html" title="article&#x2F;51917.html">计算机组成原理</a>
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/article/53598.html" title="article&#x2F;53598.html">计算机病毒原理与防治</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/article/2887.html" title="article&#x2F;2887.html">通用管理知识概论</a>
         </li>
     </ul>
   </div>
