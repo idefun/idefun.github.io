@@ -3412,6 +3412,9 @@
 <p>2.输入下列命令并回车</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ipconfig /flushdns</span><br></pre></td></tr></table></figure>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/20210303193228786.png" alt=""></p>
+<h2 id="四-github镜像访问"><a href="#四-github镜像访问" class="headerlink" title="四:github镜像访问"></a>四:github镜像访问</h2><p>这里提供两个github的镜像站,以备不测</p>
+<p><a href="https://github.com.cnpmjs.org/">https://github.com.cnpmjs.org/</a></p>
+<p><a href="https://hub.fastgit.org/">https://hub.fastgit.org/</a></p>
 <p>备注：此文仅为记载本人如何解决GitHub无法进入的问题</p>
 ]]></content>
       <categories>
