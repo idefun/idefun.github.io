@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /home/
 Allow: /archives/
 Allow: /categories/
 Allow: /tags/
@@ -7,6 +8,11 @@ Allow: /schedule/
 Allow: /photos/
 Allow: /about/
 Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
 Disallow: /fancybox/
+
 Sitemap: https://blog.idefun.com/sitemap.xml
 Sitemap: https://blog.idefun.com/baidusitemap.xml
