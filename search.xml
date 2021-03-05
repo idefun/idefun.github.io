@@ -3404,7 +3404,7 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210305192818507.png" alt=""></p>
 <p>7.选择使用下面的DNS服务器地址,并输入DNS地址</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210305192919627.png" alt=""></p>
-<p>8.这里我推荐两个4.2.2.2和223.5.5.5,之后点击确定即可</p>
+<p>8.这里我推荐两个4.2.2.2(微软)和223.5.5.5(阿里),之后点击确定即可</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210305193610294.png" alt="image-20210305193610294"></p>
 <h2 id="三-刷新DNS解析缓存"><a href="#三-刷新DNS解析缓存" class="headerlink" title="三:刷新DNS解析缓存"></a>三:刷新DNS解析缓存</h2><p>更改完hosts文件后,建议刷新一下DNS缓存</p>
 <p>1.win+R打开运行窗口,输入cmd,点击确定打开cmd窗口</p>
