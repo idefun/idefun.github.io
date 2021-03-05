@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>IdeFun Blog</title>
   <icon>http://blog.idefun.com/icon.png</icon>
-  <subtitle>暗透了,更难看得见星光.</subtitle>
+  <subtitle>暗透了,更能看得见星光.</subtitle>
   <link href="http://blog.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://blog.idefun.com/"/>
