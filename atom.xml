@@ -6,7 +6,7 @@
   <link href="http://blog.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://blog.idefun.com/"/>
-  <updated>2021-03-05T09:04:36.602Z</updated>
+  <updated>2021-03-04T05:45:43.074Z</updated>
   <id>http://blog.idefun.com/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>视频</title>
-    <link href="http://blog.idefun.com/article/fcea04bb.html"/>
-    <id>http://blog.idefun.com/article/fcea04bb.html</id>
-    <published>2021-03-05T08:54:48.000Z</published>
-    <updated>2021-03-05T09:04:36.602Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;视频&lt;/p&gt;
-&lt;div  width=&quot;100%&quot;&gt;
-&lt;video height=&quot;100%&quot; width=&quot;100%&quot; src=&quot;../media/1.mp4&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>计算机组成原理</title>
@@ -399,6 +376,25 @@
     <category term="Linux" scheme="http://blog.idefun.com/tags/Linux/"/>
     
     <category term="C语言" scheme="http://blog.idefun.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web学习</title>
+    <link href="http://blog.idefun.com/article/22773.html"/>
+    <id>http://blog.idefun.com/article/22773.html</id>
+    <published>2021-01-10T09:04:07.000Z</published>
+    <updated>2021-02-28T01:28:04.065Z</updated>
+    
+    
+    <summary type="html">本文旨在记录web学习中所获</summary>
+    
+    
+    
+    <category term="web" scheme="http://blog.idefun.com/categories/web/"/>
+    
+    
+    <category term="web" scheme="http://blog.idefun.com/tags/web/"/>
     
   </entry>
   
