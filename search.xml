@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo的next主题实现双语功能</title>
+    <url>/article/99e78227.html</url>
+    <content><![CDATA[<h1 id="Hexo的next主题实现双语功能"><a href="#Hexo的next主题实现双语功能" class="headerlink" title="Hexo的next主题实现双语功能"></a>Hexo的next主题实现双语功能</h1><a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前不久,给博客添加了Google Analytics,通过数据显示,发现我这小破站寥寥无几的流量大部分竟然是国外朋友贡献的,心中便想着将博客国际化—-搞个英文版本.说干就干,经过我的一番折腾,终于给搞出来了,但我要说明一下文章的内容是要自己转换为英文,具体效果大家可以点击下面链接前往查看</p>
+<p><a href="https://blog.idefun.com/en" class="LinkCard">英文版本</a></p>
+<h2 id="诉求"><a href="#诉求" class="headerlink" title="诉求"></a>诉求</h2><p>首先说说我对英文网站的诉求:</p>
+<ol>
+<li>英文网站要原网站基本保持一致(我看到有的小伙伴直接换支持双语的主题了,我可不想让自己的心血白流)</li>
+<li>我希望原网站和英文网站有个切换按钮,很容易切换</li>
+<li>我不希望再创建一个仓库来两头维护,最好在一个仓库</li>
+<li>我不希望有过于复杂反复的操作</li>
+</ol>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2>]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows10下搭建汇编语言开发环境</title>
     <url>/article/11317.html</url>
     <content><![CDATA[<h1 id="Windows10下搭建汇编语言开发环境"><a href="#Windows10下搭建汇编语言开发环境" class="headerlink" title="Windows10下搭建汇编语言开发环境"></a>Windows10下搭建汇编语言开发环境</h1><a id="more"></a>
@@ -3242,8 +3264,8 @@
         <category>无处安放</category>
       </categories>
       <tags>
-        <tag>域名</tag>
         <tag>hexo</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
   <entry>

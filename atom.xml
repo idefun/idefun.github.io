@@ -6,7 +6,7 @@
   <link href="http://blog.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://blog.idefun.com/"/>
-  <updated>2021-03-04T05:45:43.074Z</updated>
+  <updated>2021-03-06T14:16:21.987Z</updated>
   <id>http://blog.idefun.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo的next主题实现双语功能</title>
+    <link href="http://blog.idefun.com/article/99e78227.html"/>
+    <id>http://blog.idefun.com/article/99e78227.html</id>
+    <published>2021-03-06T13:52:06.000Z</published>
+    <updated>2021-03-06T14:16:21.987Z</updated>
+    
+    
+    <summary type="html">Hexo的next主题实现双语功能</summary>
+    
+    
+    
+    <category term="hexo" scheme="http://blog.idefun.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://blog.idefun.com/tags/hexo/"/>
+    
+    <category term="next" scheme="http://blog.idefun.com/tags/next/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机组成原理</title>
@@ -124,9 +145,9 @@
     <category term="无处安放" scheme="http://blog.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
     
     
-    <category term="域名" scheme="http://blog.idefun.com/tags/%E5%9F%9F%E5%90%8D/"/>
-    
     <category term="hexo" scheme="http://blog.idefun.com/tags/hexo/"/>
+    
+    <category term="域名" scheme="http://blog.idefun.com/tags/%E5%9F%9F%E5%90%8D/"/>
     
   </entry>
   
@@ -376,25 +397,6 @@
     <category term="Linux" scheme="http://blog.idefun.com/tags/Linux/"/>
     
     <category term="C语言" scheme="http://blog.idefun.com/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Web学习</title>
-    <link href="http://blog.idefun.com/article/22773.html"/>
-    <id>http://blog.idefun.com/article/22773.html</id>
-    <published>2021-01-10T09:04:07.000Z</published>
-    <updated>2021-02-28T01:28:04.065Z</updated>
-    
-    
-    <summary type="html">本文旨在记录web学习中所获</summary>
-    
-    
-    
-    <category term="web" scheme="http://blog.idefun.com/categories/web/"/>
-    
-    
-    <category term="web" scheme="http://blog.idefun.com/tags/web/"/>
     
   </entry>
   
