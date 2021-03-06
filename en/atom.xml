@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>IdeFun Blog</title>
+  <icon>http://blog.idefun.com/en/icon.png</icon>
+  <subtitle>暗透了,更能看得见星光.</subtitle>
+  <link href="http://blog.idefun.com/en/atom.xml" rel="self"/>
+  
+  <link href="http://blog.idefun.com/en/"/>
+  <updated>2021-03-06T02:59:15.937Z</updated>
+  <id>http://blog.idefun.com/en/</id>
+  
+  <author>
+    <name>IdeFun</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自建网盘搜索引擎</title>
+    <link href="http://blog.idefun.com/en/article/57501.html"/>
+    <id>http://blog.idefun.com/en/article/57501.html</id>
+    <published>2021-01-07T03:18:14.000Z</published>
+    <updated>2021-03-06T02:59:15.937Z</updated>
+    
+    
+    <summary type="html">本文旨在搭建网盘资源搜索引擎</summary>
+    
+    
+    
+    <category term="无处安放" scheme="http://blog.idefun.com/en/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
+    
+    
+    <category term="搜索引擎" scheme="http://blog.idefun.com/en/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="网盘" scheme="http://blog.idefun.com/en/tags/%E7%BD%91%E7%9B%98/"/>
+    
+  </entry>
+  
+</feed>
