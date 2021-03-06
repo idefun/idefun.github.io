@@ -242,6 +242,13 @@
   </url>
   
   <url>
+    <loc>http://blog.idefun.com/tags/web/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.idefun.com/tags/C%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
@@ -256,21 +263,7 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/tags/web/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.idefun.com/tags/github/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.idefun.com/tags/git/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -284,7 +277,7 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
+    <loc>http://blog.idefun.com/tags/git/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -299,6 +292,13 @@
   
   <url>
     <loc>http://blog.idefun.com/tags/hexo/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.idefun.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -347,7 +347,7 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/tags/%E7%97%85%E6%AF%92/</loc>
+    <loc>http://blog.idefun.com/tags/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -361,14 +361,14 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/</loc>
+    <loc>http://blog.idefun.com/tags/%E7%97%85%E6%AF%92/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/tags/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/</loc>
+    <loc>http://blog.idefun.com/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -384,13 +384,6 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/categories/C-C/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.idefun.com/categories/Linux/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
@@ -398,14 +391,21 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</loc>
+    <loc>http://blog.idefun.com/categories/web/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/categories/web/</loc>
+    <loc>http://blog.idefun.com/categories/C-C/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.idefun.com/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -426,14 +426,14 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
+    <loc>http://blog.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/</loc>
+    <loc>http://blog.idefun.com/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -454,14 +454,7 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/categories/%E7%97%85%E6%AF%92/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.idefun.com/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/</loc>
+    <loc>http://blog.idefun.com/categories/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -475,7 +468,14 @@
   </url>
   
   <url>
-    <loc>http://blog.idefun.com/categories/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/</loc>
+    <loc>http://blog.idefun.com/categories/%E7%97%85%E6%AF%92/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.idefun.com/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
