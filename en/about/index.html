@@ -74,8 +74,8 @@
 <script> 
     (function(){
         if(''){
-            if (prompt('请输入文章密码') !== ''){
-                alert('密码错误！');
+            if (prompt('Please enter the password for the article:') !== ''){
+                alert('Password error!');
                 history.back();
             }
         }
@@ -132,6 +132,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/en/atom.xml" title="IdeFun Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -375,6 +376,13 @@
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/en/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
@@ -661,9 +669,12 @@ if(canvas.getContext){
   <div class="links-of-recent-posts motion-element">
     <div class="links-of-recent-posts-title">
       <i class="fa fa-history fa-fw"></i>
-      最近文章
+      Recent Article
     </div>
     <ul class="links-of-recent-posts-list">
+        <li class="links-of-recent-posts-item">
+          <a href="/en/article/8bd69e52.html" title="article&#x2F;8bd69e52.html">Hello world</a>
+        </li>
     </ul>
   </div>
       </div>
@@ -685,7 +696,7 @@ hrsold=setzero(Math.floor(e_hrsold));
 e_minsold=(e_hrsold-hrsold)*60;
 minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
 seconds=setzero(Math.floor((e_minsold-minsold)*60));
-document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"时"+minsold+"分"+seconds+"秒";
+document.getElementById('days').innerHTML="To run for "+daysold+" days,"+hrsold+" hours,"+minsold+" minutes,"+seconds+" seconds";
 }
 function setzero(i){
 if (i<10)
@@ -719,20 +730,7 @@ show_date_time();
   <span class="author" itemprop="copyrightHolder">IdeFun</span>
 </div>
 
-<div class="translate-style">
-繁/简：<a id="translateLink" href="javascript:translatePage();" rel="external nofollow noreferrer">繁体
-</a>
-</div>
-<script type="text/javascript" src="/js/tw_cn.js"></script>
-<script type="text/javascript">
-var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
-var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
-var cookieDomain = "https://blog.idefun.com/"; //Cookie地址, 一定要设定, 通常为你的网址
-var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
-var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
-var translateButtonId = "translateLink"; //默认互换id
-translateInitilization();
-</script>
+
 
         
 <div class="busuanzi-count">
