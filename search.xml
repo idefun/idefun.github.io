@@ -5,7 +5,7 @@
     <url>/article/99e78227.html</url>
     <content><![CDATA[<h1 id="Hexo的next主题实现双语功能"><a href="#Hexo的next主题实现双语功能" class="headerlink" title="Hexo的next主题实现双语功能"></a>Hexo的next主题实现双语功能</h1><a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前不久,给博客添加了Google Analytics,通过数据显示,发现我这小破站寥寥无几的流量大部分竟然是国外朋友贡献的,心中便想着将博客国际化—-搞个英文版本.说干就干,经过我的一番折腾,终于给搞出来了,但我要说明一下文章的内容是要自己转换为英文,具体效果大家可以点击下面链接前往查看</p>
-<p><a href="https://blog.idefun.com/en" class="LinkCard">英文版本</a></p>
+<p><a href="https://blog.idefun.com/en" class="LinkCard" target="_blank">英文版本</a></p>
 <h2 id="诉求"><a href="#诉求" class="headerlink" title="诉求"></a>诉求</h2><p>首先说说我对英文网站的诉求:</p>
 <ol>
 <li>英文网站要原网站基本保持一致(我看到有的小伙伴直接换支持双语的主题了,我可不想让自己的心血白流)</li>
@@ -30,15 +30,15 @@
 <p>关于搭建汇编语言开发环境的教程,我也找了许多,可看下来却依旧一头雾水,经过本人摸索,同时结合网上教程,欲写下这篇易懂的文章.</p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="1-下载DOSBox"><a href="#1-下载DOSBox" class="headerlink" title="1.下载DOSBox"></a>1.下载DOSBox</h3><p>工具介绍:DOSBox是一个DOS模拟程序,由于它采用的是SDL库,所以可以很方便的移植到其他的平台.目前,DOSBox已经支持在Windows、Linux、Mac OS X、BeOS 、palmOS、Android 、webOS、os/2等系统中运行.不少DOS下的游戏都可以直接在该平台上运行.</p>
 <p>工具官网:</p>
-<p><a href="http://www.dosbox.com/" class="LinkCard">工具官网</a></p>
+<p><a href="http://www.dosbox.com/" class="LinkCard" target="_blank">工具官网</a></p>
 <p>项目主页：</p>
-<p><a href="http://sourceforge.net/projects/dosbox" class="LinkCard">项目主页</a></p>
+<p><a href="http://sourceforge.net/projects/dosbox" class="LinkCard" target="_blank">项目主页</a></p>
 <p>下载链接1(32位):</p>
-<p><a href="http://sourceforge.net/projects/dosbox/files/dosbox/0.74/DOSBox0.74-win32-installer.exe/download/" class="LinkCard">下载链接1</a></p>
+<p><a href="http://sourceforge.net/projects/dosbox/files/dosbox/0.74/DOSBox0.74-win32-installer.exe/download/" class="LinkCard" target="_blank">下载链接1</a></p>
 <p>下载链接2(这个是我下载好的,可能会快一点):</p>
 <p><a href="https://idefun.lanzous.com/i91Xpm4qzyb" class="LinkCard">下载链接2</a></p>
 <h3 id="2-下载汇编工具包"><a href="#2-下载汇编工具包" class="headerlink" title="2.下载汇编工具包"></a>2.下载汇编工具包</h3><p>下载链接:</p>
-<p><a href="https://idefun.lanzous.com/i4TQgm4zjkf/" class="LinkCard">下载链接</a></p>
+<p><a href="https://idefun.lanzous.com/i4TQgm4zjkf/" class="LinkCard" target="_blank">下载链接</a></p>
 <p>汇编工具截图</p>
 <p><img src="https://i.loli.net/2021/02/25/vmXynkcD7V3bwEe.png" alt=""></p>
 <h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><h3 id="1-安装DOSBox"><a href="#1-安装DOSBox" class="headerlink" title="1.安装DOSBox"></a>1.安装DOSBox</h3><p>双击运行DOSBox安装程序</p>
@@ -6240,7 +6240,7 @@
     <title>自建网盘搜索引擎</title>
     <url>/article/57501.html</url>
     <content><![CDATA[<h1 id="教你如何自建网盘资源搜索引擎"><a href="#教你如何自建网盘资源搜索引擎" class="headerlink" title="教你如何自建网盘资源搜索引擎"></a>教你如何自建网盘资源搜索引擎</h1><a id="more"></a>
-<h3 id="1-利用Google-要能科学上网"><a href="#1-利用Google-要能科学上网" class="headerlink" title="1.利用Google(要能科学上网)"></a>1.利用Google(要能科学上网)</h3><p><a href="https://cse.google.com/cse/" class="LinkCard">点击这里直达</a></p>
+<h3 id="1-利用Google-要能科学上网"><a href="#1-利用Google-要能科学上网" class="headerlink" title="1.利用Google(要能科学上网)"></a>1.利用Google(要能科学上网)</h3><p><a href="https://cse.google.com/cse/" class="LinkCard" target="_blank">点击这里直达</a></p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/7559cf809c4cf41e9f0c6c79d7db4885.png" alt="image-20201114100907681"></p>
 <h3 id="2-点击开始吧"><a href="#2-点击开始吧" class="headerlink" title="2.点击开始吧"></a>2.点击开始吧</h3><p>进入如下界面</p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/1ae2e326d170098cd6399ebb6914aaa8.png" alt="image-20201114100937412"></p>
