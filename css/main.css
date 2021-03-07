@@ -1209,7 +1209,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9aff9f;
+  background: #f11bb5;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3051,4 +3051,16 @@ div.post-block.tag .collection-title h2 {
 }
 .post-body img {
   margin-bottom: 0;
+}
+.carousel-indicators li {
+  width: 5px !important;
+  height: 5px !important;
+}
+.carousel-indicators .active {
+  width: 5px !important;
+  height: 5px !important;
+}
+.back-to-top.back-to-top-on {
+  bottom: 20px !important;
+  border-radius: 15px !important;
 }
