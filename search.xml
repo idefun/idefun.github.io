@@ -2800,8 +2800,8 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>github action</tag>
         <tag>github</tag>
+        <tag>github action</tag>
       </tags>
   </entry>
   <entry>
@@ -3247,8 +3247,14 @@
 <li>每个样本点出现的可能性相同,则试验E称为古典概型(有限等可能概型)</li>
 </ol>
 <p>设$\Omega$={$\omega _{1} ,\omega _{2} ,\cdots ,\omega _{n} $},则$P(\omega _{i})=\frac{1}{n}  $(i=1,2,$\cdots$,n)</p>
-<p>设A为E的任意一个事件,A中包含k个基本事件,则P(A)=$\frac{k}{n}$</p>
-<h4 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h4><h2 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h2><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
+<p>设A为E的任意一个事件,A中包含k个基本事件,则P(A)=$\frac{k}{n}$,即P(A)=$\frac{A所含样本点个数}{\Omega 所含样本点个数} $</p>
+<h5 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h5><h6 id="无放回摸球"><a href="#无放回摸球" class="headerlink" title="无放回摸球"></a>无放回摸球</h6><h4 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h4><h2 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h2><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
+      <categories>
+        <category>概率论与数理统计</category>
+      </categories>
+      <tags>
+        <tag>概率论与数理统计</tag>
+      </tags>
   </entry>
   <entry>
     <title>为hexo博客添加二级域名</title>

@@ -31,9 +31,9 @@
     <category term="github" scheme="http://blog.idefun.com/categories/github/"/>
     
     
-    <category term="github action" scheme="http://blog.idefun.com/tags/github-action/"/>
-    
     <category term="github" scheme="http://blog.idefun.com/tags/github/"/>
+    
+    <category term="github action" scheme="http://blog.idefun.com/tags/github-action/"/>
     
   </entry>
   
@@ -141,13 +141,17 @@
     <link href="http://blog.idefun.com/article/6768.html"/>
     <id>http://blog.idefun.com/article/6768.html</id>
     <published>2021-03-03T04:07:48.000Z</published>
-    <updated>2021-03-05T02:09:46.366Z</updated>
+    <updated>2021-03-07T12:28:21.786Z</updated>
     
     
     <summary type="html">概率论与数理统计</summary>
     
     
     
+    <category term="概率论与数理统计" scheme="http://blog.idefun.com/categories/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
+    
+    
+    <category term="概率论与数理统计" scheme="http://blog.idefun.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
     
   </entry>
   
