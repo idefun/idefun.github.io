@@ -6,7 +6,7 @@
   <link href="http://blog.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://blog.idefun.com/"/>
-  <updated>2021-03-06T14:19:45.660Z</updated>
+  <updated>2021-03-07T10:52:51.847Z</updated>
   <id>http://blog.idefun.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>教你定时发送天气邮件</title>
+    <link href="http://blog.idefun.com/article/a1a28d7.html"/>
+    <id>http://blog.idefun.com/article/a1a28d7.html</id>
+    <published>2021-03-07T10:34:23.000Z</published>
+    <updated>2021-03-07T10:52:51.847Z</updated>
+    
+    
+    <summary type="html">教你定时发送天气邮件</summary>
+    
+    
+    
+    <category term="github" scheme="http://blog.idefun.com/categories/github/"/>
+    
+    
+    <category term="github action" scheme="http://blog.idefun.com/tags/github-action/"/>
+    
+    <category term="github" scheme="http://blog.idefun.com/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo的next主题实现双语功能</title>
@@ -71,9 +92,9 @@
     <category term="病毒" scheme="http://blog.idefun.com/categories/%E7%97%85%E6%AF%92/"/>
     
     
-    <category term="病毒" scheme="http://blog.idefun.com/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="http://blog.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="http://blog.idefun.com/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -376,27 +397,6 @@
     
     
     <category term="数据结构与算法" scheme="http://blog.idefun.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux C编程</title>
-    <link href="http://blog.idefun.com/article/34877.html"/>
-    <id>http://blog.idefun.com/article/34877.html</id>
-    <published>2021-01-11T06:59:16.000Z</published>
-    <updated>2021-02-05T06:21:25.931Z</updated>
-    
-    
-    <summary type="html">本文旨在记录C&amp;C++学习过程中所获</summary>
-    
-    
-    
-    <category term="C&amp;C++" scheme="http://blog.idefun.com/categories/C-C/"/>
-    
-    
-    <category term="Linux" scheme="http://blog.idefun.com/tags/Linux/"/>
-    
-    <category term="C语言" scheme="http://blog.idefun.com/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
