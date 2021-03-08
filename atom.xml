@@ -6,7 +6,7 @@
   <link href="http://blog.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://blog.idefun.com/"/>
-  <updated>2021-03-07T10:52:51.847Z</updated>
+  <updated>2021-03-08T05:18:02.090Z</updated>
   <id>http://blog.idefun.com/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git报错及解决方法盘点</title>
+    <link href="http://blog.idefun.com/article/fe55cae0.html"/>
+    <id>http://blog.idefun.com/article/fe55cae0.html</id>
+    <published>2021-03-08T05:10:18.000Z</published>
+    <updated>2021-03-08T05:18:02.090Z</updated>
+    
+    
+    <summary type="html">git报错及解决方法盘点</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>教你定时发送天气邮件</title>
@@ -92,9 +107,9 @@
     <category term="病毒" scheme="http://blog.idefun.com/categories/%E7%97%85%E6%AF%92/"/>
     
     
-    <category term="病毒" scheme="http://blog.idefun.com/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="http://blog.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="http://blog.idefun.com/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -238,7 +253,7 @@
     <link href="http://blog.idefun.com/article/11317.html"/>
     <id>http://blog.idefun.com/article/11317.html</id>
     <published>2021-02-25T02:17:53.000Z</published>
-    <updated>2021-03-06T14:22:27.403Z</updated>
+    <updated>2021-03-08T01:43:30.165Z</updated>
     
     
     <summary type="html">Windows10下搭建汇编语言开发环境</summary>
@@ -257,7 +272,7 @@
     <link href="http://blog.idefun.com/article/7cc3ca60.html"/>
     <id>http://blog.idefun.com/article/7cc3ca60.html</id>
     <published>2021-02-05T05:34:58.000Z</published>
-    <updated>2021-03-07T08:58:13.849Z</updated>
+    <updated>2021-03-08T04:17:04.196Z</updated>
     
     
     <summary type="html">github无法打开或加载慢的解决方法</summary>
@@ -268,23 +283,6 @@
     
     
     <category term="github" scheme="http://blog.idefun.com/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git报错fatal: unable to access&#39; https:/ / github. com/.......git/&#39; : Failed to connect to github. com port 443: Timed out的解决方法</title>
-    <link href="http://blog.idefun.com/article/10916.html"/>
-    <id>http://blog.idefun.com/article/10916.html</id>
-    <published>2021-02-04T05:59:32.000Z</published>
-    <updated>2021-03-04T10:28:11.982Z</updated>
-    
-    
-    <summary type="html">解决git报错的问题</summary>
-    
-    
-    
-    
-    <category term="git" scheme="http://blog.idefun.com/tags/git/"/>
     
   </entry>
   
