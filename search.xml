@@ -208,7 +208,7 @@
 </tr>
 <tr>
 <td>D命令</td>
-<td>查看内存中的内容(机器指令形式)(16进制显示)</td>
+<td>查看内存中的内容(机器指令形式)(以16进制显示)</td>
 </tr>
 <tr>
 <td>E命令</td>
@@ -224,7 +224,7 @@
 </tr>
 <tr>
 <td>A命令</td>
-<td>相比较E,使用汇编指令进行内存修改——向内存提供机器指令</td>
+<td>相比较E,以汇编指令形式在内存写入一条机器指令</td>
 </tr>
 <tr>
 <td>P命令</td>
@@ -299,19 +299,21 @@
 </tbody>
 </table>
 </div>
-<p>改变标志位的值</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rf</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301095739288.png" alt=""></p>
-<h5 id="改变CPU寄存器的内容"><a href="#改变CPU寄存器的内容" class="headerlink" title="改变CPU寄存器的内容"></a>改变CPU寄存器的内容</h5><h6 id="改变ax的值"><a href="#改变ax的值" class="headerlink" title="改变ax的值"></a>改变ax的值</h6><p>直接回车退出修改</p>
+<h5 id="改变CPU寄存器的内容"><a href="#改变CPU寄存器的内容" class="headerlink" title="改变CPU寄存器的内容"></a>改变CPU寄存器的内容</h5><h6 id="改变寄存器的值"><a href="#改变寄存器的值" class="headerlink" title="改变寄存器的值"></a>改变寄存器的值</h6><p>若要修改一个寄存器中的值,比如AX中的值,可用R命令后加寄存器名来进行,输入”r ax”后按Enter键,将出现”:”作为输入提示,在后面输入要写入的数据后按Enter键(直接按Enter则退出修改),即完成了对AX中内容的修改.若想看一下修改的结果,可再用R命令查看(R命令与寄存器名之间也可以没有空格)</p>
 <p><img src="https://i.loli.net/2021/02/25/rOLVwamUWvylcnE.png" alt=""></p>
 <h6 id="改变CS-IP的值"><a href="#改变CS-IP的值" class="headerlink" title="改变CS:IP的值"></a>改变CS:IP的值</h6><p><img src="https://i.loli.net/2021/02/25/tdvuEMzlSUHI79C.png" alt=""></p>
-<h4 id="D命令"><a href="#D命令" class="headerlink" title="D命令"></a>D命令</h4><p>使用D命令,debug将输出3部分内容：</p>
+<h6 id="改变标志位的值"><a href="#改变标志位的值" class="headerlink" title="改变标志位的值"></a>改变标志位的值</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rf</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301095739288.png" alt=""></p>
+<h4 id="D命令"><a href="#D命令" class="headerlink" title="D命令"></a>D命令</h4><p>使用D命令,可以查看内存中的内容,debug将输出3部分内容：</p>
 <ol>
 <li>中间是从指定地址开始的128个内存单元的内容,用16进制的格式输出,每行的输出从16的整数倍的地址开始,最多输出16个单元的内容.注意在每行的中间有一个”-“,它将每行的输出分为两部分,这样便于查看</li>
 <li>左边是每行的起始地址</li>
 <li>右边是每个内存单元中的数据对应的可显示的ASCII码字符.若没有对应可显示的ASCII字符,debug就用”.”来代替</li>
 </ol>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228122306758.png" alt=""></p>
+<blockquote>
+<p>注意,我们看到的内存中的内容,在不同的计算机中是不一样的,也可能每次用<br>Debug看到的内容都不相同,因为我们用Debug看到的都是原来就在内存中的内容,这些内容受随时都有可能变化的系统环境的影响.当然,我们也可以改变内存、寄存器中的内容</p>
+</blockquote>
 <p>在一进入debug后,用D命令直接查看,将列出debug预设的地址处的内容</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228123326498.png" alt=""></p>
 <p>使用d 段地址:偏移地址查看(以d 1000:0为例)</p>
@@ -323,7 +325,8 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228123922247.png" alt=""></p>
 <p>若输入的地址不是16的倍数,则输出效果是这样的</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228123042937.png" alt=""></p>
-<h4 id="E命令"><a href="#E命令" class="headerlink" title="E命令"></a>E命令</h4><p>将内存1000:0-1000:9单元中的内容分别写为0、1、2、3….、9,可以用”e 段地址:起始地址 数据 数据 数据 ……”的格式来进行</p>
+<h4 id="E命令"><a href="#E命令" class="headerlink" title="E命令"></a>E命令</h4><p>改写内存中的内容,但是是以机器指令的形式</p>
+<p>将内存1000:0-1000:9单元中的内容分别写为0、1、2、3….、9,可以用”e 段地址:起始地址 数据 数据 数据$\cdots $”的格式来进行</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228132259802.png" alt=""></p>
 <p>用E命令以提问的方式来逐个地修改从某一地址开始的内存单元中的内容</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228132759807.png" alt=""></p>
@@ -334,7 +337,13 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228133235259.png" alt=""></p>
 <p>也可以用E命令向内存中写入字符串</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228133636393.png" alt=""></p>
-<p>用E命令向内存中写入机器码,用T命令执行内存中的机器码</p>
+<h4 id="U命令"><a href="#U命令" class="headerlink" title="U命令"></a>U命令</h4><p>对机器代码反汇编显示,U命令的显示输出分为3部分,每一条机器指令的地址、机器指令、机器指令所对应的汇编指令</p>
+<h5 id="按地址反汇编"><a href="#按地址反汇编" class="headerlink" title="按地址反汇编"></a>按地址反汇编</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">u 地址</span><br></pre></td></tr></table></figure>
+<p>该命令从指定地址开始,反汇编32个字节,若地址省略,则从上一个U命令的最后一个指令的下一个单元开始显示32个字节</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301100802300.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301100844123.png" alt=""></p>
+<h5 id="按范围反汇编"><a href="#按范围反汇编" class="headerlink" title="按范围反汇编"></a>按范围反汇编</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">u 范围</span><br></pre></td></tr></table></figure>
+<h4 id="T命令"><a href="#T命令" class="headerlink" title="T命令"></a>T命令</h4><h5 id="使用T命令执行CS-IP指向的指令"><a href="#使用T命令执行CS-IP指向的指令" class="headerlink" title="使用T命令执行CS:IP指向的指令"></a>使用T命令执行CS:IP指向的指令</h5><p>首先用E命令向从1000:0开始的内存单元中写入了8个字节的机器码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">e 1000:0 b8 01 00 b9 02 00 01 c8</span><br></pre></td></tr></table></figure>
 <div class="table-container">
 <table>
@@ -361,16 +370,30 @@
 </table>
 </div>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301075936404.png" alt=""></p>
+<p>然后用R命令查看CPU中寄存器的状态,可以看到,CS=0740H、IP=0100H,指向内存<br>0740:0100</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309112317133.png" alt=""></p>
+<p>若要用T命令控制CPU执行我们写到1000:0 的指令,必须先让CS:IP指向1000:0;接着用R命令修改CS、IP中的内容,使CS:IP指向1000:0</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309113531977.png" alt=""></p>
+<p>完成上面的步骤后,就可以使用T命令来执行我们写入的指令了(此时,CS:IP 指向我们的指令所在的内存单元).执行T命令后,CPU执行CS:IP指向的指令,则1000:0处的指令b8 01 00(mov ax,0001)得到执行,指令执行后,Debug 显示输出CPU中寄存器的状态</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309113809478.png" alt=""></p>
 <blockquote>
-<p>用E命令向从1000:0开始的内存单元中写入了8个字节的机器码<br>用D命令查看内存1000:0~1000:1f中的数据(从数据的角度看一下写入的内容)<br>用U命令查看从1000:0开始的内存单元中的机器指令和他们所对应的汇编指令</p>
+<p>注意:指令执行后,AX中的内容被改写为1,IP改变为IP+3(因为mov ax,0001的指令长度为3个字节),CS:IP指向下一条指令</p>
 </blockquote>
-<h4 id="U命令"><a href="#U命令" class="headerlink" title="U命令"></a>U命令</h4><p>对机器代码反汇编显示</p>
-<h5 id="按地址反汇编"><a href="#按地址反汇编" class="headerlink" title="按地址反汇编"></a>按地址反汇编</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">u 地址</span><br></pre></td></tr></table></figure>
-<p>该命令从指定地址开始,反汇编32个字节,若地址省略,则从上一个U命令的最后一个指令的下一个单元开始显示32个字节</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301100802300.png" alt=""></p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301100844123.png" alt=""></p>
-<h5 id="按范围反汇编"><a href="#按范围反汇编" class="headerlink" title="按范围反汇编"></a>按范围反汇编</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">u 范围</span><br></pre></td></tr></table></figure>
-<h4 id="T命令"><a href="#T命令" class="headerlink" title="T命令"></a>T命令</h4><h4 id="命令"><a href="#命令" class="headerlink" title="?命令"></a>?命令</h4><p>输入?查看更多命令</p>
+<p>继续使用T命令执行下面的指令</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309114535239.png" alt=""></p>
+<blockquote>
+<p>用T命令继续执行后面的指令,注意每条指令执行后,CPU相关寄存器内容的变化</p>
+</blockquote>
+<h4 id="A命令"><a href="#A命令" class="headerlink" title="A命令"></a>A命令</h4><p>使用E命令写入机器指令很不方便,最好能直接以汇编指令的形式写入指令.为此,Debug 提供了A命令,A命令以汇编指令的形式在内存中写入机器指令</p>
+<p>首先用A命令,以汇编语言向从1000:0开始的内存单元中写入了几条指令,然后用D命令查看A命令的执行结果</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309115331666.png" alt=""></p>
+<p>可以看到,在使用A命令写入指令时,我们输入的是汇编指令,Debug将这些汇编指令翻译为对应的机器指令,将它们的机器码写入内存</p>
+<blockquote>
+<p>使用A命令写入汇编指令时,在给出的起始地址后直接按Enter键表示操作结束</p>
+</blockquote>
+<p>若A命令后不跟地址,则从预设地址开始输入指令</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309115602136.png" alt=""></p>
+<h4 id="命令"><a href="#命令" class="headerlink" title="?命令"></a>?命令</h4><p>输入?查看更多命令</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228112817615.png" alt=""></p>
 <p>结果如下:</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210228112748762.png" alt=""></p>
@@ -3448,7 +3471,7 @@
     <title>github无法打开或加载慢的解决方法</title>
     <url>/article/7cc3ca60.html</url>
     <content><![CDATA[<h1 id="github无法打开或加载慢的解决方法"><a href="#github无法打开或加载慢的解决方法" class="headerlink" title="github无法打开或加载慢的解决方法"></a>github无法打开或加载慢的解决方法</h1><a id="more"></a>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><em>GitHub 是一个面向开源及私有软件项目的托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。<br>作为开源代码库以及版本控制系统，Github拥有超过900万开发者用户。随着越来越多的应用程序转移到了云上，Github已经成为了管理软件开发以及发现已有代码的首选方法。</em><br>最近也想鼓捣鼓捣一下，但却发现一个问题，根本进不去GitHub网站（难道我的念想刚萌芽就要被掐灭吗），没错就是下图<br><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210305133853283.png" alt=""><br>这可急坏了我，连忙求助百度，我也是集结多方教程（尝试各路大神的方法），最终解决了这个问题。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><em>GitHub 是一个面向开源及私有软件项目的托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。<br>作为开源代码库以及版本控制系统，Github拥有超过900万开发者用户。随着越来越多的应用程序转移到了云上，Github已经成为了管理软件开发以及发现已有代码的首选方法。</em><br>最近也想鼓捣鼓捣一下，但却发现一个问题，根本进不去GitHub网站（难道我的念想刚萌芽就要被掐灭吗），没错就是下图<br><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210305133853283.png" alt=""><br>这可急坏了我，连忙求助百度，我也是集结多方教程（尝试各路大神的方法），最终解决了这个问题。(注意检查一下自己是不是正在科学上网,这个也会导致访问不了)</p>
 <p>在此给出解决方法（亲测有用哟）</p>
 <h2 id="一-修改hosts文件"><a href="#一-修改hosts文件" class="headerlink" title="一:修改hosts文件"></a>一:修改hosts文件</h2><h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><p>1.找到hosts文件<br>路径为：<strong>C:\Windows\System32\drivers\etc\hosts</strong><br>2.编辑该文件<br>可以用记事本打开，将下面文本拷贝进去即可</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.30.253.112 github.com</span><br><span class="line">192.30.253.119 gist.github.com</span><br><span class="line">151.101.100.133 assets-cdn.github.com</span><br><span class="line">151.101.100.133 raw.githubusercontent.com</span><br><span class="line">151.101.100.133 gist.githubusercontent.com</span><br><span class="line">151.101.100.133 cloud.githubusercontent.com</span><br><span class="line">151.101.100.133 camo.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars0.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars1.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars2.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars3.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars4.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars5.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars6.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars7.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars8.githubusercontent.com</span><br></pre></td></tr></table></figure>
