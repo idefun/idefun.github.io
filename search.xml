@@ -343,7 +343,9 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301100802300.png" alt=""></p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301100844123.png" alt=""></p>
 <h5 id="按范围反汇编"><a href="#按范围反汇编" class="headerlink" title="按范围反汇编"></a>按范围反汇编</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">u 范围</span><br></pre></td></tr></table></figure>
-<h4 id="T命令"><a href="#T命令" class="headerlink" title="T命令"></a>T命令</h4><h5 id="使用T命令执行CS-IP指向的指令"><a href="#使用T命令执行CS-IP指向的指令" class="headerlink" title="使用T命令执行CS:IP指向的指令"></a>使用T命令执行CS:IP指向的指令</h5><p>首先用E命令向从1000:0开始的内存单元中写入了8个字节的机器码</p>
+<h4 id="T命令"><a href="#T命令" class="headerlink" title="T命令"></a>T命令</h4><h5 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">T [&#x3D;地址] [指令数]</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309132037512.png" alt=""></p>
+<h5 id="使用T命令执行CS-IP指向的指令"><a href="#使用T命令执行CS-IP指向的指令" class="headerlink" title="使用T命令执行CS:IP指向的指令"></a>使用T命令执行CS:IP指向的指令</h5><p>首先用E命令向从1000:0开始的内存单元中写入了8个字节的机器码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">e 1000:0 b8 01 00 b9 02 00 01 c8</span><br></pre></td></tr></table></figure>
 <div class="table-container">
 <table>
@@ -3005,8 +3007,8 @@
         <category>病毒</category>
       </categories>
       <tags>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
