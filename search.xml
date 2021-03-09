@@ -2812,7 +2812,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy  </span><br><span class="line">git config --global --unset https.proxy  </span><br></pre></td></tr></table></figure>
 <h2 id="错误二"><a href="#错误二" class="headerlink" title="错误二"></a>错误二</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: unable to access &#39;https:&#x2F;&#x2F;github.com&#x2F;.......git&#x2F;&#39;: failed to receive handshake ssl&#x2F;tls connection failed</span><br></pre></td></tr></table></figure>
 <h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global http.sslBackend &quot;openssl&quot;</span><br><span class="line">git config --global http.sslCAInfo [path to .pem file]</span><br></pre></td></tr></table></figure>
-<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>暂时就遇到这些问题,后续遇到会补上</p>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>遇到这些问题很可能是因为科学上网,可以关闭试试,暂时就遇到这些问题,后续遇到会补上</p>
 ]]></content>
   </entry>
   <entry>
@@ -2823,8 +2823,8 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>github action</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -3448,7 +3448,8 @@
     <title>github无法打开或加载慢的解决方法</title>
     <url>/article/7cc3ca60.html</url>
     <content><![CDATA[<h1 id="github无法打开或加载慢的解决方法"><a href="#github无法打开或加载慢的解决方法" class="headerlink" title="github无法打开或加载慢的解决方法"></a>github无法打开或加载慢的解决方法</h1><a id="more"></a>
-<p><em>GitHub 是一个面向开源及私有软件项目的托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。<br>作为开源代码库以及版本控制系统，Github拥有超过900万开发者用户。随着越来越多的应用程序转移到了云上，Github已经成为了管理软件开发以及发现已有代码的首选方法。</em><br>最近也想鼓捣鼓捣一下，但却发现一个问题，根本进不去GitHub网站（难道我的念想刚萌芽就要被掐灭吗），没错就是下图<br><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210305133853283.png" alt=""><br>这可急坏了我，连忙求助百度，我也是集结多方教程（尝试各路大神的方法），最终解决了这个问题。<br>在此给出解决方法（亲测有用哟）</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><em>GitHub 是一个面向开源及私有软件项目的托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。<br>作为开源代码库以及版本控制系统，Github拥有超过900万开发者用户。随着越来越多的应用程序转移到了云上，Github已经成为了管理软件开发以及发现已有代码的首选方法。</em><br>最近也想鼓捣鼓捣一下，但却发现一个问题，根本进不去GitHub网站（难道我的念想刚萌芽就要被掐灭吗），没错就是下图<br><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210305133853283.png" alt=""><br>这可急坏了我，连忙求助百度，我也是集结多方教程（尝试各路大神的方法），最终解决了这个问题。</p>
+<p>在此给出解决方法（亲测有用哟）</p>
 <h2 id="一-修改hosts文件"><a href="#一-修改hosts文件" class="headerlink" title="一:修改hosts文件"></a>一:修改hosts文件</h2><h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><p>1.找到hosts文件<br>路径为：<strong>C:\Windows\System32\drivers\etc\hosts</strong><br>2.编辑该文件<br>可以用记事本打开，将下面文本拷贝进去即可</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.30.253.112 github.com</span><br><span class="line">192.30.253.119 gist.github.com</span><br><span class="line">151.101.100.133 assets-cdn.github.com</span><br><span class="line">151.101.100.133 raw.githubusercontent.com</span><br><span class="line">151.101.100.133 gist.githubusercontent.com</span><br><span class="line">151.101.100.133 cloud.githubusercontent.com</span><br><span class="line">151.101.100.133 camo.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars0.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars1.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars2.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars3.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars4.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars5.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars6.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars7.githubusercontent.com</span><br><span class="line">151.101.100.133 avatars8.githubusercontent.com</span><br></pre></td></tr></table></figure>
 <p>3.保存（再尝试能不能打开GitHub）</p>
