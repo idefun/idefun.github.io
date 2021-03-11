@@ -372,7 +372,7 @@
 </table>
 </div>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210301075936404.png" alt=""></p>
-<p>然后用R命令查看CPU中寄存器的状态,可以看到,CS=0740H、IP=0100H,指向内存<br>0740:0100</p>
+<p>然后用R命令查看CPU中寄存器的状态,可以看到,CS=0740H、IP=0100H,指向内存0740:0100</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309112317133.png" alt=""></p>
 <p>若要用T命令控制CPU执行我们写到1000:0 的指令,必须先让CS:IP指向1000:0;接着用R命令修改CS、IP中的内容,使CS:IP指向1000:0</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210309113531977.png" alt=""></p>
@@ -2725,7 +2725,7 @@
 </tbody>
 </table>
 </div>
-]]></content>
+<h2 id="寄存器-内存访问"><a href="#寄存器-内存访问" class="headerlink" title="寄存器(内存访问)"></a>寄存器(内存访问)</h2>]]></content>
       <categories>
         <category>汇编语言</category>
       </categories>
