@@ -2837,6 +2837,8 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy  </span><br><span class="line">git config --global --unset https.proxy  </span><br></pre></td></tr></table></figure>
 <h2 id="错误二"><a href="#错误二" class="headerlink" title="错误二"></a>错误二</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: unable to access &#39;https:&#x2F;&#x2F;github.com&#x2F;.......git&#x2F;&#39;: failed to receive handshake ssl&#x2F;tls connection failed</span><br></pre></td></tr></table></figure>
 <h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global http.sslBackend &quot;openssl&quot;</span><br><span class="line">git config --global http.sslCAInfo [path to .pem file]</span><br></pre></td></tr></table></figure>
+<h2 id="错误三"><a href="#错误三" class="headerlink" title="错误三"></a>错误三</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fatal: unable to access &#39;https:&#x2F;&#x2F;github.com&#x2F;.......git&#x2F;&#39;: OpenSSL SSL_read: Connection was reset, errno 10054</span><br></pre></td></tr></table></figure>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify &quot;false&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>遇到这些问题很可能是因为科学上网,可以关闭试试,暂时就遇到这些问题,后续遇到会补上</p>
 ]]></content>
   </entry>
