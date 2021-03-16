@@ -3298,8 +3298,35 @@
 </ol>
 <p>设$\Omega$={$\omega _{1} ,\omega _{2} ,\cdots ,\omega _{n} $},则$P(\omega _{i})=\frac{1}{n}  $(i=1,2,$\cdots$,n)</p>
 <p>设A为E的任意一个事件,A中包含k个基本事件,则P(A)=$\frac{k}{n}$,即P(A)=$\frac{A所含样本点个数}{\Omega 所含样本点个数} $</p>
-<h5 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h5><h6 id="无放回摸球"><a href="#无放回摸球" class="headerlink" title="无放回摸球"></a>无放回摸球</h6><h4 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h4><h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><p>设A,B是两个事件,且P(A)&gt; 0,称P(B|A)=$\frac{P(AB)}{P(A)} $为在事件A发生的条件下事件B发生的条件概率</p>
-<h4 id="条件概率公式"><a href="#条件概率公式" class="headerlink" title="条件概率公式"></a>条件概率公式</h4><h2 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h2><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
+<h5 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h5><h6 id="无放回摸球"><a href="#无放回摸球" class="headerlink" title="无放回摸球"></a>无放回摸球</h6><div class="note info">
+            <p>例:设袋中有M个红球和N个黑球,现从袋中无放回地依次摸出m+n个球,求所取球恰好含m个红球,n个黑球的概率?</p>
+          </div>
+<div class="note success">
+            <p>解: 设A:”所取球恰好含m个红球,n个黑球”</p><p>样本点总数为$C_{M+N}^{m+n} $</p><p>A所含的样本点个数为$C_{M}^{m} C_{N}^{n}$</p><p>故P(A)=$\frac{C_{M}^{m} C_{N}^{n}}{C_{M+N}^{m+n} } $</p>
+          </div>
+<h6 id="有放回摸球"><a href="#有放回摸球" class="headerlink" title="有放回摸球"></a>有放回摸球</h6><div class="note primary">
+            <p>一般地: 一批产品共M+N件,其中M件正品,N件次品,从中依次取出n件,A:”其中恰有k件次品”,分别在”有放回”和”不放回”抽取方式下求P(A).</p>
+          </div>
+<div class="note info">
+            <p><strong>无放回</strong></p><p>$P(A)=C_{n}^{k}\left (  \frac{N}{M+N}\right ) ^{k}  \left (  \frac{M}{M+N}\right ) ^{n-k} $,$k=0,1,\cdots ,n$</p><p><strong>不放回(一块取)</strong></p><p>样本点总数为$C_{M+N}^{n} $</p><p>A所含的样本点个数为$C_{M}^{n-k} C_{N}^{k}$</p><p>故P(A)=$\frac{C_{M}^{n-k} C_{N}^{k}}{C_{M+N}^{n} } $</p>
+          </div>
+<div class="note ">
+            <p>例:某班共有n名同学,全年按365天计算,求下列事件的概率.<br>A:”某指定n天,每位同学生日各占一天”<br>B:”全年某天,恰有两人在这一天生日相同”<br>C:”全班同学生日各不相同”</p>
+          </div>
+<div class="note info">
+            <p>解:先求样本空间中所含样本点的个数<br>n个人在365天中过生日共有$365^{n} $种可能<br>(1)某指定n天,每位同学生日各占一天共有n!种可能,从而P(A)=$\frac{n!}{365^{n} } $<br>(2)全年某天,恰有两人在这一天生日相同</p>
+          </div>
+<h4 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h4><h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><h4 id="条件概率公式"><a href="#条件概率公式" class="headerlink" title="条件概率公式"></a>条件概率公式</h4><p>设A,B是两个事件,且P(A)&gt; 0,称P(B|A)=$\frac{P(AB)}{P(A)} $为在事件A发生的条件下事件B发生的条件概率;同理可得,P(A|B)=$\frac{P(AB)}{P(B)} $(P(B)&gt;0)为在事件B发生的条件下事件A发生的条件概率</p>
+<h4 id="条件概率的性质"><a href="#条件概率的性质" class="headerlink" title="条件概率的性质"></a>条件概率的性质</h4><ol>
+<li>非负性: P(B|A)≥0</li>
+<li>规范性: P($\Omega $|B)=1, P($\phi $|B)= 0</li>
+<li>可列可加性:设$B_{1} ,B_{2},\cdots $是两两不相容的事件,则有$P\left ( \bigcup_{i=1}^{\infty }\mid A  \right ) =\sum_{i=1}^{\infty } P(B_{i}|A )$</li>
+<li>P(A|B)=1-P($\bar{A} $|B)</li>
+<li>$P(A_{1} \cup A_{2}|B)=P(A_{1}|B)+P(A_{2}|B)-P(A_{1}A_{2}|B)$$P(A_{1}\cup A_{2})=P(A_{1})+P(A_{2})-P(A_{1}A_{2})$</li>
+</ol>
+<h4 id="乘法公式"><a href="#乘法公式" class="headerlink" title="乘法公式"></a>乘法公式</h4><p>$P(AB)=P(A|B)P(B)=P(B|A)P(A)$</p>
+<p>推广:$P(A_{1}A_{2}\cdots A_{n})=P(A_{1})P(A_{2}|A_{1})P(A_{3}|A_{1}A_{2})\cdots P(A_{n}|A_{1}A_{2}\cdots A_{n-1})$</p>
+<h4 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h4><h2 id="随机变量及其分布"><a href="#随机变量及其分布" class="headerlink" title="随机变量及其分布"></a>随机变量及其分布</h2><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
       <categories>
         <category>概率论与数理统计</category>
       </categories>
