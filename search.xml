@@ -3078,8 +3078,8 @@
         <category>病毒</category>
       </categories>
       <tags>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -3454,7 +3454,27 @@
 <li>事件A与A有且只有一个发生</li>
 </ol>
 <p>用X表示n重伯努利试验中事件A发生的次数,则P{X=k}=$C^{k}_{n}p^{k}(1-p)^{n-k}$,(k=1,2,$\cdots $n),此时称X服从参数为(n,p)的二项分布,记作X~B(n,p),且$\sum_{n}^{k=0}C^{k}_{n}P^{k}(1-p)^{n-k} =[p+(1-p)]=1$</p>
-<h3 id="泊松分布、几何分布、超几何分布"><a href="#泊松分布、几何分布、超几何分布" class="headerlink" title="泊松分布、几何分布、超几何分布"></a>泊松分布、几何分布、超几何分布</h3><h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
+<h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><p>设随机变量所有可能取的值为0,1,2,$\cdots $,而取各个值的概率为$P\{X=k\}=\frac{\lambda ^{k}e^{-\lambda }}{k!} ,k=0,1,2,\cdots $,其中$\lambda$&gt; 0是常数,则称X服从参数为$\lambda$的泊松分布,记为X~P($\lambda$)或X~$\pi(\lambda)$</p>
+<p>$\sum_{k=0}^{\infty }\frac{\lambda ^{k}e^{-\lambda }}{k!}=e^{-\lambda}\sum_{k=0}^{\infty }\frac{\lambda ^{k}}{k!}=e^{-\lambda } e^{\lambda}$,其中$\sum_{k=0}^{\infty }\frac{\lambda ^{k}}{k!}=e^{\lambda }$(根据麦克劳林公式)</p>
+<blockquote>
+<p>泊松分布适用于描述单位时间内随机事件发生的次数</p>
+</blockquote>
+<p>一般地,当n&gt;10,p&lt;0.1时,$C^{k}_{n}p^{k}(1-p)^{n-k}\approx \frac{\lambda ^{k}e^{-\lambda }}{k!}$其中,$\lambda =np$</p>
+<h3 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h3><p>在伯努利试验中,若每次试验中事件A发生的概率为p, X表示试验中A首次发生的试验次数,X的取值为1,2,$\cdots $,则称X服从参数为p的几何分布,其分布律为P{X=k}=(1-p)$^{k-1}$p ,k=1,2,$\cdots $,记为X~G(p)</p>
+<p>几何分布用来描述事件首次成功的概率模型</p>
+<blockquote>
+<p>例题<br>若小李每次射击的命中率为0.6,用X表示小李首次命中目标所用的射击次数,求X的分布律</p>
+<p>解:<br>P{X=k}=(1- 0.6)$^{k-1}$0.6= (0.4)$^{k-1}$0.6,k=1,2,$\cdots$</p>
+</blockquote>
+<p><strong>P{X&gt;m+n|X&gt;m}=P{X&gt;n}</strong></p>
+<h3 id="超几何分布"><a href="#超几何分布" class="headerlink" title="超几何分布"></a>超几何分布</h3><p>相当于古典概型中的无放回问题</p>
+<p>设N件产品中有M件次品,从中任取n件产品,得到的次品数X为随机变量P{X=k}=$\frac{C^{k}_{m}C^{n-k}_{N-M}}{C^{n}_{N}} $,k=0,1,2,$\cdots$,min(n,M),则称X服从<strong>超几何分布</strong></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210319194619072.png" alt=""></p>
+<blockquote>
+<p>当n$\ll$N时,即抽取的产品数远小于产品总数时,作无放回抽取,随着M产品总数改变,次品率p=$\frac{M}{N} $改变微乎其微,因此,当n$\ll$N时,无放回抽取可看作有放回抽取</p>
+</blockquote>
+<h3 id="随机变量的分布函数"><a href="#随机变量的分布函数" class="headerlink" title="随机变量的分布函数"></a>随机变量的分布函数</h3><p>设X是一个随机变量,x是任意实数,函数F(x)= P{X$\le $x}称为X的概率分布函数,简称分布函数, F(x)也写成F$_{X}$(x)</p>
+<h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
       <categories>
         <category>概率论与数理统计</category>
       </categories>
