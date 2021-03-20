@@ -14,5 +14,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://blog.idefun.com/sitemap.xml
-Sitemap: https://blog.idefun.com/baidusitemap.xml
+Sitemap: https://www.idefun.com/sitemap.xml
+Sitemap: https://www.idefun.com/baidusitemap.xml
