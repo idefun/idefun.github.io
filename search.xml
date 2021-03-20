@@ -3474,6 +3474,77 @@
 <p>当n$\ll$N时,即抽取的产品数远小于产品总数时,作无放回抽取,随着M产品总数改变,次品率p=$\frac{M}{N} $改变微乎其微,因此,当n$\ll$N时,无放回抽取可看作有放回抽取</p>
 </blockquote>
 <h3 id="随机变量的分布函数"><a href="#随机变量的分布函数" class="headerlink" title="随机变量的分布函数"></a>随机变量的分布函数</h3><p>设X是一个随机变量,x是任意实数,函数F(x)= P{X$\le $x}称为X的概率分布函数,简称分布函数, F(x)也写成F$_{X}$(x)</p>
+<ol>
+<li><p>分布函数主要研究随机变量在某一区间内取值的概率情况</p>
+<p>$P\{a&lt;X\le b\}=P\{X\le b\}-P\{X\le a\}=F(b)-F(a)$</p>
+<p>$P\{a\le X\le b\}=F(b)-F(a)+P\{X=a\}$</p>
+<p>$P\{a&lt;X&lt;b\}=F(b)-F(a)-P\{X=b\}$</p>
+</li>
+<li><p>分布函数F(x)是关于x的一个普通实函数,而不是随机变量函数</p>
+</li>
+</ol>
+<h4 id="分布函数的性质"><a href="#分布函数的性质" class="headerlink" title="分布函数的性质"></a>分布函数的性质</h4><ol>
+<li><p>$0\le F(x)\le 1,x\in (-\infty ,\infty )$</p>
+<p>$F(-\infty )=\lim_{x \to \infty} F(x)=0,F(+\infty )=\lim_{x \to \infty} F(x)=1$</p>
+</li>
+<li><p>$F(x_{}1)\le F(x_{}2),(x_{1}\le x_{2})$ (单调不减)</p>
+</li>
+<li><p>$\lim_{x \to x^{+}_{0}} F(x)=F(x_{0}),(-\infty &lt;x_{0}&lt;\infty )$ (右连续)</p>
+</li>
+</ol>
+<h3 id="连续型随机变量"><a href="#连续型随机变量" class="headerlink" title="连续型随机变量"></a>连续型随机变量</h3><p>若对于随机变量X的分布函数F(x),存在非负可积函数f(x),使对于$\forall $x∈R,有$ F(x)=\int_{-\infty }^{x} f(t)dt$,则称X为<strong>连续型随机变量</strong>,其中f(x)称为X的概率密度函数,简称<strong>概率密度</strong></p>
+<h4 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h4><ol>
+<li><p>f(x)$\ge$0</p>
+</li>
+<li><p>$\int_{-\infty }^{+\infty } f(x)dx=1$</p>
+</li>
+<li><p>$ P\{x_{1}&lt;X&lt;x_{2}\}=F(x_{2})-F(x_{1})=\int_{x_{1}}^{x_{2}}f(x)dx$</p>
+</li>
+<li><p>$P\{X\le a\}=F(a)=\int_{-\infty }^{a} f(x)dx$</p>
+<p>$P\{X&gt;a\}=1-P\{X\le a\}=1-F(a)=\int_{-\infty }^{a} f(x)dx$</p>
+</li>
+<li><p>对于任意可能值a,连续型随机变量取a的概率等于零,即P{X=a}=0,$\int_{a}^{a} f(x)dx=0$,故$P\{x_{1}&lt;X\le x_{2}\}=P\{x_{1}\le X\le x_{2}\}=P\{x_{1}&lt;X&lt;x_{2}\}$</p>
+<p>连续型随机变量取值落在某一区间的概率与区间的开闭无关</p>
+</li>
+<li><p>若f(x)在点x处连续,则有F(x)`=f(x)</p>
+</li>
+</ol>
+<blockquote>
+<p>若X是连续型随机变量,{X=a}是不可能事件,则有P{X=a}=0;若P{ X=a}=0,事件{X=a}未必是不可能事件<br>若X是离散型随机变量,概率{X=a}是不可能事件$\rightleftharpoons $P{X=a}=0</p>
+</blockquote>
+<h4 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h4><p>定义设连续型随机变量X具有概率密度$f(x)=\left\{\begin{matrix}<br>  \frac{1}{b-a}, &amp;a&lt;x&lt;b ,\\0 ,<br>  &amp;其它.<br>\end{matrix}\right.$,则称X在区间(a,b)服从均匀分布,记为X~U(a,b)</p>
+<blockquote>
+<p>X~U(a,b),则X落在区间(a,b)中任意等长度的子区间内的可能性是相同的</p>
+<p>均匀分布的本质—几何概型</p>
+</blockquote>
+<h5 id="分布函数"><a href="#分布函数" class="headerlink" title="分布函数"></a>分布函数</h5><p>$F(x)=\int_{-\infty }^{x} f(t)dt=\left\{\begin{matrix}<br> 0, &amp; x&lt;a,\\<br>  \frac{x-a}{b-a}, &amp;a\le x&lt;b, \\<br>  1,&amp;x\ge b.<br>\end{matrix}\right.$</p>
+<h4 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h4><p>定义设连续型随机变量X的概率密度为$f(x)=\left\{\begin{matrix}<br>  \lambda e^{-\lambda x},&amp;x&gt;0, \\<br>  0,&amp;x\le 0.<br>\end{matrix}\right.$,其中$\lambda$&gt;0为常数,则称X服从参数为$\lambda$的指数分布,记为X~e($\lambda$)或X~Exp($\lambda$)</p>
+<h5 id="分布函数-1"><a href="#分布函数-1" class="headerlink" title="分布函数"></a>分布函数</h5><p>$ F(x)=\left\{\begin{matrix}<br>  1-e^{-\lambda x},&amp;x&gt;0 ,\\<br>  0,&amp;x\le 0.<br>\end{matrix}\right.$</p>
+<blockquote>
+<p>指数分布是独立事件发生的时间间隔的分布</p>
+<p>无记忆性:P{X&gt;s+t|X&gt;s}=P{X&gt;t}</p>
+</blockquote>
+<p>指数分布的应用:某些元件或设备的寿命服从指数分布</p>
+<h4 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h4><p>设连续型随机变量X的概率密度为$f(x)=\frac{1}{\sqrt{2\pi \sigma } }e^{-\frac{(x-\mu )^{2}}{2\sigma^{2} } } ,-\infty <x<+\infty $,其中$\mu ,\sigma (\sigma >0)$为常数,则称X服从参数为$\mu ,\sigma^{2}$的正态分布或高斯分布,记为X~N($\mu ,\sigma^{2}$)</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320094806673.png" alt=""></p>
+<ol>
+<li><p>f(x)关于x=$\mu$对称</p>
+</li>
+<li><p>当x=$\mu$时,f(x)取得最大值$\frac{1}{\sqrt{2\pi \sigma } } $</p>
+</li>
+<li><p>当$x\to \pm \infty $,f(x)$\to $0</p>
+</li>
+<li><p>曲线在x=$\mu \pm \sigma $处有拐点</p>
+</li>
+<li><p>当固定$\sigma$,改变$\mu$的大小时,f(x)图形的形状不变,只是沿着x轴作平移变换</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320095039164.png" alt=""></p>
+</li>
+<li><p>当固定$\mu$,改变$\sigma$的大小时,f(x)图形的对称轴不变,而形状在改变,$\sigma$越小,图形越高越瘦;$\sigma$越大,图形越矮越胖</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320095310748.png" alt=""></p>
+</li>
+</ol>
+<h5 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h5><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320095402940.png" alt=""></p>
+<h5 id="标准正态分布"><a href="#标准正态分布" class="headerlink" title="标准正态分布"></a>标准正态分布</h5><p>当正态分布N($\mu ,\sigma ^{2}$)中的$\mu$=0,$\sigma $= 1时,这样的正态分布称为标准正态分布,记为N(0,1)</p>
 <h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
       <categories>
         <category>概率论与数理统计</category>
