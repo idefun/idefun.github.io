@@ -3579,6 +3579,9 @@
 </ol>
 <h5 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h5><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320095402940.png" alt=""></p>
 <h5 id="标准正态分布"><a href="#标准正态分布" class="headerlink" title="标准正态分布"></a>标准正态分布</h5><p>当正态分布N($\mu ,\sigma ^{2}$)中的$\mu$=0,$\sigma $= 1时,这样的正态分布称为标准正态分布,记为N(0,1)</p>
+<p>概率密度为</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210322155311224.png" alt=""></p>
+<p>分布函数为$\Phi (x)=\int_{-\infty }^{x} \frac{1}{\sqrt{2\pi } } e^{\frac{r^{2}}{2} } dt,-\infty &lt;x&lt;\infty $</p>
 <h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
       <categories>
         <category>概率论与数理统计</category>
