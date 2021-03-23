@@ -2953,8 +2953,8 @@
         <category>github</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>github action</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -3112,8 +3112,8 @@
         <category>病毒</category>
       </categories>
       <tags>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -3579,9 +3579,17 @@
 </ol>
 <h5 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h5><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320095402940.png" alt=""></p>
 <h5 id="标准正态分布"><a href="#标准正态分布" class="headerlink" title="标准正态分布"></a>标准正态分布</h5><p>当正态分布N($\mu ,\sigma ^{2}$)中的$\mu$=0,$\sigma $= 1时,这样的正态分布称为标准正态分布,记为N(0,1)</p>
-<p>概率密度为</p>
+<p>概率密度为$\varphi (x)=\frac{1}{\sqrt{2\pi } } e^{\frac{x^{2}}{2} },-\infty &lt;x&lt;\infty $</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210322155311224.png" alt=""></p>
 <p>分布函数为$\Phi (x)=\int_{-\infty }^{x} \frac{1}{\sqrt{2\pi } } e^{\frac{r^{2}}{2} } dt,-\infty &lt;x&lt;\infty $</p>
+<h6 id="性质-2"><a href="#性质-2" class="headerlink" title="性质"></a>性质</h6><ol>
+<li>$\Phi (-x)=1-\Phi (x)$</li>
+<li>$若X\sim N(\mu ,\sigma ^{2}),则Z=\frac{X-\mu }{\sigma } \sim N(0,1)$</li>
+</ol>
+<h4 id="一维随机变量的函数的分布"><a href="#一维随机变量的函数的分布" class="headerlink" title="一维随机变量的函数的分布"></a>一维随机变量的函数的分布</h4><h5 id="离散型随机变量-1"><a href="#离散型随机变量-1" class="headerlink" title="离散型随机变量"></a>离散型随机变量</h5><p>若X是离散型随机变量,则Y=g(X)也一定是离散型随机变量</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210323201736451.png" alt=""></p>
+<h5 id="连续性随机变量"><a href="#连续性随机变量" class="headerlink" title="连续性随机变量"></a>连续性随机变量</h5><p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210323203204058.png" alt=""></p>
+<p>设随机变量X的具有概率密度$f_{x}(x)$,其中-∞&lt;x&lt;+∞,又设函数g(x)处处可导,且恒有${g}’ (x)&gt;0$[或恒有${g}’ (x)&lt;0$],则称Y=g(X)是连续型随机变量,其概率密度为<br>$f_{Y}(y)=\left\{\begin{matrix}<br>  f_{X}[h(y)]|{h}’(y)| ,&amp; \alpha &lt;y&lt;\beta \\<br>  0,&amp;其他<br>\end{matrix}\right.$<br>其中$\alpha$=min(g(-∞),g(+)),$ \beta $= max(g(-∞),g(+∞)),h(y)是g(x)的反函数</p>
 <h2 id="多维随机变量及其分布"><a href="#多维随机变量及其分布" class="headerlink" title="多维随机变量及其分布"></a>多维随机变量及其分布</h2><h2 id="随机变量的数字特征"><a href="#随机变量的数字特征" class="headerlink" title="随机变量的数字特征"></a>随机变量的数字特征</h2><h2 id="大数定律和中心极限定律"><a href="#大数定律和中心极限定律" class="headerlink" title="大数定律和中心极限定律"></a>大数定律和中心极限定律</h2>]]></content>
       <categories>
         <category>概率论与数理统计</category>
