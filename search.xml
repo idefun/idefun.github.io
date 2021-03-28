@@ -2942,10 +2942,10 @@
 <h2 id="2-在夜神模拟器中下载微信并登录-找到想获取源码的小程序运行-建议登录微信后不要立即打开小程序-不然不好找小程序源文件包"><a href="#2-在夜神模拟器中下载微信并登录-找到想获取源码的小程序运行-建议登录微信后不要立即打开小程序-不然不好找小程序源文件包" class="headerlink" title="2.在夜神模拟器中下载微信并登录,找到想获取源码的小程序运行(建议登录微信后不要立即打开小程序,不然不好找小程序源文件包)"></a>2.在夜神模拟器中下载微信并登录,找到想获取源码的小程序运行(建议登录微信后不要立即打开小程序,不然不好找小程序源文件包)</h2><h2 id="3-找到微信小程序源文件包"><a href="#3-找到微信小程序源文件包" class="headerlink" title="3.找到微信小程序源文件包"></a>3.找到微信小程序源文件包</h2><p>在下面目录下,</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;data&#x2F;data&#x2F;com.tencent.mm&#x2F;MicroMsg&#x2F;&#123;&#123;一串32位的16进制字符串文件夹&#125;&#125;&#x2F;appbrand&#x2F;pkg&#x2F;</span><br></pre></td></tr></table></figure>
 <p>会发现一些 <code>xxxxxxx.wxapkg</code> 类型的文件，这些就是微信小程序的包</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/ca55d60ff87240b23dd635a4c55095dd.png" alt="image-20201115212541267"></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/ca55d60ff87240b23dd635a4c55095dd.png" alt=""></p>
 <p>根据时间确定源文件包</p>
 <h2 id="4-将源文件传至电脑"><a href="#4-将源文件传至电脑" class="headerlink" title="4.将源文件传至电脑"></a>4.将源文件传至电脑</h2><p>可以通过夜神模拟器的文件共享,也可以安装QQ,将源文件压缩后传至电脑</p>
-<h2 id="5-找到刚才解压的反编译脚本的存放目录-然后win-R打开如下窗口并输入cmd"><a href="#5-找到刚才解压的反编译脚本的存放目录-然后win-R打开如下窗口并输入cmd" class="headerlink" title="5.找到刚才解压的反编译脚本的存放目录,然后win+R打开如下窗口并输入cmd"></a>5.找到刚才解压的反编译脚本的存放目录,然后win+R打开如下窗口并输入cmd</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/870e49a8c940727ccd565c28ec462a74.png" alt="image-20201115214214430"></p>
+<h2 id="5-找到刚才解压的反编译脚本的存放目录-然后win-R打开如下窗口并输入cmd"><a href="#5-找到刚才解压的反编译脚本的存放目录-然后win-R打开如下窗口并输入cmd" class="headerlink" title="5.找到刚才解压的反编译脚本的存放目录,然后win+R打开如下窗口并输入cmd"></a>5.找到刚才解压的反编译脚本的存放目录,然后win+R打开如下窗口并输入cmd</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/870e49a8c940727ccd565c28ec462a74.png" alt=""></p>
 <p>点击确定即可,在cd 到这个存放目录,输入以下命令安装依赖</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install esprima</span><br><span class="line">npm install css<span class="literal">-tree</span></span><br><span class="line">npm install cssbeautify</span><br><span class="line">npm install vm2</span><br><span class="line">npm install uglify<span class="literal">-es</span></span><br></pre></td></tr></table></figure>
 <h2 id="6-反编译-wxapkg-文件"><a href="#6-反编译-wxapkg-文件" class="headerlink" title="6.反编译 .wxapkg 文件"></a>6.反编译 .wxapkg 文件</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node .\wuWxapkg.js D:\_<span class="literal">-472979937_90</span>.wxapkg  </span><br><span class="line">D:\_<span class="literal">-472979937_90</span>.wxapkg 改为你存放源文件的绝对目录</span><br></pre></td></tr></table></figure>
@@ -2958,7 +2958,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function runVM(name,code)&#123;</span><br><span class="line">    let wxAppCode&#x3D;&#123;&#125;,handle&#x3D;&#123;cssFile:name&#125;;</span><br><span class="line">    let gg &#x3D; new GwxCfg();</span><br><span class="line">    let tsandbox &#x3D;&#123;$gwx:GwxCfg.prototype[&quot;$gwx&quot;],__mainPageFrameReady__:GwxCfg.prototype[&quot;$gwx&quot;],__wxAppCode__:wxAppCode,setCssToHead:cssRebuild.bind(handle)&#125;;</span><br><span class="line">    let vm &#x3D; new VM(&#123;sandbox:tsandbox&#125;);</span><br><span class="line">    vm.run(code);</span><br><span class="line">    for(let name in wxAppCode)if(name.endsWith(&quot;.wxss&quot;))&#123;</span><br><span class="line">        handle.cssFile&#x3D;path.resolve(frameName,&quot;..&quot;,name);</span><br><span class="line">        wxAppCode[name]();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="8-反编译后产生一个文件夹-和源文件同一目录"><a href="#8-反编译后产生一个文件夹-和源文件同一目录" class="headerlink" title="8.反编译后产生一个文件夹,和源文件同一目录"></a>8.反编译后产生一个文件夹,和源文件同一目录</h2><p>打开微信开发者工具导入小程序即可</p>
 <p><strong>备注:</strong><br>其他平台小程序可自行尝试</p>
-<p><img src="https://img-blog.csdnimg.cn/20201201110158496.jpg#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20201201110158496.jpg#pic_center" alt=""></p>
 ]]></content>
       <tags>
         <tag>微信小程序</tag>
