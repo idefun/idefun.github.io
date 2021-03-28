@@ -2931,6 +2931,40 @@
       </tags>
   </entry>
   <entry>
+    <title>反编译获取微信小程序源码</title>
+    <url>/article/852da69a.html</url>
+    <content><![CDATA[<h1 id="简单几步获取微信小程序源码"><a href="#简单几步获取微信小程序源码" class="headerlink" title="简单几步获取微信小程序源码"></a>简单几步获取微信小程序源码</h1><p>本文记录了我通过反编译获得微信小程序源码的过程.</p>
+<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><p>1.下载node.js,直接去<a href="https://nodejs.org/en/">官网</a>下载,安装教程点击<a href="https://blog.csdn.net/moshangduanchang/article/details/105787602">链接</a>查看</p>
+<p>2.反编译的脚本</p>
+<p>这里直接提供,点击<a href="https://wws.lanzous.com/iixTIifqaod">链接</a>下载,下载后解压即可</p>
+<p>3.手机模拟器,这里我用的夜神模拟器,给出<a href="https://www.yeshen.com/">官网链接</a>,安装一路默认即可</p>
+<p>4.RE文件管理器(非必须),我觉得这个更好操作</p>
+<h2 id="2-在夜神模拟器中下载微信并登录-找到想获取源码的小程序运行-建议登录微信后不要立即打开小程序-不然不好找小程序源文件包"><a href="#2-在夜神模拟器中下载微信并登录-找到想获取源码的小程序运行-建议登录微信后不要立即打开小程序-不然不好找小程序源文件包" class="headerlink" title="2.在夜神模拟器中下载微信并登录,找到想获取源码的小程序运行(建议登录微信后不要立即打开小程序,不然不好找小程序源文件包)"></a>2.在夜神模拟器中下载微信并登录,找到想获取源码的小程序运行(建议登录微信后不要立即打开小程序,不然不好找小程序源文件包)</h2><h2 id="3-找到微信小程序源文件包"><a href="#3-找到微信小程序源文件包" class="headerlink" title="3.找到微信小程序源文件包"></a>3.找到微信小程序源文件包</h2><p>在下面目录下,</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;data&#x2F;data&#x2F;com.tencent.mm&#x2F;MicroMsg&#x2F;&#123;&#123;一串32位的16进制字符串文件夹&#125;&#125;&#x2F;appbrand&#x2F;pkg&#x2F;</span><br></pre></td></tr></table></figure>
+<p>会发现一些 <code>xxxxxxx.wxapkg</code> 类型的文件，这些就是微信小程序的包</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/ca55d60ff87240b23dd635a4c55095dd.png" alt="image-20201115212541267"></p>
+<p>根据时间确定源文件包</p>
+<h2 id="4-将源文件传至电脑"><a href="#4-将源文件传至电脑" class="headerlink" title="4.将源文件传至电脑"></a>4.将源文件传至电脑</h2><p>可以通过夜神模拟器的文件共享,也可以安装QQ,将源文件压缩后传至电脑</p>
+<h2 id="5-找到刚才解压的反编译脚本的存放目录-然后win-R打开如下窗口并输入cmd"><a href="#5-找到刚才解压的反编译脚本的存放目录-然后win-R打开如下窗口并输入cmd" class="headerlink" title="5.找到刚才解压的反编译脚本的存放目录,然后win+R打开如下窗口并输入cmd"></a>5.找到刚才解压的反编译脚本的存放目录,然后win+R打开如下窗口并输入cmd</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/870e49a8c940727ccd565c28ec462a74.png" alt="image-20201115214214430"></p>
+<p>点击确定即可,在cd 到这个存放目录,输入以下命令安装依赖</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install esprima</span><br><span class="line">npm install css<span class="literal">-tree</span></span><br><span class="line">npm install cssbeautify</span><br><span class="line">npm install vm2</span><br><span class="line">npm install uglify<span class="literal">-es</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-反编译-wxapkg-文件"><a href="#6-反编译-wxapkg-文件" class="headerlink" title="6.反编译 .wxapkg 文件"></a>6.反编译 .wxapkg 文件</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node .\wuWxapkg.js D:\_<span class="literal">-472979937_90</span>.wxapkg  </span><br><span class="line">D:\_<span class="literal">-472979937_90</span>.wxapkg 改为你存放源文件的绝对目录</span><br></pre></td></tr></table></figure>
+<p>运行即可,下图为成功运行</p>
+<p><img src="https://i.loli.net/2020/11/15/aporGMPjm974leN.gif" alt=""></p>
+<h2 id="7-关于出错"><a href="#7-关于出错" class="headerlink" title="7.关于出错"></a>7.关于出错</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">如果出现   Cannot find module &#39;xxx&#39;  表示模块未安装</span><br><span class="line">运行命令 npm install &#39;xxx&#39; , 安装依赖</span><br><span class="line">如果遇到 __vd_version_info__ is not defined这种报错</span><br><span class="line">解决方法如下：</span><br></pre></td></tr></table></figure>
+<p>修改反编译脚本wuWxss.js代码，将原代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function runVM(name,code)&#123;</span><br><span class="line">    let wxAppCode&#x3D;&#123;&#125;,handle&#x3D;&#123;cssFile:name&#125;;</span><br><span class="line">    let vm&#x3D;new VM(&#123;sandbox:Object.assign(new GwxCfg(),&#123;__wxAppCode__:wxAppCode,setCssToHead:cssRebuild.bind(handle)&#125;)&#125;);</span><br><span class="line">    vm.run(code);</span><br><span class="line">    for(let name in wxAppCode)if(name.endsWith(&quot;.wxss&quot;))&#123;</span><br><span class="line">        handle.cssFile&#x3D;path.resolve(frameName,&quot;..&quot;,name);</span><br><span class="line">        wxAppCode[name]();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function runVM(name,code)&#123;</span><br><span class="line">    let wxAppCode&#x3D;&#123;&#125;,handle&#x3D;&#123;cssFile:name&#125;;</span><br><span class="line">    let gg &#x3D; new GwxCfg();</span><br><span class="line">    let tsandbox &#x3D;&#123;$gwx:GwxCfg.prototype[&quot;$gwx&quot;],__mainPageFrameReady__:GwxCfg.prototype[&quot;$gwx&quot;],__wxAppCode__:wxAppCode,setCssToHead:cssRebuild.bind(handle)&#125;;</span><br><span class="line">    let vm &#x3D; new VM(&#123;sandbox:tsandbox&#125;);</span><br><span class="line">    vm.run(code);</span><br><span class="line">    for(let name in wxAppCode)if(name.endsWith(&quot;.wxss&quot;))&#123;</span><br><span class="line">        handle.cssFile&#x3D;path.resolve(frameName,&quot;..&quot;,name);</span><br><span class="line">        wxAppCode[name]();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8-反编译后产生一个文件夹-和源文件同一目录"><a href="#8-反编译后产生一个文件夹-和源文件同一目录" class="headerlink" title="8.反编译后产生一个文件夹,和源文件同一目录"></a>8.反编译后产生一个文件夹,和源文件同一目录</h2><p>打开微信开发者工具导入小程序即可</p>
+<p><strong>备注:</strong><br>其他平台小程序可自行尝试</p>
+<p><img src="https://img-blog.csdnimg.cn/20201201110158496.jpg#pic_center" alt="在这里插入图片描述"></p>
+]]></content>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git报错及解决方法盘点</title>
     <url>/article/fe55cae0.html</url>
     <content><![CDATA[<h1 id="git报错及解决方法盘点"><a href="#git报错及解决方法盘点" class="headerlink" title="git报错及解决方法盘点"></a>git报错及解决方法盘点</h1><a id="more"></a>
@@ -3766,7 +3800,7 @@
 </ul>
 </li>
 </ul>
-]]></content>
+<h2 id="分组密码"><a href="#分组密码" class="headerlink" title="分组密码"></a>分组密码</h2>]]></content>
       <categories>
         <category>密码学</category>
       </categories>
