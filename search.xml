@@ -2843,7 +2843,191 @@
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095601082.png" alt=""></p>
 <p>点击Finish,安装完毕</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095619642.png" alt=""></p>
-<h2 id="SQL语言"><a href="#SQL语言" class="headerlink" title="SQL语言"></a>SQL语言</h2><h3 id="LIKE运算符"><a href="#LIKE运算符" class="headerlink" title="LIKE运算符"></a>LIKE运算符</h3><p>进行字符串的匹配</p>
+<h2 id="关系数据库标准语言SQL"><a href="#关系数据库标准语言SQL" class="headerlink" title="关系数据库标准语言SQL"></a>关系数据库标准语言SQL</h2><h3 id="学生-课程数据库"><a href="#学生-课程数据库" class="headerlink" title="学生-课程数据库"></a>学生-课程数据库</h3><table>
+    <caption>Student</caption>
+    <tr>
+        <th>学号</br>Sno</th>
+        <th>姓名</br>Sname</th>
+        <th>性别</br>Ssex</th>
+        <th>年龄</br>Sage</th>
+        <th>所在系</br>Sdept</th>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>李勇</td>
+        <td>男</td>
+        <td>20</td>
+        <td>CS</td>
+    </tr>
+    <tr>
+        <td>201215122</td>
+        <td>刘晨</td>
+        <td>女</td>
+        <td>19</td>
+        <td>CS</td>
+    </tr>
+    <tr>
+        <td>201215123</td>
+        <td>王敏</td>
+        <td>女</td>
+        <td>18</td>
+        <td>MA</td>
+    </tr>
+    <tr>
+        <td>201215125</td>
+        <td>张立</td>
+        <td>男</td>
+        <td>19</td>
+        <td>IS</td>
+    </tr>
+</table>
+<table>
+    <caption>Course</caption>
+    <tr>
+        <th>课程号</br>Cno</th>
+        <th>课程名</br>Cname</th>
+        <th>先行课</br>Cpno</th>
+        <th>学分</br>Ccredit</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>数据库</td>
+        <td>5</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>数学</td>
+        <td></td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>信息系统</td>
+        <td>1</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>操作系统</td>
+        <td>6</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>数据结构</td>
+        <td>7</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>数据处理</td>
+        <td></td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>PASCAL语言</td>
+        <td>6</td>
+        <td>4</td>
+    </tr>
+</table>
+<table>
+    <caption>SC</caption>
+    <tr>
+        <th>学号</br>Sno</th>
+        <th>课程号</br>Cno</th>
+        <th>成绩</br>Grade</th>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>1</td>
+        <td>92</td>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>1</td>
+        <td>92</td>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>2</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>3</td>
+        <td>88</td>
+    </tr>
+    <tr>
+        <td>201215122</td>
+        <td>2</td>
+        <td>90</td>
+    </tr>
+    <tr>
+        <td>201215122</td>
+        <td>3</td>
+        <td>80</td>
+    </tr>
+</table>
+
+<h3 id="数据定义"><a href="#数据定义" class="headerlink" title="数据定义"></a>数据定义</h3><h3 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h3><h4 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h4><h5 id="选择表中若干列"><a href="#选择表中若干列" class="headerlink" title="选择表中若干列"></a>选择表中若干列</h5><blockquote>
+<p>查询全体学生的姓名,出生年份和所在的院系,要求用小写字母表示系名(现在年份为2021)</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname,<span class="string">&#x27;Year of Birth&#x27;</span>,<span class="number">2021</span><span class="operator">-</span>Sage,<span class="built_in">LOWER</span>(Sdept)</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210329222607438.png" alt=""></p>
+<blockquote>
+<p>通过指定别名改变查询结果的列标题</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname NAME,<span class="string">&#x27;Year of Birth&#x27;</span> BIRTH,<span class="number">2021</span><span class="operator">-</span>Sage BIRTHDAY,<span class="built_in">LOWER</span>(Sdept) DEPARTMENT</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210329222841512.png" alt=""></p>
+<h5 id="选择表中若干元组"><a href="#选择表中若干元组" class="headerlink" title="选择表中若干元组"></a>选择表中若干元组</h5><h5 id="消除取值重复的行"><a href="#消除取值重复的行" class="headerlink" title="消除取值重复的行"></a>消除取值重复的行</h5><p>两个本来并不完全相同的元组在投影到指定的某些列上后,可能会变成相同的行.可以用DISTINCT消除它们,如果没有指定DISTINCT关键词,则默认为ALL</p>
+<blockquote>
+<p>查询选修了课程的学生学号</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sno</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210329223333574.png" alt=""></p>
+<blockquote>
+<p>查询选修了课程的学生学号,使用DISTINCT消除重复行</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Sno</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210329223506629.png" alt=""></p>
+<h6 id="查询满足条件的元组"><a href="#查询满足条件的元组" class="headerlink" title="查询满足条件的元组"></a>查询满足条件的元组</h6><p>查询满足条件的元组可以通过WHERE子句实现</p>
+<table>
+    <caption>WHERE子句常用的查询条件</caption>
+    <tr>
+        <th>查询条件</th>
+        <th>谓词</th>
+    </tr>
+    <tr>
+        <td>比较</td>
+        <td>=,>,!=,!>等</td>
+    </tr>
+    <tr>
+        <td>确定范围</td>
+        <td>BETWEEN AND,NOT BETWEEN AND</td>
+    </tr>
+    <tr>
+        <td>确定集合</td>
+        <td>IN,NOT IN</td>
+    </tr>
+    <tr>
+        <td>字符匹配</td>
+        <td>LIKE,NOT LIKE</td>
+    </tr>
+    <tr>
+        <td>空值</td>
+        <td>IS NULL,IS NOT NULL</td>
+    </tr>
+    <tr>
+        <td>多重条件(逻辑运算)</td>
+        <td>AND,OR,NOT</td>
+    </tr>
+</table>
+
+
+
+<h3 id="LIKE运算符"><a href="#LIKE运算符" class="headerlink" title="LIKE运算符"></a>LIKE运算符</h3><p>进行字符串的匹配</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> students</span><br><span class="line"><span class="keyword">WHERE</span> Sno <span class="keyword">LIKE</span> <span class="string">&#x27;201215121&#x27;</span></span><br><span class="line"><span class="comment">-- 等价于 WHERE Sno=&#x27;201215121&#x27;</span></span><br><span class="line"><span class="comment">--如果LIKE后的匹配串中不含通配符,则可以用=代替;用!=或&lt;&gt;运算符代替NOT LIKE</span></span><br><span class="line"><span class="keyword">WHERE</span> Sname <span class="keyword">LIKE</span> <span class="string">&#x27;刘%&#x27;</span></span><br><span class="line"><span class="comment">-- %代表任意长度(长度可以为0)的字符串</span></span><br><span class="line"><span class="keyword">WHERE</span> Sname <span class="keyword">LIKE</span> <span class="string">&#x27;欧阳_&#x27;</span></span><br><span class="line"><span class="comment">-- _代表任意单个字符;数据库字符集为ASCII时一个汉字需要两个_,当字符集为GBK时需要一个_</span></span><br><span class="line"><span class="keyword">WHERE</span> Cname <span class="keyword">LIKE</span> <span class="string">&#x27;DB\_Design&#x27;</span> <span class="keyword">ESCAPE</span><span class="string">&#x27;\&#x27;</span></span><br><span class="line"><span class="comment">-- 如果要查询的字符串本身就含有通配符%或_,这时需要使用ESCAPE&#x27;&lt;换码字符&gt;&#x27;对通配符进行转义;ESCAPE&#x27;\&#x27;表示&#x27;\&#x27;为换码字符</span></span><br></pre></td></tr></table></figure>
 <h3 id="REGEXP运算符"><a href="#REGEXP运算符" class="headerlink" title="REGEXP运算符"></a>REGEXP运算符</h3><p>正则表达式的缩写(regular expression)</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line"><span class="comment">-- WHERE last_name LIKE &#x27;%field%&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field&#x27;</span></span><br><span class="line"><span class="comment">-- 等价与用LIKE</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;^field&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;^&#x27;表示以什么开头</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field$&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;$&#x27;表示以什么结尾</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field|mac|rose&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;|&#x27;表示或</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;[a-j]e&#x27;</span></span><br><span class="line"><span class="comment">-- [a-j]表示a到j任意一个字母</span></span><br></pre></td></tr></table></figure>
