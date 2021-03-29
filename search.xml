@@ -2931,6 +2931,33 @@
       </tags>
   </entry>
   <entry>
+    <title>C++中length()、size()、sizeof()三者的区别</title>
+    <url>/article/21ddb368.html</url>
+    <content><![CDATA[<h1 id="C-中length-、size-、sizeof-三者的区别"><a href="#C-中length-、size-、sizeof-三者的区别" class="headerlink" title="C++中length()、size()、sizeof()三者的区别"></a>C++中length()、size()、sizeof()三者的区别</h1><a id="more"></a>
+<h2 id="一、length-函数"><a href="#一、length-函数" class="headerlink" title="一、length()函数"></a>一、length()函数</h2><p>c++中，length()只是用来获取<strong>字符串</strong>的长度。</p>
+<blockquote>
+<p>例如：string str = “absdhffhf”,则str.length() = 9。</p>
+</blockquote>
+<h2 id="二、size-函数"><a href="#二、size-函数" class="headerlink" title="二、size()函数"></a>二、size()函数</h2><p>c++中，在获取字符串长度时，<strong>size()函数与length()函数作用相同</strong>。除此之外，size()函数还可以<strong>获取vector类型的长度</strong>。</p>
+<blockquote>
+<p>例如：vector \<int> num(15,2),则num.size() = 15。</p>
+<p>例如：string str = “abcd”,则 str.size()=4。</p>
+</blockquote>
+<h2 id="三、sizeof-运算符"><a href="#三、sizeof-运算符" class="headerlink" title="三、sizeof()运算符"></a>三、sizeof()运算符</h2><p>sizeof()运算符用来<strong>求对象所占内存空间的大小</strong>。</p>
+<blockquote>
+<p>char c[] = “asdsds”;<br> char* cc = c;<br> char cn[40] = “asdsds”;<br> int a[] = {1,2,3,4,5,6};<br> int* aa = a;<br> cout &lt;&lt; sizeof(c) &lt;&lt; sizeof(cc) &lt;&lt; sizeof(<em>cc) &lt;&lt; sizeof(cn);<br> cout &lt;&lt; sizeof(a) &lt;&lt; sizeof(aa) &lt;&lt; sizeof(</em>aa);</p>
+<p>结果输出：<br> sizeof(c) = 7          //c是数组，计算到’\0’位置，结果为6 * 1+1=7<br> sizeof(cc) = 8         //cc为指针类型，大小为8<br> sizeof(<em>cc) = 1        //</em>cc指向c的第一个字符，大小为1<br> sizeof(cn) = 40        //开辟40个char空间，大小为40 * 1=40<br> sizeof(a) = 24         //a是数组，但不需计算到’\0’，结果为6* 4=24<br> sizeof(aa) = 8         //aa为指针类型，大小为8<br> sizeof(<em>aa) = 4        //</em>aa指向a的第一个数字，大小为4</p>
+</blockquote>
+<p>需要注意的是，如果不使用Vector作为数组进行参数传递，那么在传递数组引用是需要再传递一个数组的大小，否则在函数中无法根据首地址计算出数组大小。</p>
+]]></content>
+      <categories>
+        <category>c&amp;c++</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode刷题:455.分发饼干</title>
     <url>/article/4d94effd.html</url>
     <content><![CDATA[<h1 id="LeetCode刷题-455-分发饼干"><a href="#LeetCode刷题-455-分发饼干" class="headerlink" title="LeetCode刷题:455.分发饼干"></a>LeetCode刷题:455.分发饼干</h1><a id="more"></a>

@@ -6,7 +6,7 @@
   <link href="http://www.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://www.idefun.com/"/>
-  <updated>2021-03-29T12:55:55.748Z</updated>
+  <updated>2021-03-29T13:09:06.636Z</updated>
   <id>http://www.idefun.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++中length()、size()、sizeof()三者的区别</title>
+    <link href="http://www.idefun.com/article/21ddb368.html"/>
+    <id>http://www.idefun.com/article/21ddb368.html</id>
+    <published>2021-03-29T13:03:14.000Z</published>
+    <updated>2021-03-29T13:09:06.636Z</updated>
+    
+    
+    <summary type="html">C++中length()、size()、sizeof()三者的区别</summary>
+    
+    
+    
+    <category term="c&amp;c++" scheme="http://www.idefun.com/categories/c-c/"/>
+    
+    
+    <category term="c++" scheme="http://www.idefun.com/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode刷题:455.分发饼干</title>
@@ -376,27 +395,6 @@
     
     
     <category term="Linux" scheme="http://www.idefun.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kail Linux虚拟机安装配置Nessus漏洞扫描器</title>
-    <link href="http://www.idefun.com/article/57445.html"/>
-    <id>http://www.idefun.com/article/57445.html</id>
-    <published>2021-01-25T08:35:06.000Z</published>
-    <updated>2021-01-26T09:14:35.272Z</updated>
-    
-    
-    <summary type="html">Kail Linux虚拟机安装配置Nessus漏洞扫描器</summary>
-    
-    
-    
-    <category term="Hack" scheme="http://www.idefun.com/categories/Hack/"/>
-    
-    
-    <category term="Nessus" scheme="http://www.idefun.com/tags/Nessus/"/>
-    
-    <category term="Kail" scheme="http://www.idefun.com/tags/Kail/"/>
     
   </entry>
   
