@@ -101,9 +101,9 @@
     <category term="github" scheme="http://www.idefun.com/categories/github/"/>
     
     
-    <category term="github action" scheme="http://www.idefun.com/tags/github-action/"/>
-    
     <category term="github" scheme="http://www.idefun.com/tags/github/"/>
+    
+    <category term="github action" scheme="http://www.idefun.com/tags/github-action/"/>
     
   </entry>
   
