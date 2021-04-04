@@ -186,25 +186,6 @@
   </entry>
   
   <entry>
-    <title>计算机组成原理</title>
-    <link href="http://www.idefun.com/article/51917.html"/>
-    <id>http://www.idefun.com/article/51917.html</id>
-    <published>2021-03-04T05:42:28.000Z</published>
-    <updated>2021-03-18T09:22:17.491Z</updated>
-    
-    
-    <summary type="html">计算机组成原理</summary>
-    
-    
-    
-    <category term="计算机" scheme="http://www.idefun.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    
-    <category term="计算机" scheme="http://www.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
     <title>计算机病毒原理与防治</title>
     <link href="http://www.idefun.com/article/53598.html"/>
     <id>http://www.idefun.com/article/53598.html</id>
@@ -222,44 +203,6 @@
     <category term="病毒" scheme="http://www.idefun.com/tags/%E7%97%85%E6%AF%92/"/>
     
     <category term="计算机" scheme="http://www.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通用管理知识概论</title>
-    <link href="http://www.idefun.com/article/2887.html"/>
-    <id>http://www.idefun.com/article/2887.html</id>
-    <published>2021-03-03T23:58:59.000Z</published>
-    <updated>2021-03-04T00:00:02.800Z</updated>
-    
-    
-    <summary type="html">通用管理知识概论</summary>
-    
-    
-    
-    <category term="通用管理知识" scheme="http://www.idefun.com/categories/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="通用管理知识" scheme="http://www.idefun.com/tags/%E9%80%9A%E7%94%A8%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通信原理基础</title>
-    <link href="http://www.idefun.com/article/44284.html"/>
-    <id>http://www.idefun.com/article/44284.html</id>
-    <published>2021-03-03T13:34:26.000Z</published>
-    <updated>2021-03-04T12:31:42.124Z</updated>
-    
-    
-    <summary type="html">通信原理基础</summary>
-    
-    
-    
-    <category term="通信原理" scheme="http://www.idefun.com/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="通信原理" scheme="http://www.idefun.com/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
@@ -395,6 +338,63 @@
     
     
     <category term="github" scheme="http://www.idefun.com/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python笔记</title>
+    <link href="http://www.idefun.com/article/45014.html"/>
+    <id>http://www.idefun.com/article/45014.html</id>
+    <published>2021-01-28T09:24:00.000Z</published>
+    <updated>2021-02-26T05:17:24.151Z</updated>
+    
+    
+    <summary type="html">python笔记</summary>
+    
+    
+    
+    <category term="python" scheme="http://www.idefun.com/categories/python/"/>
+    
+    
+    <category term="python" scheme="http://www.idefun.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教你如何获取腾讯视频源地址链接</title>
+    <link href="http://www.idefun.com/article/28328.html"/>
+    <id>http://www.idefun.com/article/28328.html</id>
+    <published>2021-01-28T01:31:37.000Z</published>
+    <updated>2021-01-28T03:12:54.616Z</updated>
+    
+    
+    <summary type="html">教你如何获取腾讯视频源地址链接</summary>
+    
+    
+    
+    <category term="无处安放" scheme="http://www.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
+    
+    
+    <category term="视频解析" scheme="http://www.idefun.com/tags/%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux学习笔记</title>
+    <link href="http://www.idefun.com/article/34487.html"/>
+    <id>http://www.idefun.com/article/34487.html</id>
+    <published>2021-01-27T09:36:28.000Z</published>
+    <updated>2021-03-20T07:30:06.844Z</updated>
+    
+    
+    <summary type="html">Linux学习笔记</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://www.idefun.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://www.idefun.com/tags/Linux/"/>
     
   </entry>
   
