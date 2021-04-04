@@ -6,7 +6,7 @@
   <link href="http://www.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://www.idefun.com/"/>
-  <updated>2021-04-03T11:04:46.340Z</updated>
+  <updated>2021-04-04T09:08:49.072Z</updated>
   <id>http://www.idefun.com/</id>
   
   <author>
@@ -15,6 +15,171 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于树莓派3.5寸屏的安装使用与切换至电脑屏</title>
+    <link href="http://www.idefun.com/article/6f07e0d8.html"/>
+    <id>http://www.idefun.com/article/6f07e0d8.html</id>
+    <published>2021-04-04T08:58:05.000Z</published>
+    <updated>2021-04-04T09:08:49.072Z</updated>
+    
+    
+    <summary type="html">关于树莓派3.5寸屏的安装使用与切换至电脑屏</summary>
+    
+    
+    
+    <category term="树莓派" scheme="http://www.idefun.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+    
+    <category term="树莓派" scheme="http://www.idefun.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何解决vscode中文乱码问题</title>
+    <link href="http://www.idefun.com/article/2349ecf7.html"/>
+    <id>http://www.idefun.com/article/2349ecf7.html</id>
+    <published>2021-04-04T08:57:49.000Z</published>
+    <updated>2021-04-04T09:17:56.885Z</updated>
+    
+    
+    <summary type="html">如何解决vscode中文乱码问题</summary>
+    
+    
+    
+    <category term="vscode" scheme="http://www.idefun.com/categories/vscode/"/>
+    
+    
+    <category term="vscode" scheme="http://www.idefun.com/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pycharm的安装汉化及配置</title>
+    <link href="http://www.idefun.com/article/236db6f0.html"/>
+    <id>http://www.idefun.com/article/236db6f0.html</id>
+    <published>2021-04-04T08:57:21.000Z</published>
+    <updated>2021-04-04T09:22:40.888Z</updated>
+    
+    
+    <summary type="html">pycharm的安装汉化及配置</summary>
+    
+    
+    
+    <category term="python" scheme="http://www.idefun.com/categories/python/"/>
+    
+    
+    <category term="python" scheme="http://www.idefun.com/tags/python/"/>
+    
+    <category term="pycharm" scheme="http://www.idefun.com/tags/pycharm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手机浏览器如何像PC端一样安装插件（拓展程序）？</title>
+    <link href="http://www.idefun.com/article/bc368736.html"/>
+    <id>http://www.idefun.com/article/bc368736.html</id>
+    <published>2021-04-04T08:46:54.000Z</published>
+    <updated>2021-04-04T09:23:10.577Z</updated>
+    
+    
+    <summary type="html">手机浏览器如何像PC端一样安装插件（拓展程序）？</summary>
+    
+    
+    
+    <category term="无处安放" scheme="http://www.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何在Windows系统安装node.js</title>
+    <link href="http://www.idefun.com/article/fb9e1d9c.html"/>
+    <id>http://www.idefun.com/article/fb9e1d9c.html</id>
+    <published>2021-04-04T08:44:52.000Z</published>
+    <updated>2021-04-04T10:29:15.311Z</updated>
+    
+    
+    <summary type="html">如何在Windows系统安装node.js</summary>
+    
+    
+    
+    <category term="node.js" scheme="http://www.idefun.com/categories/node-js/"/>
+    
+    
+    <category term="node.js" scheme="http://www.idefun.com/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何打包python程序（.py至.exe）并添加图标的问题</title>
+    <link href="http://www.idefun.com/article/ef5250b0.html"/>
+    <id>http://www.idefun.com/article/ef5250b0.html</id>
+    <published>2021-04-04T08:44:32.000Z</published>
+    <updated>2021-04-04T10:33:21.114Z</updated>
+    
+    
+    <summary type="html">如何打包python程序（.py至.exe）并添加图标的问题</summary>
+    
+    
+    
+    <category term="python" scheme="http://www.idefun.com/categories/python/"/>
+    
+    
+    <category term="python" scheme="http://www.idefun.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于vscode的安装使用汉化及插件推荐（内含如何设置透明主题）</title>
+    <link href="http://www.idefun.com/article/7065087.html"/>
+    <id>http://www.idefun.com/article/7065087.html</id>
+    <published>2021-04-04T08:44:09.000Z</published>
+    <updated>2021-04-04T10:35:24.408Z</updated>
+    
+    
+    <summary type="html">关于vscode的安装使用汉化及插件推荐（内含如何设置透明主题）</summary>
+    
+    
+    
+    <category term="vscode" scheme="http://www.idefun.com/categories/vscode/"/>
+    
+    
+    <category term="vscode" scheme="http://www.idefun.com/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Intellij IDEA 安装使用汉化及相关插件推荐</title>
+    <link href="http://www.idefun.com/article/33e861d8.html"/>
+    <id>http://www.idefun.com/article/33e861d8.html</id>
+    <published>2021-04-04T08:43:47.000Z</published>
+    <updated>2021-04-04T09:13:27.232Z</updated>
+    
+    
+    <summary type="html">关于Intellij IDEA 安装使用汉化及相关插件推荐</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大学物理虚拟实验之示波器实验</title>
+    <link href="http://www.idefun.com/article/c4a29565.html"/>
+    <id>http://www.idefun.com/article/c4a29565.html</id>
+    <published>2021-04-04T08:43:27.000Z</published>
+    <updated>2021-04-04T10:37:26.300Z</updated>
+    
+    
+    <summary type="html">大学物理虚拟实验之示波器实验</summary>
+    
+    
+    
+    <category term="无处安放" scheme="http://www.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>LeetCode刷题:605.种花问题</title>
@@ -222,179 +387,6 @@
     
     
     <category term="概率论与数理统计" scheme="http://www.idefun.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为hexo博客添加二级域名</title>
-    <link href="http://www.idefun.com/article/49509.html"/>
-    <id>http://www.idefun.com/article/49509.html</id>
-    <published>2021-03-01T04:53:28.000Z</published>
-    <updated>2021-03-01T05:35:12.953Z</updated>
-    
-    
-    <summary type="html">为hexo博客添加二级域名</summary>
-    
-    
-    
-    <category term="无处安放" scheme="http://www.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
-    
-    
-    <category term="hexo" scheme="http://www.idefun.com/tags/hexo/"/>
-    
-    <category term="域名" scheme="http://www.idefun.com/tags/%E5%9F%9F%E5%90%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>密码学原理学习笔记</title>
-    <link href="http://www.idefun.com/article/32664.html"/>
-    <id>http://www.idefun.com/article/32664.html</id>
-    <published>2021-03-01T00:37:25.000Z</published>
-    <updated>2021-03-28T01:19:45.578Z</updated>
-    
-    
-    <summary type="html">密码学原理学习笔记</summary>
-    
-    
-    
-    <category term="密码学" scheme="http://www.idefun.com/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-    
-    <category term="密码学" scheme="http://www.idefun.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库学习笔记</title>
-    <link href="http://www.idefun.com/article/49140.html"/>
-    <id>http://www.idefun.com/article/49140.html</id>
-    <published>2021-02-28T06:49:09.000Z</published>
-    <updated>2021-04-01T05:02:41.151Z</updated>
-    
-    
-    <summary type="html">数据库学习笔记</summary>
-    
-    
-    
-    <category term="数据库" scheme="http://www.idefun.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-    <category term="数据库" scheme="http://www.idefun.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>汇编语言学习笔记</title>
-    <link href="http://www.idefun.com/article/42633.html"/>
-    <id>http://www.idefun.com/article/42633.html</id>
-    <published>2021-02-25T23:24:01.000Z</published>
-    <updated>2021-03-31T13:35:02.367Z</updated>
-    
-    
-    <summary type="html">汇编语言学习笔记</summary>
-    
-    
-    
-    <category term="汇编语言" scheme="http://www.idefun.com/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="汇编语言" scheme="http://www.idefun.com/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows10下搭建汇编语言开发环境</title>
-    <link href="http://www.idefun.com/article/11317.html"/>
-    <id>http://www.idefun.com/article/11317.html</id>
-    <published>2021-02-25T02:17:53.000Z</published>
-    <updated>2021-03-31T13:57:01.602Z</updated>
-    
-    
-    <summary type="html">Windows10下搭建汇编语言开发环境</summary>
-    
-    
-    
-    <category term="汇编语言" scheme="http://www.idefun.com/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="汇编语言" scheme="http://www.idefun.com/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>github无法打开或加载慢的解决方法</title>
-    <link href="http://www.idefun.com/article/7cc3ca60.html"/>
-    <id>http://www.idefun.com/article/7cc3ca60.html</id>
-    <published>2021-02-05T05:34:58.000Z</published>
-    <updated>2021-03-17T14:14:44.252Z</updated>
-    
-    
-    <summary type="html">github无法打开或加载慢的解决方法</summary>
-    
-    
-    
-    <category term="github" scheme="http://www.idefun.com/categories/github/"/>
-    
-    
-    <category term="github" scheme="http://www.idefun.com/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python笔记</title>
-    <link href="http://www.idefun.com/article/45014.html"/>
-    <id>http://www.idefun.com/article/45014.html</id>
-    <published>2021-01-28T09:24:00.000Z</published>
-    <updated>2021-02-26T05:17:24.151Z</updated>
-    
-    
-    <summary type="html">python笔记</summary>
-    
-    
-    
-    <category term="python" scheme="http://www.idefun.com/categories/python/"/>
-    
-    
-    <category term="python" scheme="http://www.idefun.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>教你如何获取腾讯视频源地址链接</title>
-    <link href="http://www.idefun.com/article/28328.html"/>
-    <id>http://www.idefun.com/article/28328.html</id>
-    <published>2021-01-28T01:31:37.000Z</published>
-    <updated>2021-01-28T03:12:54.616Z</updated>
-    
-    
-    <summary type="html">教你如何获取腾讯视频源地址链接</summary>
-    
-    
-    
-    <category term="无处安放" scheme="http://www.idefun.com/categories/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE/"/>
-    
-    
-    <category term="视频解析" scheme="http://www.idefun.com/tags/%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux学习笔记</title>
-    <link href="http://www.idefun.com/article/34487.html"/>
-    <id>http://www.idefun.com/article/34487.html</id>
-    <published>2021-01-27T09:36:28.000Z</published>
-    <updated>2021-03-20T07:30:06.844Z</updated>
-    
-    
-    <summary type="html">Linux学习笔记</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://www.idefun.com/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="http://www.idefun.com/tags/Linux/"/>
     
   </entry>
   
