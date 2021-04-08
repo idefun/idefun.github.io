@@ -6,7 +6,7 @@
   <link href="http://www.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://www.idefun.com/"/>
-  <updated>2021-04-04T10:38:03.479Z</updated>
+  <updated>2021-04-08T05:36:26.195Z</updated>
   <id>http://www.idefun.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo next主题添加日历云</title>
+    <link href="http://www.idefun.com/article/2797960d.html"/>
+    <id>http://www.idefun.com/article/2797960d.html</id>
+    <published>2021-04-08T04:32:55.000Z</published>
+    <updated>2021-04-08T05:36:26.195Z</updated>
+    
+    
+    <summary type="html">hexo next主题添加日历云</summary>
+    
+    
+    
+    
+    <category term="hexo" scheme="http://www.idefun.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>关于树莓派3.5寸屏的安装使用与切换至电脑屏</title>
@@ -368,25 +385,6 @@
     <category term="病毒" scheme="http://www.idefun.com/tags/%E7%97%85%E6%AF%92/"/>
     
     <category term="计算机" scheme="http://www.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>概率论与数理统计</title>
-    <link href="http://www.idefun.com/article/6768.html"/>
-    <id>http://www.idefun.com/article/6768.html</id>
-    <published>2021-03-03T04:07:48.000Z</published>
-    <updated>2021-04-03T06:06:43.974Z</updated>
-    
-    
-    <summary type="html">概率论与数理统计</summary>
-    
-    
-    
-    <category term="概率论与数理统计" scheme="http://www.idefun.com/categories/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
-    
-    
-    <category term="概率论与数理统计" scheme="http://www.idefun.com/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
     
   </entry>
   

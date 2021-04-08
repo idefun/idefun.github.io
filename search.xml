@@ -3182,6 +3182,46 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo next主题添加日历云</title>
+    <url>/article/2797960d.html</url>
+    <content><![CDATA[<h1 id="hexo-next主题添加日历云"><a href="#hexo-next主题添加日历云" class="headerlink" title="hexo next主题添加日历云"></a>hexo next主题添加日历云</h1><a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文使用theme-next-calendar插件实现日历云模块,具体效果点击链接查看</p>
+<p><a href="#" class="LinkCard"></a></p>
+<p>theme-next-calendar插件官方文档</p>
+<p><a href="https://github.com/icecory/theme-next-calendar" class="LinkCard">官方文档</a></p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="1-安装theme-next-calendar插件"><a href="#1-安装theme-next-calendar插件" class="headerlink" title="1.安装theme-next-calendar插件"></a>1.安装theme-next-calendar插件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install --save git:&#x2F;&#x2F;github.com&#x2F;icecory&#x2F;theme-next-calendar#hexo</span><br></pre></td></tr></table></figure>
+<h3 id="2-下载相关文件"><a href="#2-下载相关文件" class="headerlink" title="2.下载相关文件"></a>2.下载相关文件</h3><p>注意:按照官方文档中的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone --depth&#x3D;1 git@github.com&#x2F;icecory&#x2F;theme-next-calendar themes&#x2F;next&#x2F;source&#x2F;lib&#x2F;calendar</span><br></pre></td></tr></table></figure>
+<p>我的git显示没有此仓库,可以直接去下载压缩包</p>
+<p><a href="https://github.com/icecory/theme-next-calendar" class="LinkCard">下载压缩包</a></p>
+<p>趁着下载,找到如下目录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">themes&#x2F;next&#x2F;source&#x2F;lib&#x2F;</span><br></pre></td></tr></table></figure>
+<p>在该目录下新建文件夹,名字为calendar.</p>
+<p>下载完毕后解压,把里面的文件直接复制到calendar文件夹,如下图</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210408124812513.png" alt=""></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>按照官方文档给出方法,我失败了,下面是官方给出的方法:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">步骤一:</span><br><span class="line">把sidebar.swig, calendar.styl放到$&#123;root&#125;&#x2F;source&#x2F;_data目录下,在themes&#x2F;next&#x2F;layout&#x2F;_layout.swig最后加入下面代码</span><br><span class="line">&#123;% include &#39;..&#x2F;source&#x2F;lib&#x2F;calendar&#x2F;calendar.swig&#39; %&#125;</span><br><span class="line">步骤二:</span><br><span class="line">在next主题配置文件_config.yml配置</span><br><span class="line">custom_file_path:</span><br><span class="line">  sidebar: source&#x2F;_data&#x2F;sidebar.swig</span><br><span class="line">  styles: source&#x2F;_data&#x2F;calendar.styl</span><br><span class="line"></span><br><span class="line">CloudCalendar:</span><br><span class="line">  enable: true</span><br><span class="line">  language: zh-CN</span><br><span class="line">  single: true</span><br><span class="line">  root: &#x2F;calendar&#x2F;</span><br></pre></td></tr></table></figure>
+<p>我的方法:</p>
+<p>依据上述步骤二中的在next主题配置文件_config.yml中配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">custom_file_path:</span><br><span class="line">  sidebar: source&#x2F;_data&#x2F;sidebar.swig</span><br><span class="line">  styles: source&#x2F;_data&#x2F;calendar.styl</span><br></pre></td></tr></table></figure>
+<p>我发现我的之前已经配置过了</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210408125818914.png" alt=""></p>
+<p>所以我不打算使用官方的步骤一,由上图看出我的style已经启用,然后我将calendar.styl中的代码直接复制到source/_data/styles.styl中._</p>
+<p>依据官方文档,在themes/next/layout/_layout.swig最后加入下面代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% include &#39;..&#x2F;source&#x2F;lib&#x2F;calendar&#x2F;calendar.swig&#39; %&#125;</span><br></pre></td></tr></table></figure>
+<p>我发现仍然失败,我直接将calendar.swig文件复制到themes/next/layout目录下</p>
+<p>然后在themes/next/layout/_layout.swig最后加入下面代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% include &#39;calendar.swig&#39; %&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来在next主题配置文件最后加入下面代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CloudCalendar:</span><br><span class="line">  enable: true</span><br><span class="line">  language: zh-CN #设置语言</span><br><span class="line">  single: true</span><br><span class="line">  root: &#x2F;calendar&#x2F;</span><br></pre></td></tr></table></figure>
+<p>最后,在你想添加日历云的位置添加下面代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- CloudCalendar --&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;widget-wrap&quot; style&#x3D;&quot;width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;&quot;&gt;</span><br><span class="line">&lt;div class&#x3D;&quot;widget&quot; id&#x3D;&quot;CloudCalendar&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于树莓派3.5寸屏的安装使用与切换至电脑屏</title>
     <url>/article/6f07e0d8.html</url>
     <content><![CDATA[<h1 id="关于树莓派3-5寸屏的安装使用与切换至电脑屏"><a href="#关于树莓派3-5寸屏的安装使用与切换至电脑屏" class="headerlink" title="关于树莓派3.5寸屏的安装使用与切换至电脑屏"></a>关于树莓派3.5寸屏的安装使用与切换至电脑屏</h1><a id="more"></a>
