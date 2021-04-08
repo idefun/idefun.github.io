@@ -693,15 +693,11 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 
 
-        <div style="width:300px;height:169px;color:#222222;background:white;border-radius:15px;margin-top:10px;overflow:hidden">
-            <div style="line-height: 20px;text-align: center;border-bottom:1px solid #96C2F1">
-              <strong>通知</strong>
-            </div>
-            <div style="line-height: 20px;text-align: center;padding-top:10px">
-              <p>欢迎来到我的博客.</p>
-              
-            </div>
-        </div>    
+        <!-- CloudCalendar -->
+        <div class="widget-wrap" style="width: 109%;height:62%;opacity: 0.97;overflow:hidden;border-radius:15px;margin-top:4px;">
+          <div class="widget" id="CloudCalendar"></div>
+        </div>
+
       
 
 
@@ -729,6 +725,18 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
           </script>
           <p id="hitokoto">🌈 获取中...</p>
 </div>
+
+
+<!--公告栏-->
+<div style="width:100%;height:140px;color:#222222;background:#ddffff;border-radius:15px;margin-top:10px;overflow:hidden">
+            <div style="line-height: 35px;text-align: center;background:#74ca83">
+              <strong>通知</strong>
+            </div>
+            <div style="line-height: 20px;text-align: center;padding-top:10px;">
+              <p>欢迎来到我的博客</p>
+            </div>
+</div>
+
 
 <div style="width: 100%;margin-top: 15px;margin-buttom: 15px">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -2064,6 +2072,24 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     }
   });
 </script>
+
+  <!-- calendar widget -->
+
+    <script src="/lib/calendar/calendar.min.js"></script>
+    <script src="/lib/calendar/languages.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>
