@@ -220,6 +220,25 @@
 <p>继续执行下列命令</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">debug test.exe</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/02/25/7zr4gBpDmUGi9nx.png" alt=""></p>
+<h4 id="自动编译调试"><a href="#自动编译调试" class="headerlink" title="自动编译调试"></a>自动编译调试</h4><p>在实践过程中,如何你修改了text.txt(假设是创建的汇编代码文件),那么你就需要重新键入上述命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">masm test.txt</span><br><span class="line">link test.obj</span><br><span class="line">debug test.exe</span><br></pre></td></tr></table></figure>
+<p>非常的麻烦,因此我用我现学的批处理知识实现自动完成这些过程,解放双手.</p>
+<h5 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h5><p>详细过程如下:</p>
+<p>在MASM文件夹下创建run.txt(名字自定义)</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210418113051985.png" alt=""></p>
+<p>打开run.txt,写入下面内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">masm %1.txt;</span><br><span class="line">echo *****************************</span><br><span class="line">echo Compilation completed!</span><br><span class="line">echo *****************************</span><br><span class="line">link %1;</span><br><span class="line">echo *****************************</span><br><span class="line">echo Link completed!</span><br><span class="line">echo *****************************</span><br><span class="line">echo Start debugging!</span><br><span class="line">echo *****************************</span><br><span class="line">debug %1.exe</span><br></pre></td></tr></table></figure>
+<p>保存,重命名修改后缀.txt为.bat即可</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210418113300980.png" alt=""></p>
+<h5 id="实际使用"><a href="#实际使用" class="headerlink" title="实际使用"></a>实际使用</h5><p>以汇编文件t8.txt为例</p>
+<p>在ASM文件夹创建汇编文件t8.txt(注意后缀必须是.txt)</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210418113632835.png" alt=""></p>
+<p>打开DOSBox,键入下列命令即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">run t8</span><br></pre></td></tr></table></figure>
+<p>run是刚才创建的run.bat,t8是汇编文件t8.txt</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210418113840786.png" alt=""></p>
+<p>可见已经进入debug,并且ASM文件夹中也产生了.obj文件和.exe文件</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210418113916125.png" alt=""></p>
 <h3 id="debug的简单使用"><a href="#debug的简单使用" class="headerlink" title="debug的简单使用"></a>debug的简单使用</h3><p>debug是Dos、Windows提供的实模式(8086方式)程序的调试工具</p>
 <ul>
 <li>可以查看CPU各种寄存器的内容</li>
