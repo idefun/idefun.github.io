@@ -6,7 +6,7 @@
   <link href="http://www.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://www.idefun.com/"/>
-  <updated>2021-04-08T05:36:26.195Z</updated>
+  <updated>2021-04-28T14:55:36.052Z</updated>
   <id>http://www.idefun.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于vulnhub的Chill_Hack靶机的渗透测试</title>
+    <link href="http://www.idefun.com/article/d0f0a8c5.html"/>
+    <id>http://www.idefun.com/article/d0f0a8c5.html</id>
+    <published>2021-04-27T01:43:11.000Z</published>
+    <updated>2021-04-28T14:55:36.052Z</updated>
+    
+    
+    <summary type="html">基于vulnhub的Chill_Hack靶机的渗透测试</summary>
+    
+    
+    
+    <category term="Hack" scheme="http://www.idefun.com/categories/Hack/"/>
+    
+    
+    <category term="Hack" scheme="http://www.idefun.com/tags/Hack/"/>
+    
+    <category term="渗透" scheme="http://www.idefun.com/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo next主题添加日历云</title>
@@ -364,27 +385,6 @@
     <category term="hexo" scheme="http://www.idefun.com/tags/hexo/"/>
     
     <category term="next" scheme="http://www.idefun.com/tags/next/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机病毒原理与防治</title>
-    <link href="http://www.idefun.com/article/53598.html"/>
-    <id>http://www.idefun.com/article/53598.html</id>
-    <published>2021-03-04T02:21:04.000Z</published>
-    <updated>2021-03-04T05:44:18.833Z</updated>
-    
-    
-    <summary type="html">计算机病毒原理与防治</summary>
-    
-    
-    
-    <category term="病毒" scheme="http://www.idefun.com/categories/%E7%97%85%E6%AF%92/"/>
-    
-    
-    <category term="病毒" scheme="http://www.idefun.com/tags/%E7%97%85%E6%AF%92/"/>
-    
-    <category term="计算机" scheme="http://www.idefun.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
