@@ -6,7 +6,7 @@
   <link href="http://www.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://www.idefun.com/"/>
-  <updated>2021-04-28T14:55:36.052Z</updated>
+  <updated>2021-04-28T15:05:15.321Z</updated>
   <id>http://www.idefun.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>http cookies劫持实验</title>
+    <link href="http://www.idefun.com/article/ab23bf02.html"/>
+    <id>http://www.idefun.com/article/ab23bf02.html</id>
+    <published>2021-04-28T15:03:47.000Z</published>
+    <updated>2021-04-28T15:05:15.321Z</updated>
+    
+    
+    <summary type="html">http cookies劫持实验</summary>
+    
+    
+    
+    <category term="Hack" scheme="http://www.idefun.com/categories/Hack/"/>
+    
+    
+    <category term="Hack" scheme="http://www.idefun.com/tags/Hack/"/>
+    
+  </entry>
   
   <entry>
     <title>基于vulnhub的Chill_Hack靶机的渗透测试</title>
@@ -364,27 +383,6 @@
     <category term="github action" scheme="http://www.idefun.com/tags/github-action/"/>
     
     <category term="github" scheme="http://www.idefun.com/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo的next主题实现双语功能</title>
-    <link href="http://www.idefun.com/article/99e78227.html"/>
-    <id>http://www.idefun.com/article/99e78227.html</id>
-    <published>2021-03-06T13:52:06.000Z</published>
-    <updated>2021-03-20T08:40:14.937Z</updated>
-    
-    
-    <summary type="html">Hexo的next主题实现双语功能</summary>
-    
-    
-    
-    <category term="hexo" scheme="http://www.idefun.com/categories/hexo/"/>
-    
-    
-    <category term="hexo" scheme="http://www.idefun.com/tags/hexo/"/>
-    
-    <category term="next" scheme="http://www.idefun.com/tags/next/"/>
     
   </entry>
   
