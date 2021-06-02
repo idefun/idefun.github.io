@@ -68,7 +68,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <meta property="og:image" content="https://i.loli.net/2021/01/24/nU8QWAlJGESgP96.png">
 <meta property="og:image" content="https://i.loli.net/2021/01/25/P1A6G4zFDUpbRs3.png">
 <meta property="article:published_time" content="2021-01-24T12:16:09.000Z">
-<meta property="article:modified_time" content="2021-01-25T08:39:18.829Z">
+<meta property="article:modified_time" content="2021-05-16T02:41:24.868Z">
 <meta property="article:author" content="IdeFun">
 <meta property="article:tag" content="BurpSuite">
 <meta name="twitter:card" content="summary">
@@ -328,7 +328,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-25 16:39:18" itemprop="dateModified" datetime="2021-01-25T16:39:18+08:00">2021-01-25</time>
+                <time title="修改时间：2021-05-16 10:41:24" itemprop="dateModified" datetime="2021-05-16T10:41:24+08:00">2021-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -367,7 +367,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -387,10 +387,10 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="BurpSuite的设置及使用"><a href="#BurpSuite的设置及使用" class="headerlink" title="BurpSuite的设置及使用"></a>BurpSuite的设置及使用</h1><h2 id="1-BurpSuite安装与配置"><a href="#1-BurpSuite安装与配置" class="headerlink" title="1.BurpSuite安装与配置"></a>1.BurpSuite安装与配置</h2><h3 id="BurpSuite功能介绍"><a href="#BurpSuite功能介绍" class="headerlink" title="BurpSuite功能介绍"></a>BurpSuite功能介绍</h3><p>BurpSuite是用于攻击web应用程序的集成平台，包含了许多工具。BurpSuite为这些工具设计了许多接口，以加快攻击应用程序的过程。所有工具都共享-一个请求， 并能处理对应的HTTP消息、持久性、认证、代理、日志、警报。</p>
-<p>Burpsuite是由JAVA语言编写,所以Burpsuite是-款跨平台的软件。 但是在测试过程中Buripsuite不像其他自动化测试工具不需要输入任何内容即可完成测试，而需要手动的配置某些参数触发对应的行为才会完成测试。</p>
+        <h1 id="BurpSuite的设置及使用"><a href="#BurpSuite的设置及使用" class="headerlink" title="BurpSuite的设置及使用"></a>BurpSuite的设置及使用</h1><h2 id="1-BurpSuite安装与配置"><a href="#1-BurpSuite安装与配置" class="headerlink" title="1.BurpSuite安装与配置"></a>1.BurpSuite安装与配置</h2><h3 id="BurpSuite功能介绍"><a href="#BurpSuite功能介绍" class="headerlink" title="BurpSuite功能介绍"></a>BurpSuite功能介绍</h3><p>BurpSuite是用于攻击web应用程序的集成平台，包含了许多工具。BurpSuite为这些工具设计了许多接口，以加快攻击应用程序的过程。所有工具都共享一个请求，并能处理对应的HTTP消息、持久性、认证、代理、日志、警报。</p>
+<p>Burpsuite是由JAVA语言编写,所以Burpsuite是-款跨平台的软件。但是在测试过程中Buripsuite不像其他自动化测试工具不需要输入任何内容即可完成测试，而需要手动的配置某些参数触发对应的行为才会完成测试。</p>
 <h2 id="2-BurpSuite-Proxy模块"><a href="#2-BurpSuite-Proxy模块" class="headerlink" title="2.BurpSuite Proxy模块"></a>2.BurpSuite Proxy模块</h2><p>Burp Proxy 是Burp Suite以用户驱动测试流程功能的核心，通过代理模式，可以让我们拦截、查看、修改所有在客户端和服务端之间传输的数据。</p>
-<h3 id="1-Intercept"><a href="#1-Intercept" class="headerlink" title="1.Intercept"></a>1.Intercept</h3><p>Forward表示将截断的HTTP或HTTPS请求发送到服务器。<br>Drop表示将截断的HTTP或HTTPS请求丢弃。<br>Intercept is on和Intercept is off表示开启或关闭代理截断功能。<br>Action表示将代理截断的HT TP或HT TPS请求发送到其他模块或做其他处理。<br>对Intercept进行Raw Hex Params Header切换查看不同的数据格式。</p>
+<h3 id="1-Intercept"><a href="#1-Intercept" class="headerlink" title="1.Intercept"></a>1.Intercept</h3><p>Forward表示将截断的HTTP或HTTPS请求发送到服务器。<br>Drop表示将截断的HTTP或HTTPS请求丢弃。<br>Intercept is on和Intercept is off表示开启或关闭代理截断功能。<br>Action表示将代理截断的HTTP或HTTPS请求发送到其他模块或做其他处理。<br>对Intercept进行Raw Hex Params Header切换查看不同的数据格式。</p>
 <h3 id="2-HTTP-history"><a href="#2-HTTP-history" class="headerlink" title="2.HTTP history"></a>2.HTTP history</h3><p>HTTP history用来查看提交过的HTTP请求。<br>Fiter可以过滤显示某些HTTP请求。点击Filter就可以打开。对于指定URL可以选中右键点击,执行其他操作。WebSockets history与HTTP history功能类似。</p>
 <h3 id="3-options"><a href="#3-options" class="headerlink" title="3.options"></a>3.options</h3><p>Options具有的功能:代理监听设置、戳断客户端请求、截断服务器响应、截断WebSocket通信、服务端响应修改(绕过JS验证文件上传)、匹配与替换HTTP消息中的内容、通过SSL连接Web服务器配置、其他配置选项。</p>
 <h3 id="4-设置proxy-listener"><a href="#4-设置proxy-listener" class="headerlink" title="4.设置proxy listener"></a>4.设置proxy listener</h3><p>通过设置Proxy Listeners来截断数据流量。比如设置监听端口等。BurpSuite默认监听8080端口.</p>
@@ -420,7 +420,8 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <p>也可以使用浏览器审计工具直接删除JS</p>
 <h2 id="5-Burpsuite-Target介绍"><a href="#5-Burpsuite-Target介绍" class="headerlink" title="5.Burpsuite Target介绍"></a>5.Burpsuite Target介绍</h2><p>Burp Target组件主要包含站点地图、目标域、Target 工具三部分组成，他们帮助渗透测试人员更好地了解目标应用的整体状况、当前的工作涉及哪些目标域、分析可能存在的攻击面等信息</p>
 <p>Target Scope中作用域的定义比较宽泛，通常来说，当我们对某个产品进行渗透测试时，可以通过域名或者主机名去限制拦截内容，这里域名或主机名就是我们说的作用域;如果我们想限制得更为细粒度化，比如，你只想拦截login目录下的所有请求，这时我们也可以在此设置，此时，作用域就是目录。</p>
-
+<h3 id="Target站点地图Sitemap介绍"><a href="#Target站点地图Sitemap介绍" class="headerlink" title="Target站点地图Sitemap介绍"></a>Target站点地图Sitemap介绍</h3><p>Site Map的左边为访问的URL,按照网站的层级和深度，树形展示整个应用系统的结构和关联其他域的url情况;右边显示的是某一个url被访问的明细列表，共访问哪些url,请求和应答内容分别是什么，都有着详实的记录。基于左边的树形结构，我们可以选择某个分支，对指定的路径进行扫描和抓取</p>
+<h2 id="6-Burpsuite-站点地图介绍"><a href="#6-Burpsuite-站点地图介绍" class="headerlink" title="6.Burpsuite 站点地图介绍"></a>6.Burpsuite 站点地图介绍</h2>
     </div>
 
    
@@ -560,7 +561,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BurpSuite%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">BurpSuite的设置及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-BurpSuite%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="nav-text">1.BurpSuite安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BurpSuite%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="nav-text">BurpSuite功能介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-BurpSuite-Proxy%E6%A8%A1%E5%9D%97"><span class="nav-text">2.BurpSuite Proxy模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Intercept"><span class="nav-text">1.Intercept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTTP-history"><span class="nav-text">2.HTTP history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-options"><span class="nav-text">3.options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E7%BD%AEproxy-listener"><span class="nav-text">4.设置proxy listener</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%AE%BE%E7%BD%AEintercept-client-requests"><span class="nav-text">5.设置intercept client requests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E8%AE%BE%E7%BD%AEIntercept-Server-Response"><span class="nav-text">6.设置Intercept Server Response</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E8%AE%BE%E7%BD%AE%E6%88%AA%E6%96%ADWebsocket%E9%80%9A%E4%BF%A1%E4%BB%A5%E5%8F%8A%E4%BF%AE%E6%94%B9Response%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">7.设置截断Websocket通信以及修改Response的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%8C%B9%E9%85%8D%E4%BB%A5%E5%8F%8A%E4%BF%AE%E6%94%B9HTTP%E6%B6%88%E6%81%AF"><span class="nav-text">8.匹配以及修改HTTP消息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Burpsuite%E6%8A%93%E5%8F%96%E6%89%8B%E6%9C%BAAPP%E6%B5%81%E9%87%8F"><span class="nav-text">3.Burpsuite抓取手机APP流量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Burpsuite%E5%89%94%E9%99%A4JS%E8%84%9A%E6%9C%AC-%E7%BB%95%E8%BF%87JS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%AA%8C%E8%AF%81"><span class="nav-text">4.Burpsuite剔除JS脚本(绕过JS文件上传验证)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Burpsuite-Target%E4%BB%8B%E7%BB%8D"><span class="nav-text">5.Burpsuite Target介绍</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BurpSuite%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">BurpSuite的设置及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-BurpSuite%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="nav-text">1.BurpSuite安装与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BurpSuite%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D"><span class="nav-text">BurpSuite功能介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-BurpSuite-Proxy%E6%A8%A1%E5%9D%97"><span class="nav-text">2.BurpSuite Proxy模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Intercept"><span class="nav-text">1.Intercept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTTP-history"><span class="nav-text">2.HTTP history</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-options"><span class="nav-text">3.options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%AE%BE%E7%BD%AEproxy-listener"><span class="nav-text">4.设置proxy listener</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%AE%BE%E7%BD%AEintercept-client-requests"><span class="nav-text">5.设置intercept client requests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E8%AE%BE%E7%BD%AEIntercept-Server-Response"><span class="nav-text">6.设置Intercept Server Response</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E8%AE%BE%E7%BD%AE%E6%88%AA%E6%96%ADWebsocket%E9%80%9A%E4%BF%A1%E4%BB%A5%E5%8F%8A%E4%BF%AE%E6%94%B9Response%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">7.设置截断Websocket通信以及修改Response的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%8C%B9%E9%85%8D%E4%BB%A5%E5%8F%8A%E4%BF%AE%E6%94%B9HTTP%E6%B6%88%E6%81%AF"><span class="nav-text">8.匹配以及修改HTTP消息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Burpsuite%E6%8A%93%E5%8F%96%E6%89%8B%E6%9C%BAAPP%E6%B5%81%E9%87%8F"><span class="nav-text">3.Burpsuite抓取手机APP流量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Burpsuite%E5%89%94%E9%99%A4JS%E8%84%9A%E6%9C%AC-%E7%BB%95%E8%BF%87JS%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E9%AA%8C%E8%AF%81"><span class="nav-text">4.Burpsuite剔除JS脚本(绕过JS文件上传验证)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Burpsuite-Target%E4%BB%8B%E7%BB%8D"><span class="nav-text">5.Burpsuite Target介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BESitemap%E4%BB%8B%E7%BB%8D"><span class="nav-text">Target站点地图Sitemap介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Burpsuite-%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE%E4%BB%8B%E7%BB%8D"><span class="nav-text">6.Burpsuite 站点地图介绍</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -576,7 +577,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -882,13 +883,13 @@ if(canvas.getContext){
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/article/cfda4bcb.html" title="article&#x2F;cfda4bcb.html">初级算法</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/article/8240bef7.html" title="article&#x2F;8240bef7.html">渗透测试实战指南</a>
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/article/44a199f9.html" title="article&#x2F;44a199f9.html">Nmap的使用</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/article/64755983.html" title="article&#x2F;64755983.html">基于vulnhub的DC-1靶机的渗透测试</a>
         </li>
     </ul>
   </div>
