@@ -1209,7 +1209,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #28d7ff;
+  background: #ffffc8;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3163,7 +3163,7 @@ div.post-block.tag .collection-title h2 {
 .cal th,
 .cal td {
   font-weight: normal;
-  line-height: 2.5625;
+  line-height: 1.4;
   padding: 0;
   text-align: center;
 }
