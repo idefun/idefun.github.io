@@ -6,7 +6,7 @@
   <link href="http://www.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://www.idefun.com/"/>
-  <updated>2021-06-03T02:53:28.293Z</updated>
+  <updated>2021-12-29T08:30:20.578Z</updated>
   <id>http://www.idefun.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java基础01：注释</title>
+    <link href="http://www.idefun.com/article/bbc957e2.html"/>
+    <id>http://www.idefun.com/article/bbc957e2.html</id>
+    <published>2021-12-29T06:39:51.000Z</published>
+    <updated>2021-12-29T08:30:20.578Z</updated>
+    
+    
+    <summary type="html">Java基础01：注释</summary>
+    
+    
+    
+    <category term="java" scheme="http://www.idefun.com/categories/java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>初级算法</title>
@@ -40,7 +57,7 @@
     <link href="http://www.idefun.com/article/8240bef7.html"/>
     <id>http://www.idefun.com/article/8240bef7.html</id>
     <published>2021-05-12T09:37:19.000Z</published>
-    <updated>2021-08-31T00:43:17.055Z</updated>
+    <updated>2021-12-29T08:33:24.871Z</updated>
     
     
     <summary type="html">渗透测试实战指南</summary>
@@ -80,7 +97,7 @@
     <link href="http://www.idefun.com/article/64755983.html"/>
     <id>http://www.idefun.com/article/64755983.html</id>
     <published>2021-05-02T02:01:48.000Z</published>
-    <updated>2021-06-18T03:28:33.483Z</updated>
+    <updated>2021-12-29T08:30:58.760Z</updated>
     
     
     <summary type="html">基于vulnhub的DC-1靶机的渗透测试</summary>
@@ -99,7 +116,7 @@
     <link href="http://www.idefun.com/article/ab23bf02.html"/>
     <id>http://www.idefun.com/article/ab23bf02.html</id>
     <published>2021-04-28T15:03:47.000Z</published>
-    <updated>2021-05-02T02:06:58.989Z</updated>
+    <updated>2021-12-29T08:31:22.648Z</updated>
     
     
     <summary type="html">http cookies劫持实验</summary>
@@ -118,7 +135,7 @@
     <link href="http://www.idefun.com/article/d0f0a8c5.html"/>
     <id>http://www.idefun.com/article/d0f0a8c5.html</id>
     <published>2021-04-27T01:43:11.000Z</published>
-    <updated>2021-06-17T08:57:22.610Z</updated>
+    <updated>2021-12-29T08:31:08.062Z</updated>
     
     
     <summary type="html">基于vulnhub的Chill_Hack靶机的渗透测试</summary>
@@ -370,25 +387,6 @@
     
     
     <category term="LeetCode" scheme="http://www.idefun.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++中length()、size()、sizeof()三者的区别</title>
-    <link href="http://www.idefun.com/article/21ddb368.html"/>
-    <id>http://www.idefun.com/article/21ddb368.html</id>
-    <published>2021-03-29T13:03:14.000Z</published>
-    <updated>2021-03-29T13:09:29.180Z</updated>
-    
-    
-    <summary type="html">C++中length()、size()、sizeof()三者的区别</summary>
-    
-    
-    
-    <category term="c&amp;c++" scheme="http://www.idefun.com/categories/c-c/"/>
-    
-    
-    <category term="c++" scheme="http://www.idefun.com/tags/c/"/>
     
   </entry>
   
