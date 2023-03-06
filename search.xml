@@ -787,14 +787,14 @@
 <p>在知道一条已知条件时，语句如下所示:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT 要查询的字段名 FROM 库名.表名 WHERE 已知条件1的字段名&#x3D;&#39;已知条件1的值&#39; and 已知条件2的字段名&#x3D;&#39;已知条件2的值&#39;</span><br></pre></td></tr></table></figure>
 <h5 id="2-limit的用法"><a href="#2-limit的用法" class="headerlink" title="2.limit的用法"></a>2.limit的用法</h5><p>limit的使用格式为limit m,n,其中m是指记录开始的位置，从0开始，表示第一条记录; n是指取n条记录。例如limit 0,1表示从第一条记录开始，取一条记录，不使用limit和使用limit查询的结果如下所示，可以很明显地看出二者的区别。</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210712153604147.png" alt=""></p>
+<p><img src="渗透测试实战指南.assets/image-20210712153604147.png" alt=""></p>
 <h5 id="3-需要记住的几个函数"><a href="#3-需要记住的几个函数" class="headerlink" title="3.需要记住的几个函数"></a>3.需要记住的几个函数</h5><ul>
 <li>database():当前网站使用的数据库。</li>
 <li>version():当前MySQL的版本。</li>
 <li>user():当前MySQL的用户。</li>
 </ul>
 <h5 id="4-注释符"><a href="#4-注释符" class="headerlink" title="4.注释符"></a>4.注释符</h5><p>在MySQL中，常见注释符的表达方式: #或—空格或/**/.</p>
-<p><img src="https://gitee.com/wxpgitee/images/raw/master/img/image-20210720084923856.png" alt=""></p>
+<p><img src="渗透测试实战指南.assets/image-20210720084923856.png" alt=""></p>
 <h5 id="5-内联注释"><a href="#5-内联注释" class="headerlink" title="5.内联注释"></a>5.内联注释</h5><p>内联注释的形式:/*! code*/。内联注释可以用于整个SQL语句中，用来执行我们的SQL语句，下面举一个例子:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">index.php?id&#x3D;-15 &#x2F;*! UNION*&#x2F;&#x2F;*! SELECT*&#x2F;1, 2, 3</span><br></pre></td></tr></table></figure>
 <h4 id="Union注入攻击"><a href="#Union注入攻击" class="headerlink" title="Union注入攻击"></a>Union注入攻击</h4><p>union型SQL注入，看名字就能知道，使用这种方法可以直接在页面中返回我们要查询的数据，方法也很简单，即使用UNION联合查询即可。</p>

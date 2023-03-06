@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>IdeFun</title>
   <icon>http://www.idefun.com/icon.png</icon>
-  <subtitle>暗透了,更能看得见星光</subtitle>
+  <subtitle>努力不一定成功，但不努力真的很舒服。</subtitle>
   <link href="http://www.idefun.com/atom.xml" rel="self"/>
   
   <link href="http://www.idefun.com/"/>
@@ -57,7 +57,7 @@
     <link href="http://www.idefun.com/article/8240bef7.html"/>
     <id>http://www.idefun.com/article/8240bef7.html</id>
     <published>2021-05-12T09:37:19.000Z</published>
-    <updated>2022-09-28T04:17:27.695Z</updated>
+    <updated>2022-12-13T14:10:35.037Z</updated>
     
     
     <summary type="html">渗透测试实战指南</summary>
